@@ -2,21 +2,25 @@
 
 ## Description
 
-This is a Docker container built for the UniFi Controller software (Ubiquiti Networks)
+#### This is a Docker container built for the Ubiquiti Networks UniFi Controller software
 
-Latest stable UniFi version is v4.8.12.
-
-It's configured to look for the configuration files/database in `/usr/lib/unifi/data`.
-
-UniFi/MongoDB log files are located in `/usr/lib/unifi/logs`
+## Available Docker tags:
+| Tag | Description |
+| --- | --- |
+| latest | Tracks UniFi Release Candidate/beta/alpha versions (v4.9.1-alpha as of 2016-02-09) |
+| stable | Tracks UniFi latest General Release version (v4.8.12 as of 2016-02-09) |
 
 ## Important notes
 
-***Always stop the existing container and make a back up copy of your UniFi data before installing newer images.***
+**Always stop the existing container and make a backup copy of your UniFi data before installing newer images.**
 
 ## Usage
 
-The basic way to run this container is as follows:
+This container is configured to look for the configuration files/database in `/usr/lib/unifi/data`.
+
+UniFi/MongoDB log files are located in `/usr/lib/unifi/logs`
+
+The most basic way to run this container is as follows:
 
 ```bash
 $ docker run --name unifi -d -p 8080:8080 -p 8443:8443 -p 8880:8880 -p 8843:8843 \
@@ -39,6 +43,21 @@ $ docker run --name unifi -d -p 8080:8080 -p 8443:8443 -p 8880:8880 -p 8843:8843
 	goofball222/unifi
 ```
 
-## Other notes
+## bleedingedge/latest tag build notes
 
+**DO NOT USE THIS IN A PRODUCTION ENVIRONMENT - FOR TESTING ONLY**
 
+_There have been past UniFi alpha/beta releases with AP bricking firmware, network breaking bugs, etc._
+
+_Proceed with caution! Use at your own risk._
+
+If you're going to use this image please make sure you create a UBNT community account:
+https://community.ubnt.com/
+
+Sign up for Beta access at:
+https://account.ubnt.com/manage/settings/beta
+
+That way you can participate in discussion and create bug reports for any issues you may encounter in:
+https://community.ubnt.com/t5/UniFi-Wireless-Beta/bd-p/UniFi_Beta
+
+**AGAIN: USE AT YOUR OWN RISK - DO NOT USE THIS IN A PRODUCTION ENVIRONMENT**
