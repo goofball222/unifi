@@ -3,27 +3,34 @@
 ## Description
 
 This is a Docker container built for the UniFi Controller software (Ubiquiti Networks)
-Latest available stable version is v4.8.12.
+Latest stable UniFi version is v4.8.12.
 
-It's configured to look for the configuration files/database in `/usr/lib/unifi`.
+It's configured to look for the configuration files/database in `/usr/lib/unifi/data`.
 
-Process log files are located in `/usr/lib/unifi/logs`
+UniFi/MongoDB log files are located in `/usr/lib/unifi/logs`
 
 ## Usage
 
-The recommended way to run this container is as follows:
+The basic way to run this container is as follows:
 
 ```bash
 $ docker run -d --name=unifi -p 8080:8080 -p 8443:8443 -p 8880:8880 -p 8843:8843 \
 	goofball222/unifi
 ```
 
-To have the container store the config/databases and logs on your filesystem instead (recommeded for troubleshooting!), you
-can run:
+This container exposes three volumes:
+/usr/lib/unifi/data - UniFi configuration data and DBs
+/usr/lib/unifi/logs - UniFi and MongoDB logs for troubleshooting
+/var/log/supervise - supervise process logs in the event of a failure
+
+To have the container store the config/databases (recomended for persistence) 
+and logs on your filesystem instead (recommeded for troubleshooting!), run:
 
 ```bash
-$ docker run -d --name=unifi  -p 8080:8080 -p 8443:8443 -p 8880:8880 -p 8843:8843 \
-	-v /path/to/data:/usr/lib/unifi \
+$ docker run -d --name=unifi -p 8080:8080 -p 8443:8443 -p 8880:8880 -p 8843:8843 \
+	-v /path/to/data:/usr/lib/unifi/data  \
+	-v /path/to/logs:/usr/lib/unifi/logs \
+	-v /path/to/supv/logs:/var/log/supervise \
 	goofball222/unifi
 ```
 
