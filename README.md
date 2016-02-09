@@ -14,7 +14,7 @@ Process log files are located in `/usr/lib/unifi/logs`
 The recommended way to run this container is as follows:
 
 ```bash
-$ docker run -d --name=UniFi -net=host -p 8080:8080 -p 8443:8443 -p 8880:8880 -p 8843:8843 \
+$ docker run -d --name=unifi -p 8080:8080 -p 8443:8443 -p 8880:8880 -p 8843:8843 \
 	goofball222/unifi
 ```
 
@@ -22,7 +22,7 @@ To have the container store the config/databases and logs on your filesystem ins
 can run:
 
 ```bash
-$ docker run -d --name=UniFi -net=host -p 8080:8080 -p 8443:8443 -p 8880:8880 -p 8843:8843 \
+$ docker run -d --name=unifi  -p 8080:8080 -p 8443:8443 -p 8880:8880 -p 8843:8843 \
 	-v /path/to/data:/usr/lib/unifi \
 	goofball222/unifi
 ```
