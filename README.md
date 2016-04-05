@@ -7,6 +7,7 @@
 ## Available Docker tags:
 | Tag | Description |
 | --- | --- |
+| latest-5.0 | Tracks UniFi Release Candidate/beta/alpha 5.0 versions (v5.0.0-alpha2 as of 2016-04-05) |
 | latest | Tracks UniFi Release Candidate/beta/alpha versions (v4.9.2-beta as of 2016-03-14) |
 | stable | Tracks UniFi latest General Release version (v4.8.14 as of 2016-02-29) |
 
@@ -43,7 +44,9 @@ $ docker run --name unifi -d -p 8080:8080 -p 8443:8443 -p 8880:8880 -p 8843:8843
 	goofball222/unifi
 ```
 
-## bleedingedge/latest tag build notes
+---
+
+## bleedingedge/latest/latest-5.0 tag build notes
 
 **DO NOT USE THIS IN A PRODUCTION ENVIRONMENT - FOR TESTING ONLY**
 
