@@ -9,7 +9,7 @@
 | --- | --- |
 | latest-5.0 | Tracks UniFi Release Candidate/beta/alpha 5.0 versions (v5.0.0-alpha2 as of 2016-04-05) |
 | latest | Tracks UniFi Release Candidate/beta/alpha versions (v4.9.2-beta as of 2016-03-14) |
-| stable | Tracks UniFi latest General Release version (v4.8.14 as of 2016-02-29) |
+| stable | Tracks UniFi latest General Release version (v4.8.15 as of 2016-04-08) |
 
 ## Important notes
 
