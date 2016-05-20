@@ -7,13 +7,16 @@
 ## Available Docker tags:
 | Tag | Description |
 | --- | --- |
-| latest-5.0 | Tracks UniFi Release Candidate/beta/alpha 5.0 versions (v5.0.3-RC as of 2016-05-19) |
-| latest | Tracks UniFi Release Candidate/beta/alpha versions (v4.9.4-beta as of 2016-04-16) |
+| latest | Tracks UniFi Release Candidate/beta/alpha versions (v5.0.3-RC as of 2016-05-19) |
 | stable | Tracks UniFi latest General Release version (v4.8.18 as of 2016-05-05) |
 
 ## Important notes
 
 **Always stop the existing container and make a backup copy of your UniFi data before installing newer images.**
+
+Changes 2016-05-20: v4.9.4-beta, released 2016-04-16 is the last v4.9.X release. All fixes and updates from v4.9.4 and onward are being rolled into v5.0 and prepped for general release. See: https://community.ubnt.com/t5/UniFi-Wireless/UniFi-Release-Schedule-and-LTS/m-p/1554264
+
+With that I'm getting rid of the latest-5.0/bleedingedge-5.0 branch and moving v5.0.X over to occupy the "latest" spot. Update your images/scripts accordingly. As always, make sure you back up data before upgrading.
 
 ## Usage
 
@@ -46,7 +49,7 @@ $ docker run --name unifi -d -p 8080:8080 -p 8443:8443 -p 8880:8880 -p 8843:8843
 
 ---
 
-## bleedingedge/latest/latest-5.0 tag build notes
+## bleedingedge/latest tag build notes
 
 **DO NOT USE THIS IN A PRODUCTION ENVIRONMENT - FOR TESTING ONLY**
 
