@@ -5,6 +5,7 @@ MAINTAINER The Goofball goofball222@gmail.com
 
 # Set environment variables
 ENV DEBIAN_FRONTEND noninteractive
+ENV URL https://www.ubnt.com/downloads/unifi/4.8.18/unifi_sysvinit_all.deb
 
 # Add apt repository keys, non-default sources, update apt database to load new data
 # Install deps and mongodb, download unifi .deb, install and remove package
@@ -20,7 +21,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 && \
     openjdk-7-jre-headless \
     jsvc \
     mongodb-server && \
-  wget -nv https://www.ubnt.com/downloads/unifi/4.8.18/unifi_sysvinit_all.deb && \
+  wget -nv $URL && \
   dpkg --install unifi_sysvinit_all.deb && \
   rm unifi_sysvinit_all.deb && \
   apt-get -y autoremove wget && \

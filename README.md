@@ -7,7 +7,7 @@
 ## Available Docker tags:
 | Tag | Description |
 | --- | --- |
-| latest | Tracks UniFi Release Candidate/beta/alpha versions (v5.0.3-RC as of 2016-05-19) |
+| latest | Tracks UniFi Release Candidate/beta/alpha versions (v5.0.4-RC as of 2016-05-26) |
 | stable | Tracks UniFi latest General Release version (v4.8.18 as of 2016-05-05) |
 
 ## Important notes
