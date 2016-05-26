@@ -32,9 +32,9 @@ $ docker run --name unifi -d -p 8080:8080 -p 8443:8443 -p 8880:8880 -p 8843:8843
 ```
 
 This container exposes three volumes:
-/usr/lib/unifi/data - UniFi configuration data and DBs
-/usr/lib/unifi/logs - UniFi and MongoDB logs for troubleshooting
-/var/log/supervisor - supervisor process logs in the event of a failure
+* /usr/lib/unifi/data - UniFi configuration data and DBs
+* /usr/lib/unifi/logs - UniFi and MongoDB logs for troubleshooting
+* /var/log/supervisor - supervisor process logs in the event of a failure
 
 To have the container store the config/databases (recomended for persistence) 
 and logs on your filesystem instead (recommeded for troubleshooting!), run:
