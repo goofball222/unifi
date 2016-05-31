@@ -37,7 +37,7 @@ This container exposes three volumes:
 * /var/log/supervisor - supervisor process logs in the event of a failure
 
 To have the container store the config/databases (recomended for persistence) 
-and logs on your filesystem instead (recommeded for troubleshooting!), run:
+and logs on your filesystem instead (recommended for troubleshooting!), run:
 
 ```bash
 $ docker run --name unifi -d -p 8080:8080 -p 8443:8443 -p 8880:8880 -p 8843:8843 \
