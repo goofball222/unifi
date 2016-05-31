@@ -36,7 +36,7 @@ This container exposes three volumes:
 * /usr/lib/unifi/logs - UniFi and MongoDB logs for troubleshooting
 * /var/log/supervisor - supervisor process logs in the event of a failure
 
-To have the container store the config/databases (recomended for persistence) 
+To have the container store the config/databases (recommended for persistence) 
 and logs on your filesystem instead (recommended for troubleshooting!), run:
 
 ```bash
