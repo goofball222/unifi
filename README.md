@@ -19,17 +19,12 @@
 
 Changes 2016-06-01: 
 * v5.0.6 is now in general release: http://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-0-6-is-released/ba-p/1579716 
-* MAKE A BACKUP OF YOUR DATA BEFORE INSTALLING VERSION 5. Database rollback from v5.X to v4.x is not possible, it requires a data restore.
-* Shifted v4.8.X and Alpha/Beta/RC Dockerfiles into subfolders instead of branches, messy to maintain. 
-* Start tagging v4 and v5 releases as they happen.
-* Repoint "latest" and "stable" tags to v5.X releases 
-* Move alpha/beta/RC to "unstable" tag moving forward
-* Add "lts" tag tracking Long Term Support version
-
-Changes 2016-05-20: 
-* v4.9.4-beta, released 2016-04-16 is the last v4.9.X release.
-* All fixes and updates from v4.9.4 and onward are being rolled into v5.0 and prepped for general release.
-* See: https://community.ubnt.com/t5/UniFi-Wireless/UniFi-Release-Schedule-and-LTS/m-p/1554264
+* MAKE A BACKUP OF YOUR DATA BEFORE INSTALLING VERSION 5. Database rollback from v5.X.X to v4.X or lower is not possible, it requires a data restore.
+* Repoint github master and "latest" tag to v5.X.X releases 
+* Move alpha/beta/RC to "unstable" branch moving forward
+* Add "lts" branch tracking v4.8.X Long Term Support versions
+* Start tagging stable and lts releases as they happen.
+* **If you want/need to stay on v4.8.X you should use the "lts" image or specific release image tag you want.
 
 ## Usage
 
