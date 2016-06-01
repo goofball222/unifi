@@ -31,8 +31,6 @@ Changes 2016-05-20:
 * All fixes and updates from v4.9.4 and onward are being rolled into v5.0 and prepped for general release.
 * See: https://community.ubnt.com/t5/UniFi-Wireless/UniFi-Release-Schedule-and-LTS/m-p/1554264
 
-With that I'm getting rid of the latest-5.0/bleedingedge-5.0 branch and moving v5.0.X over to occupy the "latest" spot. Update your images/scripts accordingly. As always, make sure you back up data before upgrading.
-
 ## Usage
 
 This container is configured to look for the configuration files/database in `/usr/lib/unifi/data`.
@@ -64,7 +62,7 @@ $ docker run --name unifi -d -p 8080:8080 -p 8443:8443 -p 8880:8880 -p 8843:8843
 
 ---
 
-## bleedingedge/latest tag build notes
+## unstable tag notes
 
 **DO NOT USE THIS IN A PRODUCTION ENVIRONMENT - FOR TESTING ONLY**
 
@@ -81,4 +79,4 @@ https://account.ubnt.com/manage/settings/beta
 That way you can participate in discussion and create bug reports for any issues you may encounter in:
 https://community.ubnt.com/t5/UniFi-Wireless-Beta/bd-p/UniFi_Beta
 
-**AGAIN: USE AT YOUR OWN RISK - DO NOT USE THIS IN A PRODUCTION ENVIRONMENT**
+**AGAIN: USE UNSTABLE AT YOUR OWN RISK - DO NOT USE IT IN A PRODUCTION ENVIRONMENT**
