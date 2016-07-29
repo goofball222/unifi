@@ -9,7 +9,7 @@
 | --- | --- |
 | latest | Tracks UniFi General Release latest version (v5.0.7 as of 2016-06-08) |
 | lts | Tracks UniFi Long Term Support latest version (v4.8.20 as of 2016-07-06) |
-| unstable | Tracks UniFi Release Candidate/beta/alpha versions (v5.1.1 as of 2016-07-01) |
+| unstable | Tracks UniFi Release Candidate/beta/alpha versions (v5.2.0 as of 2016-07-28) |
 | unstable4 | Tracks UniFi v4 Release Candidate/beta/alpha versions (v4.8.20 as of 2016-06-22) |
 | release-5.0.7 | UniFi v5.0.7 General Release, 2016-06-08 |
 | release-5.0.6 | UniFi v5.0.6 General Release, 2016-06-01 |
