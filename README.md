@@ -22,14 +22,14 @@
 **Always stop the existing container and make a backup copy of your UniFi data before installing newer images.**
 
 Changes 2016-09-19:
-* v5.2.7 is now general release/stable: http://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-2-7-is-released/ba-p$
+* v5.2.7 is now general release/stable: http://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-2-7-is-released/ba-p/1680663
 * Rename "unstable53" tag to "unstable" to match Ubiquiti release tagging scheme
 * Rename "unstable" tag to "testing" to match Ubiquiti release tagging scheme
-* Additional info (beta signup required): http://community.ubnt.com/t5/UniFi-Wireless-Beta/UniFi-Stable-Stable-Candi$
+* Additional info (beta signup required): http://community.ubnt.com/t5/UniFi-Wireless-Beta/UniFi-Stable-Stable-Candidate-SC-Testing-Unstable-Release-Cycle/m-p/1368458
 
 Changes 2016-06-01:
-* v5.0.6 is now in general release: http://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-0-6-is-released/ba-p/157$
-* MAKE A BACKUP OF YOUR DATA BEFORE INSTALLING VERSION 5. Database rollback from v5.X.X to v4.X or lower is not poss$
+* v5.0.6 is now in general release: http://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-0-6-is-released/ba-p/1579716
+* MAKE A BACKUP OF YOUR DATA BEFORE INSTALLING VERSION 5. Database rollback from v5.X.X to v4.X or lower is not possible
 * Repoint github master and "latest" tag to v5.X.X releases
 * Move alpha/beta/RC to "unstable" branch moving forward
 * Add "lts" branch tracking v4.8.X Long Term Support versions
