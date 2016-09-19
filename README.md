@@ -7,13 +7,13 @@
 ## Docker tags:
 | Tag | Description |
 | --- | --- |
-| latest | Tracks UniFi General Release latest version (v5.0.7 as of 2016-06-08) |
+| latest | Tracks UniFi latest stable/general availability version (v5.2.7 as of 2016-09-19) |
 | lts | Tracks UniFi Long Term Support latest version (v4.8.20 as of 2016-07-06) |
-| unstable | Tracks UniFi Release Candidate/beta/alpha versions (v5.2.7 as of 2016-09-18) |
+| testing | Tracks UniFi testing/stable candidate versions (v5.2.7 as of 2016-09-18) |
+| unstable | Tracks UniFi unstable versions (v5.3.3 as of 2016-09-15) |
 | unstable4 | Tracks UniFi v4 Release Candidate/beta/alpha versions (v4.8.20 as of 2016-06-22) |
-| unstable53 | Tracks UniFi v5.3.X Release Candidate/beta/alpha versions (v5.3.3 as of 2016-09-15) |
+| release-5.2.7 | UniFi v5.2.7 General Release, 2016-09-19 |
 | release-5.0.7 | UniFi v5.0.7 General Release, 2016-06-08 |
-| release-5.0.6 | UniFi v5.0.6 General Release, 2016-06-01 |
 | release-4.8.20 | UniFi v4.8.20 General Release, 2016-07-06 |
 | release-4.8.18 | UniFi v4.8.18 General Release, 2016-05-05 |
 
@@ -21,10 +21,16 @@
 
 **Always stop the existing container and make a backup copy of your UniFi data before installing newer images.**
 
-Changes 2016-06-01: 
-* v5.0.6 is now in general release: http://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-0-6-is-released/ba-p/1579716 
-* MAKE A BACKUP OF YOUR DATA BEFORE INSTALLING VERSION 5. Database rollback from v5.X.X to v4.X or lower is not possible, it requires a data restore.
-* Repoint github master and "latest" tag to v5.X.X releases 
+Changes 2016-09-19:
+* v5.2.7 is now general release/stable: http://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-2-7-is-released/ba-p$
+* Rename "unstable53" tag to "unstable" to match Ubiquiti release tagging scheme
+* Rename "unstable" tag to "testing" to match Ubiquiti release tagging scheme
+* Additional info (beta signup required): http://community.ubnt.com/t5/UniFi-Wireless-Beta/UniFi-Stable-Stable-Candi$
+
+Changes 2016-06-01:
+* v5.0.6 is now in general release: http://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-0-6-is-released/ba-p/157$
+* MAKE A BACKUP OF YOUR DATA BEFORE INSTALLING VERSION 5. Database rollback from v5.X.X to v4.X or lower is not poss$
+* Repoint github master and "latest" tag to v5.X.X releases
 * Move alpha/beta/RC to "unstable" branch moving forward
 * Add "lts" branch tracking v4.8.X Long Term Support versions
 * Start tagging stable and lts releases as they happen.
