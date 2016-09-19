@@ -7,13 +7,13 @@
 ## Docker tags:
 | Tag | Description |
 | --- | --- |
-| latest | Tracks UniFi General Release latest version (v5.2.7 as of 2016-09-19) |
+| latest | Tracks UniFi latest stable/general availability version (v5.2.7 as of 2016-09-19) |
 | lts | Tracks UniFi Long Term Support latest version (v4.8.20 as of 2016-07-06) |
-| testing | Tracks UniFi Release Candidate/beta/alpha versions (v5.2.7 as of 2016-09-18) |
-| unstable | Tracks UniFi unstable release versions (v5.3.3 as of 2016-09-15) |
+| testing | Tracks UniFi testing/stable candidate versions (v5.2.7 as of 2016-09-18) |
+| unstable | Tracks UniFi unstable versions (v5.3.3 as of 2016-09-15) |
 | unstable4 | Tracks UniFi v4 Release Candidate/beta/alpha versions (v4.8.20 as of 2016-06-22) |
+| release-5.2.7 | UniFi v5.2.7 General Release, 2016-09-19 |
 | release-5.0.7 | UniFi v5.0.7 General Release, 2016-06-08 |
-| release-5.0.6 | UniFi v5.0.6 General Release, 2016-06-01 |
 | release-4.8.20 | UniFi v4.8.20 General Release, 2016-07-06 |
 | release-4.8.18 | UniFi v4.8.18 General Release, 2016-05-05 |
 
