@@ -30,9 +30,13 @@ Changes 2016-10-03:
 
 * Additional info (beta signup required): http://community.ubnt.com/t5/UniFi-Wireless-Beta/UniFi-Stable-Stable-Candidate-SC-Testing-Unstable-Release-Cycle/m-p/1368458
 
-** MAKE A BACKUP OF YOUR DATA BEFORE INSTALLING UPDATES. **
-** Database rollback from newer to older versions isn't always possible. **
-** Export a .unf from the web interface or stop the current container and make a backup copy of the data volume. **
+
+**MAKE A BACKUP OF YOUR DATA BEFORE INSTALLING UPDATES.**
+
+**Database rollback from newer to older versions isn't always possible.**
+
+**Export a .unf from the web interface and/or stop the current container and make a backup copy of the data volume.**
+
 
 ## Usage
 
