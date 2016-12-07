@@ -7,19 +7,21 @@
 ## Docker tags:
 | Tag | Description |
 | --- | --- |
-| latest | Tracks UniFi latest stable/general availability version - v5.2.9 as of 2016-10-03 |
+| latest | Tracks UniFi latest stable/general availability version - v5.3.8 as of 2016-12-06 |
 | lts | Tracks UniFi Long Term Support latest version - v4.8.20 as of 2016-07-06 |
 | testing | Tracks UniFi testing/stable candidate versions - v5.3.8 as of 2016-11-27 |
 | unstable | Tracks UniFi unstable versions - v5.4.3 as of 2016-11-30 |
-| release-5.2.9 | UniFi v5.2.9 General Release, 2016-10-03 |
+| release-5.3.8 | UniFi v5.3.8 General Release, 2016-12-06 |
 | release-4.8.20 | UniFi v4.8.20 General Release, 2016-07-06 |
 
 ## Important notes
 
 **Always stop the existing container and make a backup copy of your UniFi data before installing newer images.**
 
-Changes 2016-11-30: 
-* v5.3.8 is still considered "stable candidate" even though the release was published to the UniFi public blog. UBNT notes that it will be upgraded to general release in a week if no issues found. I'll update the latest/stable container and generate a new release at that time.
+Changes 2016-12-07: 
+* v5.3.8 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-3-8-Stable-has-been-released/ba-p/1755779
+* Updated latest tag version and added a release-5.3.8 tag.
+* Switched Java in all tags from openjdk-7-jre-headless to openjdk-8-jre-headless from jessie-backports to match UBNT recommended version 8.
 
 Changes 2016-10-03:
 * v5.2.9 is now general release/stable: http://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-2-9-is-released/ba-p/1694199
@@ -28,7 +30,9 @@ Changes 2016-10-03:
 
 * Additional info (beta signup required): http://community.ubnt.com/t5/UniFi-Wireless-Beta/UniFi-Stable-Stable-Candidate-SC-Testing-Unstable-Release-Cycle/m-p/1368458
 
-* MAKE A BACKUP OF YOUR DATA BEFORE INSTALLING VERSION 5. Database rollback from v5.X.X to v4.X or lower is not possible
+** MAKE A BACKUP OF YOUR DATA BEFORE INSTALLING UPDATES. **
+** Database rollback from newer to older versions isn't always possible. **
+** Export a .unf from the web interface or stop the current container and make a backup copy of the data volume. **
 
 ## Usage
 
@@ -61,7 +65,7 @@ $ docker run --name unifi -d -p 8080:8080 -p 8443:8443 -p 8880:8880 -p 8843:8843
 
 ---
 
-## unstable tag notes
+## unstable/testing tag notes
 
 **DO NOT USE THIS IN A PRODUCTION ENVIRONMENT - FOR TESTING ONLY**
 
