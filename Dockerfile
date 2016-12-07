@@ -13,12 +13,16 @@ ENV UNIFI_VERSION 5.3.8-d66ec0b93d
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 && \
   echo "deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen" \
     | tee -a /etc/apt/sources.list.d/mongodb.list && \
+  echo "deb http://ftp.debian.org/debian jessie-backports main" \
+    | tee -a /etc/apt/sources.list.d/jessie-backports.list && \
   apt-get update -q && \
   apt-get --no-install-recommends -y install \
     supervisor \
     binutils \
-    wget \
-    openjdk-7-jre-headless \
+    wget && \
+  apt-get -t jessie-backports --no-install-recommends -y install \
+    openjdk-8-jre-headless && \
+  apt-get --no-install-recommends -y install \
     jsvc \
     mongodb-server && \
   wget -nv https://www.ubnt.com/downloads/unifi/$UNIFI_VERSION/unifi_sysvinit_all.deb && \
