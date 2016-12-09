@@ -9,19 +9,17 @@
 | --- | --- |
 | latest | Tracks UniFi latest stable/general availability version - v5.3.8 as of 2016-12-06 |
 | lts | Tracks UniFi Long Term Support latest version - v4.8.20 as of 2016-07-06 |
-| testing | Tracks UniFi testing/stable candidate versions - v5.3.8 as of 2016-11-27 |
-| unstable | Tracks UniFi unstable versions - v5.4.3 as of 2016-11-30 |
+| testing | Tracks UniFi testing/stable candidate versions - v5.3.9 as of 2016-12-08 |
+| unstable | Tracks UniFi unstable versions - v5.4.6 as of 2016-12-08 |
 | release-5.3.8 | UniFi v5.3.8 General Release, 2016-12-06 |
 | release-4.8.20 | UniFi v4.8.20 General Release, 2016-07-06 |
 
 ## Important notes
 
-**Always stop the existing container and make a backup copy of your UniFi data before installing newer images.**
-
 Changes 2016-12-07: 
 * v5.3.8 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-3-8-Stable-has-been-released/ba-p/1755779
 * Updated latest tag version and added a release-5.3.8 tag.
-* Switched Java in all tags from openjdk-7-jre-headless to openjdk-8-jre-headless from jessie-backports to match UBNT recommended version 8.
+* Switched Java in all tags except lts from openjdk-7-jre-headless to openjdk-8-jre-headless from jessie-backports to match UBNT recommended version 8.
 
 Changes 2016-10-03:
 * v5.2.9 is now general release/stable: http://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-2-9-is-released/ba-p/1694199
