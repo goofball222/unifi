@@ -33,7 +33,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 && \
   rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*.deb /tmp/* /var/tmp/* 
 
 # Forward apporpriate ports
-EXPOSE 8080/tcp 8443/tcp 8843/tcp 8880/tcp 3478/udp
+EXPOSE 8080/tcp 8443/tcp 8843/tcp 8880/tcp 6789/tcp 3478/udp
 
 # Set internal storage volume
 VOLUME ["/usr/lib/unifi/data", "/usr/lib/unifi/logs", "/var/log/supervisor"]
