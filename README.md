@@ -17,6 +17,9 @@
 
 ## Notes
 
+Changes 2016-12-23:
+* testing updated to v5.4.8
+
 Changes 2016-12-21:
 * Align with updated UBNT releases
 * unstable updated to v5.5.0
@@ -32,11 +35,6 @@ Changes 2016-12-07:
 * v5.3.8 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-3-8-Stable-has-been-released/ba-p/1755779
 * Updated latest tag version and added a release-5.3.8 tag.
 * Switched Java in all tags except lts from openjdk-7-jre-headless to openjdk-8-jre-headless from jessie-backports to match UBNT recommended version 8.
-
-Changes 2016-10-03:
-* v5.2.9 is now general release/stable: http://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-2-9-is-released/ba-p/1694199
-* Removed all but most recent release tags from README.md - Previous release builds/tags still available in Docker hub
-* Dropped unstable4 tag - Plan to create a new testing-lts tag if any more LTS releases are made (security updates, bugfixes, etc.).
 
 * Additional info (beta signup required): http://community.ubnt.com/t5/UniFi-Wireless-Beta/UniFi-Stable-Stable-Candidate-SC-Testing-Unstable-Release-Cycle/m-p/1368458
 
