@@ -10,7 +10,7 @@
 | latest | Tracks UniFi current stable/general availability version - v5.3.8 as of 2016-12-06 |
 | lts | Tracks UniFi Long Term Support latest version - v4.8.20 as of 2016-07-06 |
 | sc | Tracks UniFi stable candidate versions - v5.3.10 as of 2016-12-20 |
-| testing | Tracks UniFi testing versions - v5.4.7 as of 2016-12-20 |
+| testing | Tracks UniFi testing versions - v5.4.8 as of 2016-12-23 |
 | unstable | Tracks UniFi unstable versions - v5.5.0 as of 2016-12-21 |
 | release-5.3.8 | UniFi v5.3.8 General Release, 2016-12-06 |
 | release-4.8.20 | UniFi v4.8.20 General Release, 2016-07-06 |
