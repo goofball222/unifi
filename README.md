@@ -17,19 +17,13 @@
 
 ## Notes
 
+Changes 2016-12-27:
+* unstable updated to v5.5.1 ->
+* **IMPORTANT - READ THE RELEASE NOTES BEFORE UPGRADING**
+* https://community.ubnt.com/t5/UniFi-Wireless-Beta/UniFi-5-5-1-Unstable-has-been-released-discussion/m-p/1776330
+
 Changes 2016-12-23:
 * testing updated to v5.4.8
-
-Changes 2016-12-21:
-* Align with updated UBNT releases
-* unstable updated to v5.5.0
-* v5.4.7 moved to testing 
-* v5.3.10 moved to new 'sc' tag
-
-Changes 2016-12-20:
-* unstable updated to v5.4.7
-* testing updated to v5.3.10
-* Expose 6789/tcp for speed test from UniFi app in v5.x controller: https://community.ubnt.com/t5/UniFi-Wireless/Unifi-speedtest-in-5-2-7-and-Unifi-iOS-maybe-android-app/td-p/1688402
 
 Changes 2016-12-07: 
 * v5.3.8 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-3-8-Stable-has-been-released/ba-p/1755779
