@@ -73,6 +73,17 @@ $ docker run --name unifi -d -p 8080:8080 -p 8443:8443 -p 8880:8880 -p 8843:8843
 	goofball222/unifi
 ```
 
+## Use hosts networking stack
+When you use docker switch `--net host`, the container will use the networking stack from the host itself. This means that you don't have to forward the ports and that the ports inside the container will be binded to the ones from the host. Big advantage is that any local devices (gateway, access points, etc) can broadcast to the controller software running as `--net host`.
+
+```bash
+docker run --net host --name unifi \
+    -v /srv/services/unify-controller:/usr/lib/unifi/data \
+    -v /srv/services/unify-controller:/usr/lib/unifi/logs \
+    -v /srv/services/unify-controller:/var/log/supervisor \
+    goofball222/unifi
+```
+
 ---
 
 ## unstable/testing tag Notes
