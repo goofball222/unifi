@@ -17,13 +17,17 @@
 
 ## Notes
 
+Changes 2017-01-04:
+* Happy New Year!
+* sc updated to v5.3.11
+* v5.4.8 was changed to "Stable Candidate" by UBNT on 2017-01-03. 
+* Leaving v5.4.8 the "testing" tag for the time being to avoid creating additional tags. Will reevauluate this as UBNT continues releases.
+* UBNT has multiple "Stable Candidate" releases ocurring right now (v5.3.11 and v5.4.8).
+
 Changes 2016-12-27:
 * unstable updated to v5.5.1 ->
 * **IMPORTANT - READ THE RELEASE NOTES BEFORE UPGRADING**
 * https://community.ubnt.com/t5/UniFi-Wireless-Beta/UniFi-5-5-1-Unstable-has-been-released-discussion/m-p/1776330
-
-Changes 2016-12-23:
-* testing updated to v5.4.8
 
 Changes 2016-12-07: 
 * v5.3.8 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-3-8-Stable-has-been-released/ba-p/1755779
