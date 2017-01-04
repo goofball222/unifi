@@ -21,8 +21,8 @@ Changes 2017-01-04:
 * Happy New Year!
 * sc updated to v5.3.11
 * v5.4.8 was changed to "Stable Candidate" by UBNT on 2017-01-03. 
-* Leaving v5.4.8 the "testing" tag for the time being to avoid creating additional tags. Will reevauluate this as UBNT continues releases.
-* UBNT has multiple "Stable Candidate" releases ocurring right now (v5.3.11 and v5.4.8).
+* Leaving v5.4.8 the "testing" tag for the time being to avoid creating additional tags. Will reevaluate this as UBNT continues releases.
+* UBNT has multiple "Stable Candidate" releases occurring right now (v5.3.11 and v5.4.8).
 
 Changes 2016-12-27:
 * unstable updated to v5.5.1 ->
