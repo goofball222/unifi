@@ -7,15 +7,19 @@
 ## Docker tags:
 | Tag | Description |
 | --- | --- |
-| latest | Tracks UniFi current stable/general availability version - v5.3.8 as of 2016-12-06 |
+| latest | Tracks UniFi current stable/general availability version - v5.3.11 as of 2017-01-09 |
 | lts | Tracks UniFi long term support current version - v4.8.20 as of 2016-07-06 |
 | sc | Tracks UniFi stable candidate versions - v5.3.11 as of 2017-01-04 |
 | testing | Tracks UniFi testing version - v5.4.8 as of 2016-12-23 |
 | unstable | Tracks UniFi unstable version - v5.5.1 as of 2016-12-27 |
-| release-5.3.8 | UniFi v5.3.8 general release, 2016-12-06 |
+| release-5.3.8 | UniFi v5.3.11 general release, 2017-01-09 |
 | release-4.8.20 | UniFi v4.8.20 general release, 2016-07-06 |
 
 ## Notes
+
+Changes 2017-01-09:
+* v5.3.11 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-3-11-Stable-has-been-released/ba-p/1791878
+* latest tag updated to v5.3.11, tagged release-5.3.11
 
 Changes 2017-01-04:
 * Happy New Year!
@@ -30,12 +34,7 @@ Changes 2016-12-27:
 * **IMPORTANT - READ THE RELEASE NOTES BEFORE UPGRADING**
 * https://community.ubnt.com/t5/UniFi-Wireless-Beta/UniFi-5-5-1-Unstable-has-been-released-discussion/m-p/1776330
 
-Changes 2016-12-07: 
-* v5.3.8 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-3-8-Stable-has-been-released/ba-p/1755779
-* Updated latest tag version and added a release-5.3.8 tag.
-* Switched Java in all tags except lts from openjdk-7-jre-headless to openjdk-8-jre-headless from jessie-backports to match UBNT recommended version 8.
-
-* Additional info (beta signup required): http://community.ubnt.com/t5/UniFi-Wireless-Beta/UniFi-Stable-Stable-Candidate-SC-Testing-Unstable-Release-Cycle/m-p/1368458
+* Additional tagging info (beta signup required): http://community.ubnt.com/t5/UniFi-Wireless-Beta/UniFi-Stable-Stable-Candidate-SC-Testing-Unstable-Release-Cycle/m-p/1368458
 
 
 **MAKE A BACKUP OF YOUR DATA BEFORE INSTALLING UPDATES.**
@@ -64,7 +63,7 @@ This container exposes the following ports (see: https://help.ubnt.com/hc/en-us/
 
 The most basic way to start this container:
 
-```bash
+```
 $ docker run --name unifi -d \
 	-p 3478:3478/udp -p 6789:6789 -p 8080:8080 \
 	-p 8443:8443 -p 8880:8880 -p 8843:8843 \
@@ -75,7 +74,7 @@ $ docker run --name unifi -d \
 Recommended:
 Have the container store the config/databases (recommended for persistence), logs on your filesystem instead (recommended for troubleshooting!), and allow for remapping ports with NO layer 2 discovery (layer 3/remote controller):
 
-```bash
+```
 $ docker run --name unifi -d \
 	-p 3478:3478/udp -p 6789:6789 -p 8080:8080 \
 	-p 8443:8443 -p 8880:8880 -p 8843:8843 \
@@ -87,7 +86,7 @@ $ docker run --name unifi -d \
 
 To enable layer 2/local LAN discovery:
 
-```bash
+```
 $ docker run --name unifi -d \
 	-p 3478:3478/udp -p 6789:6789 -p 8080:8080 \
 	-p 8443:8443 -p 8880:8880 -p 8843:8843 \
@@ -103,7 +102,7 @@ Alternative suggested by rogierlommers:
 Use --network=host mode. Does not allow for port remapping. You may need to manually adjust host firewall settings to allow traffic. Running a container in this mode is considered insecure:
 **Please make sure to read the "Network: host" section of https://docs.docker.com/engine/reference/run/ and understand the implications of this setting before using.**
 
-```bash
+```
 $ docker run --name unifi -d \
 	--network=host \
 	-v /path/to/data:/usr/lib/unifi/data  \
