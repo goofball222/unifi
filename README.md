@@ -9,39 +9,33 @@
 | --- | --- |
 | latest | Tracks UniFi current stable/general availability version - v5.3.11 as of 2017-01-09 |
 | lts | Tracks UniFi long term support current version - v4.8.20 as of 2016-07-06 |
-| sc | Tracks UniFi stable candidate versions - v5.4.8 as of 2017-01-09 |
+| sc | Tracks UniFi stable candidate versions - v5.4.8 as of 2017-01-11 |
 | testing | Tracks UniFi testing version - v5.4.8 as of 2016-12-23 |
-| unstable | Tracks UniFi unstable version - v5.5.1 as of 2016-12-27 |
+| unstable | Tracks UniFi unstable version - v5.5.2 as of 2017-01-12 |
 | release-5.3.11 | UniFi v5.3.11 general release, 2017-01-09 |
 | release-4.8.20 | UniFi v4.8.20 general release, 2016-07-06 |
 
 ## Notes
+
+Changes 2017-01-12:
+* sc updated to v5.4.9
+* unstable updated to v5.5.2
 
 Changes 2017-01-09:
 * v5.3.11 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-3-11-Stable-has-been-released/ba-p/1791878
 * latest tag updated to v5.3.11, tagged release-5.3.11
 * v5.4.8 moved to sc tag. testing tag remains unchanged (no current testing release)
 
-Changes 2017-01-04:
-* Happy New Year!
-* UBNT has multiple "Stable Candidate" releases occurring right now (v5.3.11 and v5.4.8).
-* sc updated to v5.3.11
-* v5.4.8 was changed to "Stable Candidate" by UBNT on 2017-01-03. Leaving v5.4.8 as-is in the "testing" tag for the time being to avoid creating additional tags. Will reevaluate this as UBNT continues releases.
-* Drop /var/log/supervisor volume. Update supervisord.conf to redirect stdout/stderr so that any process output to them is visible in 'docker logs'
-* Expose 3748/udp (STUN) and 10001/udp (layer 2 discovery broadcasts) 
+---
 
-Changes 2016-12-27:
-* unstable updated to v5.5.1 ->
-* **IMPORTANT - READ THE RELEASE NOTES BEFORE UPGRADING**
+* **IMPORTANT - READ THE v5.5.X RELEASE NOTES BEFORE UPGRADING**
 * https://community.ubnt.com/t5/UniFi-Wireless-Beta/UniFi-5-5-1-Unstable-has-been-released-discussion/m-p/1776330
+* https://community.ubnt.com/t5/UniFi-Wireless-Beta/DISCUSSION-UniFi-5-5-2-Unstable-has-been-released/m-p/1796408
 
-* Additional tagging info (beta signup required): http://community.ubnt.com/t5/UniFi-Wireless-Beta/UniFi-Stable-Stable-Candidate-SC-Testing-Unstable-Release-Cycle/m-p/1368458
-
+---
 
 **MAKE A BACKUP OF YOUR DATA BEFORE INSTALLING UPDATES.**
-
 **Database rollback from newer to older versions isn't always possible.**
-
 **Export a .unf from the web interface and/or stop the current container and make a backup copy of the data volume.**
 
 
