@@ -9,7 +9,7 @@
 | --- | --- |
 | latest | Tracks UniFi current stable/general availability version - v5.3.11 as of 2017-01-09 |
 | lts | Tracks UniFi long term support current version - v4.8.20 as of 2016-07-06 |
-| sc | Tracks UniFi stable candidate versions - v5.4.8 as of 2017-01-11 |
+| sc | Tracks UniFi stable candidate versions - v5.4.9 as of 2017-01-11 |
 | testing | Tracks UniFi testing version - v5.4.8 as of 2016-12-23 |
 | unstable | Tracks UniFi unstable version - v5.5.2 as of 2017-01-12 |
 | release-5.3.11 | UniFi v5.3.11 general release, 2017-01-09 |
@@ -20,6 +20,8 @@
 Changes 2017-01-12:
 * sc updated to v5.4.9
 * unstable updated to v5.5.2
+
+---
 
 Changes 2017-01-09:
 * v5.3.11 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-3-11-Stable-has-been-released/ba-p/1791878
@@ -52,7 +54,7 @@ This container exposes the following ports (see: https://help.ubnt.com/hc/en-us/
 * `8443/tcp` (port for controller GUI / API)
 * `8880/tcp` (port for HTTP portal redirect)
 * `8843/tcp` (port for HTTPS portal redirect)
-* `10001/udp` (port used for UBNT discovery broadcasts - L2/same subnet **only**)
+* `10001/udp` (port used for UBNT discovery broadcasts - Local LAN/L2/same subnet **only**)
 
 ---
 
