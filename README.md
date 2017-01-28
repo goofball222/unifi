@@ -9,7 +9,7 @@
 | --- | --- |
 | latest | Tracks UniFi current stable/general availability version - v5.4.9 as of 2017-01-16 |
 | lts | Tracks UniFi long term support current version - v4.8.20 as of 2016-07-06 |
-| sc | Tracks UniFi stable candidate versions - v5.4.9 as of 2017-01-11 |
+| sc | Tracks UniFi stable candidate versions - v5.4.10 as of 2017-01-28 |
 | testing | Tracks UniFi testing version - v5.4.8 as of 2016-12-23 |
 | unstable | Tracks UniFi unstable version - v5.5.2 as of 2017-01-12 |
 | release-5.4.9 | UniFi v5.4.9 general release, 2017-01-16 |
@@ -18,14 +18,17 @@
 
 ## Notes
 
+Changes 2017-01-28:
+* sc updated to v5.4.10 - released 2017-01-25
+* the v5.5.X unstable releases were pulled by UBNT on 2017-01-17 due to a memory leak. No ETA for a new release. If you have issues with v5.5.2 crashing downgrade to v5.4.9 or the latest stable candidate.
+* I'm leaving the as-is v5.5.2 unstable image release up.
+
+---
+
 Changes 2017-01-16:
 * v5.4.9 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-9-Stable-has-been-released/ba-p/1800599
 * latest tag updated to v5.4.9, tagged release-5.4.9
 * if you need v5.3.X please use the release-5.3.11 tag. Guessing that UBNT will push this to LTS in the near term.
-
-Changes 2017-01-12:
-* sc updated to v5.4.9
-* unstable updated to v5.5.2
 
 ---
 
