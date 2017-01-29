@@ -11,17 +11,22 @@
 | lts | Tracks UniFi long term support current version - v4.8.20 as of 2016-07-06 |
 | sc | Tracks UniFi stable candidate versions - v5.4.10 as of 2017-01-28 |
 | testing | Tracks UniFi testing version - v5.4.8 as of 2016-12-23 |
-| unstable | Tracks UniFi unstable version - v5.5.2 as of 2017-01-12 |
+| unstable | Tracks UniFi unstable version - v5.5.3 as of 2017-01-29 |
 | release-5.4.9 | UniFi v5.4.9 general release, 2017-01-16 |
 | release-5.3.11 | UniFi v5.3.11 general release, 2017-01-09 |
 | release-4.8.20 | UniFi v4.8.20 general release, 2016-07-06 |
 
 ## Notes
 
+Changes 2017-01-29:
+* unstable updated to v5.5.3 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-3-Unstable-has-been-released/ba-p/1816215
+
+---
+
 Changes 2017-01-28:
 * sc updated to v5.4.10 - released 2017-01-25
-* the v5.5.X unstable releases were pulled by UBNT on 2017-01-17 due to a memory leak. No ETA for a new release. If you have issues with v5.5.2 crashing downgrade to v5.4.9 or the latest stable candidate.
-* I'm leaving the as-is v5.5.2 unstable image release up.
+* ~~the v5.5.X unstable releases were pulled by UBNT on 2017-01-17 due to a memory leak. No ETA for a new release. If you have issues with v5.5.2 crashing downgrade to v5.4.9 or the latest stable candidate.~~
+* ~~I'm leaving the as-is v5.5.2 unstable image release up.~~
 
 ---
 
@@ -36,12 +41,6 @@ Changes 2017-01-09:
 * v5.3.11 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-3-11-Stable-has-been-released/ba-p/1791878
 * latest tag updated to v5.3.11, tagged release-5.3.11
 * v5.4.8 moved to sc tag. testing tag remains unchanged (no current testing release)
-
----
-
-* **IMPORTANT - READ THE v5.5.X RELEASE NOTES BEFORE UPGRADING**
-* https://community.ubnt.com/t5/UniFi-Wireless-Beta/UniFi-5-5-1-Unstable-has-been-released-discussion/m-p/1776330
-* https://community.ubnt.com/t5/UniFi-Wireless-Beta/DISCUSSION-UniFi-5-5-2-Unstable-has-been-released/m-p/1796408
 
 ---
 
