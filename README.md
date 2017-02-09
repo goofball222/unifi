@@ -12,7 +12,7 @@
 | sc | Tracks UniFi stable candidate versions - v5.4.11 as of 2017-02-03 |
 | testing | Tracks UniFi testing version - v5.4.8 as of 2016-12-23 |
 | unstable | Tracks UniFi unstable version - v5.5.3 as of 2017-01-29 |
-| release-5.4.9 | UniFi v5.4.9 general release, 2017-01-16 |
+| release-5.4.11 | UniFi v5.4.11 general release, 2017-02-08 |
 | release-5.3.11 | UniFi v5.3.11 general release, 2017-01-09 |
 | release-4.8.20 | UniFi v4.8.20 general release, 2016-07-06 |
 
