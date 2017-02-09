@@ -7,7 +7,7 @@
 ## Docker tags:
 | Tag | Description |
 | --- | --- |
-| latest | Tracks UniFi current stable/general availability version - v5.4.9 as of 2017-01-16 |
+| latest | Tracks UniFi current stable/general availability version - v5.4.11 as of 2017-02-08 |
 | lts | Tracks UniFi long term support current version - v4.8.20 as of 2016-07-06 |
 | sc | Tracks UniFi stable candidate versions - v5.4.11 as of 2017-02-03 |
 | testing | Tracks UniFi testing version - v5.4.8 as of 2016-12-23 |
@@ -18,8 +18,9 @@
 
 ## Notes
 
-Changes 2017-02-03:
-* sc updated to v5.4.11 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-4-11-Stable-Candidate-has-been-released/ba-p/1823171
+Changes 2017-02-08:
+* v5.4.11 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-11-Stable-has-been-released/ba-p/1828449
+* latest tag updated to v5.4.11, tagged release-5.4.11
 
 ---
 
@@ -32,13 +33,6 @@ Changes 2017-01-16:
 * v5.4.9 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-9-Stable-has-been-released/ba-p/1800599
 * latest tag updated to v5.4.9, tagged release-5.4.9
 * if you need v5.3.X please use the release-5.3.11 tag. Guessing that UBNT will push this to LTS in the near term.
-
----
-
-Changes 2017-01-09:
-* v5.3.11 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-3-11-Stable-has-been-released/ba-p/1791878
-* latest tag updated to v5.3.11, tagged release-5.3.11
-* v5.4.8 moved to sc tag. testing tag remains unchanged (no current testing release)
 
 ---
 
