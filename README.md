@@ -10,7 +10,7 @@
 | latest | Tracks UniFi current stable/general availability version - v5.4.11 as of 2017-02-08 |
 | lts | Tracks UniFi long term support current version - v4.8.20 as of 2016-07-06 |
 | sc | Tracks UniFi stable candidate versions - v5.4.11 as of 2017-02-03 |
-| testing | Tracks UniFi testing version - v5.4.8 as of 2016-12-23 |
+| testing | Tracks UniFi testing version - v5.5.7 as of 2017-03-10 |
 | unstable | Tracks UniFi unstable version - v5.5.7 as of 2017-03-10 |
 | release-5.4.11 | UniFi v5.4.11 general release, 2017-02-08 |
 | release-5.3.11 | UniFi v5.3.11 general release, 2017-01-09 |
@@ -19,7 +19,8 @@
 ## Notes
 
 Changes 2017-03-10:
-* unstabled updated to v5.5.7 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-7-Testing-has-been-released/ba-p/1861951
+* testing updated to v5.5.7 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-7-Testing-has-been-released/ba-p/1861951
+* unstable updated to v5.5.7
 
 ---
 
