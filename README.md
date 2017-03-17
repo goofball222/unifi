@@ -8,8 +8,7 @@
 | Tag | Description |
 | --- | --- |
 | latest | Tracks UniFi current stable/general availability version - v5.4.11 as of 2017-02-08 |
-| lts | Tracks UniFi long term support current version - v4.8.20 as of 2016-07-06 |
-| sc | Tracks UniFi stable candidate versions - v5.4.11 as of 2017-02-03 |
+| sc | Tracks UniFi stable candidate versions - v5.4.12 as of 2017-03-05 |
 | testing | Tracks UniFi testing version - v5.5.7 as of 2017-03-10 |
 | unstable | Tracks UniFi unstable version - v5.5.7 as of 2017-03-10 |
 | release-5.4.11 | UniFi v5.4.11 general release, 2017-02-08 |
@@ -17,6 +16,12 @@
 | release-4.8.20 | UniFi v4.8.20 general release, 2016-07-06 |
 
 ## Notes
+
+Changes 2017-03-15:
+* sc updated to v5.4.12 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-4-12-Stable-Candidate-has-been-released/ba-p/1867318
+* drop lts tag/branch, will recreate if new stable/lts diverge again - release-4.8.20 and last lts build remains
+
+---
 
 Changes 2017-03-10:
 * testing updated to v5.5.7 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-7-Testing-has-been-released/ba-p/1861951
