@@ -8,8 +8,8 @@
 | Tag | Description |
 | --- | --- |
 | latest | Tracks UniFi current stable/general availability version - v5.4.11 as of 2017-02-08 |
-| sc | Tracks UniFi stable candidate versions - v5.4.12 as of 2017-03-05 |
-| testing | Tracks UniFi testing version - v5.5.7 as of 2017-03-10 |
+| sc | Tracks UniFi stable candidate version - v5.4.12 as of 2017-03-05 |
+| testing | Tracks UniFi testing version - v5.5.8 as of 2017-03-20 |
 | unstable | Tracks UniFi unstable version - v5.5.7 as of 2017-03-10 |
 | release-5.4.11 | UniFi v5.4.11 general release, 2017-02-08 |
 | release-5.3.11 | UniFi v5.3.11 general release, 2017-01-09 |
@@ -17,15 +17,15 @@
 
 ## Notes
 
-Changes 2017-03-15:
-* sc updated to v5.4.12 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-4-12-Stable-Candidate-has-been-released/ba-p/1867318
-* drop lts tag/branch, will recreate if new stable/lts diverge again - release-4.8.20 and last lts build remains
+Changes 2017-03-20:
+* Ubiquiti giving me headches... Two sc releases at the same time. It'd be nice if they'd solidify at least one codebase.
+* testing updated to v5.5.8, however this is a **stable candidate** (sc): https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-8-Stable-Candidate-has-been-released/ba-p/1871223
 
 ---
 
-Changes 2017-03-10:
-* testing updated to v5.5.7 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-7-Testing-has-been-released/ba-p/1861951
-* unstable updated to v5.5.7
+Changes 2017-03-15:
+* sc updated to v5.4.12 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-4-12-Stable-Candidate-has-been-released/ba-p/1867318
+* drop lts tag/branch, will recreate if new stable/lts diverge again - release-4.8.20 and last lts build remains
 
 ---
 
