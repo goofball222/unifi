@@ -10,12 +10,17 @@
 | latest | Tracks UniFi current stable/general availability version - v5.4.11 as of 2017-02-08 |
 | sc | Tracks UniFi stable candidate version - v5.4.14 as of 2017-03-24 |
 | testing | Tracks UniFi testing version - v5.5.9 as of 2017-03-29 |
-| unstable | Tracks UniFi unstable version - v5.6.1 as of 2017-03-23 |
+| unstable | Tracks UniFi unstable version - v5.6.2 as of 2017-03-30 |
 | release-5.4.11 | UniFi v5.4.11 general release, 2017-02-08 |
 | release-5.3.11 | UniFi v5.3.11 general release, 2017-01-09 |
 | release-4.8.20 | UniFi v4.8.20 general release, 2016-07-06 |
 
 ## Notes
+
+Changes 2017-03-23:
+* unstable updated to v5.6.2 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-2-Unstable-has-been-released/ba-p/1883443
+
+---
 
 Changes 2017-03-29:
 * Ubiquiti continuing my headches... Still two stable candidate releases running simultaneously
@@ -26,14 +31,6 @@ Changes 2017-03-29:
 Changes 2017-03-24:
 * sc updated to v5.4.14 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-4-14-Stable-Candidate-has-been-released/ba-p/1876272
 * this build now incorporates the WebRTC loading fix
-
----
-
-Changes 2017-03-23:
-* unstable updated to v5.6.1 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-1-Unstable-has-been-released/ba-p/1875310
-* note that the Dockerfile accounts for and takes care of the noted WebRTC JNI directory rename issue.
-* this unstable container build should also fix a WebRTC loading issue, that change will be ported to other branches/tags if no issues reported
-* As always, make a backup before updating to unstable versions.
 
 ---
 
