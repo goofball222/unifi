@@ -7,15 +7,21 @@
 ## Docker tags:
 | Tag | Description |
 | --- | --- |
-| latest | Tracks UniFi current stable/general availability version - v5.4.11 as of 2017-02-08 |
+| latest | Tracks UniFi current stable/general availability version - v5.4.14 as of 2017-04-06 |
 | sc | Tracks UniFi stable candidate version - v5.4.14 as of 2017-03-24 |
 | testing | Tracks UniFi testing version - v5.5.9 as of 2017-03-29 |
 | unstable | Tracks UniFi unstable version - v5.6.2 as of 2017-03-30 |
-| release-5.4.11 | UniFi v5.4.11 general release, 2017-02-08 |
+| release-5.4.14 | UniFi v5.4.14 general release, 2017-04-06 |
 | release-5.3.11 | UniFi v5.3.11 general release, 2017-01-09 |
 | release-4.8.20 | UniFi v4.8.20 general release, 2016-07-06 |
 
 ## Notes
+
+Changes 2017-02-08:
+* v5.4.14 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-14-Stable-has-been-released/ba-p/1890625
+* latest tag updated to v5.4.14, tagged release-5.4.14
+
+---
 
 Changes 2017-03-23:
 * unstable updated to v5.6.2 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-2-Unstable-has-been-released/ba-p/1883443
@@ -31,12 +37,6 @@ Changes 2017-03-29:
 Changes 2017-03-24:
 * sc updated to v5.4.14 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-4-14-Stable-Candidate-has-been-released/ba-p/1876272
 * this build now incorporates the WebRTC loading fix
-
----
-
-Changes 2017-02-08:
-* v5.4.11 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-11-Stable-has-been-released/ba-p/1828449
-* latest tag updated to v5.4.11, tagged release-5.4.11
 
 ---
 
