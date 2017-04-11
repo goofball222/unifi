@@ -1,11 +1,11 @@
 # Build Docker image to run the UniFi controller
 #
 FROM debian:jessie
-MAINTAINER The Goofball goofball222@gmail.com
+MAINTAINER New Dave me@newdave.com
 
 # Set environment variables
 ENV DEBIAN_FRONTEND noninteractive
-ENV UNIFI_VERSION 5.4.14
+ENV UNIFI_VERSION 5.6.2
 
 # Add apt repository keys, non-default sources, update apt database to load new data
 # Install deps and mongodb, download unifi .deb, install and remove package
