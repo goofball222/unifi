@@ -8,35 +8,26 @@
 | Tag | Description |
 | --- | --- |
 | latest | Tracks UniFi current stable/general availability version - v5.4.14 as of 2017-04-06 |
-| sc | Tracks UniFi stable candidate version - v5.4.14 as of 2017-03-24 |
-| testing | Tracks UniFi testing version - v5.5.9 as of 2017-03-29 |
-| unstable | Tracks UniFi unstable version - v5.6.2 as of 2017-03-30 |
+| sc | Tracks UniFi stable candidate version - v5.4.15 as of 2017-04-20 |
+| testing | Tracks UniFi testing version - v5.5.11 as of 2017-04-20 |
+| unstable | Tracks UniFi unstable version - v5.6.3 as of 2017-04-20 |
 | release-5.4.14 | UniFi v5.4.14 general release, 2017-04-06 |
 | release-5.3.11 | UniFi v5.3.11 general release, 2017-01-09 |
 | release-4.8.20 | UniFi v4.8.20 general release, 2016-07-06 |
 
 ## Notes
 
+Changes 2017-04-20:
+* NOTE: Still two stable candidate releases running simultaneously
+* sc updated to v5.4.15 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-4-15-Stable-Candidate-has-been-released/ba-p/1903843
+* testing updated to v5.5.11, however this is a **stable candidate** (sc) - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-11-Stable-Candidate-has-been-released/ba-p/1903839
+* unstable updated to v5.6.3 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-3-Unstable-has-been-released/ba-p/1903835
+
+---
+
 Changes 2017-04-08:
 * v5.4.14 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-14-Stable-has-been-released/ba-p/1890625
 * latest tag updated to v5.4.14, tagged release-5.4.14
-
----
-
-Changes 2017-03-23:
-* unstable updated to v5.6.2 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-2-Unstable-has-been-released/ba-p/1883443
-
----
-
-Changes 2017-03-29:
-* Ubiquiti continuing my headches... Still two stable candidate releases running simultaneously
-* testing updated to v5.5.9, however this is a **stable candidate** (sc): https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-9-Stable-Candidate-has-been-released/ba-p/1880796
-
----
-
-Changes 2017-03-24:
-* sc updated to v5.4.14 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-4-14-Stable-Candidate-has-been-released/ba-p/1876272
-* this build now incorporates the WebRTC loading fix
 
 ---
 
