@@ -7,29 +7,29 @@
 ## Docker tags:
 | Tag | Description |
 | --- | --- |
-| latest | Tracks UniFi current stable/general availability version - v5.4.15 as of 2017-05-02 |
-| sc | Tracks UniFi stable candidate version - v5.4.16 as of 2017-05-02 |
+| latest | Tracks UniFi current stable/general availability version - v5.4.16 as of 2017-05-15 |
+| sc | Tracks UniFi stable candidate version - v5.5.14 as of 2017-05-19 |
 | testing | Tracks UniFi testing version - v5.5.11 as of 2017-04-20 |
 | unstable | Tracks UniFi unstable version - v5.6.4 as of 2017-05-02 |
-| release-5.4.15 | UniFi v5.4.15 general release, 2017-05-02 |
+| release-5.4.16 | UniFi v5.4.16 general release, 2017-05-15 |
 | release-5.3.11 | UniFi v5.3.11 general release, 2017-01-09 |
 | release-4.8.20 | UniFi v4.8.20 general release, 2016-07-06 |
 
 ## Notes
+
+Changes 2017-05-20:
+* v5.4.16 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-16-Stable-has-been-released/ba-p/1931619 
+* latest tag updated to v5.4.16, tagged release-5.4.16
+* sc updated to v5.5.14 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-14-Stable-Candidate-has-been-released/ba-p/1936076
+* unstable/beta v5.6.4 has been pulled by UBNT due to bugs, install at your own risk: https://community.ubnt.com/t5/UniFi-Wireless-Beta/UniFi-5-6-4-Unstable-has-been-released/m-p/1934804/highlight/true#M50203
+
+---
 
 Changes 2017-05-02:
 * unstable updated to v5.6.4 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-4-Unstable-has-been-released/ba-p/1910934
 * sc updated to v5.4.16 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-4-16-Stable-Candidate-has-been-released/ba-p/1911583
 * v5.4.15 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-15-Stable-has-been-released/ba-p/1910910
 * latest tag updated to v5.4.15, tagged release-5.4.15
-
----
-
-Changes 2017-04-20:
-* NOTE: Still two stable candidate releases running simultaneously
-* sc updated to v5.4.15 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-4-15-Stable-Candidate-has-been-released/ba-p/1903843
-* testing updated to v5.5.11, however this is a **stable candidate** (sc) - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-11-Stable-Candidate-has-been-released/ba-p/1903839
-* unstable updated to v5.6.3 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-3-Unstable-has-been-released/ba-p/1903835
 
 ---
 
