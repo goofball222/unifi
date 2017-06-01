@@ -21,6 +21,8 @@ Changes 2017-06-01:
 * unstable updated to v5.6.7 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-7-Unstable-has-been-released/ba-p/1948972
 * sc updated to v5.5.15 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-15-Stable-Candidate-has-been-released/ba-p/1948969
 
+---
+
 Changes 2017-05-23:
 * v5.4.17 stable candidate released - placed in "testing" tag due to v5.5.14 active in "sc" tag.
 * https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-4-17-Stable-Candidate-has-been-released/ba-p/1939424
