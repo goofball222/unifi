@@ -17,7 +17,7 @@
 
 ## Notes
 
-Changes 2017-05-20:
+Changes 2017-06-26:
 * v5.4.18 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-18-Stable-has-been-released/ba-p/1974138
 * latest tag updated to v5.4.18, tagged release-5.4.18
 * sc updated to v5.5.19 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-19-Stable-Candidate-has-been-released/ba-p/1974068
