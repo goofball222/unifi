@@ -7,26 +7,30 @@
 ## Docker tags:
 | Tag | Description |
 | --- | --- |
-| latest | Tracks UniFi current stable/general availability version - v5.4.18 as of 2017-06-26 |
+| latest | Tracks UniFi current stable/general availability version - v5.5.19 as of 2017-07-03 |
+| lts | Tracks UniFi LTS stable/general availability version - v5.4.18 as of 2017-07-03 |
 | sc | Tracks UniFi stable candidate version - v5.5.19 as of 2017-06-26 |
 | testing | Tracks UniFi testing/sc version - v5.4.18 as of 2017-06-08 |
 | unstable | Tracks UniFi unstable version - v5.6.7 as of 2017-06-01 |
-| release-5.4.16 | UniFi v5.4.16 general release, 2017-05-15 |
+| release-5.5.19 | UniFi v5.5.19 general release, 2017-07-03 |
+| release-5.4.18 | UniFi v5.4.18 general release, 2017-06-26 |
 | release-5.3.11 | UniFi v5.3.11 general release, 2017-01-09 |
 | release-4.8.20 | UniFi v4.8.20 general release, 2016-07-06 |
 
 ## Notes
 
+Changes 2017-07-03:
+* v5.5.19 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-5-19-Stable-has-been-released/ba-p/1980967
+* latest tag updated to v5.5.19, tagged release-5.5.19
+* v5.4.X general release/stable (current v5.4.18) moved to rebuilt lts branch/tag. 
+* **MAKE A BACKUP OF THE DATA VOLUMES OR SAVE A .UNF FROM THE WEB INTERFACE BEFORE UPGRADING.**
+
+---
+
 Changes 2017-06-26:
 * v5.4.18 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-18-Stable-has-been-released/ba-p/1974138
 * latest tag updated to v5.4.18, tagged release-5.4.18
 * sc updated to v5.5.19 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-19-Stable-Candidate-has-been-released/ba-p/1974068
-
----
-
-Changes 2017-06-08:
-* v5.4.18 stable candidate released - placed in "testing" tag due to v5.5.17 active in "sc" tag. - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-4-18-Stable-Candidate-has-been-released/ba-p/1955911
-* v5.5.17 stable candidate released - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-17-Stable-Candidate-has-been-released/ba-p/1955915
 
 ---
 
