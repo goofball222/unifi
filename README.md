@@ -9,8 +9,9 @@
 | --- | --- |
 | latest | Tracks UniFi current stable/general availability version - v5.5.19 as of 2017-07-03 |
 | lts | Tracks UniFi LTS stable/general availability version - v5.4.18 as of 2017-07-03 |
+| lts-sc | Tracks UniFi LTS stable candidate version - v5.4.19 as of 2017-07-07 |
 | sc | Tracks UniFi stable candidate version - v5.5.19 as of 2017-06-26 |
-| testing | Tracks UniFi testing/sc version - v5.4.18 as of 2017-06-08 |
+| testing | Tracks UniFi testing version - v5.4.18 as of 2017-06-08 |
 | unstable | Tracks UniFi unstable version - v5.6.10 as of 2017-07-06 |
 | release-5.5.19 | UniFi v5.5.19 general release, 2017-07-03 |
 | release-5.4.18 | UniFi v5.4.18 general release, 2017-06-26 |
@@ -18,6 +19,12 @@
 | release-4.8.20 | UniFi v4.8.20 general release, 2016-07-06 |
 
 ## Notes
+
+Changes 2017-07-11:
+* lts-sc created and loaded with v5.4.19 - future stable candidates for v5.4.X will go here.
+* https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-4-19-Stable-Candidate-has-been-released/ba-p/1985681
+
+---
 
 Changes 2017-07-06:
 * unstable updated to v5.6.10 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-10-Testing-has-been-released/ba-p/1983293
