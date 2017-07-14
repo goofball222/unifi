@@ -10,7 +10,7 @@
 | latest | Tracks UniFi current stable/general availability version - v5.5.19 as of 2017-07-03 |
 | lts | Tracks UniFi LTS stable/general availability version - v5.4.18 as of 2017-07-03 |
 | lts-sc | Tracks UniFi LTS stable candidate version - v5.4.19 as of 2017-07-07 |
-| sc | Tracks UniFi stable candidate version - v5.5.19 as of 2017-06-26 |
+| sc | Tracks UniFi stable candidate version - v5.5.20 as of 2017-07-14 |
 | testing | Tracks UniFi testing version - v5.4.18 as of 2017-06-08 |
 | unstable | Tracks UniFi unstable version - v5.6.10 as of 2017-07-06 |
 | release-5.5.19 | UniFi v5.5.19 general release, 2017-07-03 |
@@ -19,6 +19,12 @@
 | release-4.8.20 | UniFi v4.8.20 general release, 2016-07-06 |
 
 ## Notes
+
+Changes 2017-07-14:
+* sc tag updated to stable candidate v5.5.20
+* https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-20-Stable-Candidate-has-been-released/ba-p/1992973
+
+---
 
 Changes 2017-07-11:
 * lts-sc created and loaded with v5.4.19 - future stable candidates for v5.4.X will go here.
@@ -36,13 +42,6 @@ Changes 2017-07-03:
 * latest tag updated to v5.5.19, tagged release-5.5.19
 * v5.4.X general release/stable (current v5.4.18) moved to rebuilt lts branch/tag. 
 * **MAKE A BACKUP OF THE DATA VOLUMES OR SAVE A .UNF FROM THE WEB INTERFACE BEFORE UPGRADING.**
-
----
-
-Changes 2017-06-26:
-* v5.4.18 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-18-Stable-has-been-released/ba-p/1974138
-* latest tag updated to v5.4.18, tagged release-5.4.18
-* sc updated to v5.5.19 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-19-Stable-Candidate-has-been-released/ba-p/1974068
 
 ---
 
