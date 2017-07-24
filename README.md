@@ -20,6 +20,12 @@
 
 ## Notes
 
+Changes 2017-07-24:
+* v5.6.10 is now released to testing
+* https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-10-Testing-has-been-released/ba-p/1983293
+
+---
+
 Changes 2017-07-18:
 * v5.4.19 is now general release/stable
 * lts tag updated to v5.4.19, tagged release-5.4.19
@@ -35,14 +41,6 @@ Changes 2017-07-14:
 
 Changes 2017-07-06:
 * unstable updated to v5.6.10 - https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-10-Testing-has-been-released/ba-p/1983293
-
----
-
-Changes 2017-07-03:
-* v5.5.19 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-5-19-Stable-has-been-released/ba-p/1980967
-* latest tag updated to v5.5.19, tagged release-5.5.19
-* v5.4.X general release/stable (current v5.4.18) moved to rebuilt lts branch/tag. 
-* **MAKE A BACKUP OF THE DATA VOLUMES OR SAVE A .UNF FROM THE WEB INTERFACE BEFORE UPGRADING.**
 
 ---
 
