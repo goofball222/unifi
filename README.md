@@ -18,29 +18,36 @@
 | release-5.3.11 | UniFi v5.3.11 general release, 2017-01-09 |
 | release-4.8.20 | UniFi v4.8.20 general release, 2016-07-06 |
 
-## Notes
+## Changes
 
-Changes 2017-07-26:
+2017-07-29:
+* Collapsed github multi-branch setup in to subfolders under "master" and "lts" to simplify future updates
+* Updated Docker hub configuration to reflect github changes
+* All versions remain unchanged, no other changes of note
+
+---
+
+2017-07-26:
 * updated unstable tag to v5.6.12
 * https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-12-Unstable-has-been-released/ba-p/2005576
 
 ---
 
-Changes 2017-07-25:
+2017-07-25:
 * updated testing tag to v5.6.10, missed the "testing" title on the UBNT release post
 * exact same version/release notes as was pushed to unstable on 2017-07-06.
 * https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-10-Testing-has-been-released/ba-p/1983293
 
 ---
 
-Changes 2017-07-18:
+2017-07-18:
 * v5.4.19 is now general release/stable
 * lts tag updated to v5.4.19, tagged release-5.4.19
 * https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-19-Stable-has-been-released/ba-p/1995714
 
 ---
 
-Changes 2017-07-03:
+2017-07-03:
 * v5.5.19 is now general release/stable: https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-5-19-Stable-has-been-released/ba-p/1980967
 * latest tag updated to v5.5.19, tagged release-5.5.19
 * v5.4.X general release/stable (current v5.4.18) moved to rebuilt lts branch/tag. 
