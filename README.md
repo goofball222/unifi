@@ -8,11 +8,11 @@
 | Tag | Description |
 | --- | --- |
 | latest | Tracks UniFi current stable/general availability version - v5.5.19 as of 2017-07-03 |
-| lts | Tracks UniFi LTS stable/general availability version - v5.4.19 as of 2017-07-17 |
-| lts-sc | Tracks UniFi LTS stable candidate version - v5.4.19 as of 2017-07-07 |
 | sc | Tracks UniFi stable candidate version - v5.5.20 as of 2017-07-14 |
 | testing | Tracks UniFi testing version - v5.6.10 as of 2017-07-06 |
 | unstable | Tracks UniFi unstable version - v5.6.12 as of 2017-07-26 |
+| unifi54 | Tracks UniFi v5.4 stable/general availability version - v5.4.19 as of 2017-07-17 |
+| unifi54-sc | Tracks UniFi v5.4 stable candidate version - v5.4.19 as of 2017-07-07 |
 | release-5.5.19 | UniFi v5.5.19 general release, 2017-07-03 |
 | release-5.4.19 | UniFi v5.4.19 general release, 2017-07-17 |
 | release-5.3.11 | UniFi v5.3.11 general release, 2017-01-09 |
@@ -21,9 +21,13 @@
 ## Changes
 
 2017-07-29:
-* Collapsed github multi-branch setup in to subfolders under "master" and "lts" to simplify future updates
+* Simplifying future updates and repository structure
+* Collapsed github primary multi-branches to subfolders under "master"
+* Collapsed github lts multi-branches to subfolders and renamed to "unifi54"
 * Updated Docker hub configuration to reflect github changes
-* All versions remain unchanged, no other changes of note
+* lts and lts-sc tags changed to unifi54 and unifi54-sc.
+* Existing lts and lts-sc tags will stay as-built on their last release versions, please repoint to unifi54 for future updates
+* All Unifi versions remain unchanged
 
 ---
 
