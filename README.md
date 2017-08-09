@@ -9,7 +9,7 @@
 | --- | --- |
 | latest | Tracks UniFi current stable/general availability version - v5.5.20 as of 2017-07-31 |
 | sc | Tracks UniFi stable candidate version - v5.5.21 as of 2017-08-08 |
-| testing | Tracks UniFi testing version - v5.6.10 as of 2017-07-06 |
+| testing | Tracks UniFi testing version - v5.6.14 as of 2017-08-09 |
 | unstable | Tracks UniFi unstable version - v5.6.12 as of 2017-07-26 |
 | unifi54 | Tracks UniFi LTS v5.4 stable/general availability version - v5.4.19 as of 2017-07-17 |
 | unifi54-sc | Tracks UniFi LTS v5.4 stable candidate version - v5.4.19 as of 2017-07-07 |
@@ -18,6 +18,13 @@
 | release-4.8.20 | UniFi v4.8.20 general release, 2016-07-06 |
 
 ## Changes
+
+2017-08-09:
+* v5.6.14 released to testing channel
+* https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-14-Testing-has-been-released/ba-p/2022323
+* updated testing tag to v5.6.14
+
+---
 
 2017-08-08:
 * v5.5.21 released as stable candidiate
@@ -35,15 +42,11 @@
 ---
 
 2017-07-29:
-* Simplifying future updates and repository structure
-* Collapsed github primary multi-branches to subfolders under "master"
-* Collapsed github lts multi-branches to subfolders and renamed to "unifi54"
-* Updated Docker hub configuration to reflect github changes
 * lts and lts-sc tags changed to unifi54 and unifi54-sc.
 * Existing lts and lts-sc tags will stay as-built on their last release versions, please repoint to unifi54 for future updates
-* All Unifi versions remain unchanged
 
 ---
+
 
 **MAKE A BACKUP OF YOUR DATA BEFORE INSTALLING UPDATES.**
 **Database rollback from newer to older versions isn't always possible.**
