@@ -8,7 +8,7 @@
 | Tag | Description |
 | --- | --- |
 | latest | Tracks UniFi current stable/general availability version - v5.5.20 as of 2017-07-31 |
-| sc | Tracks UniFi stable candidate version - v5.5.20 as of 2017-07-14 |
+| sc | Tracks UniFi stable candidate version - v5.5.21 as of 2017-08-08 |
 | testing | Tracks UniFi testing version - v5.6.10 as of 2017-07-06 |
 | unstable | Tracks UniFi unstable version - v5.6.12 as of 2017-07-26 |
 | unifi54 | Tracks UniFi LTS v5.4 stable/general availability version - v5.4.19 as of 2017-07-17 |
@@ -18,6 +18,13 @@
 | release-4.8.20 | UniFi v4.8.20 general release, 2016-07-06 |
 
 ## Changes
+
+2017-08-08:
+* v5.5.21 released as stable candidiate
+* https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-21-Stable-Candidate-has-been-released/ba-p/2021171
+* updated sc tag to v5.5.21
+
+---
 
 2017-07-31:
 * v5.5.20 is now general release/stable
@@ -35,19 +42,6 @@
 * lts and lts-sc tags changed to unifi54 and unifi54-sc.
 * Existing lts and lts-sc tags will stay as-built on their last release versions, please repoint to unifi54 for future updates
 * All Unifi versions remain unchanged
-
----
-
-2017-07-26:
-* updated unstable tag to v5.6.12
-* https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-12-Unstable-has-been-released/ba-p/2005576
-
----
-
-2017-07-18:
-* v5.4.19 is now LTS general release/stable
-* lts tag updated to v5.4.19, tagged release-5.4.19
-* https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-19-Stable-has-been-released/ba-p/1995714
 
 ---
 
