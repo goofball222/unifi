@@ -1,11 +1,21 @@
-# Build Docker image to run the UniFi controller
-#
-FROM debian:jessie
-MAINTAINER The Goofball goofball222@gmail.com
+FROM debian:jessie-slim
+MAINTAINER The Goofball "goofball222@gmail.com"
 
-# Set environment variables
-ENV DEBIAN_FRONTEND noninteractive
-ENV UNIFI_VERSION 5.5.20
+ENV DEBIAN_FRONTEND=noninteractive
+
+ARG BUILD_DATE
+ARG VCS_REF
+ARG UNIFI_VERSION=5.5.20
+
+LABEL org.label-schema.vendor=goofball222 \
+      org.label-schema.url="https://github.com/goofball222/unifi" \
+      org.label-schema.name="UniFi Controller" \
+      org.label-schema.license="Apache-2.0" \
+      org.label-schema.version=$UNIFI_VERSION \
+      org.label-schema.vcs-url="https://github.com/goofball222/unifi" \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.schema-version="1.0"
 
 # Add apt repository keys, non-default sources, update apt database to load new data
 # Install deps and mongodb, download unifi .deb, install and remove package
@@ -20,18 +30,17 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 && \
     supervisor \
     binutils \
     wget && \
+  mkdir /usr/share/man/man1 && \
   apt-get -t jessie-backports --no-install-recommends -y install \
+    ca-certificates-java \
     openjdk-8-jre-headless && \
   apt-get --no-install-recommends -y install \
     jsvc \
-    prelink \
     mongodb-server && \
   wget -nv https://www.ubnt.com/downloads/unifi/$UNIFI_VERSION/unifi_sysvinit_all.deb && \
   dpkg --install unifi_sysvinit_all.deb && \
-  # fix WebRTC stack guard error
-  execstack -c /usr/lib/unifi/lib/native/Linux/x86_64/libubnt_webrtc_jni.so && \
   rm unifi_sysvinit_all.deb && \
-  apt-get -y autoremove wget prelink && \
+  apt-get -y autoremove wget && \
   apt-get -q clean && \
   rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*.deb /tmp/* /var/tmp/* 
 
@@ -47,4 +56,4 @@ WORKDIR /usr/lib/unifi
 #  Add supervisor config
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-CMD ["/usr/bin/supervisord"]
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
