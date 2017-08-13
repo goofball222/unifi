@@ -34,6 +34,8 @@
 * **Note:** Init-script changes will be moved to `latest` tag and the `unifi54` branch after a brief period to insure stability.
 * Please report any bugs and/or issues on GitHub: https://github.com/goofball222/unifi
 
+---
+
 * 2017-08-09: testing tag updated to UniFi 5.6.14
 * 2017-08-08: sc tag updated to UniFi 5.5.21
 * 2017-07-31: latest tag updated to UniFi 5.5.20, tagged release-5.5.20
