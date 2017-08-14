@@ -5,32 +5,38 @@
 # Includes functionality to import custom SSL certificates into UniFi keystore.
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi.git
-# Version: 0.1.1
-# Last updated date: 2017-08-12
+# Version: 0.1.2
+# Last updated date: 2017-08-13
 
 [ "$DEBUG" == 'true' ] && set -x
 
 echo "$(date +"[%Y-%m-%d %T,%3N]") Script startup. Setting params/variables/paths."
 
 ARCH=`dpkg --print-architecture 2>/dev/null`
-
 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-${ARCH}
-
 NAME="unifi"
-
 MAINCLASS="com.ubnt.ace.Launcher"
-
 MONGOPORT=27117
-
 BASEDIR="/usr/lib/unifi"
 DATADIR=${BASEDIR}/data
 LOGDIR=${BASEDIR}/logs
 RUNDIR=${BASEDIR}/run
 CERTDIR=${BASEDIR}/cert
-
 MONGOLOCK="${DATADIR}/db/mongod.lock"
 JVM_EXTRA_OPTS="${JVM_EXTRA_OPTS} -Dunifi.datadir=${DATADIR} -Dunifi.logdir=${LOGDIR} -Dunifi.rundir=${RUNDIR}"
 PIDFILE="${RUNDIR}/${NAME}.pid"
+
+
+echo "$(date +"[%Y-%m-%d %T,%3N]") We're starting fresh. ${PIDFILE} should not exist, removing it if it does."
+if [ -e ${PIDFILE} ]; then
+  rm ${PIDFILE}
+fi
+
+# 2017-08-13 - turning this off and reverting to tailing /dev/null for now. The output of dual-tail is confusing and messy.
+# Use the process logs on the container log volume until a better solution is found.
+#echo "$(date +"[%Y-%m-%d %T,%3N]") Making sure UniFi/MongoD server logfiles exist to avoid error immediately after start."
+#touch ${LOGDIR}/server.log
+#touch ${LOGDIR}/mongod.log
 
 if [ ! -z "${JAVA_ENTROPY_GATHER_DEVICE}" ]; then
   JVM_EXTRA_OPTS="${JVM_EXTRA_OPTS} -Djava.security.egd=${JAVA_ENTROPY_GATHER_DEVICE}"
@@ -54,8 +60,6 @@ fi
 
 JVM_OPTS="${JVM_EXTRA_OPTS} -Djava.awt.headless=true -Dfile.encoding=UTF-8"
 
-[ "x${JAVA_HOME}" != "x" ] || set_java_home
-
 # JSVC - for running java apps as services
 JSVC=$(command -v jsvc)
 
@@ -77,21 +81,13 @@ JSVC_OPTS="${JSVC_OPTS}\
 
 cd ${BASEDIR}
 
-# We're starting fresh. ${PIDFILE} should not exist, remove it if it does
-if [ -e ${PIDFILE} ]; then
-  rm ${PIDFILE}
-fi
-
-# Make sure UniFi/MongoD server logfiles exist. Stops error when tailing.
-touch ${LOGDIR}/server.log
-touch ${LOGDIR}/mongod.log
-
 # SSL Certificate Setup
 if [ -e ${CERTDIR}/privkey.pem ] && [ -e ${CERTDIR}/fullchain.pem ]; then
   if `/usr/bin/sha256sum -c ${CERTDIR}/unificert.sha256 &> /dev/null`; then
     echo "$(date +"[%Y-%m-%d %T,%3N]") SSL certificate file unchanged. Continuing with UniFi startup."
+    echo "$(date +"[%Y-%m-%d %T,%3N]") To force retry the SSL import process: delete '${CERTDIR}/unificert.sha256' and restart the container."
   else
-    # ${DATADIR}/keystore needs to exist or be created if it doesn't
+    # ${DATADIR}/keystore needs to exist or be created if it doesn't. Check for it and handle.
     if [ ! -e ${DATADIR}/keystore ]; then
       echo "$(date +"[%Y-%m-%d %T,%3N]") SSL keystore does not exist. Temporarily starting UniFi with disabled DB server to generate."
       if [ -e ${DATADIR}/system.properties ]; then
@@ -128,40 +124,39 @@ if [ -e ${CERTDIR}/privkey.pem ] && [ -e ${CERTDIR}/fullchain.pem ]; then
       fi
     else
       echo "$(date +"[%Y-%m-%d %T,%3N]") SSL keystore present."
-      # Back up existing keystore file, even if we just created it.
+      # Back up existing keystore file, even if we just created it. Better safe than sorry.
       echo "$(date +"[%Y-%m-%d %T,%3N]") Backup existing '${DATADIR}/keystore' to '${DATADIR}/keystore-$(date +%s)'."
       cp ${DATADIR}/keystore ${DATADIR}/keystore-$(date +%s)
     fi
     echo "$(date +"[%Y-%m-%d %T,%3N]") Start SSL certificate keystore update."
-    # Export combined key+cert to temp pkcs12 file
+    # Export combined key+cert to temp pkcs12 file.
     echo "$(date +"[%Y-%m-%d %T,%3N]") OpenSSL combine new private key and certificate chain into temporary PKCS12 file."
     openssl pkcs12 -export \
       -inkey ${CERTDIR}/privkey.pem \
       -in ${CERTDIR}/fullchain.pem \
       -out ${CERTDIR}/certtemp.p12 \
       -name ubnt -password pass:temppass
-    # Import pkcs12 file into keystore, overwriting existing
+    # Import pkcs12 file into keystore, overwriting existing.
     echo "$(date +"[%Y-%m-%d %T,%3N]") Java keytool import PKCS12 '${CERTDIR}/certtemp.p12' file into '${DATADIR}/keystore'."
     keytool -importkeystore -deststorepass aircontrolenterprise \
      -destkeypass aircontrolenterprise -destkeystore ${DATADIR}/keystore \
      -srckeystore ${CERTDIR}/certtemp.p12 -srcstoretype PKCS12 \
      -srcstorepass temppass -alias ubnt -noprompt
-    # Delete temp combined key+cert pkcs12 file
+    # Delete temp combined key+cert pkcs12 file.
     echo "$(date +"[%Y-%m-%d %T,%3N]") Remove temporary PKCS12 file."
     rm ${CERTDIR}/certtemp.p12
-    # Store SHA256 hash of both key and certificate so we can check for changes in the future
+    # Store SHA256 hash of both key and certificate so we can check for changes in the future.
     echo "$(date +"[%Y-%m-%d %T,%3N]") Store SHA256 hash of private key and certificate file to identify future changes."
     /usr/bin/sha256sum ${CERTDIR}/privkey.pem > ${CERTDIR}/unificert.sha256
     /usr/bin/sha256sum ${CERTDIR}/fullchain.pem >> ${CERTDIR}/unificert.sha256
-    echo "$(date +"[%Y-%m-%d %T,%3N]") Completed update of SSL certificate in '${DATADIR}/keystore'. Continuing normal startup."
-    echo "$(date +"[%Y-%m-%d %T,%3N]") If either or both privkey.pem and fullchain.pem are mismatched, or invalid custom SSL certificate import fails."
+    echo "$(date +"[%Y-%m-%d %T,%3N]") Completed update of SSL certificate in '${DATADIR}/keystore'. Continuing regular startup."
     echo "$(date +"[%Y-%m-%d %T,%3N]") Check above ***this*** line for error messages if your SSL certificate import isn't working."
-    echo "$(date +"[%Y-%m-%d %T,%3N]") To force a retry of the import process delete '${CERTDIR}/unificert.sha256' and restart the container."
+    echo "$(date +"[%Y-%m-%d %T,%3N]") To force retry the SSL import process: delete '${CERTDIR}/unificert.sha256' and restart the container."
   fi
 else
   [ -f ${CERTDIR}/privkey.pem ] || echo "$(date +"[%Y-%m-%d %T,%3N]") No '${CERTDIR}/privkey.pem', cannot update SSL certificate in '${DATADIR}/keystore'."
   [ -f ${CERTDIR}/fullchain.pem ] || echo "$(date +"[%Y-%m-%d %T,%3N]") No '${CERTDIR}/fullchain.pem', cannot update SSL certificate in '${DATADIR}/keystore'."
-  echo "$(date +"[%Y-%m-%d %T,%3N]") If either or both privkey.pem and fullchain.pem are missing custom SSL certificate import fails."
+  echo "$(date +"[%Y-%m-%d %T,%3N]") Either/both privkey.pem and fullchain.pem are missing. Custom SSL certificate import is skipped."
   echo "$(date +"[%Y-%m-%d %T,%3N]") This message is expected and safe to ignore if you're not using custom SSL certificates."
 fi
 
@@ -183,19 +178,18 @@ term_handler() {
   fi
   wait "$PID"
   echo "$(date +"[%Y-%m-%d %T,%3N]") All done. Shut down. Nothing more to see here. Have a nice day!"
+  echo "$(date +"[%Y-%m-%d %T,%3N]") Exit with status code 143; # 128 + 15 -- SIGTERM"
   exit 143; # 128 + 15 -- SIGTERM
 }
 
-# setup handlers
-# on callback, kill the last background process, which is `tail -f /dev/null` and execute the specified handler
+# Setup termination handler
+# On callback, kill the last background process, which is `tail -f /dev/null` and execute the term_handler function
 trap 'kill ${!}; term_handler' SIGHUP SIGINT SIGQUIT SIGTERM
 
-# run application
+# Run UniFi JSVC start command
 echo "$(date +"[%Y-%m-%d %T,%3N]") Starting ${JSVC} with ${JSVC_OPTS} and class ${MAINCLASS}."
 ${JSVC} ${JSVC_OPTS} ${MAINCLASS} start &
 PID="$!"
-
-echo "$(date +"[%Y-%m-%d %T,%3N]") ----------------------------------------------------------------------"
 
 # wait indefinitely
 while true
@@ -203,7 +197,6 @@ do
 # We're here, lets tail something useful instead of /dev/null.
 # Too bad it gets killed before any of the shutdown is logged.
 # Actual shutdown events/errors still present in on-disk logfiles.
-  tail -f /usr/lib/unifi/logs/server.log -f /usr/lib/unifi/logs/mongod.log & wait ${!}
-#  tail -f /dev/null & wait ${!}
+#  tail -f /usr/lib/unifi/logs/server.log -f /usr/lib/unifi/logs/mongod.log & wait ${!}
+  tail -f /dev/null & wait ${!}
 done
-
