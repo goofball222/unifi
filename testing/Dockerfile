@@ -5,13 +5,13 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 ARG BUILD_DATE
 ARG VCS_REF
-ARG UNIFI_VERSION
+ARG VERSION
 
 LABEL org.label-schema.vendor=goofball222 \
       org.label-schema.url="https://github.com/goofball222/unifi" \
       org.label-schema.name="UniFi Controller" \
       org.label-schema.license="Apache-2.0" \
-      org.label-schema.version=$UNIFI_VERSION \
+      org.label-schema.version=$VERSION \
       org.label-schema.vcs-url="https://github.com/goofball222/unifi" \
       org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.build-date=$BUILD_DATE \
@@ -36,7 +36,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 > /dev
     jsvc > /dev/null && \
   apt-get -qqy --no-install-recommends install \
     mongodb-server > /dev/null && \
-  curl -sSOL https://www.ubnt.com/downloads/unifi/$UNIFI_VERSION/unifi_sysvinit_all.deb && \
+  curl -sSOL https://www.ubnt.com/downloads/unifi/$VERSION/unifi_sysvinit_all.deb && \
   dpkg --install unifi_sysvinit_all.deb && \
   rm unifi_sysvinit_all.deb && \
   apt-get -qqy autoremove --purge curl > /dev/null && \

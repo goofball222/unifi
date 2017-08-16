@@ -1,3 +1,6 @@
+* **2017-08-16:**
+    * Changed UNIFI_VERSION to VERSION throughout.
+---
 * **2017-08-15:**
     * All UniFi versions remain unchanged.
     * Switch to curl for unifi_sysvinit_all.deb file retrieval. Not downloading whole directories, don't need wget functionality.
