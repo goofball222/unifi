@@ -1,10 +1,6 @@
 # UniFi Docker Container
 
-[![Docker Build Status](https://img.shields.io/docker/build/goofball222/unifi.svg)](https://hub.docker.com/r/goofball222/unifi/) [![Docker Pulls](https://img.shields.io/docker/pulls/goofball222/unifi.svg)](https://hub.docker.com/r/goofball222/unifi/) [![Docker Stars](https://img.shields.io/docker/stars/goofball222/unifi.svg)](https://hub.docker.com/r/goofball222/unifi/) [![MB Layers](https://images.microbadger.com/badges/image/goofball222/unifi.svg)](https://microbadger.com/images/goofball222/unifi) [![MB Commit](https://images.microbadger.com/badges/commit/goofball222/unifi.svg)](https://microbadger.com/images/goofball222/unifi)[![MB License](https://images.microbadger.com/badges/license/goofball222/unifi.svg)](https://microbadger.com/images/goofball222/unifi)
-
-## Description
-
-#### Docker container based on Debian Jessie running the Ubiquiti Networks UniFi Controller software
+[![Docker Build Status](https://img.shields.io/docker/build/goofball222/unifi.svg)](https://hub.docker.com/r/goofball222/unifi/) [![Docker Pulls](https://img.shields.io/docker/pulls/goofball222/unifi.svg)](https://hub.docker.com/r/goofball222/unifi/) [![Docker Stars](https://img.shields.io/docker/stars/goofball222/unifi.svg)](https://hub.docker.com/r/goofball222/unifi/) [![MB Layers](https://images.microbadger.com/badges/image/goofball222/unifi.svg)](https://microbadger.com/images/goofball222/unifi) [![MB Commit](https://images.microbadger.com/badges/commit/goofball222/unifi.svg)](https://microbadger.com/images/goofball222/unifi) [![MB License](https://images.microbadger.com/badges/license/goofball222/unifi.svg)](https://microbadger.com/images/goofball222/unifi)
 
 ## Docker tags:
 | Tag | UniFi Version | Description | Release Date |
@@ -17,37 +13,20 @@
 | [unifi54-sc](https://github.com/goofball222/unifi/blob/unifi54/sc/Dockerfile) | [5.4.19](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-19-Stable-Candidate-has-been-released/ba-p/1990323) | UniFi LTS v5.4 latest stable candidate release | 2017-07-07 |
 | [release-5.5.20](https://github.com/goofball222/unifi/releases/tag/5.5.20) | [5.5.20](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-5-20-Stable-has-been-released/ba-p/2011817) | Static stable release tag/image | 2017-07-31 |
 | [release-5.4.19](https://github.com/goofball222/unifi/releases/tag/5.4.19) | [5.4.19](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-19-Stable-has-been-released/ba-p/1995714) | Static stable release tag/image | 2017-07-17 |
-| release-4.8.20 | [4.8.20](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-4-8-20-is-released/ba-p/1612634) | Static stable release tag/image | 2016-07-06 |
 
-## Changes
+---
 
-* **2017-08-13:**
+* **2017-08-15:**
     * All UniFi versions remain unchanged.
-    * Cleanup syntax, etc., collapse whitepace in unifi-init.
-    * Disable log tail in unifi-init. Need to find a better way to handle. For now app/db logs on container volume are sufficient.
-    * Further README.md updates.
-* **2017-08-12:**
-    * All UniFi versions remain unchanged.
-    * Add build hook script and labels to Dockerfile.
-    * Switch base to `debain:jessie-slim` image to reduce overall size.
-    * Change unstable, testing, and sc tags to use bash init-script ENTRYPOINT instead of supervisord. Simplification and size reduction.
-    * Copy majority of function from UniFi packaged init-script. Change to JSVC for process launch.
-    * Add support for Java/JSVC environment variable adjustements at container start via --env command line flags.
-    * **Add SSL Java keystore update functionality.**
-    * Automated SSL cert import for LetsEncrypt, etc. if full cert chain and private key are present in PEM format.
-    * See "SSL custom certificate configuration support (LetsEncrypt, etc.)" further along in README.md
-    * **Note:** Init-script changes will be moved to `latest` tag and the `unifi54` branch after a brief period to insure stability.
+    * Moved "Changes" to GitHub [CHANGELOG.md](https://github.com/goofball222/unifi/blob/master/CHANGELOG.md) file.
     * Please report any bugs and/or issues on GitHub: https://github.com/goofball222/unifi
-* **2017-08-09:** testing tag updated to UniFi 5.6.14
-* **2017-08-08:** sc tag updated to UniFi 5.5.21
-* **2017-07-31:** latest tag updated to UniFi 5.5.20, tagged release-5.5.20
-* **2017-07-29:** lts and lts-sc tags changed to unifi54 and unifi54-sc
-
 ---
 
 **MAKE A BACKUP OF YOUR DATA BEFORE INSTALLING UPDATES.**
 **Database rollback from newer to older versions isn't always possible.**
 **Export a .unf from the web interface and/or stop the current container and make a backup copy of the data volume.**
+
+---
 
 
 ## Usage
@@ -56,6 +35,7 @@ This container exposes three volumes:
 * `/usr/lib/unifi/cert` - SSL custom certificate storage
 * `/usr/lib/unifi/data` - UniFi configuration data and DBs
 * `/usr/lib/unifi/logs` - UniFi and MongoDB logs for troubleshooting
+
 
 This container exposes the following ports (see: https://help.ubnt.com/hc/en-us/articles/218506997-UniFi-Ports-Used):
 * `3478/udp` (port used for STUN connection)
@@ -68,17 +48,17 @@ This container exposes the following ports (see: https://help.ubnt.com/hc/en-us/
 
 ---
 
-The most basic way to start this container:
+**The most basic way to start this container:**
 
 ```
 $ docker run --name unifi -d \
 	-p 3478:3478/udp -p 6789:6789 -p 8080:8080 \
 	-p 8443:8443 -p 8880:8880 -p 8843:8843 \
 	goofball222/unifi
-```
+```  
+---
 
-
-Recommended:
+**Recommended:**
 Have the container store the config/databases (recommended for persistence), logs on your filesystem instead (recommended for troubleshooting!), and allow for remapping ports with NO layer 2 discovery (layer 3/remote controller):
 
 ```
@@ -90,9 +70,9 @@ $ docker run --name unifi -d \
 	-v /path/to/unifi/logs:/usr/lib/unifi/logs \
 	goofball222/unifi
 ```
+---
 
-
-To enable layer 2/local LAN discovery:
+**To enable layer 2/local LAN discovery:**
 
 ```
 $ docker run --name unifi -d \
@@ -104,9 +84,9 @@ $ docker run --name unifi -d \
 	-v /path/to/unifi/logs:/usr/lib/unifi/logs \
 	goofball222/unifi
 ```
+---
 
-
-Alternative suggested by [rogierlommers](https://hub.docker.com/r/rogierlommers/): 
+**Alternative suggested by [rogierlommers](https://hub.docker.com/r/rogierlommers/):**
 
 Use --network=host mode. Does not allow for port remapping. You may need to manually adjust host firewall settings to allow traffic. Running a container in this mode is considered insecure:
 **Please make sure to read the "Network: host" section of https://docs.docker.com/engine/reference/run/ and understand the implications of this setting before using.**
@@ -119,9 +99,9 @@ $ docker run --name unifi -d \
 	-v /path/to/unifi/logs:/usr/lib/unifi/logs \
 	goofball222/unifi
 ```
+---
 
-
-Example `docker-compose.yml` file for use with [Docker Compose](https://docs.docker.com/compose/), courtesy of Docker Hub user [jesk](https://hub.docker.com/r/jesk/):
+**Example `docker-compose.yml` file for use with [Docker Compose](https://docs.docker.com/compose/), courtesy of Docker Hub user [jesk](https://hub.docker.com/r/jesk/):**
 
 ```
 version: '2'
@@ -141,8 +121,8 @@ services:
      - /path/to/unifi/data:/usr/lib/unifi/data
      - /path/to/unifi/logs:/usr/lib/unifi/logs
 ```
-
 ---
+
 
 ### SSL custom certificate configuration support ([LetsEncrypt](https://letsencrypt.org/), etc.)
 

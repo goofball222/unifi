@@ -5,12 +5,15 @@
 # Includes functionality to import custom SSL certificates into UniFi keystore.
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi.git
-# Version: 0.1.2
-# Last updated date: 2017-08-13
+# Script version: 0.1.5
+# Last updated date: 2017-08-15
 
 [ "$DEBUG" == 'true' ] && set -x
 
-echo "$(date +"[%Y-%m-%d %T,%3N]") Script startup. Setting params/variables/paths."
+SCRIPT_VERSION="0.1.5"
+
+echo "$(date +"[%Y-%m-%d %T,%3N]") unifi-init script version ${SCRIPT_VERSION} startup."
+echo "$(date +"[%Y-%m-%d %T,%3N]") Setting params/variables/paths."
 
 ARCH=`dpkg --print-architecture 2>/dev/null`
 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-${ARCH}
@@ -25,7 +28,6 @@ CERTDIR=${BASEDIR}/cert
 MONGOLOCK="${DATADIR}/db/mongod.lock"
 JVM_EXTRA_OPTS="${JVM_EXTRA_OPTS} -Dunifi.datadir=${DATADIR} -Dunifi.logdir=${LOGDIR} -Dunifi.rundir=${RUNDIR}"
 PIDFILE="${RUNDIR}/${NAME}.pid"
-
 
 echo "$(date +"[%Y-%m-%d %T,%3N]") We're starting fresh. ${PIDFILE} should not exist, removing it if it does."
 if [ -e ${PIDFILE} ]; then
@@ -63,7 +65,7 @@ JVM_OPTS="${JVM_EXTRA_OPTS} -Djava.awt.headless=true -Dfile.encoding=UTF-8"
 # JSVC - for running java apps as services
 JSVC=$(command -v jsvc)
 
-# check whether jsvc requires -cwd option
+# Check whether jsvc requires -cwd option
 ${JSVC} -java-home ${JAVA_HOME} -cwd / -help >/dev/null 2>&1
 if [ $? -eq 0 ]; then
         JSVC_OPTS="${JSVC_OPTS} -cwd ${BASEDIR}"
@@ -81,7 +83,7 @@ JSVC_OPTS="${JSVC_OPTS}\
 
 cd ${BASEDIR}
 
-# SSL Certificate Setup
+# SSL certificate setup
 if [ -e ${CERTDIR}/privkey.pem ] && [ -e ${CERTDIR}/fullchain.pem ]; then
   if `/usr/bin/sha256sum -c ${CERTDIR}/unificert.sha256 &> /dev/null`; then
     echo "$(date +"[%Y-%m-%d %T,%3N]") SSL certificate file unchanged. Continuing with UniFi startup."
@@ -91,7 +93,7 @@ if [ -e ${CERTDIR}/privkey.pem ] && [ -e ${CERTDIR}/fullchain.pem ]; then
     if [ ! -e ${DATADIR}/keystore ]; then
       echo "$(date +"[%Y-%m-%d %T,%3N]") SSL keystore does not exist. Temporarily starting UniFi with disabled DB server to generate."
       if [ -e ${DATADIR}/system.properties ]; then
-        # Temporarily move existing system.properties so we can feed mongodb a parameter that prevents it from starting
+        # Temporarily move an existing system.properties so we can feed mongodb a parameter that prevents it from starting.
         echo "$(date +"[%Y-%m-%d %T,%3N]") This instance has an existing system.properties file. Moving it temporarily to '${DATADIR}/system.proporig'."
         mv ${DATADIR}/system.properties ${DATADIR}/system.proporig
         echo "unifi.db.extraargs=--version" > ${DATADIR}/system.properties
@@ -159,7 +161,9 @@ else
   echo "$(date +"[%Y-%m-%d %T,%3N]") Either/both privkey.pem and fullchain.pem are missing. Custom SSL certificate import is skipped."
   echo "$(date +"[%Y-%m-%d %T,%3N]") This message is expected and safe to ignore if you're not using custom SSL certificates."
 fi
+# End SSL certificate setup
 
+# Termination handler function
 term_handler() {
   echo "$(date +"[%Y-%m-%d %T,%3N]") SIGHUP/SIGINT/SIGQUIT/SIGTERM has been received, commencing shutdown."
   ${JSVC} ${JSVC_OPTS} -stop ${MAINCLASS} stop
@@ -181,6 +185,7 @@ term_handler() {
   echo "$(date +"[%Y-%m-%d %T,%3N]") Exit with status code 143; # 128 + 15 -- SIGTERM"
   exit 143; # 128 + 15 -- SIGTERM
 }
+# End termination handler function
 
 # Setup termination handler
 # On callback, kill the last background process, which is `tail -f /dev/null` and execute the term_handler function
@@ -191,12 +196,10 @@ echo "$(date +"[%Y-%m-%d %T,%3N]") Starting ${JSVC} with ${JSVC_OPTS} and class 
 ${JSVC} ${JSVC_OPTS} ${MAINCLASS} start &
 PID="$!"
 
-# wait indefinitely
+# Wait indefinitely
 while true
 do
-# We're here, lets tail something useful instead of /dev/null.
-# Too bad it gets killed before any of the shutdown is logged.
-# Actual shutdown events/errors still present in on-disk logfiles.
+# We're here, maybe tail something useful instead of /dev/null
 #  tail -f /usr/lib/unifi/logs/server.log -f /usr/lib/unifi/logs/mongod.log & wait ${!}
   tail -f /dev/null & wait ${!}
 done

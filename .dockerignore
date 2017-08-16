@@ -1,3 +1,7 @@
 .git
+.gitignore
 *.md
 LICENSE
+docker-compose.yml
+Makefile
+*.mk
