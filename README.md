@@ -126,7 +126,7 @@ services:
 
 ### SSL custom certificate configuration support ([LetsEncrypt](https://letsencrypt.org/), etc.)
 
-**Note:** As of 2017-08-15 this feature is only present in the `sc`, `testing`, `unstable`, and unifi54-sc tags. It will be moved to `latest` tag and the `unifi54` tag once stability is proven.
+**Note:** As of 2017-08-15 this feature is only present in the `sc`, `testing`, `unstable`, and `unifi54-sc` tags. It will be moved to `latest` tag and the `unifi54` tag once stability is proven.
 
 1. Map the Docker host cert storage location or volume to the `/usr/lib/unifi/cert` volume exposed by the container
 2. Must contain a PEM format SSL private key corresponding to the SSL certificate to be installed.
