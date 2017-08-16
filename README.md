@@ -18,8 +18,8 @@
 
 * **2017-08-15:**
     * All UniFi versions remain unchanged.
-    * Moved "Changes" to GitHub [CHANGELOG.md](https://github.com/goofball222/unifi/blob/master/CHANGELOG.md) file.
-    * Please report any bugs and/or issues on GitHub: https://github.com/goofball222/unifi
+    * Moved "Changes" to [GitHub CHANGELOG.md](https://github.com/goofball222/unifi/blob/master/CHANGELOG.md) file.
+    * Please report any bugs and/or issues on GitHub: https://github.com/goofball222/unifi/issues
 ---
 
 **MAKE A BACKUP OF YOUR DATA BEFORE INSTALLING UPDATES.**
