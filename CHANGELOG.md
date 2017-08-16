@@ -5,6 +5,8 @@
     * Move UniFi version info into self-contained file `UNIFI_VERSION`. Makes Dockerfile totally tag/version independent.
         * Updated Docker Hub hooks/build script to account for change. Loads UNIFI_VERSION file into a build arg.
     * Switch to Makefiles for local builds. Automates injecting build args including UNIFI_VERSION.
+    * Update unifi54 branch to use same tools, build structure, labels, UNIFI_VERSION, etc.
+    * Update uninfi54-sc to use unifi-init instead of supervisord.
     * (doc) Move Changes from README.md to CHANGELOG.md. Added Markdown link in README.md to GitHub CHANGELOG.md blob.
     * (doc) README.md other small updates.
 ---
