@@ -1,5 +1,9 @@
 * **2017-08-16:**
     * Changed UNIFI_VERSION to VERSION throughout.
+    * Where possible switched from 2 spaces to 4 spaces for indent, readability.
+    * Found extra used space to clean up in /var during build
+    * Add clean process to Makefiles
+    * Additional changes, cleanup and improvements to unifi-init script
 ---
 * **2017-08-15:**
     * All UniFi versions remain unchanged.
