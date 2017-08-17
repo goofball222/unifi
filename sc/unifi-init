@@ -5,12 +5,12 @@
 # Includes functionality to import custom SSL certificates into UniFi keystore.
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-# Script version: 0.2.1
+# Script version: 0.2.2
 # Last updated date: 2017-08-16
 
 [ "$DEBUG" == 'true' ] && set -x
 
-SCRIPT_VERSION="0.2.1"
+SCRIPT_VERSION="0.2.2"
 
 echo "$(date +"[%Y-%m-%d %T,%3N]") unifi-init script version ${SCRIPT_VERSION} startup."
 echo "$(date +"[%Y-%m-%d %T,%3N]") Setting params/variables/paths."
@@ -34,11 +34,11 @@ if [ -e ${PIDFILE} ]; then
     rm ${PIDFILE}
 fi
 
-# 2017-08-16 - turning this off for now. The output of dual-tail is confusing and messy.
-# Use the process logs on the container log volume until a better solution is found.
-#echo "$(date +"[%Y-%m-%d %T,%3N]") Making sure UniFi/MongoD server logfiles exist to avoid error immediately after start."
-#touch ${LOGDIR}/server.log
-#touch ${LOGDIR}/mongod.log
+if [ "$DEBUG" == 'true' ]; then
+    echo "$(date +"[%Y-%m-%d %T,%3N]") Make sure UniFi/MongoD server logfiles exist to avoid error tailing after JSVC start."
+    touch ${LOGDIR}/server.log
+    touch ${LOGDIR}/mongod.log
+fi
 
 if [ ! -z "${JAVA_ENTROPY_GATHER_DEVICE}" ]; then
     JVM_EXTRA_OPTS="${JVM_EXTRA_OPTS} -Djava.security.egd=${JAVA_ENTROPY_GATHER_DEVICE}"
@@ -200,6 +200,9 @@ ${JSVC} ${JSVC_OPTS} ${MAINCLASS} start &
 # Wait indefinitely on tail
 while true
 do
-    #tail -f /usr/lib/unifi/logs/server.log -f /usr/lib/unifi/logs/mongod.log & wait ${!}
-    tail -f /dev/null & wait ${!}
+    if [ "$DEBUG" == 'true' ]; then
+        tail -f /usr/lib/unifi/logs/server.log -f /usr/lib/unifi/logs/mongod.log & wait ${!}
+    else
+        tail -f /dev/null & wait ${!}
+    fi
 done
