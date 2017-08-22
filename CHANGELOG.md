@@ -4,7 +4,7 @@
     * Change README.md to reflect recommended --init flag for run to avoid possible signal handling issues
     * Change README.md to highlight host/Docker volume paths that need to be set/changed/removed.
     * Change docker-compose.yml to highlight host/Docker volume paths that need to be set/changed/removed.
-    * Update subfolders Makefile to use --init flagh when 'make start' is used
+    * Update subfolders Makefile to use --init flag when 'make start' is used
 ---
 * **2017-08-16:**
     * Changed UNIFI_VERSION to VERSION throughout.
