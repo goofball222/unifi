@@ -45,7 +45,7 @@ run:
 	-docker run --rm --init --name $(CONTAINER_NAME)_$(CONTAINER_INSTANCE) $(PORTS) $(VOLUMES) $(ENV) $(NS)/$(IMAGE_NAME):$(TAG)
 
 start:
-	-docker run -d --name $(CONTAINER_NAME)_$(CONTAINER_INSTANCE) $(PORTS) $(VOLUMES) $(ENV) $(NS)/$(IMAGE_NAME):$(TAG)
+	-docker run -d --init --name $(CONTAINER_NAME)_$(CONTAINER_INSTANCE) $(PORTS) $(VOLUMES) $(ENV) $(NS)/$(IMAGE_NAME):$(TAG)
 
 stop:
 	-docker stop $(CONTAINER_NAME)_$(CONTAINER_INSTANCE)
