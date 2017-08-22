@@ -1,0 +1,208 @@
+#!/usr/bin/env bash
+
+# UniFi init script for Docker container.
+# Emulates most functions of packaged UniFi systemd init script.
+# Includes functionality to import custom SSL certificates into UniFi keystore.
+# License: Apache-2.0
+# Github: https://github.com/goofball222/unifi
+# Script version: 0.2.2
+# Last updated date: 2017-08-16
+
+[ "$DEBUG" == 'true' ] && set -x
+
+SCRIPT_VERSION="0.2.2"
+
+echo "$(date +"[%Y-%m-%d %T,%3N]") unifi-init script version ${SCRIPT_VERSION} startup."
+echo "$(date +"[%Y-%m-%d %T,%3N]") Setting params/variables/paths."
+
+ARCH=`dpkg --print-architecture 2>/dev/null`
+JAVA_HOME=/usr/lib/jvm/java-8-openjdk-${ARCH}
+NAME="unifi"
+MAINCLASS="com.ubnt.ace.Launcher"
+MONGOPORT=27117
+BASEDIR="/usr/lib/unifi"
+DATADIR=${BASEDIR}/data
+LOGDIR=${BASEDIR}/logs
+RUNDIR=${BASEDIR}/run
+CERTDIR=${BASEDIR}/cert
+MONGOLOCK="${DATADIR}/db/mongod.lock"
+JVM_EXTRA_OPTS="${JVM_EXTRA_OPTS} -Dunifi.datadir=${DATADIR} -Dunifi.logdir=${LOGDIR} -Dunifi.rundir=${RUNDIR}"
+PIDFILE="${RUNDIR}/${NAME}.pid"
+
+echo "$(date +"[%Y-%m-%d %T,%3N]") Starting fresh. ${PIDFILE} should not exist, removing it if it does."
+if [ -e ${PIDFILE} ]; then
+    rm ${PIDFILE}
+fi
+
+if [ "$DEBUG" == 'true' ]; then
+    echo "$(date +"[%Y-%m-%d %T,%3N]") Make sure UniFi/MongoD server logfiles exist to avoid error tailing after JSVC start."
+    touch ${LOGDIR}/server.log
+    touch ${LOGDIR}/mongod.log
+fi
+
+if [ ! -z "${JAVA_ENTROPY_GATHER_DEVICE}" ]; then
+    JVM_EXTRA_OPTS="${JVM_EXTRA_OPTS} -Djava.security.egd=${JAVA_ENTROPY_GATHER_DEVICE}"
+fi
+
+if [ ! -z "${JVM_MAX_HEAP_SIZE}" ]; then
+    JVM_EXTRA_OPTS="${JVM_EXTRA_OPTS} -Xmx${JVM_MAX_HEAP_SIZE}"
+fi
+
+if [ ! -z "${JVM_INIT_HEAP_SIZE}" ]; then
+    JVM_EXTRA_OPTS="${JVM_EXTRA_OPTS} -Xms${JVM_INIT_HEAP_SIZE}"
+fi
+
+if [ ! -z "${JVM_MAX_THREAD_STACK_SIZE}" ]; then
+    JVM_EXTRA_OPTS="${JVM_EXTRA_OPTS} -Xss${JVM_MAX_THREAD_STACK_SIZE}"
+fi
+
+if [ ! -z "${UNIFI_JVM_EXTRA_OPTS}" ]; then
+    JVM_EXTRA_OPTS="${JVM_EXTRA_OPTS} ${UNIFI_JVM_EXTRA_OPTS}"
+fi
+
+JVM_OPTS="${JVM_EXTRA_OPTS} -Djava.awt.headless=true -Dfile.encoding=UTF-8"
+
+# JSVC - for running java apps as services
+JSVC=$(command -v jsvc)
+
+# Check whether jsvc requires -cwd option
+${JSVC} -java-home ${JAVA_HOME} -cwd / -help >/dev/null 2>&1
+if [ $? -eq 0 ]; then
+                JSVC_OPTS="${JSVC_OPTS} -cwd ${BASEDIR}"
+fi
+
+JSVC_OPTS="${JSVC_OPTS}\
+ -home ${JAVA_HOME} \
+ -cp /usr/share/java/commons-daemon.jar:${BASEDIR}/lib/ace.jar \
+ -pidfile ${PIDFILE} \
+ -procname ${NAME} \
+ -outfile ${LOGDIR}/jsvc-out.log \
+ -errfile ${LOGDIR}/jsvc-err.log \
+ ${JSVC_EXTRA_OPTS} \
+ ${JVM_OPTS}"
+
+cd ${BASEDIR}
+
+# SSL certificate setup
+if [ -e ${CERTDIR}/privkey.pem ] && [ -e ${CERTDIR}/fullchain.pem ]; then
+    if `/usr/bin/sha256sum -c ${CERTDIR}/unificert.sha256 &> /dev/null`; then
+        echo "$(date +"[%Y-%m-%d %T,%3N]") SSL certificate file unchanged. Continuing with UniFi startup."
+        echo "$(date +"[%Y-%m-%d %T,%3N]") To force retry the SSL import process: delete '${CERTDIR}/unificert.sha256' and restart the container."
+    else
+        # ${DATADIR}/keystore needs to exist or be created if it doesn't. Check for it and handle.
+        if [ ! -e ${DATADIR}/keystore ]; then
+            echo "$(date +"[%Y-%m-%d %T,%3N]") SSL keystore does not exist. Temporarily starting UniFi with disabled DB server to generate."
+            if [ -e ${DATADIR}/system.properties ]; then
+                # Temporarily move an existing system.properties so we can feed mongodb a parameter that prevents it from starting.
+                echo "$(date +"[%Y-%m-%d %T,%3N]") This instance has an existing '${DATADIR}/system.properties' file. Moving it temporarily to '${DATADIR}/system.proporig'."
+                mv ${DATADIR}/system.properties ${DATADIR}/system.proporig
+                echo "unifi.db.extraargs=--version" > ${DATADIR}/system.properties
+                echo "$(date +"[%Y-%m-%d %T,%3N]") On the safe side: copy UUID from '${DATADIR}/system.proporig' to temp '${DATADIR}/system.properties'."
+                grep -i "uuid" ${DATADIR}/system.proporig >> ${DATADIR}/system.properties
+                echo "$(date +"[%Y-%m-%d %T,%3N]") Starting /usr/lib/unifi/lib/ace.jar briefly to create '${DATADIR}/keystore'."
+                /usr/bin/java -Xmx1024M -jar /usr/lib/unifi/lib/ace.jar start &
+                TEMPPID="$!"
+                while [ ! -f ${DATADIR}/keystore ]; do
+                    sleep 1
+                done
+                echo "$(date +"[%Y-%m-%d %T,%3N]") '${DATADIR}/keystore' found on disk, stopping PID $TEMPPID."
+                kill -TERM $TEMPPID & wait ${!}
+                echo "$(date +"[%Y-%m-%d %T,%3N]") Restoring original '${DATADIR}/system.properties' file."
+                mv ${DATADIR}/system.proporig ${DATADIR}/system.properties
+                echo "$(date +"[%Y-%m-%d %T,%3N]") Generate '${DATADIR}/keystore' complete, continuing with SSL certificate import."
+            else
+                echo "unifi.db.extraargs=--version" > ${DATADIR}/system.properties
+                echo "$(date +"[%Y-%m-%d %T,%3N]") Starting /usr/lib/unifi/lib/ace.jar briefly to create '${DATADIR}/keystore'."
+                /usr/bin/java -Xmx1024M -jar /usr/lib/unifi/lib/ace.jar start &
+                TEMPPID="$!"
+                while [ ! -f ${DATADIR}/keystore ]; do
+                    sleep 1
+                done
+                echo "$(date +"[%Y-%m-%d %T,%3N]") '${DATADIR}/keystore' found on disk, force-stopping PID $TEMPPID."
+                kill -TERM $TEMPPID & wait ${!}
+                echo "$(date +"[%Y-%m-%d %T,%3N]") Removing temporary '${DATADIR}/system.properties' file."
+                rm ${DATADIR}/system.properties
+                echo "$(date +"[%Y-%m-%d %T,%3N]") Generate '${DATADIR}/keystore' complete, continuing with SSL certificate import."
+            fi
+        else
+            echo "$(date +"[%Y-%m-%d %T,%3N]") SSL keystore present."
+            # Back up existing keystore file, even if we just created it. Better safe than sorry.
+            echo "$(date +"[%Y-%m-%d %T,%3N]") Backup existing '${DATADIR}/keystore' to '${DATADIR}/keystore-$(date +%s)'."
+            cp ${DATADIR}/keystore ${DATADIR}/keystore-$(date +%s)
+        fi
+        echo "$(date +"[%Y-%m-%d %T,%3N]") Start SSL certificate keystore update."
+        # Export combined key+cert to temp pkcs12 file.
+        echo "$(date +"[%Y-%m-%d %T,%3N]") OpenSSL combine new private key and certificate chain into temporary PKCS12 file."
+        openssl pkcs12 -export \
+            -inkey ${CERTDIR}/privkey.pem \
+            -in ${CERTDIR}/fullchain.pem \
+            -out ${CERTDIR}/certtemp.p12 \
+            -name ubnt -password pass:temppass
+        # Import pkcs12 file into keystore, overwriting existing.
+        echo "$(date +"[%Y-%m-%d %T,%3N]") Java keytool import PKCS12 '${CERTDIR}/certtemp.p12' file into '${DATADIR}/keystore'."
+        keytool -importkeystore -deststorepass aircontrolenterprise \
+         -destkeypass aircontrolenterprise -destkeystore ${DATADIR}/keystore \
+         -srckeystore ${CERTDIR}/certtemp.p12 -srcstoretype PKCS12 \
+         -srcstorepass temppass -alias ubnt -noprompt
+        # Delete temp combined key+cert pkcs12 file.
+        echo "$(date +"[%Y-%m-%d %T,%3N]") Remove temporary PKCS12 file."
+        rm ${CERTDIR}/certtemp.p12
+        # Store SHA256 hash of both key and certificate so we can check for changes in the future.
+        echo "$(date +"[%Y-%m-%d %T,%3N]") Store SHA256 hash of private key and certificate file to identify future changes."
+        /usr/bin/sha256sum ${CERTDIR}/privkey.pem > ${CERTDIR}/unificert.sha256
+        /usr/bin/sha256sum ${CERTDIR}/fullchain.pem >> ${CERTDIR}/unificert.sha256
+        echo "$(date +"[%Y-%m-%d %T,%3N]") Completed update of SSL certificate in '${DATADIR}/keystore'. Continuing regular startup."
+        echo "$(date +"[%Y-%m-%d %T,%3N]") Check above ***this*** line for error messages if your SSL certificate import isn't working."
+        echo "$(date +"[%Y-%m-%d %T,%3N]") To force retry the SSL import process: delete '${CERTDIR}/unificert.sha256' and restart the container."
+    fi
+else
+    [ -f ${CERTDIR}/privkey.pem ] || echo "$(date +"[%Y-%m-%d %T,%3N]") Missing '${CERTDIR}/privkey.pem', cannot update SSL certificate in '${DATADIR}/keystore'."
+    [ -f ${CERTDIR}/fullchain.pem ] || echo "$(date +"[%Y-%m-%d %T,%3N]") Missing '${CERTDIR}/fullchain.pem', cannot update SSL certificate in '${DATADIR}/keystore'."
+    echo "$(date +"[%Y-%m-%d %T,%3N]") Custom SSL certificate import was NOT performed."
+    #echo "$(date +"[%Y-%m-%d %T,%3N]") This message is expected and safe to ignore if you're not using custom SSL certificates."
+fi
+# End SSL certificate setup
+
+# Termination handler function
+term_handler() {
+    echo "$(date +"[%Y-%m-%d %T,%3N]") SIGHUP/SIGINT/SIGQUIT/SIGTERM has been received, commencing shutdown."
+    ${JSVC} ${JSVC_OPTS} -stop ${MAINCLASS} stop
+    PID="$!"
+    for i in `seq 1 10`; do
+        [ -z "$(pgrep -f ${BASEDIR}/lib/ace.jar)" ] && break
+        # graceful shutdown
+        [ $i -gt 1 ] && [ -d ${RUNPATH}] && touch ${RUNPATH}/server.stop || true
+        # savage shutdown
+        [ $i -gt 7 ] && pkill -f ${BASEDIR}/lib/ace.jar || true
+        sleep 1
+    done
+    # shutdown mongod
+    if [ -f ${MONGOLOCK} ]; then
+        mongo localhost:${MONGOPORT} --eval "db.getSiblingDB('admin').shutdownServer()" >/dev/null 2>&1
+    fi
+    wait "$PID"
+    echo "$(date +"[%Y-%m-%d %T,%3N]") All done. Shut down. Nothing more to see here. Have a nice day!"
+    echo "$(date +"[%Y-%m-%d %T,%3N]") Exit with status code 143; # 128 + 15 -- SIGTERM"
+    exit 143; # 128 + 15 -- SIGTERM
+    #echo "$(date +"[%Y-%m-%d %T,%3N]") Exit with status code 0"
+    #exit 0; # Exit wit no error indication
+}
+# End termination handler function
+
+# Setup termination handler
+# On callback, kill the last background process and execute the term_handler function
+trap 'kill ${!}; term_handler' SIGHUP SIGINT SIGQUIT SIGTERM
+
+# Run UniFi JSVC start command
+echo "$(date +"[%Y-%m-%d %T,%3N]") -- RUN: ${JSVC} ${JSVC_OPTS} ${MAINCLASS} start"
+${JSVC} ${JSVC_OPTS} ${MAINCLASS} start &
+
+# Wait indefinitely on tail
+while true
+do
+    if [ "$DEBUG" == 'true' ]; then
+        tail -f /usr/lib/unifi/logs/server.log -f /usr/lib/unifi/logs/mongod.log & wait ${!}
+    else
+        tail -f /dev/null & wait ${!}
+    fi
+done

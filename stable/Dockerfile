@@ -26,7 +26,6 @@ RUN \
         > /etc/apt/sources.list.d/jessie-backports.list && \
     apt-get -qqy update > /dev/null && \
     apt-get -qqy --no-install-recommends install \
-        supervisor \
         binutils \
         curl > /dev/null && \
     mkdir /usr/share/man/man1 && \
@@ -46,12 +45,21 @@ RUN \
 
 EXPOSE 3478/udp 6789/tcp 8080/tcp 8443/tcp 8843/tcp 8880/tcp 10001/udp
 
-VOLUME ["/usr/lib/unifi/data", "/usr/lib/unifi/logs"]
+VOLUME ["/usr/lib/unifi/cert", "/usr/lib/unifi/data", "/usr/lib/unifi/logs"]
 
 WORKDIR /usr/lib/unifi
 
-ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+ENV \
+    DEBUG=false \
+    JAVA_ENTROPY_GATHER_DEVICE= \
+    JVM_MAX_HEAP_SIZE=1024M \
+    JVM_INIT_HEAP_SIZE= \
+    JVM_MAX_THREAD_STACK_SIZE= \
+    JVM_EXTRA_OPTS= \
+    JSVC_EXTRA_OPTS= \
+    UNIFI_JVM_EXTRA_OPTS=
 
-ENTRYPOINT ["/usr/bin/supervisord"]
+ADD unifi-init /usr/local/bin/
+RUN chmod +x /usr/local/bin/unifi-init
 
-CMD ["-c", "/etc/supervisor/conf.d/supervisord.conf"]
+ENTRYPOINT ["/usr/local/bin/unifi-init"]

@@ -1,7 +1,8 @@
-version: '2'
+version: '2.2'
 services:
   unifi:
     image: "goofball222/unifi:latest"
+    init: true
     ports:
      - "3478:3478/udp"
      - "6789:6789"

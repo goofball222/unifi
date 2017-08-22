@@ -1,3 +1,8 @@
+* **2017-08-21:**
+    * Update stable and unifi54 to use unifi-init script for startup/shutdown handling + SSL
+    * Change README.md to reflect full SSL support across tags
+    * Change README.md to reflect recommended --init flag for run to avoid possible signal handling issues
+---
 * **2017-08-16:**
     * Changed UNIFI_VERSION to VERSION throughout.
     * Where possible switched from 2 spaces to 4 spaces for indent, readability.

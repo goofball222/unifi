@@ -16,10 +16,13 @@
 
 ---
 
-* **2017-08-15:**
-    * All UniFi versions remain unchanged.
-    * Moved "Changes" to [GitHub CHANGELOG.md](https://github.com/goofball222/unifi/blob/master/CHANGELOG.md) file.
-    * Please report any bugs and/or issues on GitHub: https://github.com/goofball222/unifi/issues
+* **2017-08-21:**
+   * Moved to init-script and custom SSL support across all tags.
+   * All UniFi versions remain unchanged.
+   * Previously built static specific version tags remain unchanged (still use supervisord, no custom SSL support).
+---
+* [Recent changes, see: GitHub CHANGELOG.md](https://github.com/goofball222/unifi/blob/master/CHANGELOG.md)
+* [Report any bugs, issues or feature requests on GitHub](https://github.com/goofball222/unifi/issues)
 ---
 
 **MAKE A BACKUP OF YOUR DATA BEFORE INSTALLING UPDATES.**
@@ -51,7 +54,7 @@ This container exposes the following ports (see: https://help.ubnt.com/hc/en-us/
 **The most basic way to start this container:**
 
 ```
-$ docker run --name unifi -d \
+$ docker run --init --name unifi -d \
 	-p 3478:3478/udp -p 6789:6789 -p 8080:8080 \
 	-p 8443:8443 -p 8880:8880 -p 8843:8843 \
 	goofball222/unifi
@@ -62,7 +65,7 @@ $ docker run --name unifi -d \
 Have the container store the config/databases (recommended for persistence), logs on your filesystem instead (recommended for troubleshooting!), and allow for remapping ports with NO layer 2 discovery (layer 3/remote controller):
 
 ```
-$ docker run --name unifi -d \
+$ docker run --init --name unifi -d \
 	-p 3478:3478/udp -p 6789:6789 -p 8080:8080 \
 	-p 8443:8443 -p 8880:8880 -p 8843:8843 \
 	-v /path/to/unifi/certs:/usr/lib/unifi/cert  \
@@ -75,7 +78,7 @@ $ docker run --name unifi -d \
 **To enable layer 2/local LAN discovery:**
 
 ```
-$ docker run --name unifi -d \
+$ docker run --init --name unifi -d \
 	-p 3478:3478/udp -p 6789:6789 -p 8080:8080 \
 	-p 8443:8443 -p 8880:8880 -p 8843:8843 \
 	-p 10001:10001/udp \
@@ -92,7 +95,7 @@ Use --network=host mode. Does not allow for port remapping. You may need to manu
 **Please make sure to read the "Network: host" section of https://docs.docker.com/engine/reference/run/ and understand the implications of this setting before using.**
 
 ```
-$ docker run --name unifi -d \
+$ docker run --init --name unifi -d \
 	--network=host \
 	-v /path/to/unifi/certs:/usr/lib/unifi/cert  \
 	-v /path/to/unifi/data:/usr/lib/unifi/data  \
@@ -104,10 +107,11 @@ $ docker run --name unifi -d \
 **Example `docker-compose.yml` file for use with [Docker Compose](https://docs.docker.com/compose/), courtesy of Docker Hub user [jesk](https://hub.docker.com/r/jesk/):**
 
 ```
-version: '2'
+version: '2.2'
 services:
   unifi:
     image: "goofball222/unifi:latest"
+    init: true
     ports:
      - "3478:3478/udp"
      - "6789:6789"
@@ -126,7 +130,7 @@ services:
 
 ### SSL custom certificate configuration support ([LetsEncrypt](https://letsencrypt.org/), etc.)
 
-**Note:** As of 2017-08-15 this feature is only present in the `sc`, `testing`, `unstable`, and `unifi54-sc` tags. It will be moved to `latest` tag and the `unifi54` tag once stability is proven.
+**Note:** As of 2017-08-21 this feature is present in the **ALL** tags.
 
 1. Map the Docker host cert storage location or volume to the `/usr/lib/unifi/cert` volume exposed by the container
 2. Must contain a PEM format SSL private key corresponding to the SSL certificate to be installed.
