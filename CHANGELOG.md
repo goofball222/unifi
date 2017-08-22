@@ -2,6 +2,8 @@
     * Update stable and unifi54 to use unifi-init script for startup/shutdown handling + SSL
     * Change README.md to reflect full SSL support across tags
     * Change README.md to reflect recommended --init flag for run to avoid possible signal handling issues
+    * Change README.md to highlight host/Docker volume paths that need to be set/changed/removed.
+    * Change docker-compose.yml to highlight host/Docker volume paths that need to be set/changed/removed.
 ---
 * **2017-08-16:**
     * Changed UNIFI_VERSION to VERSION throughout.

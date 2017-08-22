@@ -12,6 +12,6 @@ services:
      - "8843:8843"
      - "10001:10001/udp"
     volumes:
-     - /path/to/unifi/certs:/usr/lib/unifi/cert
-     - /path/to/unifi/data:/usr/lib/unifi/data
-     - /path/to/unifi/logs:/usr/lib/unifi/logs
+     - /DATA_VOLUME/unifi/cert:/usr/lib/unifi/cert
+     - /DATA_VOLUME/unifi/data:/usr/lib/unifi/data
+     - /DATA_VOLUME/unifi/logs:/usr/lib/unifi/logs

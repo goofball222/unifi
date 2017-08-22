@@ -68,9 +68,9 @@ Have the container store the config/databases (recommended for persistence), log
 $ docker run --init --name unifi -d \
 	-p 3478:3478/udp -p 6789:6789 -p 8080:8080 \
 	-p 8443:8443 -p 8880:8880 -p 8843:8843 \
-	-v /path/to/unifi/certs:/usr/lib/unifi/cert  \
-	-v /path/to/unifi/data:/usr/lib/unifi/data  \
-	-v /path/to/unifi/logs:/usr/lib/unifi/logs \
+	-v /DATA_VOLUME/unifi/certs:/usr/lib/unifi/cert  \
+	-v /DATA_VOLUME/unifi/data:/usr/lib/unifi/data  \
+	-v /DATA_VOLUME/unifi/logs:/usr/lib/unifi/logs \
 	goofball222/unifi
 ```
 ---
@@ -82,9 +82,9 @@ $ docker run --init --name unifi -d \
 	-p 3478:3478/udp -p 6789:6789 -p 8080:8080 \
 	-p 8443:8443 -p 8880:8880 -p 8843:8843 \
 	-p 10001:10001/udp \
-	-v /path/to/unifi/certs:/usr/lib/unifi/cert  \
-	-v /path/to/unifi/data:/usr/lib/unifi/data  \
-	-v /path/to/unifi/logs:/usr/lib/unifi/logs \
+	-v /DATA_VOLUME/unifi/certs:/usr/lib/unifi/cert  \
+	-v /DATA_VOLUME/unifi/data:/usr/lib/unifi/data  \
+	-v /DATA_VOLUME/unifi/logs:/usr/lib/unifi/logs \
 	goofball222/unifi
 ```
 ---
@@ -97,9 +97,9 @@ Use --network=host mode. Does not allow for port remapping. You may need to manu
 ```
 $ docker run --init --name unifi -d \
 	--network=host \
-	-v /path/to/unifi/certs:/usr/lib/unifi/cert  \
-	-v /path/to/unifi/data:/usr/lib/unifi/data  \
-	-v /path/to/unifi/logs:/usr/lib/unifi/logs \
+	-v /DATA_VOLUME/unifi/certs:/usr/lib/unifi/cert  \
+	-v /DATA_VOLUME/unifi/data:/usr/lib/unifi/data  \
+	-v /DATA_VOLUME/unifi/logs:/usr/lib/unifi/logs \
 	goofball222/unifi
 ```
 ---
@@ -121,9 +121,9 @@ services:
      - "8843:8843"
      - "10001:10001/udp"
     volumes:
-     - /path/to/unifi/certs:/usr/lib/unifi/cert
-     - /path/to/unifi/data:/usr/lib/unifi/data
-     - /path/to/unifi/logs:/usr/lib/unifi/logs
+     - /DATA_VOLUME/unifi/certs:/usr/lib/unifi/cert
+     - /DATA_VOLUME/unifi/data:/usr/lib/unifi/data
+     - /DATA_VOLUME/unifi/logs:/usr/lib/unifi/logs
 ```
 ---
 
