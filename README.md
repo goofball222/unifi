@@ -17,9 +17,9 @@
 ---
 
 * **2017-08-21:**
-   * Moved to init-script and custom SSL support across all tags.
-   * All UniFi versions remain unchanged.
-   * Previously built static specific version tags remain unchanged (still use supervisord, no custom SSL support).
+    * Moved to init-script and custom SSL support across all tags.
+    * All UniFi versions remain unchanged.
+    * Previously built static specific version tags remain unchanged (still use supervisord, no custom SSL support).
 ---
 * [Recent changes, see: GitHub CHANGELOG.md](https://github.com/goofball222/unifi/blob/master/CHANGELOG.md)
 * [Report any bugs, issues or feature requests on GitHub](https://github.com/goofball222/unifi/issues)
@@ -53,58 +53,58 @@ This container exposes the following ports (see: https://help.ubnt.com/hc/en-us/
 
 **The most basic way to start this container:**
 
-```
+```bash
 $ docker run --init --name unifi -d \
-	-p 3478:3478/udp -p 6789:6789 -p 8080:8080 \
-	-p 8443:8443 -p 8880:8880 -p 8843:8843 \
-	goofball222/unifi
+    -p 3478:3478/udp -p 6789:6789 -p 8080:8080 \
+    -p 8443:8443 -p 8880:8880 -p 8843:8843 \
+    goofball222/unifi
 ```  
 ---
 
 **Recommended:**
 Have the container store the config/databases (recommended for persistence), logs on your filesystem instead (recommended for troubleshooting!), and allow for remapping ports with NO layer 2 discovery (layer 3/remote controller):
 
-```
+```bash
 $ docker run --init --name unifi -d \
-	-p 3478:3478/udp -p 6789:6789 -p 8080:8080 \
-	-p 8443:8443 -p 8880:8880 -p 8843:8843 \
-	-v /DATA_VOLUME/unifi/certs:/usr/lib/unifi/cert  \
-	-v /DATA_VOLUME/unifi/data:/usr/lib/unifi/data  \
-	-v /DATA_VOLUME/unifi/logs:/usr/lib/unifi/logs \
-	goofball222/unifi
+    -p 3478:3478/udp -p 6789:6789 -p 8080:8080 \
+    -p 8443:8443 -p 8880:8880 -p 8843:8843 \
+    -v /DATA_VOLUME/unifi/certs:/usr/lib/unifi/cert  \
+    -v /DATA_VOLUME/unifi/data:/usr/lib/unifi/data  \
+    -v /DATA_VOLUME/unifi/logs:/usr/lib/unifi/logs \
+    goofball222/unifi
 ```
 ---
 
 **To enable layer 2/local LAN discovery:**
 
-```
+```bash
 $ docker run --init --name unifi -d \
-	-p 3478:3478/udp -p 6789:6789 -p 8080:8080 \
-	-p 8443:8443 -p 8880:8880 -p 8843:8843 \
-	-p 10001:10001/udp \
-	-v /DATA_VOLUME/unifi/certs:/usr/lib/unifi/cert  \
-	-v /DATA_VOLUME/unifi/data:/usr/lib/unifi/data  \
-	-v /DATA_VOLUME/unifi/logs:/usr/lib/unifi/logs \
-	goofball222/unifi
+    -p 3478:3478/udp -p 6789:6789 -p 8080:8080 \
+    -p 8443:8443 -p 8880:8880 -p 8843:8843 \
+    -p 10001:10001/udp \
+    -v /DATA_VOLUME/unifi/certs:/usr/lib/unifi/cert  \
+    -v /DATA_VOLUME/unifi/data:/usr/lib/unifi/data  \
+    -v /DATA_VOLUME/unifi/logs:/usr/lib/unifi/logs \
+    goofball222/unifi
 ```
 ---
 
 **Alternative suggested by [rogierlommers](https://hub.docker.com/r/rogierlommers/):**
 
 Use --network=host mode. Does not allow for port remapping. You may need to manually adjust host firewall settings to allow traffic. Running a container in this mode is considered insecure:
-**Please make sure to read the "Network: host" section of https://docs.docker.com/engine/reference/run/ and understand the implications of this setting before using.**
+**Please make sure to read the "NETWORK: HOST" section of the [Docker "run" reference](https://docs.docker.com/engine/reference/run/#network-settings) and understand the implications of this setting before using.**
 
-```
+```bash
 $ docker run --init --name unifi -d \
-	--network=host \
-	-v /DATA_VOLUME/unifi/certs:/usr/lib/unifi/cert  \
-	-v /DATA_VOLUME/unifi/data:/usr/lib/unifi/data  \
-	-v /DATA_VOLUME/unifi/logs:/usr/lib/unifi/logs \
-	goofball222/unifi
+    --network="host" \
+    -v /DATA_VOLUME/unifi/certs:/usr/lib/unifi/cert  \
+    -v /DATA_VOLUME/unifi/data:/usr/lib/unifi/data  \
+    -v /DATA_VOLUME/unifi/logs:/usr/lib/unifi/logs \
+    goofball222/unifi
 ```
 ---
 
-**Example `docker-compose.yml` file for use with [Docker Compose](https://docs.docker.com/compose/), courtesy of Docker Hub user [jesk](https://hub.docker.com/r/jesk/):**
+**Example [`docker-compose.yml`](https://raw.githubusercontent.com/goofball222/unifi/master/docker-compose.yml) file for use with [Docker Compose](https://docs.docker.com/compose/), courtesy of Docker Hub user [jesk](https://hub.docker.com/r/jesk/):**
 
 ```
 version: '2.2'
