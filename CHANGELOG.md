@@ -1,6 +1,7 @@
 * **2017-08-26:**
     * Update sc VERSION to [v5.5.22](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-22-Stable-Candidate-has-been-released/ba-p/2042082)
     * Update testing VERSION to [v5.6.15](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-15-Testing-has-been-released/ba-p/2042083)
+    * Fix missing curl removal output redirect to /dev/null in Dockerfile
 ---
 * **2017-08-23:**
     * Change README.md to add direct link to GitHub docker-compose.yml file

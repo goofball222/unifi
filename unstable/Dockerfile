@@ -38,7 +38,7 @@ RUN \
     curl -sSOL https://www.ubnt.com/downloads/unifi/$VERSION/unifi_sysvinit_all.deb && \
     dpkg --install unifi_sysvinit_all.deb && \
     rm unifi_sysvinit_all.deb && \
-    apt-get -qqy purge curl && \
+    apt-get -qqy purge curl > /dev/null && \
     apt-get -qqy autoremove --purge > /dev/null && \
     apt-get -qqy clean autoclean > /dev/null && \
     rm -rf /var/cache/apt/* /var/cache/debconf/* /var/lib/apt/* /var/lib/dpkg/* /tmp/* /var/tmp/* /var/log/*
