@@ -1,3 +1,6 @@
+* **2017-08-26
+    * Update testing VERSION to [v5.6.15](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-15-Testing-has-been-released/ba-p/2042083)
+---
 * **2017-08-23
     * Change README.md to add direct link to GitHub docker-compose.yml file
     * Change README.md to adjust formatting, replace tabs with spaces
@@ -22,7 +25,7 @@
     * Switch to curl for unifi_sysvinit_all.deb file retrieval. Not downloading whole directories, don't need wget functionality
     * Redirect apt-get/dpkg STDOUT noise during build to /dev/null. Makes finding errors during build much easier
     * Move UniFi version info into self-contained file `UNIFI_VERSION`. Makes Dockerfile totally tag/version independent
-        * Updated Docker Hub hooks/build script to account for change. Loads UNIFI_VERSION file into a build arg
+    * Updated Docker Hub hooks/build script to account for change. Loads UNIFI_VERSION file into a build arg
     * Switch to Makefiles for local builds. Automates injecting build args including UNIFI_VERSION
     * Update unifi54 branch to use same tools, build structure, labels, UNIFI_VERSION, etc.
     * Update uninfi54-sc to use unifi-init instead of supervisord
