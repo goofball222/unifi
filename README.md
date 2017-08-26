@@ -16,13 +16,9 @@
 
 ---
 
-* **2017-08-21:**
-    * Moved to init-script and custom SSL support across all tags.
-    * All UniFi versions remain unchanged.
-    * Previously built static specific version tags remain unchanged (still use supervisord, no custom SSL support).
----
 * [Recent changes, see: GitHub CHANGELOG.md](https://github.com/goofball222/unifi/blob/master/CHANGELOG.md)
 * [Report any bugs, issues or feature requests on GitHub](https://github.com/goofball222/unifi/issues)
+
 ---
 
 **MAKE A BACKUP OF YOUR DATA BEFORE INSTALLING UPDATES.**
