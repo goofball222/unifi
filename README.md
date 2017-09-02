@@ -23,6 +23,7 @@
 * OPTIONAL - [system.properties](https://help.ubnt.com/hc/en-us/articles/205202580-UniFi-system-properties-File-Explanation) settings can now be passed to the container as a -e/--env flags at startup. This allows for a much easier HA automation/deployment setup for this container [(more detail and a PDF with examples here)](https://community.ubnt.com/t5/UniFi-Wireless-Beta/Unifi-Controller-High-Availability/m-p/1801933/highlight/true#M43494). It also allows easy support for an external Mongo DB. Envrionment variables must be in ALL CAPS and replace . with _.
 
 Example:
+
 | system.properties | environment variable |
 | --- | --- |
 | unifi.db.extraargs | UNIFI_DB_EXTRAARGS |
