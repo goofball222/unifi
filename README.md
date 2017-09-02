@@ -18,7 +18,7 @@
 
 ### **FROM 2017-09-01 ONWARD:** For security improvement and attack vector reduction this container is now built to run with an internal user & group named `unifi` having a UID & GID of 999. Make sure you set the ownership on existing mapped volumes and data accordingly before startup.
 
-IE: `chown -r 999:999 /DATA_VOLUME/unifi/{cert,data,logs}`
+IE: `chown -R 999:999 /DATA_VOLUME/unifi/{cert,data,logs}`
 
 ### **ALWAYS MAKE A VERIFIED BACKUP BEFORE UPDATING**
 
