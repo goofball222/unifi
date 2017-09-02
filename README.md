@@ -16,13 +16,13 @@
 
 ---
 
-**FROM 2017-09-01 ONWARD: For security and attack vector reduction this container is now built to run with an internal user/group of unifi having a UID/GID of 999. Make sure you set the ownership on any existing mapped volumes and data accordingly before startup.**
+####**FROM 2017-09-01 ONWARD:** For security improvement and attack vector reduction this container is now built to run with an internal user & group named `unifi` having a UID & GID of 999. Make sure you set the ownership on existing mapped volumes and data accordingly before startup.
 
 IE: `chown -r 999:999 /DATA_VOLUME/unifi/{cert,data,logs}`
 
-**ALWAYS MAKE A VERIFIED BACKUP BEFORE UPDATING**
+####**ALWAYS MAKE A VERIFIED BACKUP BEFORE UPDATING**
 
-* NEW OPTION - [system.properties](https://help.ubnt.com/hc/en-us/articles/205202580-UniFi-system-properties-File-Explanation) settings can now be passed to the container as -e/--env flags at startup. This allows for a much easier automation/HA/deployment setup for this container [(more detail and a PDF with examples here)](https://community.ubnt.com/t5/UniFi-Wireless-Beta/Unifi-Controller-High-Availability/m-p/1801933/highlight/true#M43494). Envrionment variables must be in ALL CAPS and replace "." with "_".
+**NEW OPTION -** [system.properties](https://help.ubnt.com/hc/en-us/articles/205202580-UniFi-system-properties-File-Explanation) settings can now be passed to the container as -e/--env flags at startup. This allows for much easier automation/HA/autodeploy setup for this container [(more detail and a PDF with examples here)](https://community.ubnt.com/t5/UniFi-Wireless-Beta/Unifi-Controller-High-Availability/m-p/1801933/highlight/true#M43494). Envrionment variables must be in ALL CAPS and replace "." with "_".
 
 Example:
 
@@ -31,7 +31,7 @@ Example:
 | unifi.db.extraargs | UNIFI_DB_EXTRAARGS |
 | unifi.https.hsts | UNIFI_HTTPS_HSTS |
 
-* This also allows relatively easy setup for an [external Mongo DB connection](https://community.ubnt.com/t5/UniFi-Wireless/External-MongoDB-Server/m-p/1711073/highlight/true#M188357). That functionality is outside the scope of this README and is left as an exercise for the interested reader.
+This also allows relatively easy setup for an [external Mongo DB connection](https://community.ubnt.com/t5/UniFi-Wireless/External-MongoDB-Server/m-p/1711073/highlight/true#M188357). That functionality is outside the scope of this README and is left as an exercise for the interested reader.
 
 ---
 
