@@ -18,9 +18,17 @@ LABEL \
     org.label-schema.license="Apache-2.0" \
     org.label-schema.schema-version="1.0"
 
+WORKDIR /usr/lib/unifi
+
+COPY files /usr/lib/unifi
+
 RUN \
+    groupadd -r mongodb -g 998 && \
+    useradd --no-log-init -r -u 998 -g 998 mongodb && \
+    groupadd -r unifi -g 999 && \
+    useradd --no-log-init -r -u 999 -g 999 unifi && \
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 > /dev/null && \
-    echo "deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen" \
+    echo "deb http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen" \
         > /etc/apt/sources.list.d/mongodb.list && \
     echo "deb http://ftp.debian.org/debian jessie-backports main" \
         > /etc/apt/sources.list.d/jessie-backports.list && \
@@ -31,35 +39,30 @@ RUN \
     mkdir /usr/share/man/man1 && \
     apt-get -qqy -t jessie-backports --no-install-recommends install \
         ca-certificates-java \
-        openjdk-8-jre-headless \
-        jsvc > /dev/null && \
+        openjdk-8-jre-headless > /dev/null && \
     apt-get -qqy --no-install-recommends install \
-        mongodb-server > /dev/null && \
+        mongodb-org-server > /dev/null && \
     curl -sSOL https://www.ubnt.com/downloads/unifi/$VERSION/unifi_sysvinit_all.deb && \
-    dpkg --install unifi_sysvinit_all.deb && \
-    rm unifi_sysvinit_all.deb && \
     apt-get -qqy purge curl > /dev/null && \
     apt-get -qqy autoremove --purge > /dev/null && \
     apt-get -qqy clean autoclean > /dev/null && \
+    dpkg --force-all -i unifi_sysvinit_all.deb && \
+    rm unifi_sysvinit_all.deb && \
+    bash -c 'mkdir -p {data,logs,run,cert}' && \
+    chown -R unifi:unifi /usr/lib/unifi && \
     rm -rf /var/cache/apt/* /var/cache/debconf/* /var/lib/apt/* /var/lib/dpkg/* /tmp/* /var/tmp/* /var/log/*
 
 EXPOSE 3478/udp 6789/tcp 8080/tcp 8443/tcp 8843/tcp 8880/tcp 10001/udp
 
 VOLUME ["/usr/lib/unifi/cert", "/usr/lib/unifi/data", "/usr/lib/unifi/logs"]
 
-WORKDIR /usr/lib/unifi
-
 ENV \
     DEBUG=false \
-    JAVA_ENTROPY_GATHER_DEVICE= \
     JVM_MAX_HEAP_SIZE=1024M \
     JVM_INIT_HEAP_SIZE= \
     JVM_MAX_THREAD_STACK_SIZE= \
-    JVM_EXTRA_OPTS= \
-    JSVC_EXTRA_OPTS= \
-    UNIFI_JVM_EXTRA_OPTS=
+    JVM_EXTRA_OPTS=
 
-ADD unifi-init /usr/local/bin/
-RUN chmod +x /usr/local/bin/unifi-init
+USER unifi
 
-ENTRYPOINT ["/usr/local/bin/unifi-init"]
+ENTRYPOINT ["/usr/lib/unifi/bin/unifi-init"]

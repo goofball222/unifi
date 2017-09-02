@@ -16,6 +16,20 @@
 
 ---
 
+**FROM 2017-09-01 ONWARD: For security and attack vector reduction this container is now built to run with an internal user/group of unifi having a UID/GID of 999. Make sure you set the ownership on any existing mapped volumes and data accordingly before startup.** IE: `chown -r 999:999 /DATA_VOLUME/unifi/{cert,data,logs}`
+
+**MAKE A VERIFIED BACKUP BEFORE UPDATING**
+
+* OPTIONAL - [system.properties](https://help.ubnt.com/hc/en-us/articles/205202580-UniFi-system-properties-File-Explanation) settings can now be passed to the container as a -e/--env flags at startup. This allows for a much easier HA automation/deployment setup for this container [(more detail and a PDF with examples here)](https://community.ubnt.com/t5/UniFi-Wireless-Beta/Unifi-Controller-High-Availability/m-p/1801933/highlight/true#M43494). It also allows easy support for an external Mongo DB. Envrionment variables must be in ALL CAPS and replace . with _.
+
+Example:
+| system.properties | environment variable |
+| --- | --- |
+| unifi.db.extraargs | UNIFI_DB_EXTRAARGS |
+| unifi.https.hsts | UNIFI_HTTPS_HSTS |
+
+---
+
 * [Recent changes, see: GitHub CHANGELOG.md](https://github.com/goofball222/unifi/blob/master/CHANGELOG.md)
 * [Report any bugs, issues or feature requests on GitHub](https://github.com/goofball222/unifi/issues)
 

@@ -1,3 +1,25 @@
+* **2017-09-01:**
+    * Update Dockerfile to reduce size and default run as non-root user to reduce attack vector.
+        * Drop jsvc
+        * Switch to correct MongoDB repository, mongod version in completed image is now 2.6.12 (was 2.4.10)
+        * Use mongodb-org-server package to reduce space usage (~100MB!)
+        * Create mongodb and unifi users/groups with known UID/GID
+        * Specifically create all needed /usr/lib/unifi subdirectories
+        * Recursive change ownership of /usr/lib/unifi to unifi:unifi (999:999)
+        * Remove unneeded environment variables
+        * Instead of "ADD", "COPY" multiple files to /usr/lib/unifi from "./files"
+        * Add USER setting to default to run as 'unifi' user
+    * Update unifi-init to 0.3.2
+        * Moved to files/bin/ subfolder
+        * Remove unneeded environment variables
+        * Add system.properties setup functionality to insure UniFi container mode is on
+        * Simplify SSL setup if keystore not present, now built via java keytool.
+        * Drop JSVC, term_handler, waits, etc., process term now all correctly handled by Docker --init or java process
+        * Don't background java process, unifi.logStdout=true in system.properties outputs to "docker logs containername"
+        * Formatting adjustments, cleanup
+    * Add files/system.properties.default, contains default settings for UniFi "container" mode
+    * Update Makefile to use OTHER variable for additional Docker launch options
+---
 * **2017-08-26:**
     * Update sc VERSION to [v5.5.22](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-22-Stable-Candidate-has-been-released/ba-p/2042082)
     * Update testing VERSION to [v5.6.15](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-15-Testing-has-been-released/ba-p/2042083)
