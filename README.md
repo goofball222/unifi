@@ -130,7 +130,7 @@ Example:
 
 ---
 
-### SSL custom certificate configuration support ([LetsEncrypt](https://letsencrypt.org/), etc.)
+**SSL custom certificate configuration support ([LetsEncrypt](https://letsencrypt.org/), etc.)**
 
 **This feature is present in **ALL** dynamic tags and any static release tags built after 2017-08-21.**
 
@@ -139,9 +139,9 @@ Example:
 Private key file **MUST** be named `privkey.pem`. 
 3. Must contain a PEM format SSL certificate file with the full certification chain. LetsEncrypt handles this automatically, other providers may need manual work (https://www.digicert.com/ssl-support/pem-ssl-creation.htm).
 Certificate file **MUST** be named `fullchain.pem`.
-4. Start the container. SSL import and Java keystore update process is automated by init-script. Status, errors, etc. can be found in the container log, IE: `docker logs goofball222-unifi`
+4. Start the container. SSL import and Java keystore update process is automated during startup. Status, errors, etc. can be found in the container log, IE: `docker logs <containername>`
 5. Existing keystore file will be backed up to  `/usr/lib/unifi/data/keystore-<epochseconds>`
-6. Java keystore is only updated when changes to the certificate files are detected. To force a re-import of existing files delete the `unificert.sha256` file in `/usr/lib/unifi/cert` and restart the container.
+6. Java keystore is only updated when changes to the certificate files are detected. To force a re-import of existing files delete the `unificert.sha256` file in `/DATA_VOLUME/unifi/cert` and restart the container.
 
 If you don't want to use a custom SSL certificate then the `/usr/lib/unifi/cert` volume can be left unmapped. Alternatively if the `privkey.pem` and/or `fullchain.pem` file are not present SSL customization will be skipped.
 
