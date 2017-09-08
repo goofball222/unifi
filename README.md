@@ -30,7 +30,7 @@ IE: `chown -R 999:999 /DATA_VOLUME/unifi/{cert,data,logs}`
 **ALWAYS MAKE A VERIFIED BACKUP OF DATA BEFORE INSTALLING UPDATES.**
 **Export a `.unf` from the web interface and/or stop the current container and create a backup or copy of the data volume.**
 **Database rollback from newer to older versions of UniFi and/or Mongo isn't always possible.**
-**The container applications, internal structure, and data can change drastically between versions.**
+**The container is under active development and applications, internal structure, and data can change drastically.**
 
 ---
 
@@ -63,7 +63,8 @@ $ docker run --init --name unifi -d \
 ```  
 ---
 
-**Recommended run command line:**
+**Recommended run command line -**
+
 Have the container store the config, databases & logs on a local filesystem or in a specific, known data volume (recommended for persistence and troubleshooting) with NO layer 2 discovery (layer 3/remote controller):
 
 ```bash
@@ -84,9 +85,11 @@ To enable speed tests from the UniFi iOS & Android apps add:
     - p 6789:6789 \
 ```
 ---
-**Alternative suggested by [rogierlommers](https://hub.docker.com/r/rogierlommers/):**
+
+**Alternative run command line suggested by [rogierlommers](https://hub.docker.com/r/rogierlommers/) -**
 
 Use --network=host mode. Does not allow for port remapping. You may need to manually adjust host firewall settings to allow traffic. Running a container in this mode is considered insecure:
+
 **Please make sure to read the "NETWORK: HOST" section of the [Docker "run" reference](https://docs.docker.com/engine/reference/run/#network-settings) and understand the implications of this setting before using.**
 
 ```bash
@@ -97,30 +100,39 @@ $ docker run --init --name unifi -d \
     -v /DATA_VOLUME/unifi/logs:/usr/lib/unifi/logs \
     goofball222/unifi
 ```
----
-
-**[Example `docker-compose.yml` file](https://raw.githubusercontent.com/goofball222/unifi/master/examples/docker-compose.yml) for use with [Docker Compose](https://docs.docker.com/compose/), courtesy of Docker Hub user [jesk](https://hub.docker.com/r/jesk/)**
 
 ---
 
-UniFi [system.properties](https://help.ubnt.com/hc/en-us/articles/205202580-UniFi-system-properties-File-Explanation) config file settings can be passed to the container as -e/--env flags at runtime [(more detail and a PDF with UBNT examples here)](https://community.ubnt.com/t5/UniFi-Wireless-Beta/Unifi-Controller-High-Availability/m-p/1801933/highlight/true#M43494). Envrionment variables must be in ALL CAPS and replace "." with "_".
+**Environment Variables:**
+* `DEBUG` Default: false - set to "true" for extra container and UniFi verbosity for debugging
+* `JVM_MAX_HEAP_SIZE` Default: 1024M - specifies the max memory size for the container Java process (-Xmx1024M)
+* `JVM_INIT_HEAP_SIZE` Default: unset - specifies the startup and minimum memory size for the container Java process (-Xms)
+* `JVM_EXTRA_OPTS` Default: unset - specifies additional custom run flags or adjustments for the container Java process
+
+UniFi [system.properties](https://help.ubnt.com/hc/en-us/articles/205202580-UniFi-system-properties-File-Explanation) config file settings can be passed to the container as -e/--env flags at runtime as well [(more detail and a PDF with UBNT examples here)](https://community.ubnt.com/t5/UniFi-Wireless-Beta/Unifi-Controller-High-Availability/m-p/1801933/highlight/true#M43494). Envrionment variables must be in ALL CAPS and replace "." with "_".
 
 Example:
 
 | system.properties | environment variable |
 | --- | --- |
-| unifi.db.extraargs=--smallfiles | UNIFI_DB_EXTRAARGS=--smallfiles |
-| unifi.https.hsts=true | UNIFI_HTTPS_HSTS=true |
+| unifi.db.extraargs | UNIFI_DB_EXTRAARGS |
+| unifi.https.hsts | UNIFI_HTTPS_HSTS |
 
-Enables easier setup for an [external Mongo DB connection](https://community.ubnt.com/t5/UniFi-Wireless/External-MongoDB-Server/m-p/1711073/highlight/true#M188357).
-Example docker-compose.yml for external Mongo DB container + UniFi container using environment variables: https://raw.githubusercontent.com/goofball222/unifi/master/examples/docker-compose-EXTERNALDB.yml
-**NOTE:** External DB support and/or using Mongo versions > 2.6.12 is highly experimental and entirely unsupported by UBNT.
+---
+
+**[Docker Compose](https://docs.docker.com/compose/):**
+
+[Example basic `docker-compose.yml` file](https://raw.githubusercontent.com/goofball222/unifi/master/examples/docker-compose.yml), courtesy of Docker Hub user [jesk](https://hub.docker.com/r/jesk/)
+
+[Example advanced `docker-compose.yml` file with external Mongo DB service and UniFi service using environment variables](https://raw.githubusercontent.com/goofball222/unifi/master/examples/docker-compose-EXTERNALDB.yml)
+
+**NOTE:** Externalizing the DB server and/or using Mongo versions > 2.6.12 is highly experimental and completely unsupported by UBNT. Full documentation for an external DB setup is outside the scope of this README and is left as an exercise for the interested reader. Additional information available on the [UBNT forums in this post](https://community.ubnt.com/t5/UniFi-Wireless/External-MongoDB-Server/m-p/1711073/highlight/true#M188357) and in the PDF post linked in the "Environment Variables" section.
 
 ---
 
 ### SSL custom certificate configuration support ([LetsEncrypt](https://letsencrypt.org/), etc.)
 
-**NOTE:** This feature is present in **ALL** dynamic tags and any static release tags built after 2017-08-21.
+**This feature is present in **ALL** dynamic tags and any static release tags built after 2017-08-21.**
 
 1. Map the Docker host cert storage location or volume to the `/usr/lib/unifi/cert` volume exposed by the container
 2. Must contain a PEM format SSL private key corresponding to the SSL certificate to be installed.
