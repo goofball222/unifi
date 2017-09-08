@@ -25,16 +25,14 @@
 
 IE: `chown -R 999:999 /DATA_VOLUME/unifi/{cert,data,logs}`
 
-### **ALWAYS MAKE A VERIFIED BACKUP BEFORE UPDATING**
-
 ---
 
-**MAKE A BACKUP OF YOUR DATA BEFORE INSTALLING UPDATES.**
-**Database rollback from newer to older versions isn't always possible.**
-**Export a .unf from the web interface and/or stop the current container and make a backup copy of the data volume.**
+**ALWAYS MAKE A VERIFIED BACKUP OF DATA BEFORE INSTALLING UPDATES.**
+**Export a `.unf` from the web interface and/or stop the current container and create a backup or copy of the data volume.**
+**Database rollback from newer to older versions of UniFi and/or Mongo isn't always possible.**
+**The container applications, internal structure, and data can change drastically between versions.**
 
 ---
-
 
 ## Usage
 
@@ -66,7 +64,7 @@ $ docker run --init --name unifi -d \
 ---
 
 **Recommended run command line:**
-Have the container store the config/databases & logs in a specific data volume or on a local filesystem (recommended for persistence and troubleshooting), and allow for remapping ports with NO layer 2 discovery (layer 3/remote controller):
+Have the container store the config, databases & logs on a local filesystem or in a specific, known data volume (recommended for persistence and troubleshooting) with NO layer 2 discovery (layer 3/remote controller):
 
 ```bash
 $ docker run --init --name unifi -d \
@@ -81,7 +79,7 @@ To enable layer 2 broadcast discovery on a controller container running in the l
 ```bash
     - p 10001:10001/udp \
 ```
-To enable speed tests from the UniFi iOS/Android apps add:
+To enable speed tests from the UniFi iOS & Android apps add:
 ```bash
     - p 6789:6789 \
 ```
@@ -122,7 +120,7 @@ Example docker-compose.yml for external Mongo DB container + UniFi container usi
 
 ### SSL custom certificate configuration support ([LetsEncrypt](https://letsencrypt.org/), etc.)
 
-**NOTE:** This feature is present in **ALL** dynamic tags and any static tag releases built after 2017-08-21.
+**NOTE:** This feature is present in **ALL** dynamic tags and any static release tags built after 2017-08-21.
 
 1. Map the Docker host cert storage location or volume to the `/usr/lib/unifi/cert` volume exposed by the container
 2. Must contain a PEM format SSL private key corresponding to the SSL certificate to be installed.
