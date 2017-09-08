@@ -103,7 +103,7 @@ $ docker run --init --name unifi -d \
 
 ---
 
-**Environment Variables:**
+**Environment variables:**
 * `DEBUG` Default: false - set to "true" for extra container and UniFi verbosity for debugging
 * `JVM_MAX_HEAP_SIZE` Default: 1024M - sets the max memory size for the container Java process (-Xmx)
 * `JVM_INIT_HEAP_SIZE` Default: unset - sets the start and min memory size for the container Java process (-Xms)
@@ -132,8 +132,6 @@ Example:
 
 **SSL custom certificate auto-configuration support ([LetsEncrypt](https://letsencrypt.org/), etc.):**
 
-**NB/IMPORTANT:** This feature is present in all dynamic tags and any static release tags built after 2017-08-21.
-
 1. Map the Docker host cert storage location or volume to the `/usr/lib/unifi/cert` volume exposed by the container
 2. Must contain a PEM format SSL private key corresponding to the SSL certificate to be installed.
 Private key file **MUST** be named `privkey.pem`. 
@@ -146,6 +144,8 @@ Certificate file **MUST** be named `fullchain.pem`.
 If you don't want to use a custom SSL certificate then the `/usr/lib/unifi/cert` volume can be left unmapped. Alternatively if the `privkey.pem` and/or `fullchain.pem` file are not present SSL customization will be skipped.
 
 To revert from a custom cert to a UniFi self-signed certificate stop the container, rename or remove `/DATA_VOLUME/unifi/data/keystore`, and restart the container. The UniFi application will automatically generate a new keystore file with a new self-signed cert.
+
+**NB/IMPORTANT:** This feature is present in all dynamic tags and any static release tags built after 2017-08-21.
 
 ---
 
