@@ -105,9 +105,9 @@ $ docker run --init --name unifi -d \
 
 **Environment Variables:**
 * `DEBUG` Default: false - set to "true" for extra container and UniFi verbosity for debugging
-* `JVM_MAX_HEAP_SIZE` Default: 1024M - specifies the max memory size for the container Java process (-Xmx1024M)
-* `JVM_INIT_HEAP_SIZE` Default: unset - specifies the startup and minimum memory size for the container Java process (-Xms)
-* `JVM_EXTRA_OPTS` Default: unset - specifies additional custom run flags or adjustments for the container Java process
+* `JVM_MAX_HEAP_SIZE` Default: 1024M - sets the max memory size for the container Java process (-Xmx)
+* `JVM_INIT_HEAP_SIZE` Default: unset - sets the start and min memory size for the container Java process (-Xms)
+* `JVM_EXTRA_OPTS` Default: unset - any additional custom run flags for the container Java process
 
 UniFi [system.properties](https://help.ubnt.com/hc/en-us/articles/205202580-UniFi-system-properties-File-Explanation) config file settings can be passed to the container as -e/--env flags at runtime as well [(more detail and a PDF with UBNT examples here)](https://community.ubnt.com/t5/UniFi-Wireless-Beta/Unifi-Controller-High-Availability/m-p/1801933/highlight/true#M43494). Envrionment variables must be in ALL CAPS and replace "." with "_".
 
@@ -124,9 +124,9 @@ Example:
 
 [Example basic `docker-compose.yml` file](https://raw.githubusercontent.com/goofball222/unifi/master/examples/docker-compose.yml), courtesy of Docker Hub user [jesk](https://hub.docker.com/r/jesk/)
 
-[Example advanced `docker-compose.yml` file with external Mongo DB service and UniFi service using environment variables](https://raw.githubusercontent.com/goofball222/unifi/master/examples/docker-compose-EXTERNALDB.yml)
+[Example advanced `docker-compose.yml` file](https://raw.githubusercontent.com/goofball222/unifi/master/examples/docker-compose-EXTERNALDB.yml) with external Mongo DB service and UniFi service using environment variables
 
-**NOTE:** Externalizing the DB server and/or using Mongo versions > 2.6.12 is highly experimental and completely unsupported by UBNT. Full documentation for an external DB setup is outside the scope of this README and is left as an exercise for the interested reader. Additional information available on the [UBNT forums in this post](https://community.ubnt.com/t5/UniFi-Wireless/External-MongoDB-Server/m-p/1711073/highlight/true#M188357) and in the PDF post linked in the "Environment Variables" section.
+**NB/IMPORTANT:** Externalizing the DB server and/or using Mongo DB versions > 2.6.12 is highly experimental and completely unsupported by UBNT. Full documentation for an external DB setup is outside the scope of this README and is left as an exercise for the interested reader. Additional information available on the [UBNT forums in this post](https://community.ubnt.com/t5/UniFi-Wireless/External-MongoDB-Server/m-p/1711073/highlight/true#M188357) and in the PDF post linked in the "Environment Variables" section.
 
 ---
 
