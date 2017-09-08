@@ -1,0 +1,29 @@
+version: '2.2'
+
+services:
+  mongo:
+    image: mongo:latest
+    volumes:
+      - /DATA_VOLUME/unifi/data/db:/data/db
+
+  unifi:
+    image: goofball222/unifi:latest
+    init: true
+    links:
+      - mongo
+    ports:
+      - "3478:3478/udp"
+      - "8080:8080"
+      - "8443:8443"
+      - "8880:8880"
+      - "8843:8843"
+    volumes:
+      - /DATA_VOLUME/unifi/cert:/usr/lib/unifi/cert
+      - /DATA_VOLUME/unifi/data:/usr/lib/unifi/data
+      - /DATA_VOLUME/unifi/logs:/usr/lib/unifi/logs
+    environment:
+      - DB_MONGO_LOCAL=false
+      - DB_MONGO_URI=mongodb://mongo:27017/unifi
+      - STATDB_MONGO_URI=mongodb://mongo:27017/unifi_stat
+      - UNIFI_DB_NAME=unifi
+
