@@ -130,9 +130,9 @@ Example:
 
 ---
 
-**SSL custom certificate configuration support ([LetsEncrypt](https://letsencrypt.org/), etc.)**
+**SSL custom certificate auto-configuration support ([LetsEncrypt](https://letsencrypt.org/), etc.):**
 
-**This feature is present in **ALL** dynamic tags and any static release tags built after 2017-08-21.**
+**NB/IMPORTANT:** This feature is present in all dynamic tags and any static release tags built after 2017-08-21.
 
 1. Map the Docker host cert storage location or volume to the `/usr/lib/unifi/cert` volume exposed by the container
 2. Must contain a PEM format SSL private key corresponding to the SSL certificate to be installed.
