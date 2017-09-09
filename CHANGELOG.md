@@ -5,6 +5,28 @@
     * Update Docker Hub settings to build from new unifi55 branch
     * Move docker-compose.yml to examples subfolder
     * Create docker-compose-EXTERNALDB.yml in examples subfolder
+    * Switch container back to initially running as root/UID=0
+        * Allows startup to insure permissions for directories and data are correct at each run
+        * Can be overridden at startup via Docker --user command (IE: --user unifi)
+    * Dockerfile changes:
+        * Remove "USER unifi", handling process setuid/setgid with "gosu" instead of relying on Docker
+        * Add ENV GOSU_VERSION variable
+        * Add gosu download and setup in RUN
+        * Add set +x to RUN to provide some minimal verbosity transparency into build steps
+        * Move "&&" in RUN from end of commands to start of next line, format is cleaner
+        * Change curl UniFi download to output to specific file in /tmp
+        * Remove unused ENV JVM_MAX_THREAD_STACK_SIZE
+        * Change ENTRYPOINT to point to "docker-entrypoint.sh"
+        * Add CMD "unifi" as default action for entrypoint, makes it simpler to override container startup for maintenance, etc.
+    * Move scripts and files to root subfolders matching finished container paths
+    * Rename unifi-init to docker-entrypoint.sh, move to /usr/local/bin/
+    * docker-entrypoint.sh changes:
+        * Support Dockerfile ENTRYPOINT CMD passthrough
+        * Remove JVM_MAX_THREAD_STACK_SIZE
+        * Clean up other JVM ENV options processing
+        * Add logic to check for script running as UID=0
+            * Allows to adjust file/folder permissions, then setuid/setgid for final Java process to 999
+            * Further supports commands to be passed through and run as root or other specified user
     * Rework README.md
 * **2017-09-01:**
     * Update sc VERSION to [5.5.23](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-23-Stable-Candidate-has-been-released/ba-p/2049377)

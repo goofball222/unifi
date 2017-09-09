@@ -39,13 +39,13 @@ build:
 	-t $(NS)/$(IMAGE_NAME):$(TAG) .
 
 shell:
-	-docker run -it --rm --name $(CONTAINER_NAME)_$(CONTAINER_INSTANCE) --entrypoint "/bin/bash" $(PORTS) $(VOLUMES) $(OTHER) $(ENV) $(NS)/$(IMAGE_NAME):$(TAG)
+	-docker run -it --rm --name $(CONTAINER_NAME)_$(CONTAINER_INSTANCE) $(PORTS) $(VOLUMES) $(OTHER) $(ENV) $(NS)/$(IMAGE_NAME):$(TAG) /bin/bash
 
 run:
-	-docker run --rm --init --name $(CONTAINER_NAME)_$(CONTAINER_INSTANCE) $(PORTS) $(VOLUMES) $(OTHER) $(ENV) $(NS)/$(IMAGE_NAME):$(TAG)
+	-docker run --rm --name $(CONTAINER_NAME)_$(CONTAINER_INSTANCE) $(PORTS) $(VOLUMES) $(OTHER) $(ENV) $(NS)/$(IMAGE_NAME):$(TAG)
 
 start:
-	-docker run -d --init --name $(CONTAINER_NAME)_$(CONTAINER_INSTANCE) $(PORTS) $(VOLUMES) $(OTHER) $(ENV) $(NS)/$(IMAGE_NAME):$(TAG)
+	-docker run -d --name $(CONTAINER_NAME)_$(CONTAINER_INSTANCE) $(PORTS) $(VOLUMES) $(OTHER) $(ENV) $(NS)/$(IMAGE_NAME):$(TAG)
 
 stop:
 	-docker stop $(CONTAINER_NAME)_$(CONTAINER_INSTANCE)

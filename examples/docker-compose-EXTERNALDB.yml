@@ -2,21 +2,20 @@ version: '2.2'
 
 services:
   mongo:
-    image: mongo:latest
+    image: mongo
     volumes:
       - /DATA_VOLUME/unifi/data/db:/data/db
 
   unifi:
-    image: goofball222/unifi:latest
-    init: true
+    image: goofball222/unifi
     links:
       - mongo
     ports:
-      - "3478:3478/udp"
-      - "8080:8080"
-      - "8443:8443"
-      - "8880:8880"
-      - "8843:8843"
+      - 3478:3478/udp
+      - 8080:8080
+      - 8443:8443
+      - 8880:8880
+      - 8843:8843
     volumes:
       - /DATA_VOLUME/unifi/cert:/usr/lib/unifi/cert
       - /DATA_VOLUME/unifi/data:/usr/lib/unifi/data

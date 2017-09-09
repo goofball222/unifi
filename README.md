@@ -9,7 +9,7 @@
 | [sc](https://github.com/goofball222/unifi/blob/master/sc/Dockerfile) | [5.6.16](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-16-Stable-Candidate-has-been-released/ba-p/2056618) | UniFi latest stable candidate release | 2017-09-08 |
 | [testing](https://github.com/goofball222/unifi/blob/master/testing/Dockerfile) | [5.6.16](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-16-Testing-has-been-released/ba-p/2049379) | UniFi latest testing release | 2017-09-01 |
 | [unstable](https://github.com/goofball222/unifi/blob/master/unstable/Dockerfile) | [5.6.12](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-12-Unstable-has-been-released/ba-p/2005576) | UniFi latest unstable release | 2017-07-26 |
-| [unifi55-sc](https://github.com/goofball222/unifi/blob/unifi55/sc/Dockerfile) | [5.5.23](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-23-Stable-Candidate-has-been-released/ba-p/2049377) | UniFi latest stable candidate release | 2017-09-01 |
+| [unifi55-sc](https://github.com/goofball222/unifi/blob/unifi55/sc/Dockerfile) | [5.5.23](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-23-Stable-Candidate-has-been-released/ba-p/2049377) | UniFi v5.5 stable candidate release | 2017-09-01 |
 | [unifi54](https://github.com/goofball222/unifi/blob/unifi54/stable/Dockerfile) | [5.4.19](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-19-Stable-has-been-released/ba-p/1995714) | UniFi LTS v5.4 latest stable release | 2017-07-17 |
 | [release-5.5.20](https://github.com/goofball222/unifi/releases/tag/5.5.20) | [5.5.20](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-5-20-Stable-has-been-released/ba-p/2011817) | Static stable release tag/image | 2017-07-31 |
 | [release-5.4.19](https://github.com/goofball222/unifi/releases/tag/5.4.19) | [5.4.19](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-19-Stable-has-been-released/ba-p/1995714) | Static stable release tag/image | 2017-07-17 |
@@ -21,7 +21,9 @@
 
 ---
 
-### **FROM 2017-09-01 ONWARD:** For attack surface reduction and increased security the container is built to run with an internal user & group `unifi` having a UID & GID of 999. Make sure to set the ownership on existing mapped volumes and data accordingly before startup!
+### **FROM 2017-09-01 ONWARD:** For attack surface reduction and increased security the container is built to run the UniFi processes with an internal user & group `unifi` having a UID & GID of 999.
+The container will attempt to adjust the permissions on mapped volumes and data before dropping priveleges to start the UniFi processes.
+If the container is being run with a different Docker --user setting permissions may need to be fixed manually.
 
 IE: `chown -R 999:999 /DATA_VOLUME/unifi/{cert,data,logs}`
 
@@ -56,7 +58,7 @@ This container exposes the following ports (see: https://help.ubnt.com/hc/en-us/
 **The most basic way to run this container:**
 
 ```bash
-$ docker run --init --name unifi -d \
+$ docker run--name unifi -d \
     -p 3478:3478/udp -p 8080:8080 -p 8443:8443 \
     -p 8880:8880 -p 8843:8843 \
     goofball222/unifi
@@ -68,7 +70,7 @@ $ docker run --init --name unifi -d \
 Have the container store the config, databases & logs on a local filesystem or in a specific, known data volume (recommended for persistence and troubleshooting) with NO layer 2 discovery (layer 3/remote controller):
 
 ```bash
-$ docker run --init --name unifi -d \
+$ docker run --name unifi -d \
     -p 3478:3478/udp -p 8080:8080 -p 8443:8443 \
     -p 8880:8880 -p 8843:8843 \
     -v /DATA_VOLUME/unifi/certs:/usr/lib/unifi/cert  \
@@ -93,7 +95,7 @@ Use --network=host mode. Does not allow for port remapping. You may need to manu
 **Please make sure to read the "NETWORK: HOST" section of the [Docker "run" reference](https://docs.docker.com/engine/reference/run/#network-settings) and understand the implications of this setting before using.**
 
 ```bash
-$ docker run --init --name unifi -d \
+$ docker run --name unifi -d \
     --network="host" \
     -v /DATA_VOLUME/unifi/certs:/usr/lib/unifi/cert  \
     -v /DATA_VOLUME/unifi/data:/usr/lib/unifi/data  \

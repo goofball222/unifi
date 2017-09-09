@@ -1,17 +1,19 @@
 #!/usr/bin/env bash
 
-# UniFi init script for Docker container.
+# docker-entrypoint.sh script for UniFi Docker container.
 # Includes functionality to import custom SSL certificates into UniFi keystore.
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-# Script version: 0.3.2
-# Last updated date: 2017-09-01
+SCRIPT_VERSION="0.4.1"
+# Last updated date: 2017-09-08
 
-[ "$DEBUG" == 'true' ] && set -x
+if [ "$DEBUG" == 'true' ]; then
+    set -xEeuo pipefail
+else
+    set -Eeuo pipefail
+fi
 
-SCRIPT_VERSION="0.3.2"
-
-echo "$(date +"[%Y-%m-%d %T,%3N]") unifi-init script version ${SCRIPT_VERSION} startup."
+echo "$(date +"[%Y-%m-%d %T,%3N]") Script version ${SCRIPT_VERSION} startup."
 echo "$(date +"[%Y-%m-%d %T,%3N]") Setting params/variables/paths."
 
 BASEDIR="/usr/lib/unifi"
@@ -20,17 +22,8 @@ DATADIR=${BASEDIR}/data
 LOGDIR=${BASEDIR}/logs
 RUNDIR=${BASEDIR}/run
 
-if [ ! -z "${JVM_MAX_HEAP_SIZE}" ]; then
-    JVM_EXTRA_OPTS="${JVM_EXTRA_OPTS} -Xmx${JVM_MAX_HEAP_SIZE}"
-fi
-
-if [ ! -z "${JVM_INIT_HEAP_SIZE}" ]; then
-    JVM_EXTRA_OPTS="${JVM_EXTRA_OPTS} -Xms${JVM_INIT_HEAP_SIZE}"
-fi
-
-if [ ! -z "${JVM_MAX_THREAD_STACK_SIZE}" ]; then
-    JVM_EXTRA_OPTS="${JVM_EXTRA_OPTS} -Xss${JVM_MAX_THREAD_STACK_SIZE}"
-fi
+[ ! -z "${JVM_MAX_HEAP_SIZE}" ] && JVM_EXTRA_OPTS="${JVM_EXTRA_OPTS} -Xmx${JVM_MAX_HEAP_SIZE}"
+[ ! -z "${JVM_INIT_HEAP_SIZE}" ] && JVM_EXTRA_OPTS="${JVM_EXTRA_OPTS} -Xms${JVM_INIT_HEAP_SIZE}"
 
 JVM_EXTRA_OPTS="${JVM_EXTRA_OPTS} -Dunifi.datadir=${DATADIR} -Dunifi.logdir=${LOGDIR} -Dunifi.rundir=${RUNDIR}"
 
@@ -43,7 +36,7 @@ if [ ! -e ${DATADIR}/system.properties ]; then
     echo "$(date +"[%Y-%m-%d %T,%3N]") '${DATADIR}/system.properties' doesn't exist. Copying from '${BASEDIR}/system.properties.default'."
     cp ${BASEDIR}/system.properties.default ${DATADIR}/system.properties
 else
-    echo "$(date +"[%Y-%m-%d %T,%3N]") Existing '${DATADIR}/system.properties' found. Setting container-mode options to 'true'."
+    echo "$(date +"[%Y-%m-%d %T,%3N]") Existing '${DATADIR}/system.properties' found. Setting its container-mode options to 'true'."
     if ! grep -q "unifi.logStdout" "${DATADIR}/system.properties"; then
         echo "unifi.logStdout=true" >> ${DATADIR}/system.properties
     else
@@ -105,5 +98,24 @@ else
 fi
 # End SSL certificate setup
 
-echo "$(date +"[%Y-%m-%d %T,%3N]") -- RUN: /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start"
-exec /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start
+if [ "$(id -u)" = '0' ]; then
+    echo "$(date +"[%Y-%m-%d %T,%3N]") Running with UID=0, Insuring permissions are correct - 'chown -R unifi:unifi ${BASEDIR}'."
+    chown -R unifi:unifi /usr/lib/unifi
+    if [[ "$@" == 'unifi' ]]; then
+        # Drop from uid 0 (root) to uid 999 (unifi) and run java
+        echo "$(date +"[%Y-%m-%d %T,%3N]") -- EXEC: gosu unifi:unifi /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start"
+        exec gosu unifi:unifi /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start
+    else
+        echo "$(date +"[%Y-%m-%d %T,%3N]") -- EXEC: $@"
+        exec "$@"
+    fi
+else
+    echo "$(date +"[%Y-%m-%d %T,%3N]") Entrypoint not started as UID 0, unable to change permissions. Requested CMD may not work."
+    if [[ "$@" == 'unifi' ]]; then
+        echo "$(date +"[%Y-%m-%d %T,%3N]") -- EXEC: /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start"
+        exec /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start
+    else
+        echo "$(date +"[%Y-%m-%d %T,%3N]") -- EXEC: $@"
+        exec "$@"
+    fi
+fi
