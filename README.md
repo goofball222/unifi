@@ -22,7 +22,7 @@
 ---
 
 ### **FROM 2017-09-01 ONWARD:** For attack surface reduction and increased security the container is built to run the UniFi processes with an internal user & group `unifi` having a UID & GID of 999.
-The container will attempt to adjust the permissions on mapped volumes and data before dropping priveleges to start the UniFi processes.
+The container will attempt to adjust the permissions on mapped volumes and data before dropping privileges to start the UniFi processes.
 If the container is being run with a different Docker --user setting permissions may need to be fixed manually.
 
 IE: `chown -R 999:999 /DATA_VOLUME/unifi/{cert,data,logs}`
@@ -67,7 +67,7 @@ $ docker run--name unifi -d \
 
 **Recommended run command line -**
 
-Have the container store the config, databases & logs on a local filesystem or in a specific, known data volume (recommended for persistence and troubleshooting) with NO layer 2 discovery (layer 3/remote controller):
+Have the container store the config, databases & logs on a local file-system or in a specific, known data volume (recommended for persistence and troubleshooting) with NO layer 2 discovery (layer 3/remote controller):
 
 ```bash
 $ docker run --name unifi -d \
