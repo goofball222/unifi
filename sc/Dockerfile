@@ -6,6 +6,8 @@ ENV \
     DEBUG=false \
     GOSU_VERSION=1.10 \
     JVM_MAX_HEAP_SIZE=1024M \
+    JVM_INIT_HEAP_SIZE= \
+    JVM_EXTRA_OPTS= \
     MONGO_UID=998 \
     MONGO_GID=998 \
     UNIFI_UID=999 \
