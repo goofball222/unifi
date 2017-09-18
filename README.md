@@ -27,7 +27,7 @@ If the container is being run with a different Docker --user setting permissions
 
 IE: `chown -R 999:999 /DATA_VOLUME/unifi/{cert,data,logs}`
 
-You can set your own custom UID and GID. For mor information see the "Environment variables" section in this document.
+You can set your own custom UID and GID. For more information see the "Environment variables" section in this document.
 
 ---
 
