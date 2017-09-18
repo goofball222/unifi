@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 
 # docker-entrypoint.sh script for UniFi Docker container.
-# Includes functionality to import custom SSL certificates into UniFi keystore.
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-SCRIPT_VERSION="0.4.1"
-# Last updated date: 2017-09-08
+SCRIPT_VERSION="0.4.4"
+# Last updated date: 2017-09-18
 
 if [ "$DEBUG" == 'true' ]; then
     set -xEeuo pipefail
@@ -31,6 +30,7 @@ JVM_OPTS="${JVM_EXTRA_OPTS} -Djava.awt.headless=true -Dfile.encoding=UTF-8"
 
 cd ${BASEDIR}
 
+# system.properties container mode setup (echo logs to STDOUT, support ENV read)
 echo "$(date +"[%Y-%m-%d %T,%3N]") Validating system.properties setup for container."
 if [ ! -e ${DATADIR}/system.properties ]; then
     echo "$(date +"[%Y-%m-%d %T,%3N]") '${DATADIR}/system.properties' doesn't exist. Copying from '${BASEDIR}/system.properties.default'."
@@ -49,6 +49,7 @@ else
         sed -i '/unifi.config.readEnv/c\unifi.config.readEnv=true' ${DATADIR}/system.properties
     fi
 fi
+# End system.properties container mode setup
 
 # SSL certificate setup
 if [ -e ${CERTDIR}/privkey.pem ] && [ -e ${CERTDIR}/fullchain.pem ]; then
@@ -98,19 +99,27 @@ else
 fi
 # End SSL certificate setup
 
+# Application run setup
 if [ "$(id -u)" = '0' ]; then
-    echo "$(date +"[%Y-%m-%d %T,%3N]") Running with UID=0, Insuring permissions are correct - 'chown -R unifi:unifi ${BASEDIR}'."
+    echo "$(date +"[%Y-%m-%d %T,%3N]") Entrypoint running with UID=0."
+    if [ "$(id unifi -u)" != "${UNIFI_UID}" ] || [ "$(id unifi -g)" != "${UNIFI_GID}" ]; then
+        echo "$(date +"[%Y-%m-%d %T,%3N]") Setting custom unifi UID/GID: UID=${UNIFI_UID}, GID=${UNIFI_GID}"
+        usermod -u ${UNIFI_UID} unifi && groupmod -g ${UNIFI_GID} unifi
+    else
+        echo "$(date +"[%Y-%m-%d %T,%3N]") UID/GID for unifi are unchanged: UID=${UNIFI_UID}, GID=${UNIFI_GID}"
+    fi
+    echo "$(date +"[%Y-%m-%d %T,%3N]") Insuring permissions are correct before dropping privs - 'chown -R unifi:unifi ${BASEDIR}'."
     chown -R unifi:unifi /usr/lib/unifi
     if [[ "$@" == 'unifi' ]]; then
-        # Drop from uid 0 (root) to uid 999 (unifi) and run java
         echo "$(date +"[%Y-%m-%d %T,%3N]") -- EXEC: gosu unifi:unifi /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start"
         exec gosu unifi:unifi /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start
     else
-        echo "$(date +"[%Y-%m-%d %T,%3N]") -- EXEC: $@"
+        echo "$(date +"[%Y-%m-%d %T,%3N]") -- EXEC: $@ as UID=0"
         exec "$@"
     fi
 else
-    echo "$(date +"[%Y-%m-%d %T,%3N]") Entrypoint not started as UID 0, unable to change permissions. Requested CMD may not work."
+    echo "$(date +"[%Y-%m-%d %T,%3N]") Entrypoint not started as UID 0."
+    echo "$(date +"[%Y-%m-%d %T,%3N]") Unable to change permissions or set custom UID/GID if configured. Requested CMD may not work."
     if [[ "$@" == 'unifi' ]]; then
         echo "$(date +"[%Y-%m-%d %T,%3N]") -- EXEC: /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start"
         exec /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start
@@ -119,3 +128,4 @@ else
         exec "$@"
     fi
 fi
+# End application run setup

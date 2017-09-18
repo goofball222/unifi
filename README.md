@@ -21,11 +21,13 @@
 
 ---
 
-### **FROM 2017-09-01 ONWARD:** For attack surface reduction and increased security the container is built to run the UniFi processes with an internal user & group `unifi` having a UID & GID of 999.
+### **FROM 2017-09-01 ONWARD:** For attack surface reduction and increased security the container is built to run the UniFi processes with an internal user & group `unifi` having a default UID & GID of 999.
 The container will attempt to adjust the permissions on mapped volumes and data before dropping privileges to start the UniFi processes.
 If the container is being run with a different Docker --user setting permissions may need to be fixed manually.
 
 IE: `chown -R 999:999 /DATA_VOLUME/unifi/{cert,data,logs}`
+
+You can set your own custom UID and GID. For mor information see the "Environment variables" section in this document.
 
 ---
 
@@ -110,8 +112,10 @@ $ docker run --name unifi -d \
 * `JVM_MAX_HEAP_SIZE` Default: 1024M - sets the max memory size for the container Java process (-Xmx)
 * `JVM_INIT_HEAP_SIZE` Default: unset - sets the start and min memory size for the container Java process (-Xms)
 * `JVM_EXTRA_OPTS` Default: unset - any additional custom run flags for the container Java process
+* `UNIFI_UID` Default: 999 - specifies the UID for the container internal unifi user (used for process and file ownership)
+* `UNIFI_GID` Default: 999 - specifies the GID for the container internal unifi group (used for file ownership)
 
-UniFi [system.properties](https://help.ubnt.com/hc/en-us/articles/205202580-UniFi-system-properties-File-Explanation) config file settings can be passed to the container as -e/--env flags at runtime as well [(more detail and a PDF with UBNT examples here)](https://community.ubnt.com/t5/UniFi-Wireless-Beta/Unifi-Controller-High-Availability/m-p/1801933/highlight/true#M43494). Envrionment variables must be in ALL CAPS and replace "." with "_".
+Additionally UniFi [system.properties](https://help.ubnt.com/hc/en-us/articles/205202580-UniFi-system-properties-File-Explanation) config file settings can be passed to the container as -e/--env flags at runtime [(more detail and a PDF with UBNT examples here)](https://community.ubnt.com/t5/UniFi-Wireless-Beta/Unifi-Controller-High-Availability/m-p/1801933/highlight/true#M43494). Envrionment variables must be in ALL CAPS and replace "." with "_".
 
 Example:
 

@@ -1,8 +1,15 @@
 FROM debian:jessie-slim
 MAINTAINER The Goofball "goofball222@gmail.com"
 
-ENV DEBIAN_FRONTEND=noninteractive
-ENV GOSU_VERSION 1.10
+ENV \
+    DEBIAN_FRONTEND=noninteractive \
+    DEBUG=false \
+    GOSU_VERSION=1.10 \
+    JVM_MAX_HEAP_SIZE=1024M \
+    MONGO_UID=998 \
+    MONGO_GID=998 \
+    UNIFI_UID=999 \
+    UNIFI_GID=999
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -24,10 +31,10 @@ WORKDIR /usr/lib/unifi
 COPY root /
 
 RUN set -x \
-    && groupadd -r mongodb -g 998 \
-    && useradd --no-log-init -r -u 998 -g 998 mongodb \
-    && groupadd -r unifi -g 999 \
-    && useradd --no-log-init -r -u 999 -g 999 unifi \
+    && groupadd -r mongodb -g $MONGO_GID \
+    && useradd --no-log-init -r -u $MONGO_UID -g $MONGO_GID mongodb \
+    && groupadd -r unifi -g $UNIFI_GID \
+    && useradd --no-log-init -r -u $UNIFI_UID -g $UNIFI_GID unifi \
     && mkdir /usr/share/man/man1 \
     && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 > /dev/null \
     && echo "deb http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen" \
@@ -68,12 +75,6 @@ RUN set -x \
 EXPOSE 3478/udp 6789/tcp 8080/tcp 8443/tcp 8843/tcp 8880/tcp 10001/udp
 
 VOLUME ["/usr/lib/unifi/cert", "/usr/lib/unifi/data", "/usr/lib/unifi/logs"]
-
-ENV \
-    DEBUG=false \
-    JVM_MAX_HEAP_SIZE=1024M \
-    JVM_INIT_HEAP_SIZE= \
-    JVM_EXTRA_OPTS=
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 

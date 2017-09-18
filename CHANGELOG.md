@@ -1,4 +1,12 @@
 * **2017-09-08:**
+    * docker-entrypoint.sh changes:
+        * Add support for setting custom UID/GID via UNIFI_UID and UNIFI_GID enviroment variables
+    * Dockerfile changes:
+        * Add support for setting custom UID/GID via UNIFI_UID and UNIFI_GID enviroment variables
+        * Move all hardcoded ENV settings to beginning of Dockerfile in a single layer
+    * Update README.md to document UNIFI_UID and UNIFI_GID enviroment variables
+---
+* **2017-09-08:**
     * Create unifi55 branch allowing for v5.6.X stable candidates/stable and v5.5.X move to LTS
     * Move master/sc v5.5.23 to unifi55/sc
     * Update master/sc VERSION to [5.6.16](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-16-Stable-Candidate-has-been-released/ba-p/2056618)
