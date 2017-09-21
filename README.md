@@ -108,10 +108,11 @@ $ docker run --name unifi -d \
 ---
 
 **Environment variables:**
+* `BIND_PRIV` Default: false - set to "true" to allow UniFi process to bind to container internal ports <1024
 * `DEBUG` Default: false - set to "true" for extra container and UniFi verbosity for debugging
-* `JVM_MAX_HEAP_SIZE` Default: 1024M - sets the max memory size for the container Java process (-Xmx)
 * `JVM_INIT_HEAP_SIZE` Default: unset - sets the start and min memory size for the container Java process (-Xms)
 * `JVM_EXTRA_OPTS` Default: unset - any additional custom run flags for the container Java process
+* `JVM_MAX_HEAP_SIZE` Default: 1024M - sets the max memory size for the container Java process (-Xmx)
 * `UNIFI_UID` Default: 999 - specifies the UID for the container internal unifi user (used for process and file ownership)
 * `UNIFI_GID` Default: 999 - specifies the GID for the container internal unifi group (used for file ownership)
 

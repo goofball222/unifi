@@ -1,4 +1,13 @@
-* **2017-09-08:**
+* **2017-09-21:**
+    * docker-entrypoint.sh changes:
+        * Add support for privileged port (<1024) binding, enabled via setting BIND_PRIV environment variable to 'true'
+            * Uses debian:jessie-slim included setcap to grant cap_net_bind_service=+ep on java binary at each run.
+    * Dockerfile changes:
+        * Add BIND_PRIV ENV setting, default to false
+        * Reorder file contents slightly
+    * Update README.md to document BIND_PRIV environment variable
+---
+* **2017-09-18:**
     * docker-entrypoint.sh changes:
         * Add support for setting custom UID/GID via UNIFI_UID and UNIFI_GID enviroment variables
     * Dockerfile changes:

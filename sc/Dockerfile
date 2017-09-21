@@ -1,18 +1,6 @@
 FROM debian:jessie-slim
 MAINTAINER The Goofball "goofball222@gmail.com"
 
-ENV \
-    DEBIAN_FRONTEND=noninteractive \
-    DEBUG=false \
-    GOSU_VERSION=1.10 \
-    JVM_MAX_HEAP_SIZE=1024M \
-    JVM_INIT_HEAP_SIZE= \
-    JVM_EXTRA_OPTS= \
-    MONGO_UID=998 \
-    MONGO_GID=998 \
-    UNIFI_UID=999 \
-    UNIFI_GID=999
-
 ARG BUILD_DATE
 ARG VCS_REF
 ARG VERSION
@@ -27,6 +15,19 @@ LABEL \
     org.label-schema.build-date=$BUILD_DATE \
     org.label-schema.license="Apache-2.0" \
     org.label-schema.schema-version="1.0"
+
+ENV \
+    BIND_PRIV=false \
+    DEBIAN_FRONTEND=noninteractive \
+    DEBUG=false \
+    GOSU_VERSION=1.10 \
+    JVM_EXTRA_OPTS= \
+    JVM_INIT_HEAP_SIZE= \
+    JVM_MAX_HEAP_SIZE=1024M \
+    MONGO_GID=998 \
+    MONGO_UID=998 \
+    UNIFI_GID=999 \
+    UNIFI_UID=999
 
 WORKDIR /usr/lib/unifi
 

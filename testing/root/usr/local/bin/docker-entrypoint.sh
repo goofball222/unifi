@@ -3,10 +3,10 @@
 # docker-entrypoint.sh script for UniFi Docker container.
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-SCRIPT_VERSION="0.4.4"
-# Last updated date: 2017-09-18
+SCRIPT_VERSION="0.4.6"
+# Last updated date: 2017-09-21
 
-if [ "$DEBUG" == 'true' ]; then
+if [ "${DEBUG}" == 'true' ]; then
     set -xEeuo pipefail
 else
     set -Eeuo pipefail
@@ -108,24 +108,31 @@ if [ "$(id -u)" = '0' ]; then
     else
         echo "$(date +"[%Y-%m-%d %T,%3N]") UID/GID for unifi are unchanged: UID=${UNIFI_UID}, GID=${UNIFI_GID}"
     fi
-    echo "$(date +"[%Y-%m-%d %T,%3N]") Insuring permissions are correct before dropping privs - 'chown -R unifi:unifi ${BASEDIR}'."
+
+    echo "$(date +"[%Y-%m-%d %T,%3N]") Ensuring file permissions are correct before dropping privs - 'chown -R unifi:unifi ${BASEDIR}'."
     chown -R unifi:unifi /usr/lib/unifi
-    if [[ "$@" == 'unifi' ]]; then
+
+    if [[ "${@}" == 'unifi' ]]; then
+        if [ "${BIND_PRIV}" == 'true' ]; then
+            echo "$(date +"[%Y-%m-%d %T,%3N]") Support binding ports <1024 'setcap 'cap_net_bind_service=+ep' /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java'."
+            setcap 'cap_net_bind_service=+ep' /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+        fi
+
         echo "$(date +"[%Y-%m-%d %T,%3N]") -- EXEC: gosu unifi:unifi /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start"
         exec gosu unifi:unifi /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start
     else
-        echo "$(date +"[%Y-%m-%d %T,%3N]") -- EXEC: $@ as UID=0"
-        exec "$@"
+        echo "$(date +"[%Y-%m-%d %T,%3N]") -- EXEC: ${@} as UID=0"
+        exec "${@}"
     fi
 else
     echo "$(date +"[%Y-%m-%d %T,%3N]") Entrypoint not started as UID 0."
     echo "$(date +"[%Y-%m-%d %T,%3N]") Unable to change permissions or set custom UID/GID if configured. Requested CMD may not work."
-    if [[ "$@" == 'unifi' ]]; then
+    if [[ "${@}" == 'unifi' ]]; then
         echo "$(date +"[%Y-%m-%d %T,%3N]") -- EXEC: /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start"
         exec /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start
     else
-        echo "$(date +"[%Y-%m-%d %T,%3N]") -- EXEC: $@"
-        exec "$@"
+        echo "$(date +"[%Y-%m-%d %T,%3N]") -- EXEC: ${@}"
+        exec "${@}"
     fi
 fi
 # End application run setup
