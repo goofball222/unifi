@@ -108,13 +108,15 @@ $ docker run --name unifi -d \
 ---
 
 **Environment variables:**
-* `BIND_PRIV` Default: false - set to "true" to allow UniFi process to bind to container internal ports <1024
-* `DEBUG` Default: false - set to "true" for extra container and UniFi verbosity for debugging
-* `JVM_INIT_HEAP_SIZE` Default: unset - sets the start and min memory size for the container Java process (-Xms)
-* `JVM_EXTRA_OPTS` Default: unset - any additional custom run flags for the container Java process
-* `JVM_MAX_HEAP_SIZE` Default: 1024M - sets the max memory size for the container Java process (-Xmx)
-* `UNIFI_UID` Default: 999 - specifies the UID for the container internal unifi user (used for process and file ownership)
-* `UNIFI_GID` Default: 999 - specifies the GID for the container internal unifi group (used for file ownership)
+| Variable | Default | Description |
+| :--- | :---: | --- |
+| `BIND_PRIV` | *false* | Set to "true" to allow UniFi process to bind to container internal ports <1024 |
+| `DEBUG` | *false* | Set to "true" for extra container and UniFi verbosity for debugging |
+| `JVM_INIT_HEAP_SIZE` | *unset* | Sets the start and min memory size for the container Java process (-Xms) |
+| `JVM_EXTRA_OPTS` | *unset* | Any additional custom run flags for the container Java process |
+| `JVM_MAX_HEAP_SIZE` | *1024M* | Sets the max memory size for the container Java process (-Xmx) |
+| `UNIFI_UID` | *999* | Specifies the UID for the container internal unifi user (used for process and file ownership) |
+| `UNIFI_GID` | *999* | Specifies the GID for the container internal unifi group (used for file ownership) |
 
 Additionally UniFi [system.properties](https://help.ubnt.com/hc/en-us/articles/205202580-UniFi-system-properties-File-Explanation) config file settings can be passed to the container as -e/--env flags at runtime [(more detail and a PDF with UBNT examples here)](https://community.ubnt.com/t5/UniFi-Wireless-Beta/Unifi-Controller-High-Availability/m-p/1801933/highlight/true#M43494). Envrionment variables must be in ALL CAPS and replace "." with "_".
 
