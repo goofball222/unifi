@@ -1,3 +1,14 @@
+* **2017-09-22:**
+    * docker-entrypoint.sh changes:
+        * Add support for running UniFi Java and Mongo processes as UID=0 (root) when explicitly requested, default to run as UID/GID=999 (unifi) for security
+        * Add log function to replace the myriad of "echo $(date blah)" calls, tee output to append to UniFi server.log
+        * Reintroduce exit signals trap and add exit_handler function to call UniFi .jar stop
+        * Add idle_handler function to spawn sacrificial tail & wait process used in exit signals trap
+        * Add logic to catch 'setcap' failure and exit with RUNAS_UID0 suggestion
+        * Various additions, updates and changes to log message formatting
+    * Dockerfile changes:
+        * Add RUNAS_UID0 ENV setting, default to false
+    * Update README.md to document RUNAS_UID0 environment variable
 * **2017-09-21:**
     * docker-entrypoint.sh changes:
         * Add support for privileged port (<1024) binding, enabled via setting BIND_PRIV environment variable to 'true'

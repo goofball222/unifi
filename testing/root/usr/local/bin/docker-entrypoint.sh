@@ -1,25 +1,28 @@
 #!/usr/bin/env bash
 
-# docker-entrypoint.sh script for UniFi Docker container.
+# docker-entrypoint.sh script for UniFi Docker container
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-SCRIPT_VERSION="0.4.6"
-# Last updated date: 2017-09-21
+SCRIPT_VERSION="0.5.4"
+# Last updated date: 2017-09-22
+
+set -Eeuo pipefail
 
 if [ "${DEBUG}" == 'true' ]; then
-    set -xEeuo pipefail
-else
-    set -Eeuo pipefail
+    set -x
 fi
-
-echo "$(date +"[%Y-%m-%d %T,%3N]") Script version ${SCRIPT_VERSION} startup."
-echo "$(date +"[%Y-%m-%d %T,%3N]") Setting params/variables/paths."
 
 BASEDIR="/usr/lib/unifi"
 CERTDIR=${BASEDIR}/cert
 DATADIR=${BASEDIR}/data
 LOGDIR=${BASEDIR}/logs
 RUNDIR=${BASEDIR}/run
+
+log() {
+    echo "$(date +"[%Y-%m-%d %T,%3N]") <docker-entrypoint> $*" | tee -a ${BASEDIR}/logs/server.log
+}
+
+log "INFO - Script version ${SCRIPT_VERSION}"
 
 [ ! -z "${JVM_MAX_HEAP_SIZE}" ] && JVM_EXTRA_OPTS="${JVM_EXTRA_OPTS} -Xmx${JVM_MAX_HEAP_SIZE}"
 [ ! -z "${JVM_INIT_HEAP_SIZE}" ] && JVM_EXTRA_OPTS="${JVM_EXTRA_OPTS} -Xms${JVM_INIT_HEAP_SIZE}"
@@ -31,12 +34,12 @@ JVM_OPTS="${JVM_EXTRA_OPTS} -Djava.awt.headless=true -Dfile.encoding=UTF-8"
 cd ${BASEDIR}
 
 # system.properties container mode setup (echo logs to STDOUT, support ENV read)
-echo "$(date +"[%Y-%m-%d %T,%3N]") Validating system.properties setup for container."
+log "INFO - Checking system.properties setup for container"
 if [ ! -e ${DATADIR}/system.properties ]; then
-    echo "$(date +"[%Y-%m-%d %T,%3N]") '${DATADIR}/system.properties' doesn't exist. Copying from '${BASEDIR}/system.properties.default'."
+    log "INFO - '${DATADIR}/system.properties' doesn't exist, copying from '${BASEDIR}/system.properties.default'"
     cp ${BASEDIR}/system.properties.default ${DATADIR}/system.properties
 else
-    echo "$(date +"[%Y-%m-%d %T,%3N]") Existing '${DATADIR}/system.properties' found. Setting its container-mode options to 'true'."
+    log "INFO - Existing '${DATADIR}/system.properties' found, ensuring container mode options are enabled"
     if ! grep -q "unifi.logStdout" "${DATADIR}/system.properties"; then
         echo "unifi.logStdout=true" >> ${DATADIR}/system.properties
     else
@@ -54,85 +57,136 @@ fi
 # SSL certificate setup
 if [ -e ${CERTDIR}/privkey.pem ] && [ -e ${CERTDIR}/fullchain.pem ]; then
     if `/usr/bin/sha256sum -c ${CERTDIR}/unificert.sha256 &> /dev/null`; then
-        echo "$(date +"[%Y-%m-%d %T,%3N]") SSL certificate file unchanged. Continuing with UniFi startup."
-        echo "$(date +"[%Y-%m-%d %T,%3N]") To force retry the SSL import process: delete '${CERTDIR}/unificert.sha256' and restart the container."
+        log "INFO - SSL: certificate files unchanged, continuing with UniFi startup"
+        log "INFO - SSL: To force rerun import process: delete '${CERTDIR}/unificert.sha256' and restart the container"
     else
         if [ ! -e ${DATADIR}/keystore ]; then
-            echo "$(date +"[%Y-%m-%d %T,%3N]") SSL keystore does not exist. Generating it with Java keytool."
+            log "WARN - SSL: keystore does not exist, generating it with Java keytool"
             keytool -genkey -keyalg RSA -alias unifi -keystore ${DATADIR}/keystore \
             -storepass aircontrolenterprise -keypass aircontrolenterprise -validity 1825 \
             -keysize 4096 -dname "cn=UniFi"
         else
-            echo "$(date +"[%Y-%m-%d %T,%3N]") SSL keystore present."
-            echo "$(date +"[%Y-%m-%d %T,%3N]") Backup existing '${DATADIR}/keystore' to '${DATADIR}/keystore-$(date +%s)'."
+            log "INFO - SSL: backup existing '${DATADIR}/keystore' to '${DATADIR}/keystore-$(date +%s)'"
             cp ${DATADIR}/keystore ${DATADIR}/keystore-$(date +%s)
         fi
-        echo "$(date +"[%Y-%m-%d %T,%3N]") Starting SSL certificate keystore update."
-        echo "$(date +"[%Y-%m-%d %T,%3N]") OpenSSL: combine new private key and certificate chain into temporary PKCS12 file."
+        log "INFO - SSL: custom certificate keystore update"
+        log "INFO - SSL: openssl combine custom private key and certificate chain into temporary PKCS12 file"
         openssl pkcs12 -export \
             -inkey ${CERTDIR}/privkey.pem \
             -in ${CERTDIR}/fullchain.pem \
             -out ${CERTDIR}/certtemp.p12 \
             -name ubnt -password pass:temppass
 
-        echo "$(date +"[%Y-%m-%d %T,%3N]") Java keytool: import PKCS12 '${CERTDIR}/certtemp.p12' file into '${DATADIR}/keystore'."
+        log "INFO - SSL: Java keytool import PKCS12 '${CERTDIR}/certtemp.p12' file into '${DATADIR}/keystore'"
         keytool -importkeystore -deststorepass aircontrolenterprise \
          -destkeypass aircontrolenterprise -destkeystore ${DATADIR}/keystore \
          -srckeystore ${CERTDIR}/certtemp.p12 -srcstoretype PKCS12 \
          -srcstorepass temppass -alias ubnt -noprompt
 
-        echo "$(date +"[%Y-%m-%d %T,%3N]") Removing temporary PKCS12 file."
+        log "INFO - SSL: Removing temporary PKCS12 file"
         rm ${CERTDIR}/certtemp.p12
 
-        echo "$(date +"[%Y-%m-%d %T,%3N]") Storing SHA256 hash of private key and certificate file to identify future changes."
+        log "INFO - SSL: Store SHA256 hash of private key and certificate file"
         /usr/bin/sha256sum ${CERTDIR}/privkey.pem > ${CERTDIR}/unificert.sha256
         /usr/bin/sha256sum ${CERTDIR}/fullchain.pem >> ${CERTDIR}/unificert.sha256
 
-        echo "$(date +"[%Y-%m-%d %T,%3N]") Completed updating SSL certificate in '${DATADIR}/keystore'. Continuing regular startup."
-        echo "$(date +"[%Y-%m-%d %T,%3N]") Check above ***this*** line for error messages if your SSL certificate import isn't working."
-        echo "$(date +"[%Y-%m-%d %T,%3N]") To force retry the SSL import process: delete '${CERTDIR}/unificert.sha256' and restart the container."
+        log "INFO - SSL: completed update of custom certificate in '${DATADIR}/keystore'"
+        log "INFO - SSL: Check above ***here*** for errors if your custom certificate import isn't working"
+        log "INFO - SSL: To force rerun import process: delete '${CERTDIR}/unificert.sha256' and restart the container"
     fi
 else
-    [ -f ${CERTDIR}/privkey.pem ] || echo "$(date +"[%Y-%m-%d %T,%3N]") Missing '${CERTDIR}/privkey.pem', cannot update SSL certificate in '${DATADIR}/keystore'."
-    [ -f ${CERTDIR}/fullchain.pem ] || echo "$(date +"[%Y-%m-%d %T,%3N]") Missing '${CERTDIR}/fullchain.pem', cannot update SSL certificate in '${DATADIR}/keystore'."
-    echo "$(date +"[%Y-%m-%d %T,%3N]") Custom SSL certificate import was NOT performed."
+    [ -f ${CERTDIR}/privkey.pem ] || log "WARN - SSL: missing '${CERTDIR}/privkey.pem', cannot update certificate in '${DATADIR}/keystore'"
+    [ -f ${CERTDIR}/fullchain.pem ] || log "WARN - SSL: missing '${CERTDIR}/fullchain.pem', cannot update certificate in '${DATADIR}/keystore'"
+    log "WARN - SSL: certificate import was NOT performed"
 fi
 # End SSL certificate setup
 
 # Application run setup
+exit_handler() {
+    log "INFO - Exit signal received, commencing shutdown"
+    exec /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar stop &
+    for i in `seq 0 9`; do
+        [ -z "$(pgrep -f ${BASEDIR}/lib/ace.jar)" ] && break
+        # graceful shutdown
+        [ $i -gt 0 ] && [ -d ${RUNDIR} ] && touch ${RUNDIR}/server.stop || true
+        # savage shutdown
+        [ $i -gt 6 ] && pkill -f ${BASEDIR}/lib/ace.jar || true
+        sleep 1
+    done
+    log "INFO - Shutdown complete. Nothing more to see here. Have a nice day!"
+    log "INFO - Exit with status code ${?}"
+    exit ${?};
+}
+
+trap 'kill ${!}; exit_handler' SIGHUP SIGINT SIGQUIT SIGTERM
+
+# Wait indefinitely on tail until killed
+idle_handler() {
+    while true
+    do
+        tail -f /dev/null & wait ${!}
+    done
+}
+
 if [ "$(id -u)" = '0' ]; then
-    echo "$(date +"[%Y-%m-%d %T,%3N]") Entrypoint running with UID=0."
+    log "INFO - Entrypoint running with UID 0 (root)"
     if [ "$(id unifi -u)" != "${UNIFI_UID}" ] || [ "$(id unifi -g)" != "${UNIFI_GID}" ]; then
-        echo "$(date +"[%Y-%m-%d %T,%3N]") Setting custom unifi UID/GID: UID=${UNIFI_UID}, GID=${UNIFI_GID}"
+        log "INFO - Setting custom unifi UID/GID: UID=${UNIFI_UID}, GID=${UNIFI_GID}"
         usermod -u ${UNIFI_UID} unifi && groupmod -g ${UNIFI_GID} unifi
     else
-        echo "$(date +"[%Y-%m-%d %T,%3N]") UID/GID for unifi are unchanged: UID=${UNIFI_UID}, GID=${UNIFI_GID}"
+        log "INFO - UID/GID for unifi are unchanged: UID=${UNIFI_UID}, GID=${UNIFI_GID}"
     fi
 
-    echo "$(date +"[%Y-%m-%d %T,%3N]") Ensuring file permissions are correct before dropping privs - 'chown -R unifi:unifi ${BASEDIR}'."
+    log "INFO - Ensuring file permissions are correct before dropping privs - 'chown -R unifi:unifi ${BASEDIR}'"
     chown -R unifi:unifi /usr/lib/unifi
 
     if [[ "${@}" == 'unifi' ]]; then
-        if [ "${BIND_PRIV}" == 'true' ]; then
-            echo "$(date +"[%Y-%m-%d %T,%3N]") Support binding ports <1024 'setcap 'cap_net_bind_service=+ep' /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java'."
-            setcap 'cap_net_bind_service=+ep' /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+
+        if [ "${BIND_PRIV}" == 'true' ] && [ "${RUNAS_UID0}" == 'false' ]; then
+            log "INFO - Support binding ports <1024 'setcap 'cap_net_bind_service=+ep' /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java'"
+            if setcap 'cap_net_bind_service=+ep' /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java; then
+                sleep 1
+            else
+                log "ERROR - BIND_PRIV = 'true' and 'setcap' command failed on this Docker host"
+                log "ERROR - If binding ports <1024 required on this Docker host use RUNAS_UID0=true instead"
+                log "ERROR - Container run state is invalid, exiting..."
+                exit 1;
+            fi
         fi
 
-        echo "$(date +"[%Y-%m-%d %T,%3N]") -- EXEC: gosu unifi:unifi /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start"
-        exec gosu unifi:unifi /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start
+        if [ "${RUNAS_UID0}" == 'true' ]; then
+            log "INFO - RUNAS_UID0 = 'true', running UniFi processes as UID 0 (root)"
+            log "WARN - ======================================================================"
+            log "WARN - *** Running as UID 0 (root) is an insecure configuration ***"
+            log "WARN - ======================================================================"
+            log "EXEC - /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start"
+            exec /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start &
+            idle_handler
+        fi
+
+        log "INFO - Use gosu to drop priveleges and start Java/UniFi as UID=${UNIFI_UID}, GID=${UNIFI_GID}"
+        log "EXEC - gosu unifi:unifi /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start"
+        exec gosu unifi:unifi /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start &
+        idle_handler
     else
-        echo "$(date +"[%Y-%m-%d %T,%3N]") -- EXEC: ${@} as UID=0"
+        log "EXEC - ${@} as UID 0 (root)"
         exec "${@}"
     fi
 else
-    echo "$(date +"[%Y-%m-%d %T,%3N]") Entrypoint not started as UID 0."
-    echo "$(date +"[%Y-%m-%d %T,%3N]") Unable to change permissions or set custom UID/GID if configured. Requested CMD may not work."
+    log "WARN - Container/entrypoint not started as UID 0 (root)"
+    log "WARN - Unable to change permissions or set custom UID/GID if configured"
+    log "WARN - Process will be spawned with UID=$(id -u), GID=$(id -g)"
+    log "WARN - Depending on permissions requested command may not work"
     if [[ "${@}" == 'unifi' ]]; then
-        echo "$(date +"[%Y-%m-%d %T,%3N]") -- EXEC: /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start"
-        exec /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start
+        log "EXEC - /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start"
+        exec /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start &
+        idle_handler
     else
-        echo "$(date +"[%Y-%m-%d %T,%3N]") -- EXEC: ${@}"
+        log "EXEC - ${@}"
         exec "${@}"
     fi
 fi
 # End application run setup
+
+# Script should never make it here, but just in case exit with a generic error code if it does
+exit 1;

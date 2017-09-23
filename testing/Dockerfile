@@ -26,6 +26,7 @@ ENV \
     JVM_MAX_HEAP_SIZE=1024M \
     MONGO_GID=998 \
     MONGO_UID=998 \
+    RUNAS_UID0=false \
     UNIFI_GID=999 \
     UNIFI_UID=999
 

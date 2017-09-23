@@ -116,6 +116,7 @@ $ docker run --name unifi -d \
 | `JVM_EXTRA_OPTS` | *unset* | Any additional custom run flags for the container Java process |
 | `JVM_INIT_HEAP_SIZE` | *unset* | Sets the start and min memory size for the container Java process (-Xms) |
 | `JVM_MAX_HEAP_SIZE` | *1024M* | Sets the max memory size for the container Java process (-Xmx) |
+| `RUNAS_UID0` | *false* | Set to "true" to force the container to run the Java/Mongo processes as UID=0 (root) - workaround for `setcap` AUFS missing xargs failure - **NB/IMPORTANT:** running with this set to "true" is insecure |
 | `UNIFI_UID` | *999* | Specifies the UID for the container internal unifi user (used for process and file ownership) |
 | `UNIFI_GID` | *999* | Specifies the GID for the container internal unifi group (used for file ownership) |
 
