@@ -1,3 +1,8 @@
+* **2017-09-25:**
+    * Bump unifi55:sc/VERSION to [5.5.24](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-24-Stable-Candidate-has-been-released/ba-p/2076003)
+    * Bump master:testing/VERSION to [5.6.18](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-18-Testing-has-been-released/ba-p/2076026)
+    * Update README.md to document VERSION changes
+---
 * **2017-09-22:**
     * docker-entrypoint.sh changes:
         * Add support for running UniFi Java and Mongo processes as UID=0 (root) when explicitly requested, default to run as UID/GID=999 (unifi) for security
@@ -9,6 +14,7 @@
     * Dockerfile changes:
         * Add RUNAS_UID0 ENV setting, default to false
     * Update README.md to document RUNAS_UID0 environment variable
+---
 * **2017-09-21:**
     * docker-entrypoint.sh changes:
         * Add support for privileged port (<1024) binding, enabled via setting BIND_PRIV environment variable to 'true'

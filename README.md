@@ -7,9 +7,9 @@
 | --- | :---: | --- | :---: |
 | [latest](https://github.com/goofball222/unifi/blob/master/stable/Dockerfile) | [5.5.20](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-5-20-Stable-has-been-released/ba-p/2011817) | UniFi latest stable release | 2017-07-31 |
 | [sc](https://github.com/goofball222/unifi/blob/master/sc/Dockerfile) | [5.6.16](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-16-Stable-Candidate-has-been-released/ba-p/2056618) | UniFi latest stable candidate release | 2017-09-08 |
-| [testing](https://github.com/goofball222/unifi/blob/master/testing/Dockerfile) | [5.6.16](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-16-Testing-has-been-released/ba-p/2049379) | UniFi latest testing release | 2017-09-01 |
+| [testing](https://github.com/goofball222/unifi/blob/master/testing/Dockerfile) | [5.6.18](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-18-Testing-has-been-released/ba-p/2076026) | UniFi latest testing release | 2017-09-25 |
 | [unstable](https://github.com/goofball222/unifi/blob/master/unstable/Dockerfile) | [5.6.12](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-12-Unstable-has-been-released/ba-p/2005576) | UniFi latest unstable release | 2017-07-26 |
-| [unifi55-sc](https://github.com/goofball222/unifi/blob/unifi55/sc/Dockerfile) | [5.5.23](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-23-Stable-Candidate-has-been-released/ba-p/2049377) | UniFi v5.5 stable candidate release | 2017-09-01 |
+| [unifi55-sc](https://github.com/goofball222/unifi/blob/unifi55/sc/Dockerfile) | [5.5.24](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-24-Stable-Candidate-has-been-released/ba-p/2076003) | UniFi v5.5 stable candidate release | 2017-09-25 |
 | [unifi54](https://github.com/goofball222/unifi/blob/unifi54/stable/Dockerfile) | [5.4.19](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-19-Stable-has-been-released/ba-p/1995714) | UniFi LTS v5.4 latest stable release | 2017-07-17 |
 | [release-5.5.20](https://github.com/goofball222/unifi/releases/tag/5.5.20) | [5.5.20](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-5-20-Stable-has-been-released/ba-p/2011817) | Static stable release tag/image | 2017-07-31 |
 | [release-5.4.19](https://github.com/goofball222/unifi/releases/tag/5.4.19) | [5.4.19](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-19-Stable-has-been-released/ba-p/1995714) | Static stable release tag/image | 2017-07-17 |
@@ -21,13 +21,13 @@
 
 ---
 
-### **FROM 2017-09-01 ONWARD:** For attack surface reduction and increased security the container is built to run the UniFi processes with an internal user & group `unifi` having a default UID & GID of 999.
+### **ALL BUILDS CREATED AFTER 2017-09-01:** For attack surface reduction and increased security the container is built to run the UniFi processes with an internal user & group `unifi` having a default UID & GID of 999.
 The container will attempt to adjust the permissions on mapped volumes and data before dropping privileges to start the UniFi processes.
 If the container is being run with a different Docker --user setting permissions may need to be fixed manually.
 
 IE: `chown -R 999:999 /DATA_VOLUME/unifi/{cert,data,logs}`
 
-You can set your own custom UID and GID. For more information see the "Environment variables" section in this document.
+A custom UID and GID can be configured for the container internal unifi user and group. For more information see the "Environment variables" section in this document.
 
 ---
 
@@ -111,21 +111,21 @@ $ docker run --name unifi -d \
 
 | Variable | Default | Description |
 | :--- | :---: | --- |
-| `BIND_PRIV` | *false* | Set to "true" to allow UniFi process to bind to container internal ports <1024 |
-| `DEBUG` | *false* | Set to "true" for extra container and UniFi verbosity for debugging |
-| `JVM_EXTRA_OPTS` | *unset* | Any additional custom run flags for the container Java process |
-| `JVM_INIT_HEAP_SIZE` | *unset* | Sets the start and min memory size for the container Java process (-Xms) |
-| `JVM_MAX_HEAP_SIZE` | *1024M* | Sets the max memory size for the container Java process (-Xmx) |
-| `RUNAS_UID0` | *false* | Set to "true" to force the container to run the Java/Mongo processes as UID=0 (root) - workaround for `setcap` AUFS missing xargs failure - **NB/IMPORTANT:** running with this set to "true" is insecure |
-| `UNIFI_UID` | *999* | Specifies the UID for the container internal unifi user (used for process and file ownership) |
-| `UNIFI_GID` | *999* | Specifies the GID for the container internal unifi group (used for file ownership) |
+| `BIND_PRIV` | ***false*** | Set to *true* to allow UniFi process to bind to container internal ports <1024 |
+| `DEBUG` | ***false*** | Set to *true* for extra container and UniFi verbosity for debugging |
+| `JVM_EXTRA_OPTS` | ***unset*** | Any additional custom run flags for the container Java process |
+| `JVM_INIT_HEAP_SIZE` | ***unset*** | Sets the start and min memory size for the container Java process (-Xms) |
+| `JVM_MAX_HEAP_SIZE` | ***1024M*** | Sets the max memory size for the container Java process (-Xmx) |
+| `RUNAS_UID0` | ***false*** | Set to *true* to force the container to run the Java/Mongo processes as UID=0 (root) - workaround for `setcap` AUFS missing xargs failure - **NB/IMPORTANT:** running with this set to "true" is insecure |
+| `UNIFI_UID` | ***999*** | Specifies the UID for the container internal unifi user (used for process and file ownership) |
+| `UNIFI_GID` | ***999*** | Specifies the GID for the container internal unifi group (used for file ownership) |
 
 Additionally UniFi [system.properties](https://help.ubnt.com/hc/en-us/articles/205202580-UniFi-system-properties-File-Explanation) config file settings can be passed to the container as -e/--env flags at runtime [(more detail and a PDF with UBNT examples here)](https://community.ubnt.com/t5/UniFi-Wireless-Beta/Unifi-Controller-High-Availability/m-p/1801933/highlight/true#M43494). Envrionment variables must be in ALL CAPS and replace "." with "_".
 
-Example:
+IE:
 
-| system.properties | environment variable |
-| --- | --- |
+| system.properties | Environment Variable |
+| :--- | :--- |
 | unifi.db.extraargs | UNIFI_DB_EXTRAARGS |
 | unifi.https.hsts | UNIFI_HTTPS_HSTS |
 
