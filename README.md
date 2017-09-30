@@ -6,10 +6,10 @@
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
 | [latest](https://github.com/goofball222/unifi/blob/master/stable/Dockerfile) | [5.5.20](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-5-20-Stable-has-been-released/ba-p/2011817) | UniFi latest stable release | 2017-07-31 |
-| [sc](https://github.com/goofball222/unifi/blob/master/sc/Dockerfile) | [5.6.16](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-16-Stable-Candidate-has-been-released/ba-p/2056618) | UniFi latest stable candidate release | 2017-09-08 |
+| [sc](https://github.com/goofball222/unifi/blob/master/sc/Dockerfile) | [5.6.18](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-18-Stable-Candidate-has-been-released/ba-p/2081597) | UniFi latest stable candidate release | 2017-09-29 |
 | [testing](https://github.com/goofball222/unifi/blob/master/testing/Dockerfile) | [5.6.18](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-18-Testing-has-been-released/ba-p/2076026) | UniFi latest testing release | 2017-09-25 |
 | [unstable](https://github.com/goofball222/unifi/blob/master/unstable/Dockerfile) | [5.6.12](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-12-Unstable-has-been-released/ba-p/2005576) | UniFi latest unstable release | 2017-07-26 |
-| [unifi55-sc](https://github.com/goofball222/unifi/blob/unifi55/sc/Dockerfile) | [5.5.24](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-24-Stable-Candidate-has-been-released/ba-p/2076003) | UniFi v5.5 stable candidate release | 2017-09-25 |
+| [unifi55-sc](https://github.com/goofball222/unifi/blob/unifi55/sc/Dockerfile) | [5.5.24](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-5-24-Stable-Candidate-has-been-released/ba-p/2082041) | UniFi v5.5 stable candidate release | 2017-09-30 |
 | [unifi54](https://github.com/goofball222/unifi/blob/unifi54/stable/Dockerfile) | [5.4.19](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-19-Stable-has-been-released/ba-p/1995714) | UniFi LTS v5.4 latest stable release | 2017-07-17 |
 | [release-5.5.20](https://github.com/goofball222/unifi/releases/tag/5.5.20) | [5.5.20](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-5-20-Stable-has-been-released/ba-p/2011817) | Static stable release tag/image | 2017-07-31 |
 | [release-5.4.19](https://github.com/goofball222/unifi/releases/tag/5.4.19) | [5.4.19](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-19-Stable-has-been-released/ba-p/1995714) | Static stable release tag/image | 2017-07-17 |
@@ -60,7 +60,7 @@ This container exposes the following ports (see: https://help.ubnt.com/hc/en-us/
 **The most basic way to run this container:**
 
 ```bash
-$ docker run--name unifi -d \
+$ docker run --name unifi -d \
     -p 3478:3478/udp -p 8080:8080 -p 8443:8443 \
     -p 8880:8880 -p 8843:8843 \
     goofball222/unifi
@@ -117,8 +117,8 @@ $ docker run --name unifi -d \
 | `JVM_INIT_HEAP_SIZE` | ***unset*** | Sets the start and min memory size for the container Java process (-Xms) |
 | `JVM_MAX_HEAP_SIZE` | ***1024M*** | Sets the max memory size for the container Java process (-Xmx) |
 | `RUNAS_UID0` | ***false*** | Set to *true* to force the container to run the Java/Mongo processes as UID=0 (root) - workaround for `setcap` AUFS missing xargs failure - **NB/IMPORTANT:** running with this set to "true" is insecure |
-| `UNIFI_UID` | ***999*** | Specifies the UID for the container internal unifi user (used for process and file ownership) |
 | `UNIFI_GID` | ***999*** | Specifies the GID for the container internal unifi group (used for file ownership) |
+| `UNIFI_UID` | ***999*** | Specifies the UID for the container internal unifi user (used for process and file ownership) |
 
 Additionally UniFi [system.properties](https://help.ubnt.com/hc/en-us/articles/205202580-UniFi-system-properties-File-Explanation) config file settings can be passed to the container as -e/--env flags at runtime [(more detail and a PDF with UBNT examples here)](https://community.ubnt.com/t5/UniFi-Wireless-Beta/Unifi-Controller-High-Availability/m-p/1801933/highlight/true#M43494). Envrionment variables must be in ALL CAPS and replace "." with "_".
 
