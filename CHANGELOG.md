@@ -1,4 +1,7 @@
 * **2017-09-30:**
+    * Bump master:stable/VERSION to [5.5.24](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-5-24-Stable-has-been-released/ba-p/2086518)
+---
+* **2017-09-30:**
     * Bump master:sc/VERSION to [5.6.18](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-18-Stable-Candidate-has-been-released/ba-p/2081597)
     * Update README.md
         * Change unifi55-sc VERSION [5.5.24](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-5-24-Stable-Candidate-has-been-released/ba-p/2082041) link to point to open release announcement
