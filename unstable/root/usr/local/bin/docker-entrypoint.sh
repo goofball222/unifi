@@ -3,7 +3,7 @@
 # docker-entrypoint.sh script for UniFi Docker container
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-SCRIPT_VERSION="0.5.5"
+SCRIPT_VERSION="0.5.6"
 # Last updated date: 2017-10-10
 
 set -Eeuo pipefail
@@ -138,7 +138,7 @@ if [ "$(id -u)" = '0' ]; then
     fi
 
     log "INFO - Ensuring file permissions are correct before dropping privs - 'chown -R unifi:unifi ${BASEDIR}'"
-    chown -R unifi:unifi /usr/lib/unifi
+    chown -R unifi:unifi ${BASEDIR}
 
     if [[ "${@}" == 'unifi' ]]; then
 
