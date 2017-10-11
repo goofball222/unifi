@@ -3,8 +3,8 @@
 # docker-entrypoint.sh script for UniFi Docker container
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-SCRIPT_VERSION="0.5.4"
-# Last updated date: 2017-09-22
+SCRIPT_VERSION="0.5.5"
+# Last updated date: 2017-10-10
 
 set -Eeuo pipefail
 
@@ -164,7 +164,7 @@ if [ "$(id -u)" = '0' ]; then
             idle_handler
         fi
 
-        log "INFO - Use gosu to drop priveleges and start Java/UniFi as UID=${UNIFI_UID}, GID=${UNIFI_GID}"
+        log "INFO - Use gosu to drop privileges and start Java/UniFi as UID=${UNIFI_UID}, GID=${UNIFI_GID}"
         log "EXEC - gosu unifi:unifi /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start"
         exec gosu unifi:unifi /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start &
         idle_handler

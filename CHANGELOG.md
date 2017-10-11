@@ -1,3 +1,6 @@
+* **2017-10-10:**
+    * Fix typo/spelling error in docker-entrypoint.sh
+---
 * **2017-09-30:**
     * Bump master:stable/VERSION to [5.5.24](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-5-24-Stable-has-been-released/ba-p/2086518)
 ---
