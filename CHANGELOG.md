@@ -1,3 +1,6 @@
+* **2017-10-12:**
+    * Bump master:sc/VERSION to [5.6.19](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-19-Stable-Candidate-has-been-released/ba-p/2095589)
+---
 * **2017-10-10:**
     * Fix typo/spelling error in docker-entrypoint.sh
     * Update chown in docker-entrypoint.sh to use ${BASEDIR} instead of hardcoded path
