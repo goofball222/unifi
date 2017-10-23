@@ -1,16 +1,3 @@
-## Reporting bugs
-
-* When reporting a bug:
-    * Please ensure that you are using the latest release.
-    * Revert any custom modifications to insure they're not the cause.
-    * Please include the following information:
-        * OS/distribution version
-        * Docker version
-        * Labels from `docker inspect goofball222/unifi:<tagname>`
-        * Details on how to reproduce the trouble, if available
-
----
-
 ## Code Changes
 
 * Make sure you have a [GitHub account](https://github.com/signup/free)

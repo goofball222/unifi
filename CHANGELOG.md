@@ -3,6 +3,11 @@
     * Update README.md
         * Drop unifi54 (Git branch/tag on Docker Hub still exist) and release-5.4.19 from tags table
         * Add/Re-add unifi55 branch/tag info
+    * Add GitHub docs folder
+        * Move CONTRIBUTING.md from root
+        * Create ISSUE_TEMPLATE.md
+        * Create PULL_REQUEST_TEMPLATE.md
+    * Update .dockerignore to exclude docs folder
 ---
 * **2017-10-12:**
     * Bump master:sc/VERSION to [5.6.19](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-19-Stable-Candidate-has-been-released/ba-p/2095589)
