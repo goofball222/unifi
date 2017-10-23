@@ -5,14 +5,13 @@
 ## Docker tags:
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
-| [latest](https://github.com/goofball222/unifi/blob/master/stable/Dockerfile) | [5.5.24](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-5-24-Stable-has-been-released/ba-p/2086518) | UniFi latest stable release | 2017-10-04 |
+| [latest](https://github.com/goofball222/unifi/blob/master/stable/Dockerfile) | [5.6.19](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-19-Stable-has-been-released/ba-p/2109621) | UniFi latest stable release | 2017-10-23 |
 | [sc](https://github.com/goofball222/unifi/blob/master/sc/Dockerfile) | [5.6.19](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-19-Stable-Candidate-has-been-released/ba-p/2095589) | UniFi latest stable candidate release | 2017-10-12 |
 | [testing](https://github.com/goofball222/unifi/blob/master/testing/Dockerfile) | [5.6.18](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-18-Testing-has-been-released/ba-p/2076026) | UniFi latest testing release | 2017-09-25 |
 | [unstable](https://github.com/goofball222/unifi/blob/master/unstable/Dockerfile) | [5.6.12](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-12-Unstable-has-been-released/ba-p/2005576) | UniFi latest unstable release | 2017-07-26 |
-| [unifi55-sc](https://github.com/goofball222/unifi/blob/unifi55/sc/Dockerfile) | [5.5.24](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-5-24-Stable-Candidate-has-been-released/ba-p/2082041) | UniFi v5.5 stable candidate release | 2017-09-30 |
-| [unifi54](https://github.com/goofball222/unifi/blob/unifi54/stable/Dockerfile) | [5.4.19](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-19-Stable-has-been-released/ba-p/1995714) | UniFi LTS v5.4 latest stable release | 2017-07-17 |
-| [release-5.5.24](https://github.com/goofball222/unifi/releases/tag/5.5.24) | [5.5.24](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-5-24-Stable-has-been-released/ba-p/2086518) | Static stable release tag/image | 2017-10-04 |
-| [release-5.4.19](https://github.com/goofball222/unifi/releases/tag/5.4.19) | [5.4.19](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-4-19-Stable-has-been-released/ba-p/1995714) | Static stable release tag/image | 2017-07-17 |
+| [unifi55](https://github.com/goofball222/unifi/blob/unifi55/stable/Dockerfile) | [5.5.24](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-5-24-Stable-has-been-released/ba-p/2086518) | UniFi v5.5 latest stable release | 2017-10-04 |
+| [release-5.6.19](https://github.com/goofball222/unifi/releases/tag/5.6.19) | [5.6.19](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-19-Stable-has-been-released/ba-p/2109621) | Static stable release tag/image | 2017-10-23 |
+| [release-5.5.24](https://github.com/goofball222/unifi/releases/tag/5.5.24) | [5.5.24](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-5-24-Stable-has-been-released/ba-p/2086518) | Static stable release tag/image | 2017-10-04
 
 ---
 
@@ -34,7 +33,6 @@ A custom UID and GID can be configured for the container internal unifi user and
 **ALWAYS MAKE A VERIFIED BACKUP OF DATA BEFORE INSTALLING UPDATES.**
 **Export a `.unf` from the web interface and/or stop the current container and create a backup or copy of the data volume.**
 **Database rollback from newer to older versions of UniFi and/or Mongo isn't always possible.**
-**The container is under active development and applications, internal structure, and data can change drastically.**
 
 ---
 

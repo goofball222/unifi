@@ -1,3 +1,9 @@
+* **2017-10-23:**
+    * Bump master:stable/VERSION to [5.6.19](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-19-Stable-has-been-released/ba-p/2109621)
+    * Update README.md
+        * Drop unifi54 (Git branch/tag on Docker Hub still exist) and release-5.4.19 from tags table
+        * Add/Re-add unifi55 branch/tag info
+---
 * **2017-10-12:**
     * Bump master:sc/VERSION to [5.6.19](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-19-Stable-Candidate-has-been-released/ba-p/2095589)
 ---
