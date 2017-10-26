@@ -1,3 +1,8 @@
+* **2017-10-25:**
+    * Bump master:sc/VERSION to [5.6.20](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-20-Stable-Candidate-has-been-released/ba-p/2113208)
+    * Bump unifi55:sc/VERSION to [5.5.27](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-27-LTS-Stable-Candidate-has-been-released/ba-p/2113202)
+    * Update README.md
+        * Table updates for version adds/changes
 * **2017-10-23:**
     * Bump master:stable/VERSION to [5.6.19](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-19-Stable-has-been-released/ba-p/2109621)
     * Update README.md
