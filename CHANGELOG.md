@@ -1,3 +1,6 @@
+* **2017-10-31:**
+    * Bump master:unstable/VERSION to [5.7.3](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-7-3-Unstable-has-been-released/ba-p/2119632)
+---
 * **2017-10-30:**
     * Bump master:stable/VERSION to [5.6.20](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-20-Stable-has-been-released/ba-p/2119397)
 ---
