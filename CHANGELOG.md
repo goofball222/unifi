@@ -1,3 +1,6 @@
+* **2017-11-08:**
+    * Bump master:sc/VERSION to [5.6.23](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-23-Stable-Candidate-has-been-released/ba-p/2131134)
+---
 * **2017-11-06:**
     * Bump master:sc/VERSION to [5.6.22](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-22-Stable-Candidate-has-been-released/ba-p/2127830)
 ---
