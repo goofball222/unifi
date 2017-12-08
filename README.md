@@ -7,11 +7,11 @@
 | --- | :---: | --- | :---: |
 | [latest](https://github.com/goofball222/unifi/blob/master/stable/Dockerfile) | [5.6.26](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-26-Stable-has-been-released/ba-p/2165432) | UniFi latest stable release | 2017-12-07 |
 | [sc](https://github.com/goofball222/unifi/blob/master/sc/Dockerfile) | [5.6.26](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-26-Stable-Candidate-has-been-released/ba-p/2161106) | UniFi latest stable candidate release | 2017-12-04 |
-| [testing](https://github.com/goofball222/unifi/blob/master/testing/Dockerfile) | [5.6.18](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-18-Testing-has-been-released/ba-p/2076026) | UniFi latest testing release | 2017-09-25 |
+| [testing](https://github.com/goofball222/unifi/blob/master/testing/Dockerfile) | [5.7.9](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-7-9-Testing-has-been-released/ba-p/2166660) | UniFi latest testing release | 2017-12-08 |
 | [unstable](https://github.com/goofball222/unifi/blob/master/unstable/Dockerfile) | [5.7.8](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-7-8-Unstable-has-been-released/ba-p/2149934) | UniFi latest unstable release | 2017-11-24 |
 | [unifi55](https://github.com/goofball222/unifi/blob/unifi55/stable/Dockerfile) | [5.5.24](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-5-24-Stable-has-been-released/ba-p/2086518) | UniFi v5.5 latest stable release | 2017-10-04 |
 | [unifi55-sc](https://github.com/goofball222/unifi/blob/unifi55/sc/Dockerfile) | [5.5.27](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-5-27-LTS-Stable-Candidate-has-been-released/ba-p/2113202) | UniFi v5.5 latest stable candidate release | 2017-10-25 |
-| [release-5.6.22](https://github.com/goofball222/unifi/releases/tag/5.6.26) | [5.6.26](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-26-Stable-has-been-released/ba-p/2165432) | Static stable release tag/image | 2017-12-07 |
+| [release-5.6.26](https://github.com/goofball222/unifi/releases/tag/5.6.26) | [5.6.26](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-26-Stable-has-been-released/ba-p/2165432) | Static stable release tag/image | 2017-12-07 |
 | [release-5.5.24](https://github.com/goofball222/unifi/releases/tag/5.5.24) | [5.5.24](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-5-24-Stable-has-been-released/ba-p/2086518) | Static stable release tag/image | 2017-10-04 |
 
 ---
@@ -21,8 +21,8 @@
 
 ---
 
-### **ALL BUILDS CREATED AFTER 2017-09-01:** For attack surface reduction and increased security the container is built to run the UniFi processes with an internal user & group `unifi` having a default UID & GID of 999.
-The container will attempt to adjust the permissions on mapped volumes and data before dropping privileges to start the UniFi processes.
+**AS OF 2017-09-01:** For security/attack surface reduction the container is configured to run the UniFi processes as an internal user & group `unifi` having a pre-set UID & GID of 999.
+The container will attempt to adjust permissions on mapped volumes and data to match before dropping privileges to start the UniFi Java and Mongo processes.
 If the container is being run with a different Docker --user setting permissions may need to be fixed manually.
 
 IE: `chown -R 999:999 /DATA_VOLUME/unifi/{cert,data,logs}`

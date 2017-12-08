@@ -1,3 +1,8 @@
+* **2017-12-08:**
+    * Bump master:testing/VERSION to [5.7.9](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-7-9-Testing-has-been-released/ba-p/2166660)
+    * Update README.md
+        * Demphasize and re-word non-priveleged user verbage.
+---
 * **2017-12-07:**
     * Bump master:stable/VERSION to [5.6.26](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-26-Stable-has-been-released/ba-p/2165432)
 ---
