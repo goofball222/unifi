@@ -1,3 +1,7 @@
+* **2017-12-11:**
+    * Bump master:sc/VERSION to [5.6.27](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-27-Stable-Candidate-has-been-released/ba-p/2169686)
+    * Bump master:testing/VERSION to [5.7.10](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-7-10-Testing-has-been-released/ba-p/2169697)
+---
 * **2017-12-08:**
     * Bump master:testing/VERSION to [5.7.9](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-7-9-Testing-has-been-released/ba-p/2166660)
     * Update README.md
