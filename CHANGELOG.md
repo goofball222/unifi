@@ -1,3 +1,7 @@
+* **2017-12-20:**
+    * Bump master:testing/VERSION to [5.7.11](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-7-11-Testing-has-been-released/ba-p/2180775)
+    * Update README.md URL for sc 5.6.29 to point to non-beta blog announcement https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-29-Stable-Candidate-has-been-released/ba-p/2180909
+---
 * **2017-12-16:**
     * Bump master:sc/VERSION to [5.6.29](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-29-Stable-Candidate-has-been-released/ba-p/2176631)
     * Change *:*/Dockerfile to use updated UniFi package download URL - https://dl.ubnt.com/unifi/$VERSION/unifi_sysvinit_all.deb
