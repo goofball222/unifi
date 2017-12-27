@@ -1,3 +1,10 @@
+* **2017-12-27:**
+    * Create unifi56 branch allowing for v5.7.X stable candidates/stable and pending v5.6.X move to LTS
+    * Bump master:sc/VERSION to [5.7.12](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-7-12-Stable-Candidate-has-been-released/ba-p/2186624)
+    * Update README.md
+        * Document branch changes, add unifi56-sc tag
+        * Copy over UBNT warning/links regarding 5.7.12 required AP firmware pre-upgrade to 3.9.18.8086
+---
 * **2017-12-20:**
     * Bump master:testing/VERSION to [5.7.11](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-7-11-Testing-has-been-released/ba-p/2180775)
     * Update README.md URL for sc 5.6.29 to point to non-beta blog announcement https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-29-Stable-Candidate-has-been-released/ba-p/2180909
