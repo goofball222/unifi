@@ -1,3 +1,6 @@
+* **2018-01-02:**
+    * Bump master:stable/VERSION to [5.6.29](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-29-Stable-has-been-released/ba-p/2191996)
+---
 * **2017-12-27:**
     * Create unifi56 branch allowing for v5.7.X stable candidates/stable and pending v5.6.X move to LTS
     * Bump master:sc/VERSION to [5.7.12](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-7-12-Stable-Candidate-has-been-released/ba-p/2186624)
