@@ -5,7 +5,7 @@
 ## Docker tags:
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
-| [latest](https://github.com/goofball222/unifi/blob/master/stable/Dockerfile) | [5.6.29](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-29-Stable-has-been-released/ba-p/2191996) | UniFi latest stable release | 2018-01-02 |
+| [latest](https://github.com/goofball222/unifi/blob/master/stable/Dockerfile) | [5.6.30](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-30-Stable-has-been-released/ba-p/2220761) | UniFi latest stable release | 2018-01-26 |
 | [sc](https://github.com/goofball222/unifi/blob/master/sc/Dockerfile) | [5.7.15](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-7-15-Stable-Candidate-has-been-released/ba-p/2203643) | UniFi latest stable candidate release | 2018-01-12 |
 | [testing](https://github.com/goofball222/unifi/blob/master/testing/Dockerfile) | [5.7.11](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-7-11-Testing-has-been-released/ba-p/2180775) | UniFi latest testing release | 2017-12-20 |
 | [unstable](https://github.com/goofball222/unifi/blob/master/unstable/Dockerfile) | [5.7.8](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-7-8-Unstable-has-been-released/ba-p/2149934) | UniFi latest unstable release | 2017-11-24 |
@@ -22,8 +22,8 @@
 
 ---
 
-### \*\*\*Important Update Notice - v5.7.12\*\*\*
-### Please make sure to upgrade your UniFi APs to firmware v3.9.18.8086 BEFORE upgrading to controller v5.7.12. You can find that firmware [HERE](https://community.ubnt.com/t5/UniFi-Updates-Blog/FIRMWARE-3-9-18-8086-for-UAP-USW-has-been-released/ba-p/2184652). UBNT has an article on updating UniFI device firmware [HERE](https://help.ubnt.com/hc/en-us/articles/204910064-UniFi-Changing-the-Firmware-of-a-UniFi-Device). The quickest/easiest way to do this would be with batch upgrading ([instructions at the end of the v5.7.12 announcement](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-7-12-Stable-Candidate-has-been-released/ba-p/2186624)) via the controller ahead of updating to v5.7.12.
+\*\*\*Important Update Notice - v5.7.12\*\*\*
+Please make sure to upgrade your UniFi APs to firmware v3.9.18.8086 BEFORE upgrading to controller v5.7.12. You can find that firmware [HERE](https://community.ubnt.com/t5/UniFi-Updates-Blog/FIRMWARE-3-9-18-8086-for-UAP-USW-has-been-released/ba-p/2184652). UBNT has an article on updating UniFI device firmware [HERE](https://help.ubnt.com/hc/en-us/articles/204910064-UniFi-Changing-the-Firmware-of-a-UniFi-Device). The quickest/easiest way to do this would be with batch upgrading ([instructions at the end of the v5.7.12 announcement](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-7-12-Stable-Candidate-has-been-released/ba-p/2186624)) via the controller ahead of updating to v5.7.12.
 
 ---
 
