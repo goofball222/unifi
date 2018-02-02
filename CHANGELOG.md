@@ -1,5 +1,6 @@
-* **2018-01-10:**
+* **2018-02-01:**
     * Bump unifi56:sc/VERSION to [5.6.31](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-31-Stable-Candidate-has-been-released/ba-p/2228608)
+    * Update README.md - forgot to tag release-5.6.30 on 2018-01-26
 ---
 * **2018-01-26:**
     * Bump master:stable/VERSION to [5.6.30](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-30-Stable-has-been-released/ba-p/2220761)
