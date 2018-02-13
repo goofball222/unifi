@@ -1,3 +1,6 @@
+* **2018-02-12:**
+    * Bump master:testing/VERSION to [5.8.3](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-8-3-Testing-has-been-released/ba-p/2241766)
+---
 * **2018-02-10:**
     * Bump master:sc/VERSION to [5.7.18](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-7-18-Stable-Candidate-has-been-released/ba-p/2238507)
 ---
