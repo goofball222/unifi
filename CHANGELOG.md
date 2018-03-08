@@ -1,3 +1,7 @@
+* **2018-03-08:**
+    * Bump master:stable/VERSION to [5.7.20](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-7-20-Stable-has-been-released/ba-p/2271529)
+    * Move stable v5.6.30 to unifi56 branch and update README.md to reflect changes
+---
 * **2018-02-26:**
     * Bump master:sc/VERSION to [5.7.20](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-7-20-Stable-Candidate-has-been-released/ba-p/2258831)
 ---
