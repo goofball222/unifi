@@ -24,6 +24,7 @@ v5.7+ discontinues support for the following hardware, if you have any of these 
 * UAP-AC
 * UAP-AC v2
 * UAP-AC-Outdoor
+
 More information at https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-7-20-Release-Update/ba-p/2278500
 
 ---
