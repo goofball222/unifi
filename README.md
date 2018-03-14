@@ -18,7 +18,17 @@
 
 ---
 
-**AS OF 2017-09-01:** For security/attack surface reduction the container is configured to run the UniFi processes as an internal user & group `unifi` having a pre-set UID & GID of 999.
+**NOTE: **
+v5.7+ discontinues support for the following hardware, if you have any of these devices in production you need to remain on v5.6:
+* PicoM2 converted to UniFi
+* UAP-AC
+* UAP-AC v2
+* UAP-AC-Outdoor
+More information at https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-7-20-Release-Update/ba-p/2278500
+
+---
+
+For security/attack surface reduction the container is configured to run the UniFi processes as an internal user & group `unifi` having a pre-set UID & GID of 999.
 The container will attempt to adjust permissions on mapped volumes and data to match before dropping privileges to start the UniFi Java and Mongo processes.
 If the container is being run with a different Docker --user setting permissions may need to be fixed manually.
 
