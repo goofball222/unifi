@@ -1,3 +1,6 @@
+* **2018-03-19:**
+    * Bump master:testing/VERSION to [5.8.8](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-8-8-Testing-has-been-released/ba-p/2284459)
+---
 * **2018-03-13:**
     * Bump unifi56:stable/VERSION to [5.6.36](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-36-LTS-Stable-has-been-released/ba-p/2277323)
     * Tag stable LTS release 5.6.36
