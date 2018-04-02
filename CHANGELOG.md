@@ -1,3 +1,6 @@
+* **2018-04-02:**
+    * Bump unifi56:sc/VERSION to [5.6.37](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-37-LTS-Stable-Candidate-has-been-released/ba-p/2302068)
+---
 * **2018-03-30:**
     * Bump master:testing/VERSION to [5.8.10](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-8-10-Testing-has-been-released/ba-p/2299020)
 ---
