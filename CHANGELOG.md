@@ -1,3 +1,9 @@
+* **2018-04-16:**
+    * Bump master:stable/VERSION to [5.7.23](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-7-23-Stable-has-been-released/ba-p/2318813)
+    * Bump unifi56:stable/VERSION to [5.6.37](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-37-LTS-Stable-has-been-released/ba-p/2318810)
+    * Tag stable release 5.7.23
+    * Tag stable LTS release 5.6.37
+---
 * **2018-04-02:**
     * Bump unifi56:sc/VERSION to [5.6.37](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-37-LTS-Stable-Candidate-has-been-released/ba-p/2302068)
 ---
