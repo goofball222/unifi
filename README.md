@@ -6,7 +6,8 @@
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
 | [latest](https://github.com/goofball222/unifi/blob/master/stable/Dockerfile) | [5.7.23](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-7-23-Stable-has-been-released/ba-p/2318813) | UniFi latest stable release | 2018-04-16 |
-| [testing](https://github.com/goofball222/unifi/blob/master/testing/Dockerfile) | [5.8.10](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-8-10-Testing-has-been-released/ba-p/2299020) | UniFi latest testing release | 2018-03-30 |
+| [sc](https://github.com/goofball222/unifi/blob/master/sc/Dockerfile) | [5.7.25](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-7-25-Stable-Candidate-has-been-released/ba-p/2320628) | UniFi latest testing release | 2018-04-17 |
+| [testing](https://github.com/goofball222/unifi/blob/master/testing/Dockerfile) | [5.8.12](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-8-12-Testing-has-been-released/ba-p/2321460) | UniFi latest testing release | 2018-04-18 |
 | [unifi56](https://github.com/goofball222/unifi/blob/unifi56/stable/Dockerfile) | [5.6.37](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-37-LTS-Stable-has-been-released/ba-p/2318810) | UniFi v5.6 latest stable release | 2018-04-16 |
 | [release-5.7.23](https://github.com/goofball222/unifi/releases/tag/5.7.23) | [5.7.23](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-7-23-Stable-has-been-released/ba-p/2318813) | Static stable release tag/image | 2018-04-16 |
 | [release-5.6.37](https://github.com/goofball222/unifi/releases/tag/5.6.37) | [5.6.37](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-37-LTS-Stable-has-been-released/ba-p/2318810) | Static stable release tag/image | 2018-04-16 |

@@ -1,3 +1,7 @@
+* **2018-04-18:**
+    * Bump master:testing/VERSION to [5.8.12](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-8-12-Testing-has-been-released/ba-p/2321460)
+    * Bump master:sc/VERSION to [5.7.25](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-7-25-Stable-Candidate-has-been-released/ba-p/2320628)
+---
 * **2018-04-16:**
     * Bump master:stable/VERSION to [5.7.23](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-7-23-Stable-has-been-released/ba-p/2318813)
     * Bump unifi56:stable/VERSION to [5.6.37](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-37-LTS-Stable-has-been-released/ba-p/2318810)
