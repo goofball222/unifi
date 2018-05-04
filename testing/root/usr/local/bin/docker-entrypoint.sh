@@ -3,8 +3,8 @@
 # docker-entrypoint.sh script for UniFi Docker container
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-SCRIPT_VERSION="0.5.6"
-# Last updated date: 2017-10-10
+SCRIPT_VERSION="0.5.7"
+# Last updated date: 2018-05-03
 
 set -Eeuo pipefail
 
@@ -75,13 +75,13 @@ if [ -e ${CERTDIR}/privkey.pem ] && [ -e ${CERTDIR}/fullchain.pem ]; then
             -inkey ${CERTDIR}/privkey.pem \
             -in ${CERTDIR}/fullchain.pem \
             -out ${CERTDIR}/certtemp.p12 \
-            -name ubnt -password pass:temppass
+            -name unifi -password pass:temppass
 
         log "INFO - SSL: Java keytool import PKCS12 '${CERTDIR}/certtemp.p12' file into '${DATADIR}/keystore'"
         keytool -importkeystore -deststorepass aircontrolenterprise \
          -destkeypass aircontrolenterprise -destkeystore ${DATADIR}/keystore \
          -srckeystore ${CERTDIR}/certtemp.p12 -srcstoretype PKCS12 \
-         -srcstorepass temppass -alias ubnt -noprompt
+         -srcstorepass temppass -alias unifi -noprompt
 
         log "INFO - SSL: Removing temporary PKCS12 file"
         rm ${CERTDIR}/certtemp.p12
