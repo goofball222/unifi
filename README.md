@@ -22,6 +22,10 @@
 
 **NOTE:**
 
+v5.9+: Ubiquiti changed the SSL certificate handling internally. If you're using a custom LetsEncrypt, etc. SSL certificate and upgrade to v5.9+ you will need to rename/remove the file `unificert.sha256` in `/DATA_VOLUME/unifi/cert:/usr/lib/unifi/cert` and restart the container to force a re-import of the existing certificate files under the changed keystore alias.
+
+Additional info at https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-9-4-Unstable-has-been-released/ba-p/2339206
+
 v5.7+ discontinues support for the following hardware, if you have any of these devices in production you need to remain on v5.6:
 * PicoM2 converted to UniFi
 * UAP-AC
@@ -85,7 +89,7 @@ Have the container store the config, databases & logs on a local file-system or 
 $ docker run --name unifi -d \
     -p 3478:3478/udp -p 8080:8080 -p 8443:8443 \
     -p 8880:8880 -p 8843:8843 \
-    -v /DATA_VOLUME/unifi/certs:/usr/lib/unifi/cert  \
+    -v /DATA_VOLUME/unifi/cert:/usr/lib/unifi/cert  \
     -v /DATA_VOLUME/unifi/data:/usr/lib/unifi/data  \
     -v /DATA_VOLUME/unifi/logs:/usr/lib/unifi/logs \
     goofball222/unifi
@@ -109,7 +113,7 @@ Use --network=host mode. Does not allow for port remapping. You may need to manu
 ```bash
 $ docker run --name unifi -d \
     --network="host" \
-    -v /DATA_VOLUME/unifi/certs:/usr/lib/unifi/cert  \
+    -v /DATA_VOLUME/unifi/cert:/usr/lib/unifi/cert  \
     -v /DATA_VOLUME/unifi/data:/usr/lib/unifi/data  \
     -v /DATA_VOLUME/unifi/logs:/usr/lib/unifi/logs \
     goofball222/unifi

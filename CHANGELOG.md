@@ -1,5 +1,6 @@
 * **2018-05-03:**
     * Bump master:unstable/VERSION to [5.9.4](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-9-4-Unstable-has-been-released/ba-p/2339206)
+    * Update master:unstable docker-entrypoint.sh script to use "unifi" alias for ssl keystore import instead of "ubnt"
 ---
 * **2018-05-01:**
     * Bump master:testing/VERSION to [5.8.15](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-8-15-Testing-has-been-released/ba-p/2336031)
