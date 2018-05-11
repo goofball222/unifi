@@ -1,3 +1,7 @@
+* **2018-05-10:**
+    * Move 5.7.X sc to unifi57 branch.
+    * Bump master:sc/VERSION to [5.8.16](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-8-16-Stable-Candidate-has-been-released/ba-p/2345114)
+---
 * **2018-05-05:**
     * Bump master:sc/VERSION to [5.7.26](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-7-26-Stable-Candidate-has-been-released/ba-p/2341045)
     * Bump unifi56:sc/VERSION to [5.6.38](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-38-LTS-Stable-Candidate-has-been-released/ba-p/2341040)
