@@ -1,3 +1,8 @@
+* **2018-06-14:**
+    * Bump master:sc/VERSION to [5.8.22](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-8-22-Stable-Candidate-has-been-released/ba-p/2386690)
+    * Update Dockerfile to remove depreciated "MAINTAINER", move info to LABEL "org.label-schema.vendor" value
+    * Update Dockerfile for all non-static tags to use UBNT recommended Mongo v3.4 instead of v2.6
+---
 * **2018-06-07:**
     * Bump master:sc/VERSION to [5.8.21](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-8-21-Stable-Candidate-has-been-released/ba-p/2378925)
 ---

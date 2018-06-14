@@ -6,7 +6,7 @@
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
 | [latest](https://github.com/goofball222/unifi/blob/master/stable/Dockerfile) | [5.7.23](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-7-23-Stable-has-been-released/ba-p/2318813) | UniFi latest stable release | 2018-04-16 |
-| [sc](https://github.com/goofball222/unifi/blob/master/sc/Dockerfile) | [5.8.21](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-8-21-Stable-Candidate-has-been-released/ba-p/2378925) | UniFi v5.8 stable candidate | 2018-06-07 |
+| [sc](https://github.com/goofball222/unifi/blob/master/sc/Dockerfile) | [5.8.22](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-8-22-Stable-Candidate-has-been-released/ba-p/2386690) | UniFi v5.8 stable candidate | 2018-06-14 |
 | [unstable](https://github.com/goofball222/unifi/blob/master/unstable/Dockerfile) | [5.9.4](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-9-4-Unstable-has-been-released/ba-p/2339206) | UniFi v5.9 unstable release | 2018-05-03 |
 | [unifi57-sc](https://github.com/goofball222/unifi/blob/unifi57/sc/Dockerfile) | [5.7.28](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-7-28-Stable-Candidate-has-been-released/ba-p/2360718) | UniFi v5.7 latest stable candidate | 2018-05-22 |
 | [unifi56](https://github.com/goofball222/unifi/blob/unifi56/stable/Dockerfile) | [5.6.37](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-37-LTS-Stable-has-been-released/ba-p/2318810) | UniFi v5.6 latest stable release | 2018-04-16 |
@@ -22,6 +22,8 @@
 ---
 
 **NOTE:**
+
+2018-06-14: The internal Mongo DB version has been updated to track the v3.4 latest release for all dynamic tags. Existing deployments/data will continue to use the old mmapv1 DB format, new deployments will end up running WiredTiger DBs. Please make a verified offline backup of your data before updating.
 
 v5.9+: Ubiquiti changed the SSL certificate handling internally. If you're using a custom LetsEncrypt, etc. SSL certificate and upgrade to v5.9+ you will need to rename/remove the file `unificert.sha256` in `/DATA_VOLUME/unifi/cert:/usr/lib/unifi/cert` and restart the container to force a re-import of the existing certificate files under the changed keystore alias.
 
