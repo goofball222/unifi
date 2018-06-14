@@ -1,12 +1,11 @@
 FROM debian:jessie-slim
-MAINTAINER The Goofball "goofball222@gmail.com"
 
 ARG BUILD_DATE
 ARG VCS_REF
 ARG VERSION
 
 LABEL \
-    org.label-schema.vendor=goofball222 \
+    org.label-schema.vendor="The Goofball - goofball222@gmail.com" \
     org.label-schema.url="https://github.com/goofball222/unifi" \
     org.label-schema.name="UniFi Controller" \
     org.label-schema.version=$VERSION \
@@ -40,9 +39,9 @@ RUN set -x \
     && groupadd -r unifi -g $UNIFI_GID \
     && useradd --no-log-init -r -u $UNIFI_UID -g $UNIFI_GID unifi \
     && mkdir /usr/share/man/man1 \
-    && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 > /dev/null \
-    && echo "deb http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen" \
-        > /etc/apt/sources.list.d/mongodb.list \
+    && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6 > /dev/null \
+    && echo "deb http://repo.mongodb.org/apt/debian jessie/mongodb-org/3.4 main" \
+        > /etc/apt/sources.list.d/mongodb-org-3.4.list \
     && echo "deb http://ftp.debian.org/debian jessie-backports main" \
         > /etc/apt/sources.list.d/jessie-backports.list \
     && apt-get -qqy update > /dev/null \
