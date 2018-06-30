@@ -1,3 +1,6 @@
+* **2018-06-29:**
+    * Bump master:stable/VERSION to [5.8.24](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-8-24-Stable-has-been-released/ba-p/2404580)
+---
 * **2018-06-25:**
     * Bump master:stable/VERSION to [5.8.23](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-8-23-Stable-has-been-released/ba-p/2399028)
     * Move current and future v5.7 releases to unifi57:stable/VERSION
