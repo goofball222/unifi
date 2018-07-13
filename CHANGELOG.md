@@ -1,3 +1,7 @@
+* **2018-07-12:**
+    * Bump master:testing/VERSION to [5.9.12](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-12-Testing-has-been-released/ba-p/2418005)
+    * Bump master:sc/VERSION to [5.8.25](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-8-25-Stable-Candidate-has-been-released/ba-p/2418897)
+---
 * **2018-06-29:**
     * Bump master:stable/VERSION to [5.8.24](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-8-24-Stable-has-been-released/ba-p/2404580)
 ---
