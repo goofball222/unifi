@@ -3,6 +3,7 @@
     * Bump master:sc/VERSION to [5.9.20](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-20-Stable-Candidate-has-been-released/ba-p/2443623)
     * Bump unifi58:sc/VERSION to [5.8.28](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-8-28-Stable-Candidate-has-been-released/ba-p/2443775)
     * Copy master:testing/Dockerfile curl changes to all master branch dynamic tags
+    * Delete unifi57 branch - v5.7.X train is "unsupported" by UBNT. https://community.ubnt.com/t5/UniFi-Wireless/UniFi-Controller-Releases-Updated-Jun-27th-2018/m-p/2371605
 ---
 * **2018-07-20:**
     * Update master:testing/Dockerfile to leave curl installed. Covers additional UniFi dependency starting with v5.9.12 release.
