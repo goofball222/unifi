@@ -66,7 +66,6 @@ RUN set -x \
     # Verify that the gosu binary works
     && gosu nobody true \
     && curl -sSL https://dl.ubnt.com/unifi/$VERSION/unifi_sysvinit_all.deb -o /tmp/unifi.deb \
-    && apt-get -qqy purge curl > /dev/null \
     && apt-get -qqy autoremove --purge > /dev/null \
     && apt-get -qqy clean autoclean > /dev/null \
     && dpkg --force-all -i /tmp/unifi.deb \
