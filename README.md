@@ -6,8 +6,8 @@
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
 | [latest](https://github.com/goofball222/unifi/blob/master/stable/Dockerfile) | [5.8.24](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-8-24-Stable-has-been-released/ba-p/2404580) | UniFi latest stable release | 2018-06-29 |
-| [sc](https://github.com/goofball222/unifi/blob/master/sc/Dockerfile) | [5.8.25](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-8-25-Stable-Candidate-has-been-released/ba-p/2418897) | UniFi v5.8 stable candidate release | 2018-07-12 |
-| [testing](https://github.com/goofball222/unifi/blob/master/testing/Dockerfile) | [5.9.16](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-16-Testing-has-been-released/ba-p/2427840) | UniFi v5.9 testing release | 2018-07-20 |
+| [sc](https://github.com/goofball222/unifi/blob/master/sc/Dockerfile) | [5.9.20](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-20-Stable-Candidate-has-been-released/ba-p/2443623) | UniFi v5.9 stable candidate release | 2018-08-03 |
+| [unifi58-sc](https://github.com/goofball222/unifi/blob/unifi58/sc/Dockerfile) | [5.8.28](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-8-28-Stable-Candidate-has-been-released/ba-p/2443775) | UniFi v5.8 stable candidate release | 2018-08-03 |
 | [unifi57](https://github.com/goofball222/unifi/blob/unifi57/stable/Dockerfile) | [5.7.23](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-7-23-Stable-has-been-released/ba-p/2318813) | UniFi latest stable release | 2018-04-16 |
 | [unifi57-sc](https://github.com/goofball222/unifi/blob/unifi57/sc/Dockerfile) | [5.7.28](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-7-28-Stable-Candidate-has-been-released/ba-p/2360718) | UniFi v5.7 latest stable candidate | 2018-05-22 |
 | [unifi56](https://github.com/goofball222/unifi/blob/unifi56/stable/Dockerfile) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | UniFi v5.6 latest stable release | 2018-06-25 |
