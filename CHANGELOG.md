@@ -1,3 +1,9 @@
+* **2018-08-08:**
+    * Bump master:sc/VERSION to [5.9.22](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-22-Stable-Candidate-has-been-released/ba-p/2449044)
+    * Bump unifi58:stable/VERSION to [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036)
+    * Point latest tag at unifi58:stable
+    * Tag 5.8.28-release
+---
 * **2018-08-03:**
     * Move 5.8.X sc to unifi58 branch.
     * Bump master:sc/VERSION to [5.9.20](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-20-Stable-Candidate-has-been-released/ba-p/2443623)
