@@ -93,6 +93,36 @@ $ docker run --name unifi -d \
 
 ---
 
+**Recommended run method: [Docker Compose](https://docs.docker.com/compose/) - UniFi app and internal Mongo DB:**
+
+```bash
+
+version: '3'
+
+services:
+  unifi:
+    image: goofball222/unifi
+    container_name: unifi
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 3478:3478/udp
+      - 8080:8080
+      - 8443:8443
+      - 8880:8880
+      - 8843:8843
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./cert:/usr/lib/unifi/cert
+      - ./data:/usr/lib/unifi/data
+      - ./logs:/usr/lib/unifi/logs
+    environment:
+      - TZ=UTC
+
+```
+
+---
+
 **Recommended run method: [Docker Compose](https://docs.docker.com/compose/) - UniFi app and Mongo DB as separate services:**
 
 ```bash
@@ -147,49 +177,13 @@ services:
 
 **Please make sure to read the "NETWORK: HOST" section of the [Docker "run" reference](https://docs.docker.com/engine/reference/run/#network-settings) and understand the implications of this before using.**
 
+Copy the following to both services in the docker-compose.yml file under the commented out `network_mode: bridge` line in the example above, and then uncomment the `network_mode: host` line:
+
 ```bash
 
-version: '3'
-
-services:
-  mongo:
-    image: mongo
-    container_name: unifidb
-    restart: unless-stopped
 #   Use host network mode. Does not allow for port remapping. You may need to manually adjust
 #       host firewall settings to allow traffic. Running a container in this mode is considered insecure.
 #    network_mode: host
-    volumes:
-      - ./data/db:/data/db
-
-  unifi:
-    image: goofball222/unifi
-    container_name: unifi
-    restart: unless-stopped
-#   Use host network mode. Does not allow for port remapping. You may need to manually adjust
-#       host firewall settings to allow traffic. Running a container in this mode is considered insecure.
-#    network_mode: host
-    ports:
-      - 3478:3478/udp
-      - 8080:8080
-      - 8443:8443
-      - 8880:8880
-      - 8843:8843
-#     Optional: Uncomment to enable speed tests from the UniFi iOS & Android apps
-#      - 6789:6789
-#     Optional: Uncomment for layer 2 broadcast discovery if container running on a host in the local LAN
-#      - 10001:10001/udp
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - ./cert:/usr/lib/unifi/cert
-      - ./data:/usr/lib/unifi/data
-      - ./logs:/usr/lib/unifi/logs
-    environment:
-      - DB_MONGO_LOCAL=false
-      - DB_MONGO_URI=mongodb://mongo:27017/unifi
-      - STATDB_MONGO_URI=mongodb://mongo:27017/unifi_stat
-      - TZ=UTC
-      - UNIFI_DB_NAME=unifi
 
 ```
 

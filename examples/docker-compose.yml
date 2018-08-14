@@ -1,16 +1,27 @@
-version: '2.2'
+version: '3'
+
 services:
   unifi:
     image: goofball222/unifi
+    container_name: unifi
+    restart: unless-stopped
+#   By default docker-compose will create a new bridge network for the services in the compose file.
+#   Enable this to have the services/containers use the existing docker0/default bridge network.
+#    network_mode: bridge
     ports:
-     - 3478:3478/udp
-     - 6789:6789
-     - 8080:8080
-     - 8443:8443
-     - 8880:8880
-     - 8843:8843
-     - 10001:10001/udp
+      - 3478:3478/udp
+      - 8080:8080
+      - 8443:8443
+      - 8880:8880
+      - 8843:8843
+#     Optional: Uncomment to enable speed tests from the UniFi iOS & Android apps
+#      - 6789:6789
+#     Optional: Uncomment for layer 2 broadcast discovery if container running on a host in the local LAN
+#      - 10001:10001/udp
     volumes:
-     - /DATA_VOLUME/unifi/cert:/usr/lib/unifi/cert
-     - /DATA_VOLUME/unifi/data:/usr/lib/unifi/data
-     - /DATA_VOLUME/unifi/logs:/usr/lib/unifi/logs
+      - /etc/localtime:/etc/localtime:ro
+      - ./cert:/usr/lib/unifi/cert
+      - ./data:/usr/lib/unifi/data
+      - ./logs:/usr/lib/unifi/logs
+    environment:
+      - TZ=UTC
