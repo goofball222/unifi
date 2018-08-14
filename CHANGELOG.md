@@ -1,3 +1,23 @@
+* **2018-08-13:**
+    * Add experimental Alpine based builds running the v5.9.22 stable candidate. Hoping for smaller, simpler images.
+        * alpine:sc-nom - DOES NOT CONTAIN MONGO. Needs to be run via orchestration or Docker compose.
+        * alpine:sc - More standard build containing Mongo DB binaries.
+        * Known issue: WebRTC doesn't load. NOTE: Access to the controller from the UBNT Cloud portal doesn't work without this.
+    * Add master:sc-nom - DOES NOT CONTAIN MONGO. Needs to be run via orchestration or Docker compose.
+    * Update Dockerfiles across the board with the following:
+        * Remove MONGO_UID/MONGO_GID. The internal Mongo process runs as the "unifi" user anyway, so these aren't needed.
+        * Change UNIFI_UID to PUID and UNIFI_GID to PGID.
+        * Add RUN_CHOWN env entry and default it to 'true'. Make sure your permissions are correct and then set to 'false' to improve container startup times.
+        * Switch gosu to the Debian package. The older direct-download method was prone to build failures due to unavailable keyservers.
+    * Update docker-entrypoint.sh across the board to 0.6.1-debian.
+        * Add automated UNIFI_GID and UNIFI_UID conversion to new PGID/PUID variables.
+        * Add support for RUN_CHOWN env entry to skip chown command on slow overlay2 systems.
+        * Add warnings about future change to remove internal Mongo from images if external DB variables not detected.
+    * Update documentation
+        * Add Alpine info to README.md
+        * Add Mongo changes notice and suggestions to README.md
+        * Change README.md recommended launch/run examples to docker-compose.
+---
 * **2018-08-08:**
     * Bump master:sc/VERSION to [5.9.22](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-22-Stable-Candidate-has-been-released/ba-p/2449044)
     * Bump unifi58:stable/VERSION to [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036)

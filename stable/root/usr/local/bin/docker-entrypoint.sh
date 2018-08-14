@@ -3,8 +3,8 @@
 # docker-entrypoint.sh script for UniFi Docker container
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-SCRIPT_VERSION="0.5.7"
-# Last updated date: 2018-05-03
+SCRIPT_VERSION="0.6.1-debian-mongo"
+# Last updated date: 2018-08-13
 
 set -Eeuo pipefail
 
@@ -18,6 +18,14 @@ DATADIR=${BASEDIR}/data
 LOGDIR=${BASEDIR}/logs
 RUNDIR=${BASEDIR}/run
 
+DB_MONGO_LOCAL=${DB_MONGO_LOCAL:-}
+DB_MONGO_URI=${DB_MONGO_URI:-}
+STATDB_MONGO_URI=${STATDB_MONGO_URI:-}
+UNIFI_DB_NAME=${UNIFI_DB_NAME:-}
+
+UNIFI_UID=${UNIFI_UID:-}
+UNIFI_GID=${UNIFI_GID:-}
+
 log() {
     echo "$(date +"[%Y-%m-%d %T,%3N]") <docker-entrypoint> $*" | tee -a ${BASEDIR}/logs/server.log
 }
@@ -30,6 +38,17 @@ log "INFO - Script version ${SCRIPT_VERSION}"
 JVM_EXTRA_OPTS="${JVM_EXTRA_OPTS} -Dunifi.datadir=${DATADIR} -Dunifi.logdir=${LOGDIR} -Dunifi.rundir=${RUNDIR}"
 
 JVM_OPTS="${JVM_EXTRA_OPTS} -Djava.awt.headless=true -Dfile.encoding=UTF-8"
+
+if [ ! -z "${UNIFI_GID}" ]; then
+    log "INFO - UNIFI_GID is set to '${UNIFI_GID}'. Please update to the PGID env variable."
+    log "INFO - Automatically converting UNIFI_GID to PGID."
+    PGID=${UNIFI_GID}
+fi
+if [ ! -z "${UNIFI_UID}" ]; then
+    log "INFO - UNIFI_UID is set to '${UNIFI_UID}'. Please update to the PUID env variable."
+    log "INFO - Automatically converting UNIFI_UID to PUID."
+    PUID=${UNIFI_UID}
+fi
 
 cd ${BASEDIR}
 
@@ -130,17 +149,22 @@ idle_handler() {
 
 if [ "$(id -u)" = '0' ]; then
     log "INFO - Entrypoint running with UID 0 (root)"
-    if [ "$(id unifi -u)" != "${UNIFI_UID}" ] || [ "$(id unifi -g)" != "${UNIFI_GID}" ]; then
-        log "INFO - Setting custom unifi UID/GID: UID=${UNIFI_UID}, GID=${UNIFI_GID}"
-        usermod -u ${UNIFI_UID} unifi && groupmod -g ${UNIFI_GID} unifi
+    if [ "$(id unifi -u)" != "${PUID}" ] || [ "$(id unifi -g)" != "${PGID}" ]; then
+        log "INFO - Setting custom unifi UID/GID: UID=${PUID}, GID=${PGID}"
+        usermod -u ${PUID} unifi && groupmod -g ${PGID} unifi
     else
-        log "INFO - UID/GID for unifi are unchanged: UID=${UNIFI_UID}, GID=${UNIFI_GID}"
+        log "INFO - UID/GID for unifi are unchanged: UID=${PUID}, GID=${PGID}"
     fi
 
-    log "INFO - Ensuring file permissions are correct before dropping privs - 'chown -R unifi:unifi ${BASEDIR}'"
-    chown -R unifi:unifi ${BASEDIR}
-
     if [[ "${@}" == 'unifi' ]]; then
+
+        if [ -z "${DB_MONGO_LOCAL}" ] || [ -z "${DB_MONGO_URI}" ] || [ -z "${STATDB_MONGO_URI}" ] || [ -z "${UNIFI_DB_NAME}" ]; then
+            log "WARN - ======================================================================"
+            log "WARN - One or more of: 'DB_MONGO_LOCAL', 'DB_MONGO_URI', 'STATDB_MONGO_URI', or 'UNIFI_DB_NAME' is unset."
+            log "WARN - In the near future this container *will not* run UniFi without an external Mongo DB instance defined."
+            log "WARN - *** Please check the README.md and examples at https://github.com/goofball222/unifi ***"
+            log "WARN - ======================================================================"
+        fi
 
         if [ "${BIND_PRIV}" == 'true' ] && [ "${RUNAS_UID0}" == 'false' ]; then
             log "INFO - Support binding ports <1024 'setcap 'cap_net_bind_service=+ep' /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java'"
@@ -154,6 +178,15 @@ if [ "$(id -u)" = '0' ]; then
             fi
         fi
 
+        if [ "${RUN_CHOWN}" == 'true' ]; then
+            log "INFO - Ensuring file permissions are correct before dropping privs - 'chown -R unifi:unifi ${BASEDIR}'"
+            log "INFO - Running 'chown' on Docker overlay2 storage is **really** slow."
+            log "INFO - To skip this and speed up future container starts set RUN_CHOWN=false."
+            chown -R unifi:unifi ${BASEDIR}
+        else
+            log "INFO - RUN_CHOWN set to 'false' - Not running 'chown -R unifi:unifi ${BASEDIR}', assume permissions are right."
+        fi
+
         if [ "${RUNAS_UID0}" == 'true' ]; then
             log "INFO - RUNAS_UID0 = 'true', running UniFi processes as UID 0 (root)"
             log "WARN - ======================================================================"
@@ -164,7 +197,7 @@ if [ "$(id -u)" = '0' ]; then
             idle_handler
         fi
 
-        log "INFO - Use gosu to drop privileges and start Java/UniFi as UID=${UNIFI_UID}, GID=${UNIFI_GID}"
+        log "INFO - Use gosu to drop privileges and start Java/UniFi as UID=${PUID}, GID=${PGID}"
         log "EXEC - gosu unifi:unifi /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start"
         exec gosu unifi:unifi /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start &
         idle_handler
@@ -178,6 +211,15 @@ else
     log "WARN - Process will be spawned with UID=$(id -u), GID=$(id -g)"
     log "WARN - Depending on permissions requested command may not work"
     if [[ "${@}" == 'unifi' ]]; then
+
+        if [ -z "${DB_MONGO_LOCAL}" ] || [ -z "${DB_MONGO_URI}" ] || [ -z "${STATDB_MONGO_URI}" ] || [ -z "${UNIFI_DB_NAME}" ]; then
+            log "WARN - ======================================================================"
+            log "WARN - One or more of: 'DB_MONGO_LOCAL', 'DB_MONGO_URI', 'STATDB_MONGO_URI', or 'UNIFI_DB_NAME' is unset."
+            log "WARN - In the near future this container *will not* run UniFi without an external Mongo DB instance defined."
+            log "WARN - *** Please check the README.md and examples at https://github.com/goofball222/unifi ***"
+            log "WARN - ======================================================================"
+        fi
+
         log "EXEC - /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start"
         exec /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start &
         idle_handler
