@@ -8,11 +8,13 @@
 | --- | :---: | --- | :---: |
 | [latest](https://github.com/goofball222/unifi/blob/unifi58/stable/Dockerfile) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi latest stable release | 2018-08-13 |
 | [sc](https://github.com/goofball222/unifi/blob/master/sc/Dockerfile) | [5.9.22](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-22-Stable-Candidate-has-been-released/ba-p/2449044) | UniFi v5.9 stable candidate release | 2018-08-13 |
-| [sc-nom](https://github.com/goofball222/unifi/blob/master/sc/Dockerfile) | [5.9.22](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-22-Stable-Candidate-has-been-released/ba-p/2449044) | UniFi v5.9 stable candidate release | 2018-08-13 |
+| [sc-nom](https://github.com/goofball222/unifi/blob/master/sc/Dockerfile) | [5.9.22](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-22-Stable-Candidate-has-been-released/ba-p/2449044) | UniFi v5.9 stable candidate release, no Mongo | 2018-08-13 |
 | [alpine-sc](https://github.com/goofball222/unifi/blob/alpine/sc/Dockerfile) | [5.9.22](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-22-Stable-Candidate-has-been-released/ba-p/2449044) | UniFi v5.9 stable candidate release, Alpine base | 2018-08-13 |
 | [alpine-sc-nom](https://github.com/goofball222/unifi/blob/alpine/sc-nom/Dockerfile) | [5.9.22](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-22-Stable-Candidate-has-been-released/ba-p/2449044) | UniFi v5.9 stable candidate release, Alpine base, no Mongo | 2018-08-13 |
 | [unifi58](https://github.com/goofball222/unifi/blob/unifi58/stable/Dockerfile) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi v5.8 latest stable release | 2018-08-13 |
+| [unifi58-nom](https://github.com/goofball222/unifi/blob/unifi58/stable-nom/Dockerfile) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi v5.8 latest stable release, mo Mongo | 2018-08-13 |
 | [unifi56](https://github.com/goofball222/unifi/blob/unifi56/stable/Dockerfile) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | UniFi v5.6 latest stable release | 2018-08-13 |
+| [unifi56-nom](https://github.com/goofball222/unifi/blob/unifi56/stable-nom/Dockerfile) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | UniFi v5.6 latest stable release, no Mongo | 2018-08-13 |
 | [release-5.8.28](https://github.com/goofball222/unifi/releases/tag/5.8.28) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | Static stable release tag/image | 2018-08-08 |
 | [release-5.6.39](https://github.com/goofball222/unifi/releases/tag/5.6.39) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | Static stable release tag/image | 2018-06-25 |
 
@@ -29,7 +31,7 @@
 * Added experimental images/tags using Alpine Linux as the base: alpine-sc, alpine-sc-nom
 * Renamed UNIFI_GID and UNIFI_UID variables to PGID and PUID respectively.
 * Added option to skip automatic `chown` during startup. Helps start speed on overlay2 Docker hosts.
-* Preliminary build of images/tags without Mongo included. goofball222/unifi:sc-nom, goofball222/unifi:alpine-sc-nom
+* Preliminary build of images/tags without Mongo included. Naming convention *-nom, IE: sc-nom, alpine-sc-nom, unifi58-nom, unifi56-nom
 * Added log message warnings about pending future removal of Mongo from container. You can still run this as an all-in-one on current tags, however I highly recommend moving over to a single-service per container setup with Mongo externalized.
 
 
