@@ -49,10 +49,9 @@ RUN set -x \
     && apt-get -qqy autoremove --purge > /dev/null \
     && apt-get -qqy clean autoclean > /dev/null \
     && dpkg --force-all -i /tmp/unifi-${VERSION}.deb \
-    && rm /tmp/unifi-${VERSION}.deb \
     && bash -c 'mkdir -p {data,logs,run,cert}' \
     && chown -R unifi:unifi /usr/lib/unifi \
-    && rm -rf /var/cache/apt/* /var/cache/debconf/* /var/lib/apt/* /var/lib/dpkg/* /tmp/* /var/tmp/* /var/log/*
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/log/*
 
 EXPOSE 3478/udp 6789/tcp 8080/tcp 8443/tcp 8843/tcp 8880/tcp 10001/udp
 
