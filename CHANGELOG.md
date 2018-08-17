@@ -1,3 +1,9 @@
+* **2018-08-17:**
+    * Update Alpine Dockerfile to use 'frolvlad/alpine-glibc:latest' as source image.
+        * Fixes musl-c vs. glibc compat issues with UniFi included Snappy library, probably others.
+    * Update Alpine Dockerfile to leave curl installed, add other dependencies based on listing from Debian package.
+    * Update Debian Dockerfiles to stop clearing dpkg and apt DBs. Only saving ~5MB of data doing so and causing headaches for users troubleshooting.
+---
 * **2018-08-13:**
     * Add experimental Alpine based builds running the v5.9.22 stable candidate. Hoping for smaller, simpler images.
         * alpine:sc - DOES NOT CONTAIN MONGO. Needs to be run via docker-compose and/or connected to external Mongo DB.
