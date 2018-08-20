@@ -1,3 +1,6 @@
+* **2018-08-20:**
+    * Update Alpine Dockerfile to include openssl package. Missing tools for certificate management without...
+---
 * **2018-08-17:**
     * Update Alpine Dockerfile to use 'frolvlad/alpine-glibc:latest' as source image.
         * Fixes musl-c vs. glibc compat issues with UniFi included Snappy library, probably others.
