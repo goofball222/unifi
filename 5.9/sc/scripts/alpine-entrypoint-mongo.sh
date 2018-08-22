@@ -3,7 +3,7 @@
 # docker-entrypoint.sh script for UniFi Docker container
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-SCRIPT_VERSION="0.6.3-alpine-mongo"
+SCRIPT_VERSION="0.6.5-alpine-mongo"
 # Last updated date: 2018-08-22
 
 set -Eeuo pipefail
@@ -23,8 +23,8 @@ DB_MONGO_URI=${DB_MONGO_URI:-}
 STATDB_MONGO_URI=${STATDB_MONGO_URI:-}
 UNIFI_DB_NAME=${UNIFI_DB_NAME:-}
 
-UNIFI_UID=${UNIFI_UID:-}
 UNIFI_GID=${UNIFI_GID:-}
+UNIFI_UID=${UNIFI_UID:-}
 
 log() {
     echo "$(date +"[%Y-%m-%d %T,%3N]") <docker-entrypoint> $*" | tee -a ${BASEDIR}/logs/server.log
@@ -149,11 +149,12 @@ idle_handler() {
 
 if [ "$(id -u)" = '0' ]; then
     log "INFO - Entrypoint running with UID 0 (root)"
-    if [ "$(id unifi -u)" != "${PUID}" ] || [ "$(id unifi -g)" != "${PGID}" ]; then
-        log "INFO - Setting custom unifi UID/GID: UID=${PUID}, GID=${PGID}"
-        usermod -u ${PUID} unifi && groupmod -g ${PGID} unifi
+    if [ "$(id unifi -g)" != "${PGID}" ] || [ "$(id unifi -u)" != "${PUID}" ]; then
+        log "INFO - Setting custom unifi GID/UID: GID=${PGID}, UID=${PUID}"
+        groupmod -o -g ${PGID} unifi
+        usermod -o -u ${PUID} unifi
     else
-        log "INFO - UID/GID for unifi are unchanged: UID=${PUID}, GID=${PGID}"
+        log "INFO - GID/UID for unifi are unchanged: GID=${PGID}, UID=${PUID}"
     fi
 
     if [[ "${@}" == 'unifi' ]]; then
@@ -197,7 +198,7 @@ if [ "$(id -u)" = '0' ]; then
             idle_handler
         fi
 
-        log "INFO - Use su-exec to drop privileges and start Java/UniFi as UID=${PUID}, GID=${PGID}"
+        log "INFO - Use su-exec to drop privileges and start Java/UniFi as GID=${PGID}, UID=${PUID}"
         log "EXEC - su-exec unifi:unifi /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start"
         exec su-exec unifi:unifi /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start &
         idle_handler
@@ -207,8 +208,8 @@ if [ "$(id -u)" = '0' ]; then
     fi
 else
     log "WARN - Container/entrypoint not started as UID 0 (root)"
-    log "WARN - Unable to change permissions or set custom UID/GID if configured"
-    log "WARN - Process will be spawned with UID=$(id -u), GID=$(id -g)"
+    log "WARN - Unable to change permissions or set custom GID/UID if configured"
+    log "WARN - Process will be spawned with GID=$(id -g), UID=$(id -u)"
     log "WARN - Depending on permissions requested command may not work"
     if [[ "${@}" == 'unifi' ]]; then
 

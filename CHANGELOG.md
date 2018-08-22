@@ -1,3 +1,6 @@
+* **2018-08-22:**
+    * Update scripts/*.sh to version 0.6.5, fix for issue #24 - allow setting custom GID/UID when already exists.
+---
 * **2018-08-21:**
     * Update scripts/*.sh to version 0.6.3, adjust wording on MongoDB WARN/ERROR
 ---
