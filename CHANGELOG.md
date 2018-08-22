@@ -1,4 +1,7 @@
 * **2018-08-21:**
+    * Update scripts/*.sh to version 0.6.3, adjust wording on MongoDB WARN/ERROR
+---
+* **2018-08-21:**
     * Flatten git branches to master branch MAJOR.MINOR version subfolders.
         * IE: /5.6/stable, /5.8/{stable,sc}, /5.9/{sc,testing}, etc.
         * Docker cloud automated builds support subfolders and alternate Dockerfile paths allowing for this change.

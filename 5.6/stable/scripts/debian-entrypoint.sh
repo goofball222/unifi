@@ -3,8 +3,8 @@
 # docker-entrypoint.sh script for UniFi Docker container
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-SCRIPT_VERSION="0.6.2-debian"
-# Last updated date: 2018-08-21
+SCRIPT_VERSION="0.6.3-debian"
+# Last updated date: 2018-08-22
 
 set -Eeuo pipefail
 
@@ -161,7 +161,7 @@ if [ "$(id -u)" = '0' ]; then
         if [ -z "${DB_MONGO_LOCAL}" ] || [ -z "${DB_MONGO_URI}" ] || [ -z "${STATDB_MONGO_URI}" ] || [ -z "${UNIFI_DB_NAME}" ]; then
             log "WARN - ======================================================================"
             log "WARN - One or more of: 'DB_MONGO_LOCAL', 'DB_MONGO_URI', 'STATDB_MONGO_URI', or 'UNIFI_DB_NAME' is unset."
-            log "WARN - In the near future this container *will not* run UniFi without an external Mongo DB instance defined."
+            log "WARN - In the future you should consider running UniFi on Docker with an external Mongo DB instance defined."
             log "WARN - *** Please check the README.md and examples at https://github.com/goofball222/unifi ***"
             log "WARN - ======================================================================"
         fi
@@ -215,7 +215,7 @@ else
         if [ -z "${DB_MONGO_LOCAL}" ] || [ -z "${DB_MONGO_URI}" ] || [ -z "${STATDB_MONGO_URI}" ] || [ -z "${UNIFI_DB_NAME}" ]; then
             log "WARN - ======================================================================"
             log "WARN - One or more of: 'DB_MONGO_LOCAL', 'DB_MONGO_URI', 'STATDB_MONGO_URI', or 'UNIFI_DB_NAME' is unset."
-            log "WARN - In the near future this container *will not* run UniFi without an external Mongo DB instance defined."
+            log "WARN - In the future you should consider running UniFi on Docker with an external Mongo DB instance defined."
             log "WARN - *** Please check the README.md and examples at https://github.com/goofball222/unifi ***"
             log "WARN - ======================================================================"
         fi

@@ -3,8 +3,8 @@
 # docker-entrypoint.sh script for UniFi Docker container
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-SCRIPT_VERSION="0.6.2-alpine"
-# Last updated date: 2018-08-21
+SCRIPT_VERSION="0.6.3-alpine"
+# Last updated date: 2018-08-22
 
 set -Eeuo pipefail
 
@@ -162,6 +162,7 @@ if [ "$(id -u)" = '0' ]; then
             log "ERROR - ======================================================================"
             log "ERROR - One or more of: 'DB_MONGO_LOCAL', 'DB_MONGO_URI', 'STATDB_MONGO_URI', or 'UNIFI_DB_NAME' is unset."
             log "ERROR - This container cannot run UniFi without all Mongo external env variables defined correctly."
+            log "ERROR - They must be pointed to a valid external Mongo DB container or host instance."
             log "ERROR - *** Please check the README.md and examples at https://github.com/goofball222/unifi ***"
             log "ERROR - ======================================================================"
             log "ERROR - Container run environment is invalid, exiting..."
@@ -218,6 +219,7 @@ else
             log "ERROR - ======================================================================"
             log "ERROR - One or more of: 'DB_MONGO_LOCAL', 'DB_MONGO_URI', 'STATDB_MONGO_URI', or 'UNIFI_DB_NAME' is unset."
             log "ERROR - This container cannot run UniFi without all Mongo external env variables defined correctly."
+            log "ERROR - They must be pointed to a valid external Mongo DB container or host instance."
             log "ERROR - *** Please check the README.md and examples at https://github.com/goofball222/unifi ***"
             log "ERROR - ======================================================================"
             log "ERROR - Container run environment is invalid, exiting..."
