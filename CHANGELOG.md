@@ -1,3 +1,16 @@
+* **2018-08-21:**
+    * Flatten git branches to master branch MAJOR.MINOR version subfolders.
+        * IE: /5.6/stable, /5.8/{stable,sc}, /5.9/{sc,testing}, etc.
+        * Docker cloud automated builds support subfolders and alternate Dockerfile paths allowing for this change.
+    * Reorganize directory structure to support multiple Dockerfiles and entrypoint scripts per PATCH version.
+        * Build container with different OSes, etc. easier
+        * Move root/usr/lib/unifi/system.properties.default to defaults/system.properties.default
+        * Move root/usr/local/bin/docker-entrypoint.sh scripts to scripts/{OS}-entrypoint{-MODS}.sh
+        * Move Dockerfile(s) to dockerfiles/Dockerfile.{OS}{.MOD}
+    * Update scripts/{OS}-entrypoint{-MODS}.sh to version 0.6.2, insure each is tagged with expected OS+MODs 
+        * IE: 0.6.2-alpine, 0.6.2-alpine-mongo, 0.6.2-debian, 0.6.2-debian-nomongo
+    * Update Dockerfiles to drop COPY root / and use COPY statements specific to container OS+MODs
+---
 * **2018-08-20:**
     * Update Alpine Dockerfile to include openssl package. Missing tools for certificate management without...
 ---

@@ -7,3 +7,6 @@ docker-compose.yml
 Makefile
 *.mk
 *.dmk
+*.sw?
+*~
+tmp/*
