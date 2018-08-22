@@ -1,21 +1,21 @@
 
 # UniFi Docker Container
 
-[![Docker Build Status](https://img.shields.io/docker/build/goofball222/unifi.svg)](https://hub.docker.com/r/goofball222/unifi/) [![Docker Pulls](https://img.shields.io/docker/pulls/goofball222/unifi.svg)](https://hub.docker.com/r/goofball222/unifi/) [![Docker Stars](https://img.shields.io/docker/stars/goofball222/unifi.svg)](https://hub.docker.com/r/goofball222/unifi/) [![MB Layers](https://images.microbadger.com/badges/image/goofball222/unifi.svg)](https://microbadger.com/images/goofball222/unifi) [![MB Commit](https://images.microbadger.com/badges/commit/goofball222/unifi.svg)](https://microbadger.com/images/goofball222/unifi) [![MB License](https://images.microbadger.com/badges/license/goofball222/unifi.svg)](https://microbadger.com/images/goofball222/unifi)
+[![Docker Pulls](https://img.shields.io/docker/pulls/goofball222/unifi.svg)](https://hub.docker.com/r/goofball222/unifi/) [![Docker Stars](https://img.shields.io/docker/stars/goofball222/unifi.svg)](https://hub.docker.com/r/goofball222/unifi/) [![MB Layers](https://images.microbadger.com/badges/image/goofball222/unifi.svg)](https://microbadger.com/images/goofball222/unifi) [![MB Commit](https://images.microbadger.com/badges/commit/goofball222/unifi.svg)](https://microbadger.com/images/goofball222/unifi) [![MB License](https://images.microbadger.com/badges/license/goofball222/unifi.svg)](https://microbadger.com/images/goofball222/unifi)
 
 ## Docker tags:
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
-| [latest](https://github.com/goofball222/unifi/blob/master/5.8/stable/Dockerfile.debian) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi latest stable release | 2018-08-21 |
-| [sc](https://github.com/goofball222/unifi/blob/master/5.9/sc/Dockerfile.debian) | [5.9.24](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-24-Stable-Candidate-has-been-released/ba-p/2464949) | UniFi v5.9 stable candidate release | 2018-08-21 |
-| [sc-alpine](https://github.com/goofball222/unifi/blob/master/5.9/sc/Dockerfile.alpine) | [5.9.24](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-24-Stable-Candidate-has-been-released/ba-p/2464949) | UniFi v5.9 stable candidate release, Alpine base, NO MONGO | 2018-08-21 |
-| [sc-debian-nomongo](https://github.com/goofball222/unifi/blob/master/5.9/sc/Dockerfile.debian.nomongo) | [5.9.24](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-24-Stable-Candidate-has-been-released/ba-p/2464949) | UniFi v5.9 stable candidate release, NO MONGO | 2018-08-21 |
-| [unifi58](https://github.com/goofball222/unifi/blob/master/5.8/stable/Dockerfile.debian) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi v5.8 latest stable release | 2018-08-21 |
-| [unifi58-alpine](https://github.com/goofball222/unifi/blob/master/5.8/stable/Dockerfile.alpine) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi v5.8 latest stable release, Alpine base, NO MONGO | 2018-08-21 |
-| [unifi58-debian-nomongo](https://github.com/goofball222/unifi/blob/master/5.8/stable/Dockerfile.debian.nomongo) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi v5.8 latest stable release, NO MONGO | 2018-08-21 |
-| [unifi56](https://github.com/goofball222/unifi/blob/master/5.6/stable/Dockerfile.debian) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | UniFi v5.6 latest stable release | 2018-08-21 |
-| [unifi56-alpine](https://github.com/goofball222/unifi/blob/master/5.6/stable/Dockerfile.alpine) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | UniFi v5.6 latest stable release, Alpine base, NO MONGO | 2018-08-21 |
-| [unifi56-debian-nomongo](https://github.com/goofball222/unifi/blob/master/5.6/stable/Dockerfile.debian.nomongo) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | UniFi v5.6 latest stable release, NO MONGO | 2018-08-21 |
+| [latest](https://github.com/goofball222/unifi/blob/master/5.8/stable/Dockerfile.debian) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi latest stable release | 2018-08-22 |
+| [sc](https://github.com/goofball222/unifi/blob/master/5.9/sc/Dockerfile.debian) | [5.9.24](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-24-Stable-Candidate-has-been-released/ba-p/2464949) | UniFi v5.9 stable candidate release | 2018-08-22 |
+| [sc-alpine](https://github.com/goofball222/unifi/blob/master/5.9/sc/Dockerfile.alpine) | [5.9.24](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-24-Stable-Candidate-has-been-released/ba-p/2464949) | UniFi v5.9 stable candidate release, Alpine base, **NO MONGO** | 2018-08-22 |
+| [sc-debian-nomongo](https://github.com/goofball222/unifi/blob/master/5.9/sc/Dockerfile.debian.nomongo) | [5.9.24](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-24-Stable-Candidate-has-been-released/ba-p/2464949) | UniFi v5.9 stable candidate release, **NO MONGO** | 2018-08-22 |
+| [unifi58](https://github.com/goofball222/unifi/blob/master/5.8/stable/Dockerfile.debian) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi v5.8 latest stable release | 2018-08-22 |
+| [unifi58-alpine](https://github.com/goofball222/unifi/blob/master/5.8/stable/Dockerfile.alpine) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi v5.8 latest stable release, Alpine base, **NO MONGO** | 2018-08-22 |
+| [unifi58-debian-nomongo](https://github.com/goofball222/unifi/blob/master/5.8/stable/Dockerfile.debian.nomongo) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi v5.8 latest stable release, **NO MONGO** | 2018-08-22 |
+| [unifi56](https://github.com/goofball222/unifi/blob/master/5.6/stable/Dockerfile.debian) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | UniFi v5.6 latest stable release | 2018-08-22 |
+| [unifi56-alpine](https://github.com/goofball222/unifi/blob/master/5.6/stable/Dockerfile.alpine) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | UniFi v5.6 latest stable release, Alpine base, **NO MONGO** | 2018-08-22 |
+| [unifi56-debian-nomongo](https://github.com/goofball222/unifi/blob/master/5.6/stable/Dockerfile.debian.nomongo) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | UniFi v5.6 latest stable release, **NO MONGO** | 2018-08-22 |
 | [release-5.8.28](https://github.com/goofball222/unifi/releases/tag/5.8.28) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | Static stable release tag/image | 2018-08-08 |
 | [release-5.6.39](https://github.com/goofball222/unifi/releases/tag/5.6.39) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | Static stable release tag/image | 2018-06-25 |
 
@@ -28,14 +28,14 @@
 
 **NOTE:**
 
-**Alpine images DO NOT contain an internal Mongo process. You must connect them to an external Mongo DB container or other host instance.**
+**Alpine and -nomongo tags DO NOT contain any internal MongoDB binaries. You must connect them to an external Mongo DB container or other host instance.**
 
 2018-08-21:
 * Changes in structure in git/GitHub. See [CHANGELOG.md](https://github.com/goofball222/unifi/blob/master/CHANGELOG.md)
 * Update tag naming conventions:
     * alpine-sc is now sc-alpine. Future Alpine builds will be *-alpine, IE: stable-alpine, latest-alpine, unifi58-alpine etc.
     * *-nom is now *-debian-nomongo. Writing the entire thing out better clarifies what modification it has.
-    * Any future new build tags will follow the `releasetype-os-mods` format.
+    * Any future new build tags will follow the `releasetype-os{-mods}` format.
 
 2018-08-13:
 * Added experimental images/tags using Alpine Linux as the base: alpine-sc
@@ -160,6 +160,8 @@ services:
 #   By default docker-compose will create a new bridge network for the services in the compose file.
 #   Enable this to have the services/containers use the existing docker0/default bridge network.
 #    network_mode: bridge
+    links:
+      - mongo
     ports:
       - 3478:3478/udp
       - 8080:8080
@@ -229,7 +231,7 @@ Recommended UniFi system.properties converted environment variables to externali
 | `DB_MONGO_LOCAL` | ***false*** | Setting this to *false* tells UniFi that we're using an external Mongo DB |
 | `DB_MONGO_URI` | ***mongodb://mongo:27017/unifi***| This sets the URI that UniFi should connect to for the main configuration database |
 | `STATDB_MONGO_URI` | ***mongodb://mongo:27017/unifi_stat*** | This sets the URI that UniFi should connect to for the statistics database |
-| `UNIFI_DB_NAME` | ***unifi*** | Sets a database name that can be connected and managed on the external Mongo DB server, must match with the URI variables. |
+| `UNIFI_DB_NAME` | ***unifi*** | Sets a database name that can be connected and managed on the external Mongo DB server, must match with the URI variables (IE: unifi, unifi_stat = unifi). |
 
 **NB/IMPORTANT:** Although I've been running my own deployments with an external DB for a year or more without issue with these settings externalizing the DB, just like running the app itself in a Docker container, is considered experimental and totally unsupported by UBNT. Full documentation for an external DB setup is outside the scope of this README and is left as an exercise for the interested reader. Additional information available on the [UBNT forums in this post](https://community.ubnt.com/t5/UniFi-Wireless/External-MongoDB-Server/m-p/1711073/highlight/true#M188357) and in the PDF post linked below.
 

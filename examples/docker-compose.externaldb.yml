@@ -16,8 +16,10 @@ services:
     container_name: unifi
     restart: unless-stopped
 #   By default docker-compose will create a new bridge network for the services in the compose file.
-#   Enable this to have the services/containers use the existing docker0/default bridge network.
+#   Enable the line below to have the services/containers use the existing docker0/default bridge network.
 #    network_mode: bridge
+    links:
+      - mongo
     ports:
       - 3478:3478/udp
       - 8080:8080
