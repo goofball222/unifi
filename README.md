@@ -6,14 +6,16 @@
 ## Docker tags:
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
-| [latest](https://github.com/goofball222/unifi/blob/master/5.8/stable/dockerfiles/Dockerfile.debian) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi latest stable release | 2018-08-21 |
-| [sc](https://github.com/goofball222/unifi/blob/master/5.9/sc/dockerfiles/Dockerfile.debian) | [5.9.24](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-24-Stable-Candidate-has-been-released/ba-p/2464949) | UniFi v5.9 stable candidate release | 2018-08-21 |
-| [sc-nom](https://github.com/goofball222/unifi/blob/master/5.9/sc/dockerfiles/Dockerfile.debian.nomongo) | [5.9.24](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-24-Stable-Candidate-has-been-released/ba-p/2464949) | UniFi v5.9 stable candidate release, NO MONGO | 2018-08-21 |
-| [alpine-sc](https://github.com/goofball222/unifi/blob/master/5.9/sc/dockerfiles/Dockerfile.alpine) | [5.9.24](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-24-Stable-Candidate-has-been-released/ba-p/2464949) | UniFi v5.9 stable candidate release, Alpine base, NO MONGO | 2018-08-21 |
-| [unifi58](https://github.com/goofball222/unifi/blob/master/5.8/stable/dockerfiles/Dockerfile.debian) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi v5.8 latest stable release | 2018-08-21 |
-| [unifi58-nom](https://github.com/goofball222/unifi/blob/master/5.8/stable-nom/dockerfiles/Dockerfile.debian.nomongo) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi v5.8 latest stable release, NO MONGO | 2018-08-21 |
-| [unifi56](https://github.com/goofball222/unifi/blob/unifi56/stable/dockerfiles/Dockerfile.debian) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | UniFi v5.6 latest stable release | 2018-08-21 |
-| [unifi56-nom](https://github.com/goofball222/unifi/blob/unifi56/stable-nom/dockerfiles/Dockerfile.debian.nomongo) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | UniFi v5.6 latest stable release, NO MONGO | 2018-08-21 |
+| [latest](https://github.com/goofball222/unifi/blob/master/5.8/stable/Dockerfile.debian) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi latest stable release | 2018-08-21 |
+| [sc](https://github.com/goofball222/unifi/blob/master/5.9/sc/Dockerfile.debian) | [5.9.24](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-24-Stable-Candidate-has-been-released/ba-p/2464949) | UniFi v5.9 stable candidate release | 2018-08-21 |
+| [sc-alpine](https://github.com/goofball222/unifi/blob/master/5.9/sc/Dockerfile.alpine) | [5.9.24](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-24-Stable-Candidate-has-been-released/ba-p/2464949) | UniFi v5.9 stable candidate release, Alpine base, NO MONGO | 2018-08-21 |
+| [sc-debian-nomongo](https://github.com/goofball222/unifi/blob/master/5.9/sc/Dockerfile.debian.nomongo) | [5.9.24](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-24-Stable-Candidate-has-been-released/ba-p/2464949) | UniFi v5.9 stable candidate release, NO MONGO | 2018-08-21 |
+| [unifi58](https://github.com/goofball222/unifi/blob/master/5.8/stable/Dockerfile.debian) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi v5.8 latest stable release | 2018-08-21 |
+| [unifi58-alpine](https://github.com/goofball222/unifi/blob/master/5.8/stable/Dockerfile.alpine) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi v5.8 latest stable release, Alpine base, NO MONGO | 2018-08-21 |
+| [unifi58-debian-nomongo](https://github.com/goofball222/unifi/blob/master/5.8/stable/Dockerfile.debian.nomongo) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi v5.8 latest stable release, NO MONGO | 2018-08-21 |
+| [unifi56](https://github.com/goofball222/unifi/blob/master/5.6/stable/Dockerfile.debian) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | UniFi v5.6 latest stable release | 2018-08-21 |
+| [unifi56-alpine](https://github.com/goofball222/unifi/blob/master/5.6/stable/Dockerfile.alpine) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | UniFi v5.6 latest stable release, Alpine base, NO MONGO | 2018-08-21 |
+| [unifi56-debian-nomongo](https://github.com/goofball222/unifi/blob/master/5.6/stable/Dockerfile.debian.nomongo) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | UniFi v5.6 latest stable release, NO MONGO | 2018-08-21 |
 | [release-5.8.28](https://github.com/goofball222/unifi/releases/tag/5.8.28) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | Static stable release tag/image | 2018-08-08 |
 | [release-5.6.39](https://github.com/goofball222/unifi/releases/tag/5.6.39) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | Static stable release tag/image | 2018-06-25 |
 
@@ -26,9 +28,17 @@
 
 **NOTE:**
 
+**Alpine images DO NOT contain an internal Mongo process. You must connect them to an external Mongo DB container or other host instance.**
+
+2018-08-21:
+* Changes in structure in git/GitHub. See [CHANGELOG.md](https://github.com/goofball222/unifi/blob/master/CHANGELOG.md)
+* Update tag naming conventions:
+    * alpine-sc is now sc-alpine. Future Alpine builds will be *-alpine, IE: stable-alpine, latest-alpine, unifi58-alpine etc.
+    * *-nom is now *-debian-nomongo. Writing the entire thing out better clarifies what modification it has.
+    * Any future new build tags will follow the `releasetype-os-mods` format.
+
 2018-08-13:
 * Added experimental images/tags using Alpine Linux as the base: alpine-sc
-* Alpine images DO NOT contain an internal Mongo process. You must connect them to an external Mongo DB container or host instance.
 * Renamed UNIFI_GID and UNIFI_UID variables to PGID and PUID respectively.
 * Preliminary build of Debian based images/tags without Mongo included. Naming convention *-nom, IE: sc-nom, unifi58-nom, unifi56-nom
     * These DO NOT contain an internal Mongo process. You must connect them to an external Mongo DB container or host instance.

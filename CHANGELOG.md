@@ -6,10 +6,16 @@
         * Build container with different OSes, etc. easier
         * Move root/usr/lib/unifi/system.properties.default to defaults/system.properties.default
         * Move root/usr/local/bin/docker-entrypoint.sh scripts to scripts/{OS}-entrypoint{-MODS}.sh
-        * Move Dockerfile(s) to dockerfiles/Dockerfile.{OS}{.MOD}
+        * Rename Dockerfile names to indicate/separate what OS+MODs they're based on.
+        * ~~Move Dockerfile(s) to dockerfiles/Dockerfile.{OS}{.MOD}~~
     * Update scripts/{OS}-entrypoint{-MODS}.sh to version 0.6.2, insure each is tagged with expected OS+MODs 
         * IE: 0.6.2-alpine, 0.6.2-alpine-mongo, 0.6.2-debian, 0.6.2-debian-nomongo
     * Update Dockerfiles to drop COPY root / and use COPY statements specific to container OS+MODs
+    * Update automatic build hooks script to include $DOCKERFILE_PATH variable to fix auto-build issues
+    * Rename alpine-sc tag to sc-alpine. Future tags will always be 'releasetype-os-mods'
+        * IE: sc-alpine = latest/most current UniFi Stable Candidate on Alpine; unifi58-alpine, sc-nomongo
+    * Extend *-nom tags to *-nomongo to hopefully better clarify what they are.
+    * Update README.md for the changes listed above.
 ---
 * **2018-08-20:**
     * Update Alpine Dockerfile to include openssl package. Missing tools for certificate management without...
