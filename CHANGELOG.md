@@ -1,3 +1,10 @@
+* **2018-08-24:**
+    * Combine and move scripts/* back to root/usr/local/bin/docker-entrypoint.sh, now has OS/MODs independence
+    * Functionize a lot of docker-entrypoint.sh and move it to root/usr/local/bin/entrypoint-functions.sh
+    * Move defaults/system.properties.default back to root/usr/lib/unifi/system.properties.default
+    * Update Dockerfiles for the entrypoint script changes
+    * Update Alpine containers to add tzdata package. Setting timezone actually works now.
+---
 * **2018-08-22:**
     * Update scripts/*.sh to version 0.6.5, fix for issue #24 - allow setting custom GID/UID when already exists.
 ---

@@ -8,4 +8,3 @@ docker build \
     --build-arg VCS_REF=`git rev-parse --short HEAD` \
     --build-arg VERSION=`cat VERSION` \
     -f $DOCKERFILE_PATH -t $IMAGE_NAME .
-

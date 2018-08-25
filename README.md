@@ -6,16 +6,16 @@
 ## Docker tags:
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
-| [latest](https://github.com/goofball222/unifi/blob/master/5.8/stable/Dockerfile.debian) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi latest stable release | 2018-08-22 |
-| [sc](https://github.com/goofball222/unifi/blob/master/5.9/sc/Dockerfile.debian) | [5.9.24](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-24-Stable-Candidate-has-been-released/ba-p/2464949) | UniFi v5.9 stable candidate release | 2018-08-22 |
-| [sc-alpine](https://github.com/goofball222/unifi/blob/master/5.9/sc/Dockerfile.alpine) | [5.9.24](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-24-Stable-Candidate-has-been-released/ba-p/2464949) | UniFi v5.9 stable candidate release, Alpine base, **NO MONGO** | 2018-08-22 |
-| [sc-debian-nomongo](https://github.com/goofball222/unifi/blob/master/5.9/sc/Dockerfile.debian.nomongo) | [5.9.24](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-24-Stable-Candidate-has-been-released/ba-p/2464949) | UniFi v5.9 stable candidate release, **NO MONGO** | 2018-08-22 |
-| [unifi58](https://github.com/goofball222/unifi/blob/master/5.8/stable/Dockerfile.debian) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi v5.8 latest stable release | 2018-08-22 |
-| [unifi58-alpine](https://github.com/goofball222/unifi/blob/master/5.8/stable/Dockerfile.alpine) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi v5.8 latest stable release, Alpine base, **NO MONGO** | 2018-08-22 |
-| [unifi58-debian-nomongo](https://github.com/goofball222/unifi/blob/master/5.8/stable/Dockerfile.debian.nomongo) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi v5.8 latest stable release, **NO MONGO** | 2018-08-22 |
-| [unifi56](https://github.com/goofball222/unifi/blob/master/5.6/stable/Dockerfile.debian) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | UniFi v5.6 latest stable release | 2018-08-22 |
-| [unifi56-alpine](https://github.com/goofball222/unifi/blob/master/5.6/stable/Dockerfile.alpine) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | UniFi v5.6 latest stable release, Alpine base, **NO MONGO** | 2018-08-22 |
-| [unifi56-debian-nomongo](https://github.com/goofball222/unifi/blob/master/5.6/stable/Dockerfile.debian.nomongo) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | UniFi v5.6 latest stable release, **NO MONGO** | 2018-08-22 |
+| [latest](https://github.com/goofball222/unifi/blob/master/5.8/stable/Dockerfile.debian) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi latest stable release | 2018-08-24 |
+| [sc](https://github.com/goofball222/unifi/blob/master/5.9/sc/Dockerfile.debian) | [5.9.24](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-24-Stable-Candidate-has-been-released/ba-p/2464949) | UniFi v5.9 stable candidate release | 2018-08-24 |
+| [sc-alpine](https://github.com/goofball222/unifi/blob/master/5.9/sc/Dockerfile.alpine) | [5.9.24](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-24-Stable-Candidate-has-been-released/ba-p/2464949) | UniFi v5.9 stable candidate release, Alpine base, **NO MONGO** | 2018-08-24 |
+| [sc-debian-nomongo](https://github.com/goofball222/unifi/blob/master/5.9/sc/Dockerfile.debian.nomongo) | [5.9.24](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-24-Stable-Candidate-has-been-released/ba-p/2464949) | UniFi v5.9 stable candidate release, **NO MONGO** | 2018-08-24 |
+| [unifi58](https://github.com/goofball222/unifi/blob/master/5.8/stable/Dockerfile.debian) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi v5.8 latest stable release | 2018-08-24 |
+| [unifi58-alpine](https://github.com/goofball222/unifi/blob/master/5.8/stable/Dockerfile.alpine) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi v5.8 latest stable release, Alpine base, **NO MONGO** | 2018-08-24 |
+| [unifi58-debian-nomongo](https://github.com/goofball222/unifi/blob/master/5.8/stable/Dockerfile.debian.nomongo) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | UniFi v5.8 latest stable release, **NO MONGO** | 2018-08-24 |
+| [unifi56](https://github.com/goofball222/unifi/blob/master/5.6/stable/Dockerfile.debian) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | UniFi v5.6 latest stable release | 2018-08-24 |
+| [unifi56-alpine](https://github.com/goofball222/unifi/blob/master/5.6/stable/Dockerfile.alpine) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | UniFi v5.6 latest stable release, Alpine base, **NO MONGO** | 2018-08-24 |
+| [unifi56-debian-nomongo](https://github.com/goofball222/unifi/blob/master/5.6/stable/Dockerfile.debian.nomongo) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | UniFi v5.6 latest stable release, **NO MONGO** | 2018-08-24 |
 | [release-5.8.28](https://github.com/goofball222/unifi/releases/tag/5.8.28) | [5.8.28](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-28-Stable-has-been-released/ba-p/2449036) | Static stable release tag/image | 2018-08-08 |
 | [release-5.6.39](https://github.com/goofball222/unifi/releases/tag/5.6.39) | [5.6.39](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-6-39-LTS-Stable-has-been-released/ba-p/2398954) | Static stable release tag/image | 2018-06-25 |
 
@@ -221,7 +221,7 @@ Copy the following to both services in the docker-compose.yml file under the com
 | `JVM_MAX_HEAP_SIZE` | ***1024M*** | Sets the max memory size for the container Java process (-Xmx) |
 | `PGID` | ***999*** | Specifies the GID for the container internal unifi group (used for file ownership) |
 | `PUID` | ***999*** | Specifies the UID for the container internal unifi user (used for process and file ownership) |
-| `RUN_CHOWN` | ***true*** | Set to *false* to disable the container automatic `chown` at startup. Speeds up startup process on overlay2 Docker hosts. NB/IMPORTANT: It's critical that you insure directory/data permissions on all mapped volumes are correct before disabling this or UniFi and/or Mongo will not start. |
+| `RUN_CHOWN` | ***true*** | Set to *false* to disable the container automatic `chown` at startup. Speeds up startup process on overlay2 Docker hosts. **NB/IMPORTANT:** It's critical that you insure directory/data permissions on all mapped volumes are correct before disabling this or UniFi and/or Mongo will not start. |
 | `RUNAS_UID0` | ***false*** | Set to *true* to force the container to run the Java/Mongo processes as UID=0 (root) - workaround for `setcap` AUFS missing xargs failure - **NB/IMPORTANT:** running with this set to "true" is insecure |
 
 Recommended UniFi system.properties converted environment variables to externalize Mongo DB via docker-compose:
@@ -247,8 +247,10 @@ Additional UniFi [system.properties](https://help.ubnt.com/hc/en-us/articles/205
 **SSL custom certificate auto-configuration support ([LetsEncrypt](https://letsencrypt.org/), etc.):**
 
 1. Map the Docker host cert storage location or volume to the `/usr/lib/unifi/cert` volume exposed by the container
-2. Must contain a PEM format SSL private key corresponding to the SSL certificate to be installed. Private key file **MUST** be named `privkey.pem`.
-3. Must contain a PEM format SSL certificate file with the full certification chain. LetsEncrypt handles this automatically, other providers may need manual work (https://www.digicert.com/ssl-support/pem-ssl-creation.htm). Certificate file **MUST** be named `fullchain.pem`.
+2. Must contain a PEM format SSL private key corresponding to the SSL certificate to be installed.
+Private key file **MUST** be named `privkey.pem`.
+3. Must contain a PEM format SSL certificate file with the full certification chain. LetsEncrypt handles this automatically, other providers may need manual work (https://www.digicert.com/ssl-support/pem-ssl-creation.htm).
+Certificate file **MUST** be named `fullchain.pem`.
 4. Start the container. SSL import and Java keystore update process is automated during startup. Status, errors, etc. can be found in the container log, IE: `docker logs <containername>`
 5. Existing keystore file will be backed up to  `/usr/lib/unifi/data/keystore-<epochseconds>`
 6. Java keystore is only updated when changes to the certificate files are detected. To force a re-import of existing files delete the `unificert.sha256` file in `./cert` and restart the container.

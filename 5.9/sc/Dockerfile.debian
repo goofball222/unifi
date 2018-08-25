@@ -29,7 +29,7 @@ ENV \
 
 WORKDIR /usr/lib/unifi
 
-COPY defaults/system.properties.default /usr/lib/unifi/system.properties.default
+COPY root /
 
 RUN set -x \
     && groupadd -r unifi -g $PGID \
@@ -57,8 +57,6 @@ RUN set -x \
     && bash -c 'mkdir -p {data,logs,run,cert}' \
     && chown -R unifi:unifi /usr/lib/unifi \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/log/*
-
-COPY scripts/debian-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 EXPOSE 3478/udp 6789/tcp 8080/tcp 8443/tcp 8843/tcp 8880/tcp 10001/udp
 
