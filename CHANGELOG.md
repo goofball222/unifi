@@ -1,6 +1,17 @@
+* **2018-09-11:**
+    * Update 5.8/stable to version [5.8.30](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-30-Stable-has-been-released/ba-p/2489957)
+    * Tag 5.8.30 release
+    * Update 5.9/sc to version [5.9.26](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-26-Stable-Candidate-has-been-released/ba-p/2489657)
+---
+* **2018-09-10:**
+    * Update 5.6/stable to version [5.6.40](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-6-40-LTS-Stable-has-been-released/ba-p/2488202)
+    * Tag 5.6.40 release
+    * Update 5.8/sc to version [5.8.30](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-30-Stable-Candidate-has-been-released/ba-p/2488240)
+---
 * **2018-09-04:**
     * Add stable candidate [5.8.28](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-8-29-Stable-Candidate-has-been-released/ba-p/2481622)
     * Add LTS stable candidate [5.6.40](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-6-40-LTS-Stable-Candidate-has-been-released/ba-p/2481272)
+---
 * **2018-08-24:**
     * Combine and move scripts/* back to root/usr/local/bin/docker-entrypoint.sh, now has OS/MODs independence
     * Functionize a lot of docker-entrypoint.sh and move it to root/usr/local/bin/entrypoint-functions.sh
