@@ -1,3 +1,6 @@
+* **2018-09-25:**
+    * Update 5.9/sc to version [5.9.29](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-29-Stable-Candidate-has-been-released/ba-p/2506740)
+---
 * **2018-09-11:**
     * Update 5.8/stable to version [5.8.30](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-30-Stable-has-been-released/ba-p/2489957)
     * Tag 5.8.30 release
