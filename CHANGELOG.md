@@ -1,3 +1,6 @@
+* **2018-11-06:**
+    * Clone 5.9/stable to 5.9/sc, update 5.9/sc VERSION to [5.9.32](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-SDN-Controller-5-9-32-Stable-Candidate-has-been-released/ba-p/2555555)
+---
 * **2018-10-04:**
     * Move 5.9/sc to 5.9/stable, version [5.9.29](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-9-29-Stable-has-been-released/ba-p/2516852) is now released as stable.
     * Tag 5.9.29 release
