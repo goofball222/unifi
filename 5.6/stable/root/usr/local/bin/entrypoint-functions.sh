@@ -3,8 +3,8 @@
 # entrypoint-functions.sh script for UniFi Docker container
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-ENTRYPOINT_FUNCTIONS_VERSION="1.0.6"
-# Last updated date: 2018-08-24
+ENTRYPOINT_FUNCTIONS_VERSION="1.0.7"
+# Last updated date: 2019-01-26
 
 f_bindpriv() {
     JAVABIN=$(readlink -f /usr/bin/java)
@@ -31,7 +31,10 @@ f_chown() {
             f_log "INFO - Running recursive 'chown' on Docker overlay2 storage is **really** slow. This may take a bit."
             chown -R unifi:unifi ${BASEDIR}
         else
-            f_log "INFO - RUN_CHOWN=false - Not running 'chown -R unifi:unifi ${BASEDIR}', assume subdir/file permissions OK."
+            f_log "INFO - Explicitly setting owner on '${LOGDIR}/*.log' and '${DATADIR}/system.properties'"
+            chown unifi:unifi ${DATADIR}/system.properties
+            chown unifi:unifi ${LOGDIR}/*.log
+            f_log "INFO - RUN_CHOWN=false - Not running 'chown -R unifi:unifi ${BASEDIR}', assume subdir/file permissions OK"
         fi
     elif [ "${RUNAS_UID0}" == 'true' ]; then
         f_log "INFO - RUNAS_UID0=true - Not running 'chown -R unifi:unifi ${BASEDIR}', no need to worry about permissions."
