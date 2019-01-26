@@ -1,3 +1,6 @@
+* **2019-01-26:**
+    * Clone 5.10/unstable to 5.10/sc, update 5.10/sc VERSION to [5.10.10](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-Network-Controller-5-10-10-Stable-Candidate-has-been/ba-p/2649077)
+---
 * **2019-01-10:**
     * Clone 5.9/stable to 5.10/unstable, update 5.10/unstable VERSION to [5.10.5](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-Network-Controller-5-10-5-beta-has-been-released/ba-p/2627904)
 ---
