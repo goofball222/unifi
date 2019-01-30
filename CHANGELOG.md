@@ -1,3 +1,6 @@
+* **2019-01-29:**
+    * Update 5.10/sc to version [5.10.11](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-Network-Controller-5-10-11-Stable-Candidate-has-been/ba-p/2654117)
+---
 * **2019-01-26:**
     * Clone 5.10/unstable to 5.10/sc, update 5.10/sc VERSION to [5.10.10](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-Network-Controller-5-10-10-Stable-Candidate-has-been/ba-p/2649077)
     * Update */root/usr/local/bin/entrypoint-functions.sh and docker-entrypoint.sh to 1.0.7
