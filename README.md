@@ -221,7 +221,7 @@ Copy the following to both services in the docker-compose.yml file under the com
 
 | Variable | Default | Description |
 | :--- | :---: | --- |
-| `BIND_PRIV` | ***false*** | Set to *true* to allow UniFi process to bind to container internal ports <1024 |
+| `BIND_PRIV` | ***false*** | Set to *true* to allow UniFi process to bind to container internal ports &lt; 1024 |
 | `DEBUG` | ***false*** | Set to *true* for extra container and UniFi verbosity for debugging |
 | `JVM_EXTRA_OPTS` | ***unset*** | Any additional custom run flags for the container Java process |
 | `JVM_INIT_HEAP_SIZE` | ***unset*** | Sets the start and min memory size for the container Java process (-Xms) |
@@ -258,8 +258,8 @@ Additional UniFi [system.properties](https://help.ubnt.com/hc/en-us/articles/205
 Private key file **MUST** be named `privkey.pem`.
 3. Must contain a PEM format SSL certificate file with the full certification chain. LetsEncrypt handles this automatically, other providers may need manual work (https://www.digicert.com/ssl-support/pem-ssl-creation.htm).
 Certificate file **MUST** be named `fullchain.pem`.
-4. Start the container. SSL import and Java keystore update process is automated during startup. Status, errors, etc. can be found in the container log, IE: `docker logs <containername>`
-5. Existing keystore file will be backed up to  `/usr/lib/unifi/data/keystore-<epochseconds>`
+4. Start the container. SSL import and Java keystore update process is automated during startup. Status, errors, etc. can be found in the container log, IE: `docker logs "containername"`
+5. Existing keystore file will be backed up to  `/usr/lib/unifi/data/keystore-"epochseconds"`
 6. Java keystore is only updated when changes to the certificate files are detected. To force a re-import of existing files delete the `unificert.sha256` file in `./cert` and restart the container.
 
 If you don't want to use a custom SSL certificate then the `/usr/lib/unifi/cert` volume can be left unmapped. Alternatively if the `privkey.pem` and/or `fullchain.pem` file are not present SSL customization will be skipped.

@@ -1,3 +1,6 @@
+* **2019-02-05:**
+    * Adjust README.md formatting to fix Docker Cloud/Hub rendering errors
+---
 * **2019-02-04:**
     * Update 5.10/sc to version [5.10.12](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-Network-Controller-5-10-12-Stable-Candidate-has-been/ba-p/2661477)
 ---
