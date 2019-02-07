@@ -1,3 +1,7 @@
+* **2019-02-06:**
+    * Promote 5.10/sc to 5.10/stable for stable release [5.10.12](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-Network-Controller-5-10-12-Stable-has-been-released/ba-p/2665341)
+    * Tag 5.10.12 release
+---
 * **2019-02-05:**
     * Adjust README.md formatting to fix Docker Cloud/Hub rendering errors
 ---
