@@ -1,3 +1,6 @@
+* **2019-02-12:**
+    * Update 5.10/sc to version [5.10.15](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-Network-Controller-5-10-15-Stable-Candidate-has-been/ba-p/2674019)
+---
 * **2019-02-06:**
     * Promote 5.10/sc to 5.10/stable for stable release [5.10.12](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-Network-Controller-5-10-12-Stable-has-been-released/ba-p/2665341)
     * Tag 5.10.12 release
