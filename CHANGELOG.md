@@ -1,3 +1,7 @@
+* **2019-02-13:**
+    * Update 5.10/stable to version [5.10.17](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-Network-Controller-5-10-17-Stable-has-been-released/ba-p/2676018)
+    * Tag 5.10.17 release
+---
 * **2019-02-12:**
     * ~~Update 5.10/sc to version [5.10.15](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-Network-Controller-5-10-15-Stable-Candidate-has-been/ba-p/2674019)~~
     * Update 5.10/sc to version [5.10.16](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-Network-Controller-5-10-16-Stable-Candidate-has-been/ba-p/2674811)
