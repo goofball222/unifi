@@ -3,6 +3,7 @@
     * Fix jessie-backports apt repository to use archive - https://lists.debian.org/debian-devel-announce/2019/03/msg00006.html
         * Set apt-get update to ignore expired jessie-backports InRelease file - `apt-get -o Acquire::Check-Valid-Until=false -qqy update`
     * Force re-add nss package to Alpine build, fixes issue #33
+    * Clean up 5.6, 5.8, and 5.9. UniFi development appears to be focused on 5.10 and 5.11. Can recreate for bug/security fixes as needed.
 ---
 * **2019-03-12:**
     * Update 5.10/stable to version [5.10.20](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-Network-Controller-5-10-20-Stable-has-been-released/ba-p/2713745)

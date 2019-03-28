@@ -35,9 +35,9 @@ RUN set -x \
     && groupadd -r unifi -g $PGID \
     && useradd --no-log-init -r -u $PUID -g $PGID unifi \
     && mkdir /usr/share/man/man1 \
-    && echo "deb http://ftp.debian.org/debian jessie-backports main" \
+    && echo "deb http://archive.debian.org/debian jessie-backports main" \
         > /etc/apt/sources.list.d/jessie-backports.list \
-    && apt-get -qqy update > /dev/null \
+    && apt-get -o Acquire::Check-Valid-Until=false -qqy update > /dev/null \
     && apt-get -qqy --no-install-recommends install \
         binutils \
         curl \
