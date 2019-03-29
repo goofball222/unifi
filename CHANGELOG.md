@@ -1,3 +1,6 @@
+* **2019-03-29:**
+    * Update 5.10/sc to version [5.10.21](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-Network-Controller-5-10-21-Stable-Candidate-has-been/ba-p/2734156)
+---
 * **2019-03-27:**
     * Clone 5.10/stable to 5.11/unstable, update 5.11/unstable VERSION to [5.11.10](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-Network-Controller-5-11-10-Unstable-has-been-released/ba-p/2731721)
     * Fix jessie-backports apt repository to use archive - https://lists.debian.org/debian-devel-announce/2019/03/msg00006.html
