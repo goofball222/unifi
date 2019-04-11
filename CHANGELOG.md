@@ -1,3 +1,6 @@
+* **2019-04-11:**
+    * OpenJDK upstream fixed deps, remove explicit nss package install from Alpine build, closes issue #33
+---
 * **2019-04-05:**
     * Update 5.10/stable to version [5.10.21](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-Network-Controller-5-10-21-Stable-has-been-released/ba-p/2741854)
     * Tag 5.10.21 release
