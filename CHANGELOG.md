@@ -1,4 +1,5 @@
 * **2019-04-23:**
+    * Update 5.11/unstable to version [5.11.18](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-Network-Controller-5-11-18-Unstable-has-been-released/ba-p/2759716)
     * Update 5.10/sc to version [5.10.22](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-Network-Controller-5-10-22-Stable-Candidate-has-been/ba-p/2758357)
 ---
 * **2019-04-11:**
