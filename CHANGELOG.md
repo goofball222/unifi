@@ -1,3 +1,6 @@
+* **2019-06-07:**
+    * Update 5.11/testing to version [5.11.29](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-Network-Controller-5-11-29-Testing-has-been-released/ba-p/2809129)
+*
 * **2019-06-04:**
     * Update 5.10/stable to version [5.10.24](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-Network-Controller-5-10-24-Stable-has-been-released/ba-p/2790242)
     * Tag 5.10.24 release
