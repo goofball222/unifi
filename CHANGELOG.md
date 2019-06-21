@@ -1,3 +1,7 @@
+* **2019-06-20:**
+    * Update 5.10/stable to version [5.10.25](https://community.ui.com/releases/UniFi-Network-Controller-Stable-5-10-25/fc76945d-c918-4d8d-8cd1-094d05287f45)
+    * Tag 5.10.25 release
+    * New UBNT "community" software **S U C K S**
 * **2019-06-08:**
     * Update 5.10/sc to version [5.10.25](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-Network-Controller-5-10-25-Stable-Candidate-has-been/ba-p/2809319)
 *
