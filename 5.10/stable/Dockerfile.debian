@@ -50,7 +50,7 @@ RUN set -x \
         openjdk-8-jre-headless > /dev/null \
     && apt-get -qqy --no-install-recommends install \
         mongodb-org-server > /dev/null \
-    && curl -sSL https://dl.ubnt.com/unifi/${VERSION}/unifi_sysvinit_all.deb -o /tmp/unifi-${VERSION}.deb \
+    && curl -sSL https://dl.ui.com/unifi/${VERSION}/unifi_sysvinit_all.deb -o /tmp/unifi-${VERSION}.deb \
     && apt-get -qqy autoremove --purge > /dev/null \
     && apt-get -qqy clean autoclean > /dev/null \
     && dpkg --force-all -i /tmp/unifi-${VERSION}.deb \

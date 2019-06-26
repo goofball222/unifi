@@ -1,17 +1,22 @@
+* **2019-06-25:**
+    * Update 5.11/testing to version [5.11.31](https://community.ui.com/releases/UniFi-Network-Controller-5-11-31/c7f8a8a0-0414-4324-a567-1f2b3cb6affa)
+    * Update Dockerfile package download links to point to new https://dl.ui.com instead of https://dl.ubnt.com
+---
 * **2019-06-20:**
     * Update 5.10/stable to version [5.10.25](https://community.ui.com/releases/UniFi-Network-Controller-Stable-5-10-25/fc76945d-c918-4d8d-8cd1-094d05287f45)
     * Tag 5.10.25 release
     * New UBNT "community" software **S U C K S**
+---
 * **2019-06-08:**
     * Update 5.10/sc to version [5.10.25](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-Network-Controller-5-10-25-Stable-Candidate-has-been/ba-p/2809319)
-*
+---
 * **2019-06-07:**
     * Update 5.11/testing to version [5.11.29](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-Network-Controller-5-11-29-Testing-has-been-released/ba-p/2809129)
-*
+---
 * **2019-06-04:**
     * Update 5.10/stable to version [5.10.24](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-Network-Controller-5-10-24-Stable-has-been-released/ba-p/2790242)
     * Tag 5.10.24 release
-*
+---
 * **2019-05-25:**
     * Update 5.11/unstable to version [5.11.26](https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-Network-Controller-5-11-26-Unstable-has-been-released/ba-p/2794468)
 ---

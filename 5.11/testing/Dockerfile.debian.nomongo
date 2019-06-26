@@ -45,7 +45,7 @@ RUN set -x \
     && apt-get -qqy -t jessie-backports --no-install-recommends install \
         ca-certificates-java \
         openjdk-8-jre-headless > /dev/null \
-    && curl -sSL https://dl.ubnt.com/unifi/${VERSION}/unifi_sysvinit_all.deb -o /tmp/unifi-${VERSION}.deb \
+    && curl -sSL https://dl.ui.com/unifi/${VERSION}/unifi_sysvinit_all.deb -o /tmp/unifi-${VERSION}.deb \
     && apt-get -qqy autoremove --purge > /dev/null \
     && apt-get -qqy clean autoclean > /dev/null \
     && dpkg --force-all -i /tmp/unifi-${VERSION}.deb \

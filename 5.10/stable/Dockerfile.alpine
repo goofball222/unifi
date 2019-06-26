@@ -38,7 +38,7 @@ RUN set -x \
         bash binutils coreutils curl libcap \
         openjdk8-jre openssl shadow su-exec \
         tzdata \
-    && curl -sSL https://dl.ubnt.com/unifi/${VERSION}/UniFi.unix.zip -o /tmp/UniFi.unix.${VERSION}.zip \
+    && curl -sSL https://dl.ui.com/unifi/${VERSION}/UniFi.unix.zip -o /tmp/UniFi.unix.${VERSION}.zip \
     && unzip -q /tmp/UniFi.unix.${VERSION}.zip -d /tmp \
     && mv /tmp/UniFi/* /usr/lib/unifi/ \
     && bash -c 'mkdir -p {data,logs,run,cert}' \
