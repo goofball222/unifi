@@ -1,3 +1,6 @@
+* **2019-07-18:**
+    * Update 5.10/sc to version [5.10.26](https://community.ui.com/releases/UniFi-Network-Controller-5-10-26/6f393935-a023-4855-b9ec-f38b5a12d610)
+---
 * **2019-06-25:**
     * Update 5.11/testing to version [5.11.31](https://community.ui.com/releases/UniFi-Network-Controller-5-11-31/c7f8a8a0-0414-4324-a567-1f2b3cb6affa)
     * Update Dockerfile package download links to point to new https://dl.ui.com instead of https://dl.ubnt.com
