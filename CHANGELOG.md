@@ -1,5 +1,6 @@
 * **2019-08-06:**
     * Update 5.10/sc to version [5.10.27](https://community.ui.com/releases/UniFi-Network-Controller-5-10-27/7eb576ae-0a4e-4b37-9d73-82ec47d7902d)
+    * Fix regression to 5.11.34 in 5.11/testing/VERSION
 ---
 * **2019-07-31:**
     * Update 5.11/testing to version [5.11.36](https://community.ui.com/releases/UniFi-Network-Controller-5-11-36/a888e5ed-be25-4b81-8949-a677f9e09f3d)
