@@ -1,3 +1,8 @@
+* **2019-08-08:**
+    * Update 5.10/stable to version [5.10.26](https://community.ui.com/releases/UniFi-Network-Controller-5-10-26/2bcd1137-a5f1-437b-ba5d-30f9be2049c1)
+    * Tag 5.10.26 release
+        * Missed this release being published on 2019-07-30. New UI community added e-mail alert functionality for releases again so we'll see...
+---
 * **2019-08-06:**
     * Update 5.10/sc to version [5.10.27](https://community.ui.com/releases/UniFi-Network-Controller-5-10-27/7eb576ae-0a4e-4b37-9d73-82ec47d7902d)
     * Fix regression to 5.11.34 in 5.11/testing/VERSION
