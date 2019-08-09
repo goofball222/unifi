@@ -1,3 +1,7 @@
+* **2019-08-09:**
+    * Update 5.11/sc to version [5.11.38](https://community.ui.com/releases/UniFi-Network-Controller-5-11-38/5130ef57-1127-4c69-b20c-1cc823f1be3b)
+    * Update all hooks/build scripts to support multi-tag image builds on Docker Cloud
+---
 * **2019-08-08:**
     * Update 5.10/stable to version [5.10.26](https://community.ui.com/releases/UniFi-Network-Controller-5-10-26/2bcd1137-a5f1-437b-ba5d-30f9be2049c1)
     * Tag 5.10.26 release

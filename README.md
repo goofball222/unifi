@@ -9,9 +9,12 @@
 | [latest](https://github.com/goofball222/unifi/blob/master/5.10/stable/Dockerfile.debian) | [5.10.26](https://community.ui.com/releases/UniFi-Network-Controller-5-10-26/2bcd1137-a5f1-437b-ba5d-30f9be2049c1) | UniFi latest stable release | 2019-08-08 |
 | [latest-alpine](https://github.com/goofball222/unifi/blob/master/5.10/stable/Dockerfile.alpine) | [5.10.26](https://community.ui.com/releases/UniFi-Network-Controller-5-10-26/2bcd1137-a5f1-437b-ba5d-30f9be2049c1) | UniFi latest stable release, Alpine base, **NO MONGO** | 2019-08-08 |
 | [latest-debian-nomongo](https://github.com/goofball222/unifi/blob/master/5.10/stable/Dockerfile.debian.nomongo) | [5.10.26](https://community.ui.com/releases/UniFi-Network-Controller-5-10-26/2bcd1137-a5f1-437b-ba5d-30f9be2049c1) | UniFi latest stable release, **NO MONGO** | 2019-08-08 |
-| [sc](https://github.com/goofball222/unifi/blob/master/5.10/sc/Dockerfile.debian) | [5.10.27](https://community.ui.com/releases/UniFi-Network-Controller-5-10-27/7eb576ae-0a4e-4b37-9d73-82ec47d7902d) | UniFi stable candidate release | 2019-08-06 |
-| [sc-alpine](https://github.com/goofball222/unifi/blob/master/5.10/sc/Dockerfile.alpine) | [5.10.27](https://community.ui.com/releases/UniFi-Network-Controller-5-10-27/7eb576ae-0a4e-4b37-9d73-82ec47d7902d) | UniFi stable candidate release, Alpine base, **NO MONGO** | 2019-08-06 |
-| [sc-debian-nomongo](https://github.com/goofball222/unifi/blob/master/5.10/sc/Dockerfile.debian.nomongo) | [5.10.27](https://community.ui.com/releases/UniFi-Network-Controller-5-10-27/7eb576ae-0a4e-4b37-9d73-82ec47d7902d) | UniFi stable candidate release, **NO MONGO** | 2019-08-06 |
+| [5.10-sc](https://github.com/goofball222/unifi/blob/master/5.10/sc/Dockerfile.debian) | [5.10.27](https://community.ui.com/releases/UniFi-Network-Controller-5-10-27/7eb576ae-0a4e-4b37-9d73-82ec47d7902d) | UniFi stable candidate release | 2019-08-06 |
+| [5.10-sc-alpine](https://github.com/goofball222/unifi/blob/master/5.10/sc/Dockerfile.alpine) | [5.10.27](https://community.ui.com/releases/UniFi-Network-Controller-5-10-27/7eb576ae-0a4e-4b37-9d73-82ec47d7902d) | UniFi stable candidate release, Alpine base, **NO MONGO** | 2019-08-06 |
+| [5.10-sc-debian-nomongo](https://github.com/goofball222/unifi/blob/master/5.10/sc/Dockerfile.debian.nomongo) | [5.10.27](https://community.ui.com/releases/UniFi-Network-Controller-5-10-27/7eb576ae-0a4e-4b37-9d73-82ec47d7902d) | UniFi stable candidate release, **NO MONGO** | 2019-08-06 |
+| [5.11-sc](https://github.com/goofball222/unifi/blob/master/5.11/sc/Dockerfile.debian) | [5.11.38](https://community.ui.com/releases/UniFi-Network-Controller-5-11-38/5130ef57-1127-4c69-b20c-1cc823f1be3b) | UniFi stable candidate release | 2019-08-09 |
+| [5.11-sc-alpine](https://github.com/goofball222/unifi/blob/master/5.11/sc/Dockerfile.alpine) | [5.11.38](https://community.ui.com/releases/UniFi-Network-Controller-5-11-38/5130ef57-1127-4c69-b20c-1cc823f1be3b) | UniFi stable candidate release, Alpine base, **NO MONGO** | 2019-08-09 |
+| [5.11-sc-debian-nomongo](https://github.com/goofball222/unifi/blob/master/5.11/sc/Dockerfile.debian.nomongo) | [5.11.38](https://community.ui.com/releases/UniFi-Network-Controller-5-11-38/5130ef57-1127-4c69-b20c-1cc823f1be3b) | UniFi stable candidate release, **NO MONGO** | 2019-08-09 |
 | [testing](https://github.com/goofball222/unifi/blob/master/5.11/testing/Dockerfile.debian) | [5.11.36](https://community.ui.com/releases/UniFi-Network-Controller-5-11-36/a888e5ed-be25-4b81-8949-a677f9e09f3d) | UniFi testing release | 2019-07-31 |
 | [testing-alpine](https://github.com/goofball222/unifi/blob/master/5.11/testing/Dockerfile.alpine) | [5.11.36](https://community.ui.com/releases/UniFi-Network-Controller-5-11-36/a888e5ed-be25-4b81-8949-a677f9e09f3d) | UniFi testing release, Alpine base, **NO MONGO** | 2019-07-31 |
 | [testing-debian-nomongo](https://github.com/goofball222/unifi/blob/master/5.11/testing/Dockerfile.debian.nomongo) | [5.11.36](https://community.ui.com/releases/UniFi-Network-Controller-5-11-36/a888e5ed-be25-4b81-8949-a677f9e09f3d) | UniFi testing release, **NO MONGO** | 2019-07-31 |
@@ -28,26 +31,6 @@
 **NOTE:**
 
 **Alpine and -nomongo tags DO NOT contain any internal MongoDB binaries. You must connect them to an external Mongo DB container or other host instance.**
-
-2019-01-26:
-* v5.9 development has stopped, all new development is in v5.10 - https://community.ubnt.com/t5/UniFi-Wireless-Beta/UniFi-SDN-Controller-5-9-32-Stable-Candidate-has-been-released/m-p/2645977/highlight/true#M77554
-* v5.10.10 stable candidate promoted to sc tags, v5.10.5 unstable removed.
-
-2018-08-21:
-* Changes in structure in git/GitHub. See [CHANGELOG.md](https://github.com/goofball222/unifi/blob/master/CHANGELOG.md)
-* Update tag naming conventions:
-    * alpine-sc is now sc-alpine. Future Alpine builds will be *-alpine, IE: stable-alpine, latest-alpine, unifi58-alpine etc.
-    * *-nom is now *-debian-nomongo. Writing the entire thing out better clarifies what modification it has.
-    * Any future new build tags will follow the `releasetype-os{-mods}` format.
-
-2018-08-13:
-* Added experimental images/tags using Alpine Linux as the base: alpine-sc
-* Renamed UNIFI_GID and UNIFI_UID variables to PGID and PUID respectively.
-* Preliminary build of Debian based images/tags without Mongo included. Naming convention *-nom, IE: sc-nom, unifi58-nom, unifi56-nom
-    * These DO NOT contain an internal Mongo process. You must connect them to an external Mongo DB container or host instance.
-* Added option to skip automatic `chown` during startup. Helps start speed on overlay2 Docker hosts.
-* Added log message warnings about pending future removal of Mongo from container. You can still run this as an all-in-one on current tags, however I highly recommend moving over to a single-service per container setup with Mongo externalized.
-
 
 v5.9+: Ubiquiti changed the SSL certificate handling internally. If you're using a custom LetsEncrypt, etc. SSL certificate and upgrade to v5.9+ you will need to rename/remove the file `unificert.sha256` in `./cert:/usr/lib/unifi/cert` and restart the container to force a re-import of the existing certificate files under the changed keystore alias.
 
