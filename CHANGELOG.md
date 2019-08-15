@@ -1,5 +1,6 @@
 * **2019-08-09:**
     * Update 5.11/sc to version [5.11.39](https://community.ui.com/releases/UniFi-Network-Controller-5-11-39/4872e0a9-8020-44e9-bdbf-3999565ad35e)
+    * Update Docker tagging, add version tags that track latest UI development point release/stable, drop -debian-nomongo from autobuilds and tag table.
 ---
 * **2019-08-09:**
     * Update 5.11/sc to version [5.11.38](https://community.ui.com/releases/UniFi-Network-Controller-5-11-38/5130ef57-1127-4c69-b20c-1cc823f1be3b)
