@@ -1,3 +1,8 @@
+* **2019-08-30:**
+    * Update 5.10/stable to version [5.10.27](https://community.ui.com/releases/UniFi-Network-Controller-5-10-27/c80933a1-e240-4b54-9923-75a4e95142fd)
+    * Tag 5.10.27 release
+        * Missed this release being promoted to stable on 2019-08-20. UI community release alerts don't work if they just change the designation on an existing post... *sigh*
+---
 * **2019-08-24:**
     * Promote 5.11/sc to [stable](https://community.ui.com/releases/UniFi-Network-Controller-5-11-39/6ab8ef1a-376f-41e6-85b2-ceec098b8462)
     * Tag 5.11.39 release
