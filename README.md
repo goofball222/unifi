@@ -6,11 +6,11 @@
 ## Docker tags:
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
-| [5.11, latest](https://github.com/goofball222/unifi/blob/master/5.11/stable/Dockerfile.debian) | [5.11.39](https://community.ui.com/releases/UniFi-Network-Controller-5-11-39/6ab8ef1a-376f-41e6-85b2-ceec098b8462) | UniFi latest stable release | 2019-08-19 |
-| [5.11-alpine, latest-alpine](https://github.com/goofball222/unifi/blob/master/5.11/stable/Dockerfile.alpine) | [5.11.39](https://community.ui.com/releases/UniFi-Network-Controller-5-11-39/6ab8ef1a-376f-41e6-85b2-ceec098b8462) | UniFi latest stable release, Alpine base, **NO MONGO** | 2019-08-19 |
+| [5.11, latest](https://github.com/goofball222/unifi/blob/master/5.11/stable/Dockerfile.debian) | [5.11.45](https://community.ui.com/releases/UniFi-Network-Controller-5-11-45/fc758129-7b75-44e8-8da2-1150e7359f7d) | UniFi latest stable release | 2019-09-04 |
+| [5.11-alpine, latest-alpine](https://github.com/goofball222/unifi/blob/master/5.11/stable/Dockerfile.alpine) | [5.11.45](https://community.ui.com/releases/UniFi-Network-Controller-5-11-45/fc758129-7b75-44e8-8da2-1150e7359f7d) | UniFi latest stable release, Alpine base, **NO MONGO** | 2019-09-04 |
 | [5.10](https://github.com/goofball222/unifi/blob/master/5.10/stable/Dockerfile.debian) | [5.10.27](https://community.ui.com/releases/UniFi-Network-Controller-5-10-27/c80933a1-e240-4b54-9923-75a4e95142fd) | UniFi v5.10 stable release | 2019-08-20 |
 | [5.10-alpine](https://github.com/goofball222/unifi/blob/master/5.10/stable/Dockerfile.alpine) | [5.10.27](https://community.ui.com/releases/UniFi-Network-Controller-5-10-27/c80933a1-e240-4b54-9923-75a4e95142fd) | UniFi v5.10 stable release, Alpine base, **NO MONGO** | 2019-08-20 |
-| [5.11.39](https://github.com/goofball222/unifi/releases/tag/5.11.39) | [5.11.39](https://community.ui.com/releases/UniFi-Network-Controller-5-11-39/6ab8ef1a-376f-41e6-85b2-ceec098b8462) | Static stable release tag/image | 2019-08-19 |
+| [5.11.45](https://github.com/goofball222/unifi/releases/tag/5.11.45) | [5.11.45](https://community.ui.com/releases/UniFi-Network-Controller-5-11-45/fc758129-7b75-44e8-8da2-1150e7359f7d) | Static stable release tag/image | 2019-09-04 |
 | [5.10.27](https://github.com/goofball222/unifi/releases/tag/5.10.27) | [5.10.27](https://community.ui.com/releases/UniFi-Network-Controller-5-10-27/c80933a1-e240-4b54-9923-75a4e95142fd) | Static stable release tag/image | 2019-08-20 |
 | [5.6.42](https://github.com/goofball222/unifi/releases/tag/5.6.42) | [5.6.42](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-Network-Controller-5-6-42-Stable-has-been-released/ba-p/2771271) | Static stable release tag/image | 2019-05-03 |
 
