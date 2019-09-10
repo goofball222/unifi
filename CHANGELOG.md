@@ -1,3 +1,6 @@
+* **2019-09-10:**
+    * Create 5.12/unstable, version [5.12.5](https://community.ui.com/releases/UniFi-Network-Controller-5-12-5/6e656b4e-5406-44c3-a56c-a4637ae7a6b3)
+---
 * **2019-09-04:**
     * Update 5.11/sc to version [5.11.45](https://community.ui.com/releases/UniFi-Network-Controller-5-11-45/fc758129-7b75-44e8-8da2-1150e7359f7d)
 ---
