@@ -1,3 +1,6 @@
+* **2019-10-18:**
+    * Update 5.12/sc to version [5.12.19](https://community.ui.com/releases/UniFi-Network-Controller-5-12-19/c21cb9e4-1c7a-41f1-87f6-618933da4c5b)
+---
 * **2019-10-16:**
     * Move 5.12/testing to 5.12/sc, still version [5.12.16](https://community.ui.com/releases/UniFi-Network-Controller-5-12-16/50031836-435f-4561-9150-a149007dd85c)
 ---
