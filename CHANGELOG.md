@@ -1,4 +1,7 @@
-* **2019-10-16:**
+* **2019-10-24:**
+    * Move 5.12/testing to sc, version [5.12.22](https://community.ui.com/releases/UniFi-Network-Controller-5-12-22/263c8b60-def8-4667-85c3-87a6200a6c9b)
+---
+* **2019-10-23:**
     * Create 5.12/testing, version [5.12.22](https://community.ui.com/releases/UniFi-Network-Controller-5-12-22/0980b7e2-802e-4aba-9f7e-d075ad733265)
 ---
 * **2019-10-18:**
