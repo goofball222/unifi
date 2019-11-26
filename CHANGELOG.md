@@ -1,3 +1,6 @@
+* **2019-11-26:**
+    * Update 5.12/testing to version [5.12.42](https://community.ui.com/releases/UniFi-Network-Controller-5-12-42/1ef1387d-02bc-4d5c-a1f1-f7d21952adc6)
+---
 * **2019-11-22:**
     * Promote 5.12/sc to stable, version [5.12.35](https://community.ui.com/releases/UniFi-Network-Controller-5-12-35/45726736-ee4c-4172-877a-a2303f5d3627)
     * Tag 5.12.35 release
