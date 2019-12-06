@@ -1,3 +1,8 @@
+* **2019-12-06:**
+    * Update 5.12/testing/Dockerfile.debian* to use debian:buster-slim as the base image
+        * Plan to move this change out to 5.12/stable and all current images at next UniFi release, barring any issues reported
+    * All: add docker-healthcheck.sh to provide health status of UniFi web server to Docker host
+---
 * **2019-11-26:**
     * Update 5.12/testing to version [5.12.42](https://community.ui.com/releases/UniFi-Network-Controller-5-12-42/1ef1387d-02bc-4d5c-a1f1-f7d21952adc6)
 ---
