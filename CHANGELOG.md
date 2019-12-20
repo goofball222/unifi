@@ -1,3 +1,6 @@
+* **2019-12-20:**
+    * Update 5.12/testing to version [5.12.46](https://community.ui.com/releases/UniFi-Network-Controller-5-12-46/de5a2124-3012-4704-ab4e-ea2d227f0e6e)
+---
 * **2019-12-06:**
     * Update 5.12/testing/Dockerfile.debian* to use debian:buster-slim as the base image
         * Plan to move this change out to 5.12/stable and all current images at next UniFi release, barring any issues reported
