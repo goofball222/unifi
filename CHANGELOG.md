@@ -1,3 +1,6 @@
+* **2020-01-20:**
+    * Clone 5.12/testing to 5.13/testing version [5.13.9](https://community.ui.com/releases/UniFi-Network-Controller-5-13-9/ccabebdd-503e-46c8-a4aa-79a2fa654326)
+---
 * **2019-12-20:**
     * Update 5.12/testing to version [5.12.46](https://community.ui.com/releases/UniFi-Network-Controller-5-12-46/de5a2124-3012-4704-ab4e-ea2d227f0e6e)
 ---
