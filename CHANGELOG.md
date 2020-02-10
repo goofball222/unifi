@@ -1,3 +1,6 @@
+* **2020-02-10:**
+    * Move 5.12/testing to 5.12/sc, update to version [5.12.60](https://community.ui.com/releases/UniFi-Network-Controller-5-12-60/3a8b7df2-fa35-4d5f-aee9-d07b7a61cdc2)
+---
 * **2020-01-20:**
     * Clone 5.12/testing to 5.13/testing version [5.13.9](https://community.ui.com/releases/UniFi-Network-Controller-5-13-9/ccabebdd-503e-46c8-a4aa-79a2fa654326)
 ---
