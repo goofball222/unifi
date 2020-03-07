@@ -1,3 +1,6 @@
+* **2020-03-07:**
+    * Update 5.13/testing to version [5.13.10](https://community.ui.com/releases/UniFi-Network-Controller-5-13-10/345bd4ae-aafc-435d-bd92-0cb3048d38e9)
+---
 * **2020-02-25:**
     * Update 5.12/sc to version [5.12.66](https://community.ui.com/releases/UniFi-Network-Controller-5-12-66/7c67dfd6-251c-4992-9f35-7d3a9035c406)
 ---
