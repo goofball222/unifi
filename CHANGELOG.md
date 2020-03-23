@@ -1,3 +1,7 @@
+* **2020-03-23:**
+    * Promote 5.12/sc to stable, version [5.12.66](https://community.ui.com/releases/UniFi-Network-Controller-5-12-66/ac49e57b-6f38-4912-8455-940d3d487d00)
+    * Tag 5.12.66 release
+---
 * **2020-03-07:**
     * Update 5.13/testing to version [5.13.10](https://community.ui.com/releases/UniFi-Network-Controller-5-13-10/345bd4ae-aafc-435d-bd92-0cb3048d38e9)
 ---
