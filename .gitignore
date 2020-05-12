@@ -3,3 +3,5 @@
 *.sw?
 *~
 tmp/*
+bork/
+debug/
