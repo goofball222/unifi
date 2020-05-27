@@ -1,3 +1,7 @@
+* **2020-05-27:**
+    * Update 5.14/testing to version [5.14.9](https://community.ui.com/releases/UniFi-Network-Controller-5-14-9/3451a314-04c8-459a-9ae2-77cac01c0c1f)
+    * Update 5.13/sc to version [5.13.29](https://community.ui.com/releases/UniFi-Network-Controller-5-13-29/b40cbec0-251f-41e9-a765-b5fd8a65298d)
+---
 * **2020-05-19:**
     * Move 5.13/testing to 5.13/sc, still version [5.13.27](https://community.ui.com/releases/UniFi-Network-Controller-5-13-27/20946ec7-1905-44f7-8d2a-1a518ebf756a)
     * Add 5.14/testing, version [5.14.7](https://community.ui.com/releases/UniFi-Network-Controller-5-14-7/7e5dceb0-cab7-4a12-a5a9-23a997f8c6d8)
