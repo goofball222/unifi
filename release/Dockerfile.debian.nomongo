@@ -1,4 +1,4 @@
-FROM debian:jessie-slim
+FROM debian:buster-slim
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -35,17 +35,27 @@ RUN set -x \
     && groupadd -r unifi -g $PGID \
     && useradd --no-log-init -r -u $PUID -g $PGID unifi \
     && mkdir /usr/share/man/man1 \
-    && echo "deb http://archive.debian.org/debian jessie-backports main" \
-        > /etc/apt/sources.list.d/jessie-backports.list \
-    && apt-get -o Acquire::Check-Valid-Until=false -qqy update > /dev/null \
+    && apt-get -qqy update \
+    && apt-get -qqy install apt-utils \
+# We need packages from jessie and stretch to make this work with buster images.
+    && echo "deb http://deb.debian.org/debian stretch main" \
+        > /etc/apt/sources.list.d/debian-stretch.list \
+    && apt-get -qqy update \
     && apt-get -qqy --no-install-recommends install \
         binutils \
-        curl \
-        gosu > /dev/null \
-    && apt-get -qqy -t jessie-backports --no-install-recommends install \
         ca-certificates-java \
+        curl \
+        gosu \
+        libcap2 \
+        procps > /dev/null \
+# Pull in openjdk-8-jre-headless from stretch packages for UniFi compat, buster only has openjdk-11 available
+    && apt-get -qqy -t stretch --no-install-recommends install \
         openjdk-8-jre-headless > /dev/null \
+    && apt-get -qqy --no-install-recommends install \
+        mongodb-org-server > /dev/null \
     && curl -sSL https://dl.ui.com/unifi/${VERSION}/unifi_sysvinit_all.deb -o /tmp/unifi-${VERSION}.deb \
+    && apt-get -qqy purge \
+        apt-utils > /dev/null \
     && apt-get -qqy autoremove --purge > /dev/null \
     && apt-get -qqy clean autoclean > /dev/null \
     && dpkg --force-all -i /tmp/unifi-${VERSION}.deb \
