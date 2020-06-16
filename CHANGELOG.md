@@ -1,3 +1,6 @@
+* **2020-06-16:**
+    * Update 5.13/sc to version [5.13.32](https://community.ui.com/releases/UniFi-Network-Controller-5-13-32/44d52317-0b29-43f9-a7f3-ccb52d98fa00)
+---
 * **2020-06-11:**
     * Move 5.13/sc to 5.13/stable, still version [5.13.29](https://community.ui.com/releases/UniFi-Network-Controller-5-13-29/d7647910-77a2-4e61-bbfe-389206f2d6ad)
     * Tag 5.13.29 release
