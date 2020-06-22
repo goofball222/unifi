@@ -1,3 +1,6 @@
+* **2020-06-22:**
+    * Fix for OpenJDK-11 being pulled in by ca-certificates-java on Debian:buster-slim
+---
 * **2020-06-16:**
     * Update 5.13/sc to version [5.13.32](https://community.ui.com/releases/UniFi-Network-Controller-5-13-32/44d52317-0b29-43f9-a7f3-ccb52d98fa00)
 ---
