@@ -43,13 +43,13 @@ RUN set -x \
     && apt-get -qqy update \
     && apt-get -qqy --no-install-recommends install \
         binutils \
-        ca-certificates-java \
         curl \
         gosu \
         libcap2 \
         procps > /dev/null \
 # Pull in openjdk-8-jre-headless from stretch packages for UniFi compat, buster only has openjdk-11 available
     && apt-get -qqy -t stretch --no-install-recommends install \
+        ca-certificates-java \
         openjdk-8-jre-headless > /dev/null \
     && apt-get -qqy --no-install-recommends install \
         mongodb-org-server > /dev/null \
