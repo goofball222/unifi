@@ -1,3 +1,6 @@
+* **2020-06-23:**
+    * Update 5.14/testing to version [5.14.15](https://community.ui.com/releases/UniFi-Network-Controller-5-14-15/7c52416b-578c-4b4f-947c-13f322feded7)
+---
 * **2020-06-22:**
     * Fix for OpenJDK-11 being pulled in by ca-certificates-java on Debian:buster-slim
 ---
