@@ -1,3 +1,7 @@
+* **2020-07-07:**
+    * Create 6.0/unstable, version [6.0.3](https://community.ui.com/releases/UniFi-Network-Controller-6-0-3/06e1278b-7aa1-4f0e-a4e3-3ff947a7f2b3)
+    * Update Dockerfile label schema
+---
 * **2020-07-03:**
     * Update 5.14/testing to version [5.14.17](https://community.ui.com/releases/UniFi-Network-Controller-5-14-17/35321135-e0b0-4d07-8f4c-144a504c77f8)
 ---
