@@ -36,7 +36,7 @@ RUN set -x \
     && mkdir /usr/share/man/man1 \
     && apt-get -qqy update \
     && apt-get -qqy install apt-utils \
-# We need packages from jessie and stretch to make this work with buster images.
+# We need openjdk-8 packages from stretch to meet UniFi REQS, buster repos only have openjdk-11.
     && echo "deb http://deb.debian.org/debian stretch main" \
         > /etc/apt/sources.list.d/debian-stretch.list \
     && apt-get -qqy update \
@@ -46,7 +46,6 @@ RUN set -x \
         gosu \
         libcap2 \
         procps > /dev/null \
-# Pull in openjdk-8-jre-headless from stretch packages for UniFi compat, buster only has openjdk-11 available
     && apt-get -qqy -t stretch --no-install-recommends install \
         ca-certificates-java \
         openjdk-8-jre-headless > /dev/null \
