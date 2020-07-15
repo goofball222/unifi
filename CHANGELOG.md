@@ -1,3 +1,6 @@
+* **2020-07-15:**
+    * Update 6.0/unstable to version [6.0.4](https://community.ui.com/releases/UniFi-Network-Controller-6-0-4/56057601-966c-4777-bdfd-2dc667da1154)
+---
 * **2020-07-09:**
     * Update Debian Dockerfiles for 5.13+ to use Mongo 3.6
 ---
