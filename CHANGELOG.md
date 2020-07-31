@@ -1,3 +1,6 @@
+* **2020-07-31:**
+    * Move 6.0/unstable to sc, version [6.0.8](https://community.ui.com/releases/UniFi-Network-Controller-6-0-8/369d3499-484a-42d2-9b75-1419e38bc32d)
+---
 * **2020-07-15:**
     * Update 6.0/unstable to version [6.0.4](https://community.ui.com/releases/UniFi-Network-Controller-6-0-4/56057601-966c-4777-bdfd-2dc667da1154)
 ---
