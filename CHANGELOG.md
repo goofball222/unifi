@@ -1,3 +1,6 @@
+* **2020-08-05:**
+    * Add libcap2-bin to Debian:buster-slim images. Fixes #68
+---
 * **2020-08-03:**
     * Move 5.14/testing to sc, version [5.14.20](https://community.ui.com/releases/UniFi-Network-Controller-5-14-20/a232c73f-f525-418e-bf1a-fd206ce94a76)
 ---
