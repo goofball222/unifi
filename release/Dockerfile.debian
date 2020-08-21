@@ -37,37 +37,24 @@ RUN set -x \
     && apt-get -qqy update \
     && apt-get -qqy install apt-utils \
     && apt-get -qqy --no-install-recommends install \
-        dirmngr \
-        gnupg2 > /dev/null \
-# We need packages from jessie and stretch to make this work with buster images.
-    && echo "deb http://deb.debian.org/debian jessie main" \
-        > /etc/apt/sources.list.d/debian-jessie.list \
+        dirmngr gnupg2 > /dev/null \
+# We need openjdk-8 packages from stretch to meet UniFi REQS, buster repos only have openjdk-11.
     && echo "deb http://deb.debian.org/debian stretch main" \
         > /etc/apt/sources.list.d/debian-stretch.list \
-    && echo "deb http://repo.mongodb.org/apt/debian jessie/mongodb-org/3.4 main" \
-        > /etc/apt/sources.list.d/mongodb-org-3.4.list \
-    && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6 \
+    && echo "deb http://repo.mongodb.org/apt/debian stretch/mongodb-org/3.6 main" \
+        > /etc/apt/sources.list.d/mongodb-org.list \
+    && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5 \
     && apt-get -qqy update \
     && apt-get -qqy --no-install-recommends install \
-        binutils \
-        curl \
-        gosu \
-        libcap2 \
-        procps > /dev/null \
-# Pull in libssl1.0.0 from jessie packages to fix Mongo 3.4 dependency
-    && apt-get -qqy -t jessie --no-install-recommends install \
-        libssl1.0.0 > /dev/null \
-# Pull in openjdk-8-jre-headless from stretch packages for UniFi compat, buster only has openjdk-11 available
+        binutils curl gosu \
+        libcap2 libcap2-bin procps > /dev/null \
     && apt-get -qqy -t stretch --no-install-recommends install \
-        ca-certificates-java \
-        openjdk-8-jre-headless > /dev/null \
+        ca-certificates-java openjdk-8-jre-headless > /dev/null \
     && apt-get -qqy --no-install-recommends install \
         mongodb-org-server > /dev/null \
     && curl -sSL https://dl.ui.com/unifi/${VERSION}/unifi_sysvinit_all.deb -o /tmp/unifi-${VERSION}.deb \
     && apt-get -qqy purge \
-        apt-utils \
-        dirmngr \
-        gnupg2 > /dev/null \
+        apt-utils dirmngr gnupg2 > /dev/null \
     && apt-get -qqy autoremove --purge > /dev/null \
     && apt-get -qqy clean autoclean > /dev/null \
     && dpkg --force-all -i /tmp/unifi-${VERSION}.deb \
