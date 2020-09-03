@@ -1,3 +1,6 @@
+* **2020-09-03:**
+    * Update 6.0/sc to version [6.0.18](https://community.ui.com/releases/UniFi-Network-Controller-6-0-18/5869a608-5e12-4df8-ab1b-674a906d996d)
+---
 * **2020-08-25:**
     * Move 5.14/sc to stable version [5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a)
     * Tag 5.14.23 release
