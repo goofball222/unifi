@@ -1,3 +1,7 @@
+* **2020-09-16:**
+    * Update 6.0/sc to version [6.0.22](https://community.ui.com/releases/UniFi-Network-Controller-6-0-22/910ceffc-f0e9-4518-86c1-df5eeee34695)
+    * Promote version [6.0.20](https://community.ui.com/releases/UniFi-Network-Controller-6-0-20/3ddd1684-6747-4a66-a038-5ff0b25f4027) to stable but not tagging as Docker latest due to a plethora of issues
+---
 * **2020-09-11:**
     * Update 6.0/sc to version [6.0.20](https://community.ui.com/releases/UniFi-Network-Controller-6-0-20/c31c23b3-327f-488d-ba9a-28af0d4d33bb)
 ---
