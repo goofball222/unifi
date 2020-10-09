@@ -1,3 +1,6 @@
+* **2020-10-09:**
+    * Update 6.0/sc to version [6.0.27](https://community.ui.com/releases/UniFi-Network-Controller-6-0-27/452aa4a3-c108-4a04-8c05-242371c27d93)
+---
 * **2020-10-05:**
     * Update 6.0/sc to version [6.0.26](https://community.ui.com/releases/UniFi-Network-Controller-6-0-26/4d5d550d-8b4b-4387-ba14-e8065872dca5)
 ---
