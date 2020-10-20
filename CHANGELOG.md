@@ -1,6 +1,7 @@
 * **2020-10-20:**
     * Promote version [6.0.28](https://community.ui.com/releases/UniFi-Network-Controller-6-0-28/23c77a99-0957-449a-b3c0-58a37d4df81f) to 6.0/stable
     * Update 6.0/sc to version [6.0.28](https://community.ui.com/releases/UniFi-Network-Controller-6-0-28/cf0fe647-8623-4cb4-a257-f985da68f7e3)
+    * Update 6.1/testing to version [6.1.20](https://community.ui.com/releases/UniFi-Network-Controller-6-1-20/56c5fccf-4018-4b89-9337-33aa621b7daf)
     * Tag 6.0.28 release
 
 * **2020-10-09:**
