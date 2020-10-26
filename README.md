@@ -6,16 +6,16 @@
 ## Docker tags:
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
-| [5.14, latest](https://github.com/goofball222/unifi/blob/master/5.14/stable/Dockerfile.debian) | [5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a) | UniFi stable release | 2020-08-25 |
-| [5.14-alpine, latest-alpine](https://github.com/goofball222/unifi/blob/master/5.14/stable/Dockerfile.alpine) | [5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a) | UniFi stable release, Alpine base, **NO MONGO** | 2020-08-25 |
-| [6.0](https://github.com/goofball222/unifi/blob/master/6.0/stable/Dockerfile.debian) | [6.0.28](https://community.ui.com/releases/UniFi-Network-Controller-6-0-28/23c77a99-0957-449a-b3c0-58a37d4df81f) | UniFi stable release | 2020-10-20 |
-| [6.0-alpine](https://github.com/goofball222/unifi/blob/master/6.0/stable/Dockerfile.alpine) | [6.0.28](https://community.ui.com/releases/UniFi-Network-Controller-6-0-28/23c77a99-0957-449a-b3c0-58a37d4df81f) | UniFi stable release, Alpine base, **NO MONGO** | 2020-10-20 |
-| [6.0-sc](https://github.com/goofball222/unifi/blob/master/6.0/sc/Dockerfile.debian) | [6.0.28](https://community.ui.com/releases/UniFi-Network-Controller-6-0-28/cf0fe647-8623-4cb4-a257-f985da68f7e3) | UniFi release candidate | 2020-10-20 |
-| [6.0-alpine-sc](https://github.com/goofball222/unifi/blob/master/6.0/sc/Dockerfile.alpine) | [6.0.28](https://community.ui.com/releases/UniFi-Network-Controller-6-0-28/cf0fe647-8623-4cb4-a257-f985da68f7e3) | UniFi release candidate, Alpine base, **NO MONGO** | 2020-10-20 |
-| [6.1, 6.1-testing](https://github.com/goofball222/unifi/blob/master/6.1/testing/Dockerfile.debian) | [6.1.20](https://community.ui.com/releases/UniFi-Network-Controller-6-1-20/56c5fccf-4018-4b89-9337-33aa621b7daf) | UniFi testing  | 2020-10-20 |
-| [6.1-alpine, 6.1-alpine-testing](https://github.com/goofball222/unifi/blob/master/6.1/testing/Dockerfile.alpine) | [6.1.20](https://community.ui.com/releases/UniFi-Network-Controller-6-1-20/56c5fccf-4018-4b89-9337-33aa621b7daf) | UniFi testing, Alpine base, **NO MONGO** | 2020-10-20 |
-| [5.13](https://github.com/goofball222/unifi/blob/master/5.13/stable/Dockerfile.debian) | [5.13.32](https://community.ui.com/releases/UniFi-Network-Controller-5-13-32/85eee834-c987-4875-8de2-51c6842d7bd3) | UniFi latest stable release | 2020-07-02 |
-| [5.13-alpine](https://github.com/goofball222/unifi/blob/master/5.13/stable/Dockerfile.alpine) | [5.13.32](https://community.ui.com/releases/UniFi-Network-Controller-5-13-32/85eee834-c987-4875-8de2-51c6842d7bd3) | UniFi latest stable release, Alpine base, **NO MONGO** | 2020-07-02 |
+| [5.14, latest](https://github.com/goofball222/unifi/blob/master/5.14/official/Dockerfile.debian) | [5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a) | UniFi official release | 2020-08-25 |
+| [5.14-alpine, latest-alpine](https://github.com/goofball222/unifi/blob/master/5.14/official/Dockerfile.alpine) | [5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a) | UniFi official release, Alpine base, **NO MONGO** | 2020-08-25 |
+| [6.0](https://github.com/goofball222/unifi/blob/master/6.0/official/Dockerfile.debian) | [6.0.28](https://community.ui.com/releases/UniFi-Network-Controller-6-0-28/23c77a99-0957-449a-b3c0-58a37d4df81f) | UniFi stable release | 2020-10-20 |
+| [6.0-alpine](https://github.com/goofball222/unifi/blob/master/6.0/official/Dockerfile.alpine) | [6.0.28](https://community.ui.com/releases/UniFi-Network-Controller-6-0-28/23c77a99-0957-449a-b3c0-58a37d4df81f) | UniFi stable release, Alpine base, **NO MONGO** | 2020-10-20 |
+| [6.0-beta](https://github.com/goofball222/unifi/blob/master/6.0/beta/Dockerfile.debian) | [6.0.31](https://community.ui.com/releases/UniFi-Network-Controller-6-0-31/e63ccd8b-d382-484f-a0bd-6ee45f965625) | UniFi beta release | 2020-10-23 |
+| [6.0-alpine-beta](https://github.com/goofball222/unifi/blob/master/6.0/beta/Dockerfile.alpine) | [6.0.31](https://community.ui.com/releases/UniFi-Network-Controller-6-0-31/e63ccd8b-d382-484f-a0bd-6ee45f965625) | UniFi beta release, Alpine base, **NO MONGO** | 2020-10-23 |
+| [6.1, 6.1-beta](https://github.com/goofball222/unifi/blob/master/6.1/beta/Dockerfile.debian) | [6.1.20](https://community.ui.com/releases/UniFi-Network-Controller-6-1-20/56c5fccf-4018-4b89-9337-33aa621b7daf) | UniFi testing  | 2020-10-20 |
+| [6.1-alpine, 6.1-alpine-beta](https://github.com/goofball222/unifi/blob/master/6.1/beta/Dockerfile.alpine) | [6.1.20](https://community.ui.com/releases/UniFi-Network-Controller-6-1-20/56c5fccf-4018-4b89-9337-33aa621b7daf) | UniFi testing, Alpine base, **NO MONGO** | 2020-10-20 |
+| [5.13](https://github.com/goofball222/unifi/blob/master/5.13/official/Dockerfile.debian) | [5.13.32](https://community.ui.com/releases/UniFi-Network-Controller-5-13-32/85eee834-c987-4875-8de2-51c6842d7bd3) | UniFi latest stable release | 2020-07-02 |
+| [5.13-alpine](https://github.com/goofball222/unifi/blob/master/5.13/official/Dockerfile.alpine) | [5.13.32](https://community.ui.com/releases/UniFi-Network-Controller-5-13-32/85eee834-c987-4875-8de2-51c6842d7bd3) | UniFi latest stable release, Alpine base, **NO MONGO** | 2020-07-02 |
 | [6.0.28](https://github.com/goofball222/unifi/releases/tag/6.0.28) | [6.0.28](https://community.ui.com/releases/UniFi-Network-Controller-6-0-28/23c77a99-0957-449a-b3c0-58a37d4df81f) | Static stable release tag/image | 2020-10-20 |
 | [5.14.23](https://github.com/goofball222/unifi/releases/tag/5.14.23) | [5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a) | Static stable release tag/image | 2020-08-25 |
 | [5.13.32](https://github.com/goofball222/unifi/releases/tag/5.13.32) | [5.13.32](https://community.ui.com/releases/UniFi-Network-Controller-5-13-32/85eee834-c987-4875-8de2-51c6842d7bd3) | Static stable release tag/image | 2020-07-02 |
@@ -31,6 +31,10 @@
 ---
 
 **NOTE:**
+
+2020-10-25:
+* Directory and tag structure was reworked to match UI community beta/official designations (no more unstable/testing/sc/stable)
+* I'm still dealying pushing 6.0 to the "latest" tag since it still doesn't seem quite ready for primetime.
 
 2019-08-15:
 * Dropping -debian-nomongo tags from auto-build/Docker Hub. The cloud configuration with multiple tags per-build setup, and recreating build rules to change the latest version of each release makes it tedious to maintain. It will also improve build times. The Dockerfiles and setup for it will remain in the GitHub repo and can be built locally if needed/wanted.
