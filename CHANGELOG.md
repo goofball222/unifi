@@ -1,3 +1,6 @@
+* **2020-10-28:**
+    * Update 6.1/beta to [6.1.21](https://community.ui.com/releases/UniFi-Network-Controller-6-1-21/f11067bc-46b7-4eeb-a29c-e2687598f12f)
+---
 * **2020-10-25:**
     * Rework directory and tag structure to match UI community beta/official designations (no more unstable/testing/sc/stable)
     * Update 6.0/beta to [6.0.31](https://community.ui.com/releases/UniFi-Network-Controller-6-0-31/e63ccd8b-d382-484f-a0bd-6ee45f965625)
