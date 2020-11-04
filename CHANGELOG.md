@@ -1,3 +1,6 @@
+* **2020-11-04:**
+    * Update 6.0/beta to [6.0.34](https://community.ui.com/releases/UniFi-Network-Controller-6-0-34/5abb40a8-d765-4e92-ba6b-032f54ebea75)
+---
 * **2020-11-03:**
     * Update 6.1/beta to [6.1.23](https://community.ui.com/releases/UniFi-Network-Controller-6-1-23/1d35112c-4040-4fe5-b049-fc71d86ae962)
 ---
