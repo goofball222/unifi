@@ -36,7 +36,7 @@ RUN set -x \
     && apk add -q --no-cache \
         bash binutils coreutils curl libcap \
         openjdk8-jre openssl shadow su-exec \
-        tzdata \
+        tzdata curl \
     && curl -sSL https://dl.ui.com/unifi/${VERSION}/UniFi.unix.zip -o /tmp/UniFi.unix.${VERSION}.zip \
     && unzip -q /tmp/UniFi.unix.${VERSION}.zip -d /tmp \
     && mv /tmp/UniFi/* /usr/lib/unifi/ \

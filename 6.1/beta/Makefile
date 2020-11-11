@@ -2,9 +2,8 @@
 -include ../*.mk
 -include *.mk
 
-
-
-NS ?= goofball222
+#NS ?= goofball222
+NS ?= tty0
 
 IMAGE_NAME ?= unifi
 CONTAINER_NAME ?= unifi
@@ -26,21 +25,17 @@ ifndef TAG
 TAG := $(notdir $(shell pwd))
 endif
 
-
-
 .PHONY: build shell debug run start stop rm rmi test clean
-
-
 
 default: build
 
-
-
 build:
-	docker build \
+	docker buildx build \
 	--build-arg VCS_REF=$(VCS_REF) \
 	--build-arg BUILD_DATE=$(BUILD_DATE) \
 	--build-arg VERSION=$(VERSION) \
+	--platform=linux/amd64,linux/arm/v7,linux/arm64 \
+	--push \
 	-f $(DOCKERFILE) \
 	-t $(NS)/$(IMAGE_NAME):$(TAG) .
 
@@ -63,10 +58,13 @@ rmi:
 	-docker rmi $(NS)/$(IMAGE_NAME):$(TAG)
 
 test:
-	@echo docker build \
+	@docker buildx build \
 	--build-arg VCS_REF=$(VCS_REF) \
 	--build-arg BUILD_DATE=$(BUILD_DATE) \
 	--build-arg VERSION=$(VERSION) \
+	--platform=linux/amd64,linux/arm/v7,linux/arm64 \
+	--push \
+	-f $(DOCKERFILE) \
 	-t $(NS)/$(IMAGE_NAME):$(TAG) .
 
 clean: stop rm rmi
