@@ -1,3 +1,7 @@
+* **2021-01-26:**
+    * Update 6.0/official to [6.0.45](https://community.ui.com/releases/UniFi-Network-Controller-6-0-45/8d3b98e1-b9d4-4ab3-b8da-721dbe9ab842)
+    * Tag 6.0.45 release
+---
 * **2021-01-25:**
     * Update 6.0/beta to [6.0.45](https://community.ui.com/releases/UniFi-Network-Controller-6-0-45/01f9f1fb-08f2-4573-bae1-c784df9b1818)
 ---
