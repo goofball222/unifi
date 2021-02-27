@@ -81,6 +81,7 @@ This container exposes three volumes:
 
 This container exposes the following ports (see: https://help.ubnt.com/hc/en-us/articles/218506997-UniFi-Ports-Used):
 * `3478/udp` (port used for STUN connection)
+* `5514/udp` (port used for remote syslog if log to the controller is enabled)
 * `6789/tcp` (port used for throughput measurement from Android/iOS app)
 * `8080/tcp` (port for UAP/USW/USG to inform controller)
 * `8443/tcp` (port for controller GUI / API)
