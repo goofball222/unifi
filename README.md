@@ -6,14 +6,14 @@
 ## Docker tags:
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
-| [5.14, latest](https://github.com/goofball222/unifi/blob/master/5.14/official/Dockerfile.debian) | [5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a) | UniFi official release | 2020-08-25 |
-| [5.14-alpine, latest-alpine](https://github.com/goofball222/unifi/blob/master/5.14/official/Dockerfile.alpine) | [5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a) | UniFi official release, Alpine base, **NO MONGO** | 2020-08-25 |
-| [6.0](https://github.com/goofball222/unifi/blob/master/6.0/official/Dockerfile.debian) | [6.0.45](https://community.ui.com/releases/UniFi-Network-Controller-6-0-45/8d3b98e1-b9d4-4ab3-b8da-721dbe9ab842) | UniFi official release | 2021-01-26 |
-| [6.0-alpine](https://github.com/goofball222/unifi/blob/master/6.0/official/Dockerfile.alpine) | [6.0.45](https://community.ui.com/releases/UniFi-Network-Controller-6-0-45/8d3b98e1-b9d4-4ab3-b8da-721dbe9ab842) | UniFi official release, Alpine base, **NO MONGO** | 2021-01-26 |
-| [6.1, 6.1-beta](https://github.com/goofball222/unifi/blob/master/6.1/beta/Dockerfile.debian) | [6.1.64](https://community.ui.com/releases/UniFi-Network-Controller-6-1-64/a8587fe2-e9b1-43a4-9f97-bcd5051226d6) | UniFi beta release  | 2021-03-04 |
-| [6.1-alpine, 6.1-alpine-beta](https://github.com/goofball222/unifi/blob/master/6.1/beta/Dockerfile.alpine) | [6.1.64](https://community.ui.com/releases/UniFi-Network-Controller-6-1-64/a8587fe2-e9b1-43a4-9f97-bcd5051226d6) | UniFi beta release, Alpine base, **NO MONGO** | 2021-03-04 |
-| [5.13](https://github.com/goofball222/unifi/blob/master/5.13/official/Dockerfile.debian) | [5.13.32](https://community.ui.com/releases/UniFi-Network-Controller-5-13-32/85eee834-c987-4875-8de2-51c6842d7bd3) | UniFi latest official release | 2020-07-02 |
-| [5.13-alpine](https://github.com/goofball222/unifi/blob/master/5.13/official/Dockerfile.alpine) | [5.13.32](https://community.ui.com/releases/UniFi-Network-Controller-5-13-32/85eee834-c987-4875-8de2-51c6842d7bd3) | UniFi latest official release, Alpine base, **NO MONGO** | 2020-07-02 |
+| [6.0, latest](https://github.com/goofball222/unifi/blob/master/6.0/official/Dockerfile.debian) | [6.0.45](https://community.ui.com/releases/UniFi-Network-Controller-6-0-45/8d3b98e1-b9d4-4ab3-b8da-721dbe9ab842) | UniFi official release | 2021-01-26 |
+| [6.0-alpine, latest-alpine](https://github.com/goofball222/unifi/blob/master/6.0/official/Dockerfile.alpine) | [6.0.45](https://community.ui.com/releases/UniFi-Network-Controller-6-0-45/8d3b98e1-b9d4-4ab3-b8da-721dbe9ab842) | UniFi official release, Alpine base, **NO MONGO** | 2021-01-26 |
+| [6.1](https://github.com/goofball222/unifi/blob/master/6.1/beta/Dockerfile.debian) | [6.1.61](https://community.ui.com/releases/UniFi-Network-Controller-6-1-61/62f1ad38-1ac5-430c-94b0-becbb8f71d7d) | UniFi official release  | 2021-03-01 |
+| [6.1-alpine](https://github.com/goofball222/unifi/blob/master/6.1/beta/Dockerfile.alpine) | [6.1.61](https://community.ui.com/releases/UniFi-Network-Controller-6-1-61/62f1ad38-1ac5-430c-94b0-becbb8f71d7d) | UniFi official release, Alpine base, **NO MONGO** | 2021-03-01 |
+| [6.1-beta](https://github.com/goofball222/unifi/blob/master/6.1/beta/Dockerfile.debian) | [6.1.64](https://community.ui.com/releases/UniFi-Network-Controller-6-1-64/a8587fe2-e9b1-43a4-9f97-bcd5051226d6) | UniFi beta release  | 2021-03-04 |
+| [6.1-alpine-beta](https://github.com/goofball222/unifi/blob/master/6.1/beta/Dockerfile.alpine) | [6.1.64](https://community.ui.com/releases/UniFi-Network-Controller-6-1-64/a8587fe2-e9b1-43a4-9f97-bcd5051226d6) | UniFi beta release, Alpine base, **NO MONGO** | 2021-03-04 |
+| [5.14](https://github.com/goofball222/unifi/blob/master/5.14/official/Dockerfile.debian) | [5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a) | UniFi official release | 2020-08-25 |
+| [5.14-alpine](https://github.com/goofball222/unifi/blob/master/5.14/official/Dockerfile.alpine) | [5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a) | UniFi official release, Alpine base, **NO MONGO** | 2020-08-25 |
 | [6.0.45](https://github.com/goofball222/unifi/releases/tag/6.0.45) | [6.0.45](https://community.ui.com/releases/UniFi-Network-Controller-6-0-45/8d3b98e1-b9d4-4ab3-b8da-721dbe9ab842) | Static official release tag/image | 2021-01-26 |
 | [5.14.23](https://github.com/goofball222/unifi/releases/tag/5.14.23) | [5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a) | Static official release tag/image | 2020-08-25 |
 | [5.13.32](https://github.com/goofball222/unifi/releases/tag/5.13.32) | [5.13.32](https://community.ui.com/releases/UniFi-Network-Controller-5-13-32/85eee834-c987-4875-8de2-51c6842d7bd3) | Static official release tag/image | 2020-07-02 |
@@ -30,28 +30,16 @@
 
 **NOTE:**
 
+2021-03-04:
+* Just in time for the impending 6.1 official release I'm moving the "latest" and "latest-alpine" tags to tracking the 6.0 versions...
+* Make sure you're making regular backups before upgrading, rolling back to an older version without a .unf file or a full DB backup is not possible.
+
 2020-10-25:
 * Directory and tag structure was reworked to match UI community beta/official designations (no more unstable/testing/sc/stable)
-* I'm still dealying pushing 6.0 to the "latest" tag since it still doesn't seem quite ready for primetime.
+* I'm still delaying pushing 6.0 to the "latest" tag since it still doesn't seem quite ready for primetime.
 
-2019-08-15:
-* Dropping -debian-nomongo tags from auto-build/Docker Hub. The cloud configuration with multiple tags per-build setup, and recreating build rules to change the latest version of each release makes it tedious to maintain. It will also improve build times. The Dockerfiles and setup for it will remain in the GitHub repo and can be built locally if needed/wanted.
-* Version tags added. These will track the latest point release versions up to the time version is declared/released as stable by UI.
-* Once a version is declared stable the version tag will track the last UI declared stable point release. If you need stable candidate, testing, etc. point releases for that version once it is stable you will need to target those specific tags.
 
-**Alpine and -nomongo tags DO NOT contain any internal MongoDB binaries. You must connect them to an external Mongo DB container or other host instance.**
-
-v5.9+: Ubiquiti changed the SSL certificate handling internally. If you're using a custom LetsEncrypt, etc. SSL certificate and upgrade to v5.9+ you will need to rename/remove the file `unificert.sha256` in `./cert:/usr/lib/unifi/cert` and restart the container to force a re-import of the existing certificate files under the changed keystore alias.
-
-Additional info at https://community.ubnt.com/t5/UniFi-Beta-Blog/UniFi-5-9-4-Unstable-has-been-released/ba-p/2339206
-
-v5.7+ discontinues support for the following hardware, if you have any of these devices in production you need to remain on v5.6:
-* PicoM2 converted to UniFi
-* UAP-AC
-* UAP-AC v2
-* UAP-AC-Outdoor
-
-More information at https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-7-20-Release-Update/ba-p/2278500
+**Alpine and tags DO NOT contain any internal MongoDB binaries. You must connect them to an external Mongo DB container or other host instance.**
 
 ---
 
@@ -256,24 +244,23 @@ To revert from a custom cert to a UniFi self-signed certificate stop the contain
 
 ---
 
-## unstable/testing/sc tag warning
+## beta and bleeding-edge official tag warning
 
 **NOT RECOMMENDED FOR USE IN A PRODUCTION ENVIRONMENT - FOR TESTING/LABS ONLY**
 
-_There have been past UniFi unstable/testing/stable candidate releases with AP bricking firmware, network breaking bugs, etc._
+_There have been past UniFi beta and ***official*** releases with AP bricking firmware, network breaking bugs, etc._
 
 _Proceed with caution! Use at your own risk._
 
 If you're going to use these images please make sure you create a UBNT community account:
-https://community.ubnt.com/
+https://community.ui.com/
 
-Sign up for Beta access at:
-https://account.ubnt.com/manage/settings/beta
+Instructions for how to sign up for beta/early access at:
+https://help.ui.com/hc/en-us/articles/204908664-How-To-Sign-Up-for-Early-Access
 
-Participate in discussion and create bug reports for any issues you may encounter in:
-https://community.ubnt.com/t5/UniFi-Wireless-Beta/bd-p/UniFi_Beta
+Please make sure to participate in discussion and create bug reports for any issues you encounter with beta/early access releases.
 
-**USE UNSTABLE/TESTING/SC AT YOUR OWN RISK - DO NOT USE IN A PRODUCTION ENVIRONMENT**
+**USE BETA/BLEEDING-EDGE RELEASES AT YOUR OWN RISK - REPEAT: NOT RECOMMENDED FOR USE IN A PRODUCTION ENVIRONMENT WITHOUT EXTENSIVE TESTING**
 
 [//]: # (Licensed under the Apache 2.0 license)
-[//]: # (Copyright 2017 The Goofball - goofball222@gmail.com)
+[//]: # (Copyright 2021 The Goofball - goofball222@gmail.com)
