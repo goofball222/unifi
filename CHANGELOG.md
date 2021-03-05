@@ -1,3 +1,6 @@
+* **2021-03-05:**
+    * Update 6.1/beta to [6.1.65](https://community.ui.com/releases/UniFi-Network-Controller-6-1-65/75073c38-4001-4d86-be81-5c0ffc75af0d)
+---
 * **2021-03-04:**
     * Update 6.1/beta to [6.1.64](https://community.ui.com/releases/UniFi-Network-Controller-6-1-64/a8587fe2-e9b1-43a4-9f97-bcd5051226d6)
     * Clone 6.1/beta to 6.1/official
