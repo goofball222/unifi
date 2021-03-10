@@ -1,3 +1,8 @@
+* **2021-03-10:**
+    * Update 6.1/official to [6.1.67](https://community.ui.com/releases/UniFi-Network-Controller-6-1-67/aed28c2f-6346-45b2-9f40-6eb92accafa8)
+    * Change git master branch to main
+    * Create 6.1/test and 6.1-alpine-test tag with base alpine + gcompat + libc6-compat as possible fix for [#81](https://github.com/goofball222/unifi/issues/81), evaluate moving from frolvlad/alpine-glibc
+---
 * **2021-03-08:**
     * Update 6.1/beta to [6.1.67](https://community.ui.com/releases/UniFi-Network-Controller-6-1-67/ac0256ea-c41a-4d4e-8141-c9f9f5b633e0)
     * Update 6.1/official to [6.1.65](https://community.ui.com/releases/UniFi-Network-Controller-6-1-65/fbfd6971-3da4-420a-9568-103047515e91)
