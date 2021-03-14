@@ -1,3 +1,7 @@
+* **2021-03-13:**
+    * Update 6.1/beta to [6.1.69](https://community.ui.com/releases/UniFi-Network-Controller-6-1-69/f470cbc3-21af-4922-a5f7-5fe9746a958f)
+    * Re-base beta Alpine images to pure Alpine, add gcompat and libc6-compat for compatibility, instead of using frolvlad/alpine-glibc:latest
+---
 * **2021-03-10:**
     * Update 6.1/official to [6.1.67](https://community.ui.com/releases/UniFi-Network-Controller-6-1-67/aed28c2f-6346-45b2-9f40-6eb92accafa8)
     * Change git master branch to main
