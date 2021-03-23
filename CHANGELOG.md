@@ -1,3 +1,6 @@
+* **2021-03-22:**
+    * Update 6.1/beta to [6.1.71](https://community.ui.com/releases/UniFi-Network-Controller-6-1-71/6755cdd6-17c9-4f46-875c-56fc7ed76d0d)
+---
 * **2021-03-17:**
     * Update 6.1/official to [6.1.70](https://community.ui.com/releases/UniFi-Network-Controller-6-1-70/f0607cc3-80dc-4019-87ad-02207b546417)
 ---
