@@ -6,14 +6,14 @@
 ## Docker tags:
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
-| [6.0, latest](https://github.com/goofball222/unifi/blob/master/6.0/official/Dockerfile.debian) | [6.0.45](https://community.ui.com/releases/UniFi-Network-Controller-6-0-45/8d3b98e1-b9d4-4ab3-b8da-721dbe9ab842) | UniFi official release | 2021-01-26 |
-| [6.0-alpine, latest-alpine](https://github.com/goofball222/unifi/blob/master/6.0/official/Dockerfile.alpine) | [6.0.45](https://community.ui.com/releases/UniFi-Network-Controller-6-0-45/8d3b98e1-b9d4-4ab3-b8da-721dbe9ab842) | UniFi official release, Alpine base, **NO MONGO** | 2021-01-26 |
-| [6.1](https://github.com/goofball222/unifi/blob/master/6.1/beta/Dockerfile.debian) | [6.1.71](https://community.ui.com/releases/UniFi-Network-Controller-6-1-71/0cffd3ed-7429-4529-9a20-9fead78ebf66) | UniFi official release  | 2021-03-25 |
-| [6.1-alpine](https://github.com/goofball222/unifi/blob/master/6.1/beta/Dockerfile.alpine) | [6.1.71](https://community.ui.com/releases/UniFi-Network-Controller-6-1-71/0cffd3ed-7429-4529-9a20-9fead78ebf66) | UniFi official release, Alpine base, **NO MONGO** | 2021-03-25 |
-| [6.1-beta](https://github.com/goofball222/unifi/blob/master/6.1/beta/Dockerfile.debian) | [6.1.71](https://community.ui.com/releases/UniFi-Network-Controller-6-1-71/6755cdd6-17c9-4f46-875c-56fc7ed76d0d) | UniFi beta release  | 2021-03-23 |
-| [6.1-alpine-beta](https://github.com/goofball222/unifi/blob/master/6.1/beta/Dockerfile.alpine) | [6.1.71](https://community.ui.com/releases/UniFi-Network-Controller-6-1-71/6755cdd6-17c9-4f46-875c-56fc7ed76d0d) | UniFi beta release, Alpine base, **NO MONGO** | 2021-03-23 |
-| [5.14](https://github.com/goofball222/unifi/blob/master/5.14/official/Dockerfile.debian) | [5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a) | UniFi official release | 2020-08-25 |
-| [5.14-alpine](https://github.com/goofball222/unifi/blob/master/5.14/official/Dockerfile.alpine) | [5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a) | UniFi official release, Alpine base, **NO MONGO** | 2020-08-25 |
+| [6.0, latest](https://github.com/goofball222/unifi/blob/main/6.0/official/Dockerfile.debian) | [6.0.45](https://community.ui.com/releases/UniFi-Network-Controller-6-0-45/8d3b98e1-b9d4-4ab3-b8da-721dbe9ab842) | UniFi official release | 2021-01-26 |
+| [6.0-alpine, latest-alpine](https://github.com/goofball222/unifi/blob/main/6.0/official/Dockerfile.alpine) | [6.0.45](https://community.ui.com/releases/UniFi-Network-Controller-6-0-45/8d3b98e1-b9d4-4ab3-b8da-721dbe9ab842) | UniFi official release, Alpine base, **NO MONGO** | 2021-01-26 |
+| [6.1](https://github.com/goofball222/unifi/blob/main/6.1/beta/Dockerfile.debian) | [6.1.71](https://community.ui.com/releases/UniFi-Network-Controller-6-1-71/0cffd3ed-7429-4529-9a20-9fead78ebf66) | UniFi official release  | 2021-03-25 |
+| [6.1-alpine](https://github.com/goofball222/unifi/blob/main/6.1/beta/Dockerfile.alpine) | [6.1.71](https://community.ui.com/releases/UniFi-Network-Controller-6-1-71/0cffd3ed-7429-4529-9a20-9fead78ebf66) | UniFi official release, Alpine base, **NO MONGO** | 2021-03-25 |
+| [6.2-beta](https://github.com/goofball222/unifi/blob/main/6.2/beta/Dockerfile.debian) | [6.2.12](https://community.ui.com/releases/UniFi-Network-Controller-6-2-12/41529bd2-d156-4731-b201-68c069d7bd00) | UniFi beta release  | 2021-03-25 |
+| [6.2-alpine-beta](https://github.com/goofball222/unifi/blob/main/6.2/beta/Dockerfile.alpine) | [6.2.12](https://community.ui.com/releases/UniFi-Network-Controller-6-2-12/41529bd2-d156-4731-b201-68c069d7bd00) | UniFi beta release, Alpine base, **NO MONGO** | 2021-03-25 |
+| [5.14](https://github.com/goofball222/unifi/blob/main/5.14/official/Dockerfile.debian) | [5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a) | UniFi official release | 2020-08-25 |
+| [5.14-alpine](https://github.com/goofball222/unifi/blob/main/5.14/official/Dockerfile.alpine) | [5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a) | UniFi official release, Alpine base, **NO MONGO** | 2020-08-25 |
 | [6.0.45](https://github.com/goofball222/unifi/releases/tag/6.0.45) | [6.0.45](https://community.ui.com/releases/UniFi-Network-Controller-6-0-45/8d3b98e1-b9d4-4ab3-b8da-721dbe9ab842) | Static official release tag/image | 2021-01-26 |
 | [5.14.23](https://github.com/goofball222/unifi/releases/tag/5.14.23) | [5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a) | Static official release tag/image | 2020-08-25 |
 | [5.13.32](https://github.com/goofball222/unifi/releases/tag/5.13.32) | [5.13.32](https://community.ui.com/releases/UniFi-Network-Controller-5-13-32/85eee834-c987-4875-8de2-51c6842d7bd3) | Static official release tag/image | 2020-07-02 |
@@ -23,7 +23,7 @@
 
 ---
 
-* [Recent changes, see: GitHub CHANGELOG.md](https://github.com/goofball222/unifi/blob/master/CHANGELOG.md)
+* [Recent changes, see: GitHub CHANGELOG.md](https://github.com/goofball222/unifi/blob/main/CHANGELOG.md)
 * [Report any bugs, issues or feature requests on GitHub](https://github.com/goofball222/unifi/issues)
 
 ---
@@ -187,9 +187,9 @@ Copy the following to both services in the docker-compose.yml file under the com
 
 ---
 
-[Example basic `docker-compose.yml` in file form](https://raw.githubusercontent.com/goofball222/unifi/master/examples/docker-compose.yml).
+[Example basic `docker-compose.yml` in file form](https://raw.githubusercontent.com/goofball222/unifi/main/examples/docker-compose.yml).
 
-[Example advanced `docker-compose.yml` in file form](https://raw.githubusercontent.com/goofball222/unifi/master/examples/docker-compose.externaldb.yml) with external Mongo DB service and UniFi service using environment variables.
+[Example advanced `docker-compose.yml` in file form](https://raw.githubusercontent.com/goofball222/unifi/main/examples/docker-compose.externaldb.yml) with external Mongo DB service and UniFi service using environment variables.
 
 ---
 
