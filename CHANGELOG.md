@@ -1,3 +1,6 @@
+* **2021-04-12:**
+    * Update 6.2/beta to v[6.2.17](https://community.ui.com/releases/UniFi-Network-Controller-6-2-17/ea1d097f-9990-48d0-be18-984352e3d5ed)
+---
 * **2021-04-02:**
     * Update 6.2/beta to v[6.2.13](https://community.ui.com/releases/UniFi-Network-Controller-6-2-13/f8dc5ebe-8790-4ae6-a7f7-6d1cc53e510f)
     * Promote 6.1 official to "latest" and "latest-alpine" tags
