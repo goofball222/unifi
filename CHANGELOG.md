@@ -1,3 +1,7 @@
+* **2021-04-16:**
+    * Update 6.2/beta to v[6.2.19](https://community.ui.com/releases/UniFi-Network-Controller-6-2-19/23346096-9421-491a-9869-f8d94bde962a)
+    * Copy 6.2/beta v[6.2.17](https://community.ui.com/releases/UniFi-Network-Controller-6-2-17/7f6d58bc-ce9f-43f2-8bc8-0c0dd935ebce) to 6.2/official
+---
 * **2021-04-12:**
     * Update 6.2/beta to v[6.2.17](https://community.ui.com/releases/UniFi-Network-Controller-6-2-17/ea1d097f-9990-48d0-be18-984352e3d5ed)
 ---
