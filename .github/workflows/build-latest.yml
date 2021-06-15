@@ -48,7 +48,8 @@ jobs:
             type=raw,6.2-alpine
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
-            org.opencontainers.image.description=Containerized UniFi Server
+            org.opencontainers.image.title=UniFi Controller
+            org.opencontainers.image.description=UniFi Controller
             org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Alpine
       -
         name: Set up QEMU
