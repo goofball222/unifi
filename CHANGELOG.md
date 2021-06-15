@@ -1,3 +1,9 @@
+* **2021-06-15:**
+    * Switch to using GitHub actions for builds
+    * Update Dockerfiles for GitHub actions
+    * Promote 6.2 official to "latest" and "latest-alpine" tags
+    * Tag 6.2.25 release
+---
 * **2021-05-31:**
     * Update 6.2/beta to v[6.2.26](https://community.ui.com/releases/UniFi-Network-Application-6-2-26/4ce235f8-c479-477e-b71a-e66d5294c5a9)
 ---

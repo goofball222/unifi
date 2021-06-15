@@ -1,21 +1,22 @@
 
 # UniFi Docker Container
 
-[![Docker Build Status](https://img.shields.io/docker/cloud/build/goofball222/unifi.svg)](https://hub.docker.com/r/goofball222/unifi/) [![Docker Pulls](https://img.shields.io/docker/pulls/goofball222/unifi.svg)](https://hub.docker.com/r/goofball222/unifi/) [![Docker Stars](https://img.shields.io/docker/stars/goofball222/unifi.svg)](https://hub.docker.com/r/goofball222/unifi/) [![MB Layers](https://images.microbadger.com/badges/image/goofball222/unifi.svg)](https://microbadger.com/images/goofball222/unifi) [![MB Commit](https://images.microbadger.com/badges/commit/goofball222/unifi.svg)](https://microbadger.com/images/goofball222/unifi) [![MB License](https://images.microbadger.com/badges/license/goofball222/unifi.svg)](https://microbadger.com/images/goofball222/unifi)
+[![Stable Build Status](https://github.com/goofball222/unifi/actions/workflows/build-stable.yml/badge.svg)](https://github.com/goofball222/unifi/actions/workflows/build-stable.yml) [![Docker Pulls](https://img.shields.io/docker/pulls/goofball222/unifi.svg)](https://hub.docker.com/r/goofball222/unifi/) [![Docker Stars](https://img.shields.io/docker/stars/goofball222/unifi.svg)](https://hub.docker.com/r/goofball222/unifi/) [![MB License](https://images.microbadger.com/badges/license/goofball222/unifi.svg)](https://microbadger.com/images/goofball222/unifi)
 
 ## Docker tags:
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
-| [6.1, latest](https://github.com/goofball222/unifi/blob/main/6.1/official/Dockerfile.debian) | [6.1.71](https://community.ui.com/releases/UniFi-Network-Controller-6-1-71/0cffd3ed-7429-4529-9a20-9fead78ebf66) | UniFi official release  | 2021-03-25 |
-| [6.1-alpine, latest-alpine](https://github.com/goofball222/unifi/blob/main/6.1/official/Dockerfile.alpine) | [6.1.71](https://community.ui.com/releases/UniFi-Network-Controller-6-1-71/0cffd3ed-7429-4529-9a20-9fead78ebf66) | UniFi official release, Alpine base, **NO MONGO** | 2021-03-25 |
-| [6.2](https://github.com/goofball222/unifi/blob/main/6.2/official/Dockerfile.debian) | [6.2.25](https://community.ui.com/releases/UniFi-Network-Application-6-2-25/d9cb0897-3ef4-4dda-a5d6-c07530ff8a86) | UniFi official release | 2021-05-14 |
-| [6.2-alpine](https://github.com/goofball222/unifi/blob/main/6.2/official/Dockerfile.alpine) | [6.2.25](https://community.ui.com/releases/UniFi-Network-Application-6-2-25/d9cb0897-3ef4-4dda-a5d6-c07530ff8a86) | UniFi official release, Alpine | 2021-05-14 |
+| [6.2, latest](https://github.com/goofball222/unifi/blob/main/6.2/official/Dockerfile.debian) | [6.2.25](https://community.ui.com/releases/UniFi-Network-Application-6-2-25/d9cb0897-3ef4-4dda-a5d6-c07530ff8a86) | UniFi official release | 2021-05-14 |
+| [6.2-alpine, latest-alpine](https://github.com/goofball222/unifi/blob/main/6.2/official/Dockerfile.alpine) | [6.2.25](https://community.ui.com/releases/UniFi-Network-Application-6-2-25/d9cb0897-3ef4-4dda-a5d6-c07530ff8a86) | UniFi official release, Alpine | 2021-05-14 |
 | [6.2-beta](https://github.com/goofball222/unifi/blob/main/6.2/beta/Dockerfile.debian) | [6.2.26](https://community.ui.com/releases/UniFi-Network-Application-6-2-26/4ce235f8-c479-477e-b71a-e66d5294c5a9) | UniFi beta release  | 2021-05-31 |
 | [6.2-alpine-beta](https://github.com/goofball222/unifi/blob/main/6.2/beta/Dockerfile.alpine) | [6.2.26](https://community.ui.com/releases/UniFi-Network-Application-6-2-26/4ce235f8-c479-477e-b71a-e66d5294c5a9) | UniFi beta release, Alpine base, **NO MONGO** | 2021-05-31 |
+| [6.1](https://github.com/goofball222/unifi/blob/main/6.1/official/Dockerfile.debian) | [6.1.71](https://community.ui.com/releases/UniFi-Network-Controller-6-1-71/0cffd3ed-7429-4529-9a20-9fead78ebf66) | UniFi official release  | 2021-03-25 |
+| [6.1-alpine](https://github.com/goofball222/unifi/blob/main/6.1/official/Dockerfile.alpine) | [6.1.71](https://community.ui.com/releases/UniFi-Network-Controller-6-1-71/0cffd3ed-7429-4529-9a20-9fead78ebf66) | UniFi official release, Alpine base, **NO MONGO** | 2021-03-25 |
 | [6.0](https://github.com/goofball222/unifi/blob/main/6.0/official/Dockerfile.debian) | [6.0.45](https://community.ui.com/releases/UniFi-Network-Controller-6-0-45/8d3b98e1-b9d4-4ab3-b8da-721dbe9ab842) | UniFi official release | 2021-01-26 |
 | [6.0-alpine](https://github.com/goofball222/unifi/blob/main/6.0/official/Dockerfile.alpine) | [6.0.45](https://community.ui.com/releases/UniFi-Network-Controller-6-0-45/8d3b98e1-b9d4-4ab3-b8da-721dbe9ab842) | UniFi official release, Alpine base, **NO MONGO** | 2021-01-26 |
 | [5.14](https://github.com/goofball222/unifi/blob/main/5.14/official/Dockerfile.debian) | [5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a) | UniFi official release | 2020-08-25 |
 | [5.14-alpine](https://github.com/goofball222/unifi/blob/main/5.14/official/Dockerfile.alpine) | [5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a) | UniFi official release, Alpine base, **NO MONGO** | 2020-08-25 |
+| [6.2.25](https://github.com/goofball222/unifi/releases/tag/6.2.25) | [6.2.25](https://community.ui.com/releases/UniFi-Network-Application-6-2-25/d9cb0897-3ef4-4dda-a5d6-c07530ff8a86) | Static official release tag/image | 2021-05-14 |
 | [6.1.71](https://github.com/goofball222/unifi/releases/tag/6.1.71) | [6.1.71](https://community.ui.com/releases/UniFi-Network-Controller-6-1-71/0cffd3ed-7429-4529-9a20-9fead78ebf66) | Static official release tag/image | 2021-03-25 |
 | [6.0.45](https://github.com/goofball222/unifi/releases/tag/6.0.45) | [6.0.45](https://community.ui.com/releases/UniFi-Network-Controller-6-0-45/8d3b98e1-b9d4-4ab3-b8da-721dbe9ab842) | Static official release tag/image | 2021-01-26 |
 | [5.14.23](https://github.com/goofball222/unifi/releases/tag/5.14.23) | [5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a) | Static official release tag/image | 2020-08-25 |
@@ -33,19 +34,15 @@
 
 **NOTE:**
 
-2021-04-02:
-* Switch "latest" and "latest-alpine" tags to track 6.1 official.
-
-2021-03-04:
-* Just in time for the impending 6.1 official release I'm moving the "latest" and "latest-alpine" tags to tracking the 6.0 versions...
+2021-06-15:
+* Switch "latest" and "latest-alpine" tags to track 6.2 official.
 * Make sure you're making regular backups before upgrading, rolling back to an older version without a .unf file or a full DB backup is not possible.
 
 2020-10-25:
 * Directory and tag structure was reworked to match UI community beta/official designations (no more unstable/testing/sc/stable)
-* I'm still delaying pushing 6.0 to the "latest" tag since it still doesn't seem quite ready for primetime.
 
 
-**Alpine and tags DO NOT contain any internal MongoDB binaries. You must connect them to an external Mongo DB container or other host instance.**
+**Alpine tags DO NOT contain any internal MongoDB binaries. You must connect them to an external Mongo DB container or other host instance.**
 
 ---
 
