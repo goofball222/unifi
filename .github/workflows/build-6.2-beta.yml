@@ -20,21 +20,6 @@ jobs:
         id: getargs
         run: echo "::set-output name=version::$(cat ./6.2/beta/VERSION)"
       -
-        name: Set up Docker metadata for Debian
-        id: meta-debian
-        uses: docker/metadata-action@v3
-        with:
-          images: |
-            ${{ github.repository }}
-            ghcr.io/${{ github.repository }}
-          tags: |
-            type=raw,6.2-beta
-          labels: |
-            org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
-            org.opencontainers.image.title=UniFi Controller
-            org.opencontainers.image.description=UniFi Controller
-            org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Debian
-      -
         name: Set up Docker metadata for Alpine
         id: meta-alpine
         uses: docker/metadata-action@v3
@@ -43,12 +28,45 @@ jobs:
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
           tags: |
+            type=raw,latest-alpine-beta
             type=raw,6.2-alpine-beta
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
             org.opencontainers.image.title=UniFi Controller
             org.opencontainers.image.description=UniFi Controller
             org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Alpine
+      -
+        name: Set up Docker metadata for Debian
+        id: meta-debian
+        uses: docker/metadata-action@v3
+        with:
+          images: |
+            ${{ github.repository }}
+            ghcr.io/${{ github.repository }}
+          tags: |
+            type=raw,latest-beta
+            type=raw,6.2-beta
+          labels: |
+            org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
+            org.opencontainers.image.title=UniFi Controller
+            org.opencontainers.image.description=UniFi Controller
+            org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Debian
+      -
+        name: Set up Docker metadata for Ubuntu
+        id: meta-ubuntu
+        uses: docker/metadata-action@v3
+        with:
+          images: |
+            ${{ github.repository }}
+            ghcr.io/${{ github.repository }}
+          tags: |
+            type=raw,latest-ubuntu-beta
+            type=raw,6.2-ubuntu-beta
+          labels: |
+            org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
+            org.opencontainers.image.title=UniFi Controller
+            org.opencontainers.image.description=UniFi Controller
+            org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Ubuntu
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -69,22 +87,35 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
       -
-        name: Build and push Debian Docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: ./6.2/beta
-          file: ./6.2/beta/Dockerfile.debian
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta-debian.outputs.tags }}
-          labels: ${{ steps.meta-debian.outputs.labels }}
-          build-args: VERSION=${{ steps.getargs.outputs.version }}
-      -
         name: Build and push Alpine Docker image
         uses: docker/build-push-action@v2
         with:
           context: ./6.2/beta
           file: ./6.2/beta/Dockerfile.alpine
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-alpine.outputs.tags }}
           labels: ${{ steps.meta-alpine.outputs.labels }}
+          build-args: VERSION=${{ steps.getargs.outputs.version }}
+      -
+        name: Build and push Debian Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: ./6.2/beta
+          file: ./6.2/beta/Dockerfile
+          platforms: linux/amd64
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta-debian.outputs.tags }}
+          labels: ${{ steps.meta-debian.outputs.labels }}
+          build-args: VERSION=${{ steps.getargs.outputs.version }}
+      -
+        name: Build and push Ubuntu Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: ./6.2/beta
+          file: ./6.2/beta/Dockerfile.ubuntu
+          platforms: linux/amd64,linux/arm64
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta-ubuntu.outputs.tags }}
+          labels: ${{ steps.meta-ubuntu.outputs.labels }}
           build-args: VERSION=${{ steps.getargs.outputs.version }}
