@@ -1,4 +1,4 @@
-name: 6.2 Beta Build
+name: Build 6.2 Beta
 
 on:
   push:

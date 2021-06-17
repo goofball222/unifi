@@ -1,4 +1,4 @@
-name: 5.14 Official Build
+name: Build 5.14 Official
 
 on:
   push:

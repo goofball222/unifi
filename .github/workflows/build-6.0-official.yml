@@ -1,4 +1,4 @@
-name: 6.0 Official Build
+name: Build 6.0 Official
 
 on:
   push:
