@@ -33,8 +33,8 @@
 **2021-06-16:**
 * **GitHub actions build allows multi-architecture platforms:**
 * Latest/default tag Debian Buster image: linux/amd64
-* Alpine image: linux/amd64,linux/arm64,linux/arm/v7
-* New Ubuntu 20.04 image: linux/amd64,linux/arm64
+* Alpine image: linux/amd64, linux/arm64, linux/arm/v7
+* New Ubuntu 20.04 image: linux/amd64, linux/arm64
 * Multi-architechture images rebuilt back to 5.14 (non-static/tagged builds).
 * Targeting switch from Debian as latest/default to Ubuntu in the near future if no [issues](https://github.com/goofball222/unifi/issues) reported with it. Please test!
 
