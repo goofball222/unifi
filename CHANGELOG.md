@@ -1,3 +1,8 @@
+* **2021-06-24:**
+    * Create 6.3/beta, v[6.3.51](https://community.ui.com/releases/UniFi-Network-Application-6-3-51/af39cc49-d743-462f-978a-5707d217bb4f)
+    * Update 6.2/official to v[6.2.26](https://community.ui.com/releases/UniFi-Network-Application-6-2-26/0dfcbc77-8a4f-4e20-bb93-07bbb0237e3a)
+    * Tag 6.2.26 release
+---
 * **2021-06-17:**
     * Update GitHub actions
     * Update README.md
