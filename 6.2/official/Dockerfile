@@ -34,7 +34,7 @@ COPY root /
 RUN set -x \
     && groupadd -r unifi -g $PGID \
     && useradd --no-log-init -r -u $PUID -g $PGID unifi \
-    && mkdir /usr/share/man/man1 \
+    && mkdir -p /usr/share/man/man1 \
     && apt-get -qqy update \
     && apt-get -qqy install apt-utils \
     && apt-get -qqy --no-install-recommends install \
