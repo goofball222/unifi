@@ -1,7 +1,7 @@
 
 # UniFi Docker Container
 
-[![Latest Build Status](https://github.com/goofball222/unifi/actions/workflows/build-latest.yml/badge.svg)](https://github.com/goofball222/unifi/actions/workflows/build-latest.yml) [![Docker Pulls](https://img.shields.io/docker/pulls/goofball222/unifi.svg)](https://hub.docker.com/r/goofball222/unifi/) [![Docker Stars](https://img.shields.io/docker/stars/goofball222/unifi.svg)](https://hub.docker.com/r/goofball222/unifi/) [![MB License](https://images.microbadger.com/badges/license/goofball222/unifi.svg)](https://microbadger.com/images/goofball222/unifi)
+[![Latest Build Status](https://github.com/goofball222/unifi/actions/workflows/build-latest.yml/badge.svg)](https://github.com/goofball222/unifi/actions/workflows/build-latest.yml) [![Docker Pulls](https://img.shields.io/docker/pulls/goofball222/unifi.svg)](https://hub.docker.com/r/goofball222/unifi/) [![Docker Stars](https://img.shields.io/docker/stars/goofball222/unifi.svg)](https://hub.docker.com/r/goofball222/unifi/) [![License](https://img.shields.io/github/license/goofball222/unifi.svg)](https://github.com/goofball222/unifi)
 
 ## Docker tags:
 | Tag | UniFi Version | Description | Release Date |
