@@ -1,3 +1,10 @@
+* **2021-09-21:**
+    * Create 6.5/beta, v[6.5.42](https://community.ui.com/releases/UniFi-Network-Application-6-5-42/bcd04b35-bccf-4f63-8615-363af85e9488)
+    * Move v[6.4.54](https://community.ui.com/releases/UniFi-Network-Application-6-4-54/c1be3b7f-44c4-4d6f-af1e-707bf017110d) to 6.4/official
+    * Promote 6.4 official to "latest" and "latest-alpine" tags
+    * Tag 6.4.54 release
+    * Archive 6.0, 6.1, 6.3, & associated workflows
+***
 * **2021-09-14:**
     * Update 6.4/beta to v[6.4.54](https://community.ui.com/releases/UniFi-Network-Application-6-4-54/40722053-cf04-4cbf-9c88-d9fabad57e41)
 ***
