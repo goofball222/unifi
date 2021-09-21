@@ -28,7 +28,7 @@ jobs:
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
           tags: |
-            type=raw,latest-alpine-beta
+#            type=raw,latest-alpine-beta
             type=raw,6.4-alpine-beta
             type=raw,6.4-alpine
           labels: |
@@ -45,7 +45,7 @@ jobs:
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
           tags: |
-            type=raw,latest-beta
+#            type=raw,latest-beta
             type=raw,6.4-beta
             type=raw,6.4
           labels: |
@@ -62,7 +62,7 @@ jobs:
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
           tags: |
-            type=raw,latest-ubuntu-beta
+#            type=raw,latest-ubuntu-beta
             type=raw,6.4-ubuntu-beta
             type=raw,6.4-ubuntu
           labels: |
