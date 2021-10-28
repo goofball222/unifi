@@ -1,3 +1,6 @@
+* **2021-10-28:**
+    * Update 6.5/beta to v[6.5.50](https://community.ui.com/releases/UniFi-Network-Application-6-5-50/9f80f1db-b593-45e8-9422-4b4d7cc78efc)
+***
 * **2021-10-05:**
     * Update 6.5/beta to v[6.5.45](https://community.ui.com/releases/UniFi-Network-Application-6-5-45/a9d8ca5f-fc17-44ed-aded-15c4991aed03)
 ***
