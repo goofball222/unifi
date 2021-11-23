@@ -1,43 +1,49 @@
+* **2021-11-23:**
+    * Move v[6.5.53](https://community.ui.com/releases/UniFi-Network-Application-6-5-53/16025ec1-4bbc-46a9-8f4f-8561fd59cd4c) to 6.5/official
+    * Promote 6.5 official to "latest" and "latest-alpine" tags
+    * Tag 6.5.53 release
+    * Archive 6.2 & associated workflows
+---
 * **2021-11-19:**
     * Update 6.5/beta to v[6.5.53](https://community.ui.com/releases/UniFi-Network-Application-6-5-53/16025ec1-4bbc-46a9-8f4f-8561fd59cd4c)
-***
+---
 * **2021-11-15:**
     * Update 6.5/beta to v[6.5.52](https://community.ui.com/releases/UniFi-Network-Application-6-5-52/b7ca4128-c6f7-4741-9da1-e216db190452)
-***
+---
 * **2021-11-05:**
     * Update 6.5/beta to v[6.5.51](https://community.ui.com/releases/UniFi-Network-Application-6-5-51/ceff3dff-083e-4b83-a89e-7fe1d56d026e)
-***
+---
 * **2021-10-28:**
     * Update 6.5/beta to v[6.5.50](https://community.ui.com/releases/UniFi-Network-Application-6-5-50/9f80f1db-b593-45e8-9422-4b4d7cc78efc)
-***
+---
 * **2021-10-05:**
     * Update 6.5/beta to v[6.5.45](https://community.ui.com/releases/UniFi-Network-Application-6-5-45/a9d8ca5f-fc17-44ed-aded-15c4991aed03)
-***
+---
 * **2021-09-21:**
     * Create 6.5/beta, v[6.5.42](https://community.ui.com/releases/UniFi-Network-Application-6-5-42/bcd04b35-bccf-4f63-8615-363af85e9488)
     * Move v[6.4.54](https://community.ui.com/releases/UniFi-Network-Application-6-4-54/c1be3b7f-44c4-4d6f-af1e-707bf017110d) to 6.4/official
     * Promote 6.4 official to "latest" and "latest-alpine" tags
     * Tag 6.4.54 release
     * Archive 6.0, 6.1, 6.3, & associated workflows
-***
+---
 * **2021-09-14:**
     * Update 6.4/beta to v[6.4.54](https://community.ui.com/releases/UniFi-Network-Application-6-4-54/40722053-cf04-4cbf-9c88-d9fabad57e41)
-***
+---
 * **2021-09-13:**
     * Update 6.4/beta to v[6.4.53](https://community.ui.com/releases/UniFi-Network-Application-6-4-53/59a64fa4-789d-4f2b-bf1c-b80aac0a0ad3)
-***
+---
 * **2021-08-31:**
     * Update 6.4/beta to v[6.4.52](https://community.ui.com/releases/UniFi-Network-Application-6-4-52/cc43afd6-a2fa-4a72-8c76-d557ab3cecd6)
-***
+---
 * **2021-08-24:**
     * Update 6.4/beta to v[6.4.51](https://community.ui.com/releases/UniFi-Network-Application-6-4-51/cab1aee5-2d0d-476b-920d-71cdbb7ee9bc)
-***
+---
 * **2021-08-17:**
     * Update 6.4/beta to v[6.4.50](https://community.ui.com/releases/UniFi-Network-Application-6-4-50/9125136d-7e1d-41c7-a9bd-b2bc39c3b1ce)
-***
+---
 * **2021-07-27:**
     * Create 6.4/beta, v[6.4.47](https://community.ui.com/releases/UniFi-Network-Application-6-4-47/e1634fdf-fd71-4750-835d-b65af04c44c3)
-***
+---
 * **2021-06-24:**
     * Create 6.3/beta, v[6.3.51](https://community.ui.com/releases/UniFi-Network-Application-6-3-51/af39cc49-d743-462f-978a-5707d217bb4f)
     * Update 6.2/official to v[6.2.26](https://community.ui.com/releases/UniFi-Network-Application-6-2-26/0dfcbc77-8a4f-4e20-bb93-07bbb0237e3a)

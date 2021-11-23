@@ -30,7 +30,6 @@ jobs:
           tags: |
             type=raw,latest-alpine-beta
             type=raw,6.5-alpine-beta
-            type=raw,6.5-alpine
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
             org.opencontainers.image.title=UniFi Controller
@@ -47,7 +46,6 @@ jobs:
           tags: |
             type=raw,latest-beta
             type=raw,6.5-beta
-            type=raw,6.5
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
             org.opencontainers.image.title=UniFi Controller
@@ -64,7 +62,6 @@ jobs:
           tags: |
             type=raw,latest-ubuntu-beta
             type=raw,6.5-ubuntu-beta
-            type=raw,6.5-ubuntu
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
             org.opencontainers.image.title=UniFi Controller
