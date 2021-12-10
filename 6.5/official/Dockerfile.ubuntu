@@ -19,7 +19,7 @@ ENV \
     BIND_PRIV=false \
     DEBIAN_FRONTEND=noninteractive \
     DEBUG=false \
-    JVM_EXTRA_OPTS= \
+    JVM_EXTRA_OPTS=-Dlog4j2.formatMsgNoLookups=true \
     JVM_INIT_HEAP_SIZE= \
     JVM_MAX_HEAP_SIZE=1024M \
     PGID=999 \
