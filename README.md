@@ -6,11 +6,11 @@
 ## Docker tags:
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
-| [6.5, 6.5-alpine, 6.5-ubuntu, latest, latest-alpine, latest-ubuntu](https://github.com/goofball222/unifi/blob/main/6.5/official/Dockerfile) | [6.5.53](https://community.ui.com/releases/UniFi-Network-Application-6-5-53/16025ec1-4bbc-46a9-8f4f-8561fd59cd4c) | UniFi Network Application official release  | 2021-11-23 |
-| [6.5-beta, 6.5-alpine-beta, 6.5-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/6.5/beta/Dockerfile) | [6.5.53](https://community.ui.com/releases/UniFi-Network-Application-6-5-53/16025ec1-4bbc-46a9-8f4f-8561fd59cd4c) | UniFi Network Application beta release  | 2021-11-19 |
-| [6.4, 6.4-alpine, 6.4-ubuntu](https://github.com/goofball222/unifi/blob/main/6.4/official/Dockerfile) | [6.4.54](https://community.ui.com/releases/UniFi-Network-Application-6-4-54/c1be3b7f-44c4-4d6f-af1e-707bf017110d) | UniFi Network Application official release  | 2021-09-20 |
-| [5.14, 5.14-alpine, 5.14-ubuntu](https://github.com/goofball222/unifi/blob/main/5.14/official/Dockerfile) | [5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a) | UniFi Network Application official release | 2020-08-25 |
-| [6.5.53](https://github.com/goofball222/unifi/releases/tag/6.5.53) | [6.5.53](https://community.ui.com/releases/UniFi-Network-Application-6-5-53/16025ec1-4bbc-46a9-8f4f-8561fd59cd4c) | Static official release tag/image | 2021-11-23 |
+| [6.5, 6.5-alpine, 6.5-ubuntu, latest, latest-alpine, latest-ubuntu](https://github.com/goofball222/unifi/blob/main/6.5/official/Dockerfile) | [6.5.53](https://community.ui.com/releases/UniFi-Network-Application-6-5-53/16025ec1-4bbc-46a9-8f4f-8561fd59cd4c) | UniFi Network Application official release  | 2021-12-10 |
+| [6.5-beta, 6.5-alpine-beta, 6.5-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/6.5/beta/Dockerfile) | [6.5.53](https://community.ui.com/releases/UniFi-Network-Application-6-5-53/16025ec1-4bbc-46a9-8f4f-8561fd59cd4c) | UniFi Network Application beta release  | 2021-12-10 |
+| [6.4, 6.4-alpine, 6.4-ubuntu](https://github.com/goofball222/unifi/blob/main/6.4/official/Dockerfile) | [6.4.54](https://community.ui.com/releases/UniFi-Network-Application-6-4-54/c1be3b7f-44c4-4d6f-af1e-707bf017110d) | UniFi Network Application official release  | 2021-12-10 |
+| [5.14, 5.14-alpine, 5.14-ubuntu](https://github.com/goofball222/unifi/blob/main/5.14/official/Dockerfile) | [5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a) | UniFi Network Application official release | 2021-12-10 |
+| [6.5.53](https://github.com/goofball222/unifi/releases/tag/6.5.53) | [6.5.53](https://community.ui.com/releases/UniFi-Network-Application-6-5-53/16025ec1-4bbc-46a9-8f4f-8561fd59cd4c) | Static official release tag/image | 2021-12-10 |
 | [6.4.54](https://github.com/goofball222/unifi/releases/tag/6.4.54) | [6.4.54](https://community.ui.com/releases/UniFi-Network-Application-6-4-54/c1be3b7f-44c4-4d6f-af1e-707bf017110d) | Static official release tag/image | 2021-09-20 |
 | [6.2.26](https://github.com/goofball222/unifi/releases/tag/6.2.26) | [6.2.26](https://community.ui.com/releases/UniFi-Network-Application-6-2-25/d9cb0897-3ef4-4dda-a5d6-c07530ff8a86) | Static official release tag/image | 2021-06-24 |
 | [6.1.71](https://github.com/goofball222/unifi/releases/tag/6.1.71) | [6.1.71](https://community.ui.com/releases/UniFi-Network-Controller-6-1-71/0cffd3ed-7429-4529-9a20-9fead78ebf66) | Static official release tag/image | 2021-03-25 |
@@ -30,6 +30,11 @@
 
 **NOTE:**
 **Alpine tags DO NOT contain any internal MongoDB binaries. You must connect them to an external Mongo DB container or other host instance.**
+
+**2021-12-10:**
+* As of this date UniFi versions <= 6.5.53 may contain a version of log4j that is vulnerable to RCE - CVE-2021-44228 - https://github.com/advisories/GHSA-jfh8-c2jp-5v3q - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228
+* Updated this container default JVM options to mitigate the issue via `-Dlog4j2.formatMsgNoLookups=true`, rebuilt dynamic tags for 6.5, 6.4, and 5.14 versions. Forced rebuild of static tag for 6.5.53 version.
+* Older static tags or non-updated usage should configure the ENV VAR `JVM_EXTRA_OPTS=-Dlog4j2.formatMsgNoLookups=true` in their docker run, docker-compose, etc. launch configuration.
 
 **2021-06-16:**
 * **GitHub actions build allows multi-architecture platforms:**

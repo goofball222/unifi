@@ -1,3 +1,8 @@
+* **2021-12-10:**
+    * Default JVM_EXTRA_OPTS=-Dlog4j2.formatMsgNoLookups=true across the board to mitigate log4j RCE - CVE-2021-44228 - https://github.com/advisories/GHSA-jfh8-c2jp-5v3q - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228
+    * Automatic rebuild all dynamic images on push. Force republish latest 6.5.53 static image.
+    * Update documentation & container dates to reflect above.
+---
 * **2021-11-23:**
     * Move v[6.5.53](https://community.ui.com/releases/UniFi-Network-Application-6-5-53/16025ec1-4bbc-46a9-8f4f-8561fd59cd4c) to 6.5/official
     * Promote 6.5 official to "latest" and "latest-alpine" tags
