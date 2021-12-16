@@ -1,3 +1,7 @@
+* **2021-12-16:**
+    * Move v[6.5.55](https://community.ui.com/releases/UniFi-Network-Application-6-5-55/48c64137-4a4a-41f7-b7e4-3bee505ae16e) to 6.5/official
+    * Tag 6.5.55 release
+---
 * **2021-12-15:**
     * Update 6.5/beta to v[6.5.55](https://community.ui.com/releases/UniFi-Network-Application-6-5-55/48c64137-4a4a-41f7-b7e4-3bee505ae16e)
     * Addresses second log4j vulnerability - CVE-2021-45046 - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45046
