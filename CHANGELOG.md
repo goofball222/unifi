@@ -1,3 +1,6 @@
+* **2021-12-21:**
+    * Create 7.0/beta, v[7.0.15](https://community.ui.com/releases/UniFi-Network-Application-7-0-15/0ccbe7da-de96-4444-9362-b4d1acf3056f)
+---
 * **2021-12-16:**
     * Move v[6.5.55](https://community.ui.com/releases/UniFi-Network-Application-6-5-55/48c64137-4a4a-41f7-b7e4-3bee505ae16e) to 6.5/official
     * Tag 6.5.55 release
