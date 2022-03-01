@@ -1,3 +1,8 @@
+* **2022-02-28:**
+    * Move v[7.0.23](https://community.ui.com/releases/UniFi-Network-Application-6-5-55/48c64137-4a4a-41f7-b7e4-3bee505ae16e) to 7.0/official
+    * Promote 7.0 official to "latest" and "latest-alpine" tags
+    * Tag 7.0.23 release
+---
 * **2022-02-21:**
     * Update 7.0/beta to v[7.0.23](https://community.ui.com/releases/UniFi-Network-Application-7-0-23/f1b404b4-f595-4346-aaa1-df6941e35525)
 ---
