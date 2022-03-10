@@ -7,6 +7,7 @@
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
 | [7.0, 7.0-alpine, 7.0-ubuntu, latest, latest-alpine, latest-ubuntu](https://github.com/goofball222/unifi/blob/main/7.0/official/Dockerfile) | [7.0.23](https://community.ui.com/releases/UniFi-Network-Application-7-0-23/f1b404b4-f595-4346-aaa1-df6941e35525) | UniFi Network Application official release | 2022-02-28 |
+| [7.1-beta, 7.1-alpine-beta, 7.1-ubuntu-beta, latest-beta, latest-alpine-beta, latest-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/7.1/beta/Dockerfile) | [7.1.55](https://community.ui.com/releases/UniFi-Network-Application-7-1-55/0b04846e-4f6b-44a3-b70e-ec9a38c3b811) | UniFi Network Application beta/release candidate | 2022-03-10 |
 | [6.5, 6.5-alpine, 6.5-ubuntu](https://github.com/goofball222/unifi/blob/main/6.5/official/Dockerfile) | [6.5.55](https://community.ui.com/releases/UniFi-Network-Application-6-5-55/48c64137-4a4a-41f7-b7e4-3bee505ae16e) | UniFi Network Application official release | 2021-12-16 |
 | [6.4, 6.4-alpine, 6.4-ubuntu](https://github.com/goofball222/unifi/blob/main/6.4/official/Dockerfile) | [6.4.54](https://community.ui.com/releases/UniFi-Network-Application-6-4-54/c1be3b7f-44c4-4d6f-af1e-707bf017110d) | UniFi Network Application official release | 2021-12-10 |
 | [5.14, 5.14-alpine, 5.14-ubuntu](https://github.com/goofball222/unifi/blob/main/5.14/official/Dockerfile) | [5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a) | UniFi Network Application official release | 2021-12-10 |
@@ -43,10 +44,6 @@
 * New Ubuntu image: linux/amd64, linux/arm64
 * Multi-architechture images rebuilt back to 5.14 (non-static/tagged builds).
 * Targeting switch from Debian as latest/default to Ubuntu in the near future if no [issues](https://github.com/goofball222/unifi/issues) reported with it. Please test!
-
-**2021-06-15:**
-* Switch "latest" and "latest-alpine" tags to track 6.2 official.
-* Make sure you're making regular backups before upgrading, rolling back to an older version without a .unf file or a full DB backup is not possible.
 
 **2020-10-25:**
 * Directory and tag structure was reworked to match UI community beta/official designations (no more unstable/testing/sc/stable)

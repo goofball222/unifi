@@ -1,3 +1,6 @@
+* **2022-03-10:**
+    * Create 7.1/beta, v[7.1.55](https://community.ui.com/releases/UniFi-Network-Application-7-1-55/0b04846e-4f6b-44a3-b70e-ec9a38c3b811)
+---
 * **2022-02-28:**
     * Move v[7.0.23](https://community.ui.com/releases/UniFi-Network-Application-6-5-55/48c64137-4a4a-41f7-b7e4-3bee505ae16e) to 7.0/official
     * Promote 7.0 official to "latest" and "latest-alpine" tags
