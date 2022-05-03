@@ -1,3 +1,9 @@
+* **2022-02-28:**
+    * Move v[7.1.61](https://community.ui.com/releases/UniFi-Network-Application-7-1-61/06f67c89-c798-423f-91a2-4cb2bca7694d) to 7.1/official
+    * Update 7.1/beta to v[7.1.61](https://community.ui.com/releases/UniFi-Network-Application-7-1-65/ae9da509-812f-4351-8676-2e04e87d7224)
+    * Promote 7.1 official to "latest" and "latest-alpine" tags
+    * Tag 7.1.61 release
+---
 * **2022-04-12:**
     * Update 7.1/beta to v[7.1.61](https://community.ui.com/releases/UniFi-Network-Application-7-1-61/37500b1e-8f27-457b-a091-eedc70f9a528)
 ---
