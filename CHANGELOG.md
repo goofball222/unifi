@@ -1,9 +1,13 @@
+* **2022-06-23:**
+    * Update 7.1/beta to v[7.1.67](https://community.ui.com/releases/UniFi-Network-Application-7-1-67/f85ec723-ae52-405b-8905-077afcc97bb5)
+    * Update 7.2/beta to v[7.2.87](https://community.ui.com/releases/UniFi-Network-Application-7-2-87/29245b66-dcf2-4832-bd53-69e7c7d9929f)
+---
 * **2022-05-31:**
     * Create 7.2/beta, v[7.2.85](https://community.ui.com/releases/UniFi-Network-Application-7-2-85/3cfaeb66-66c0-4c22-9837-a7ed7442ae89)
     * Move v[7.1.66](https://community.ui.com/releases/UniFi-Network-Application-7-1-66/cf1208d2-3898-418c-b841-699e7b773fd4) to 7.1/official
     * Tag 7.1.66 release
 ---
-* **2022-08-18:**
+* **2022-05-18:**
     * Update 7.1/beta to v[7.1.66](https://community.ui.com/releases/UniFi-Network-Application-7-1-66/cf1208d2-3898-418c-b841-699e7b773fd4)
 ---
 * **2022-05-12:**
