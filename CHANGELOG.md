@@ -1,3 +1,6 @@
+* **2022-08-08:**
+    * Update 7.2/beta to v[7.2.92](https://community.ui.com/releases/UniFi-Network-Application-7-2-92/f1903cbc-4daa-4695-ac8c-7324bcff529a)
+---
 * **2022-08-02:**
     * Move v[7.1.68](https://community.ui.com/releases/UniFi-Network-Application-7-1-68/30df65ee-9adf-44da-ba0c-f30766c2d874) to 7.1/official
     * Tag 7.1.68 release
