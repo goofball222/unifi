@@ -27,21 +27,21 @@ f_chown() {
         || [ ! "$(stat -c %u ${DATADIR})" = "${PUID}" ] || [ ! "$(stat -c %u ${LOGDIR})" = "${PUID}" ] \
         || [ ! "$(stat -c %u ${RUNDIR})" = "${PUID}" ]; then
             f_log "WARN - Configured PUID doesn't match owner of a required directory. Ignoring RUN_CHOWN=false"
-            f_log "INFO - Ensuring permissions are correct before continuing - 'chown -R unifi:unifi ${BASEDIR}'"
+            f_log "INFO - Ensuring permissions are correct before continuing - 'chown -RH unifi:unifi ${BASEDIR}'"
             f_log "INFO - Running recursive 'chown' on Docker overlay2 storage is **really** slow. This may take a bit."
-            chown -R unifi:unifi ${BASEDIR}
+            chown -RH unifi:unifi ${BASEDIR}
         else
             f_log "INFO - Explicitly setting owner on '${LOGDIR}/*.log' and '${DATADIR}/system.properties'"
             chown unifi:unifi ${DATADIR}/system.properties
             chown unifi:unifi ${LOGDIR}/*.log
-            f_log "INFO - RUN_CHOWN=false - Not running 'chown -R unifi:unifi ${BASEDIR}', assume subdir/file permissions OK"
+            f_log "INFO - RUN_CHOWN=false - Not running 'chown -RH unifi:unifi ${BASEDIR}', assume subdir/file permissions OK"
         fi
     elif [ "${RUNAS_UID0}" == 'true' ]; then
-        f_log "INFO - RUNAS_UID0=true - Not running 'chown -R unifi:unifi ${BASEDIR}', no need to worry about permissions."
+        f_log "INFO - RUNAS_UID0=true - Not running 'chown -RH unifi:unifi ${BASEDIR}', no need to worry about permissions."
     else
-        f_log "INFO - Ensuring permissions are correct before continuing - 'chown -R unifi:unifi ${BASEDIR}'"
+        f_log "INFO - Ensuring permissions are correct before continuing - 'chown -RH unifi:unifi ${BASEDIR}'"
         f_log "INFO - Running recursive 'chown' on Docker overlay2 storage is **really** slow. This may take a bit."
-        chown -R unifi:unifi ${BASEDIR}
+        chown -RH unifi:unifi ${BASEDIR}
     fi
 }
 
