@@ -1,3 +1,10 @@
+* **2022-08-15:**
+    * Move v[7.2.92](https://community.ui.com/releases/UniFi-Network-Application-7-1-68/30df65ee-9adf-44da-ba0c-f30766c2d874) to 7.2/official
+    * Fix Debian / Ubuntu .deb package post-installation directory symlink issue (Closes #103)
+    * Promote 7.2 official to "latest" and "latest-alpine" tags
+    * Tag 7.2.92 release
+    * Archive 5.14, 6.5, & 7.0 folders & workflows
+---
 * **2022-08-08:**
     * Update 7.2/beta to v[7.2.92](https://community.ui.com/releases/UniFi-Network-Application-7-2-92/f1903cbc-4daa-4695-ac8c-7324bcff529a)
 ---
