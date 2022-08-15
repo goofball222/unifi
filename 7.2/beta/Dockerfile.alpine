@@ -1,0 +1,58 @@
+FROM alpine:latest
+
+ARG BUILD_DATE
+ARG VCS_REF
+ARG VERSION
+
+LABEL \
+    org.opencontainers.image.vendor="The Goofball - goofball222@gmail.com" \
+    org.opencontainers.image.url="https://github.com/goofball222/unifi" \
+    org.opencontainers.image.title="UniFi Controller" \
+    org.opencontainers.image.description="UniFi Controller" \
+    org.opencontainers.image.version=${VERSION}-Alpine \
+    org.opencontainers.image.source="https://github.com/goofball222/unifi" \
+    org.opencontainers.image.revision=${VCS_REF} \
+    org.opencontainers.image.created=${BUILD_DATE} \
+    org.opencontainers.image.licenses="Apache-2.0"
+
+ENV \
+    BIND_PRIV=false \
+    DEBUG=false \
+    JVM_EXTRA_OPTS=-Dlog4j2.formatMsgNoLookups=true \
+    JVM_INIT_HEAP_SIZE= \
+    JVM_MAX_HEAP_SIZE=1024M \
+    PGID=999 \
+    PUID=999 \
+    RUN_CHOWN=true \
+    RUNAS_UID0=false
+
+WORKDIR /usr/lib/unifi
+
+COPY root /
+
+RUN set -x \
+    && delgroup ping \
+    && addgroup -g $PGID unifi \
+    && adduser -D -G unifi -u $PUID unifi \
+    && apk add -q --no-cache \
+        gcompat libc6-compat \
+    && apk add -q --no-cache \
+        bash binutils coreutils curl libcap \
+        openjdk8-jre openssl shadow su-exec \
+        tzdata \
+    && curl -sSL https://dl.ui.com/unifi/${VERSION}/UniFi.unix.zip -o /tmp/UniFi.unix.${VERSION}.zip \
+    && unzip -q /tmp/UniFi.unix.${VERSION}.zip -d /tmp \
+    && mv /tmp/UniFi/* /usr/lib/unifi/ \
+    && bash -c 'mkdir -p {data,logs,run,cert}' \
+    && chown -R unifi:unifi /usr/lib/unifi \
+    && rm -rf /tmp/* /var/tmp/* /var/cache/apk/*
+
+EXPOSE 3478/udp 6789/tcp 8080/tcp 8443/tcp 8843/tcp 8880/tcp 10001/udp
+
+VOLUME ["/usr/lib/unifi/cert", "/usr/lib/unifi/data", "/usr/lib/unifi/logs"]
+
+HEALTHCHECK --start-period=2m CMD /usr/local/bin/docker-healthcheck.sh
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+CMD ["unifi"]
