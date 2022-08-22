@@ -1,3 +1,6 @@
+* **2022-08-22:**
+    * Update 7.2/beta to v[7.2.93](https://community.ui.com/releases/UniFi-Network-Application-7-2-93/7ae66066-72d0-4336-8400-e89d951ef11d)
+---
 * **2022-08-15:**
     * Move v[7.2.92](https://community.ui.com/releases/UniFi-Network-Application-7-1-68/30df65ee-9adf-44da-ba0c-f30766c2d874) to 7.2/official
     * Fix Debian / Ubuntu .deb package post-installation directory symlink issue (Closes #103)
