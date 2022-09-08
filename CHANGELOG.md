@@ -2,6 +2,7 @@
     * Create 7.3/beta, v[7.3.69](https://community.ui.com/releases/UniFi-Network-Application-7-3-69/d801e00a-8d7d-4e52-b6db-d4d8d87835fb)
     * Update 7.3/beta Dockerfiles to use OpenJDK 11 instead of 8
     * Update 7.3/beta entrypoint functions to import non-chain cert.pem and warn about invalid fullchain.pem config in 7.3+
+    * No armv7 package for OpenJDK11-jre in Alpine, max OpenJDK8-jre. Removing arch from build.
 ---
 * **2022-09-05:**
     * Update 7.2/beta to v[7.2.94](https://community.ui.com/releases/UniFi-Network-Application-7-2-94/b559f699-407f-44bb-a6dc-f95ade25c1ff)

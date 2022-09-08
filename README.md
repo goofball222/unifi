@@ -45,6 +45,7 @@
     <ble-load-keystore> ERROR blebridge - unable to load local keystore for BLE bridge
     ```
     * Starting with this beta, design & documentation of the image for v7.3+ will switch to recommending importing only a single custom cert named "cert.pem"
+* No armv7 package available for OpenJDK11-jre in Alpine, max OpenJDK8-jre. Removing arch from build. If armv7 support is required use v7.2 and lower Alpine images.
 
 **2021-12-10:**
 * As of this date UniFi versions <= 6.5.53 may contain a version of log4j that is vulnerable to RCE - CVE-2021-44228 - https://github.com/advisories/GHSA-jfh8-c2jp-5v3q - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228
