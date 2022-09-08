@@ -28,7 +28,6 @@ jobs:
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
           tags: |
-#            type=raw,latest-alpine-beta
             type=raw,7.2-alpine-beta
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
@@ -44,7 +43,6 @@ jobs:
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
           tags: |
-#            type=raw,latest-beta
             type=raw,7.2-beta
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
@@ -60,7 +58,6 @@ jobs:
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
           tags: |
-#            type=raw,latest-ubuntu-beta
             type=raw,7.2-ubuntu-beta
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
