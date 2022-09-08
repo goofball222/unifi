@@ -7,7 +7,8 @@
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
 | [7.2, 7.2-alpine, 7.2-ubuntu, latest, latest-alpine, latest-ubuntu](https://github.com/goofball222/unifi/blob/main/7.2/official/Dockerfile) | [7.2.92](https://community.ui.com/releases/UniFi-Network-Application-7-2-92/f1903cbc-4daa-4695-ac8c-7324bcff529a) | UniFi Network Application official release | 2022-08-09 |
-| [7.2-beta, 7.2-alpine-beta, 7.2-ubuntu-beta, latest-beta, latest-alpine-beta, latest-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/7.2/beta/Dockerfile) | [7.2.94](https://community.ui.com/releases/UniFi-Network-Application-7-2-94/b559f699-407f-44bb-a6dc-f95ade25c1ff) | UniFi Network Application beta/release candidate | 2022-09-05 |
+| [7.3-beta, 7.3-alpine-beta, 7.3-ubuntu-beta, latest-beta, latest-alpine-beta, latest-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/7.3/beta/Dockerfile) | [7.3.69](https://community.ui.com/releases/UniFi-Network-Application-7-3-69/d801e00a-8d7d-4e52-b6db-d4d8d87835fb) | UniFi Network Application beta/release candidate | 2022-09-08 |
+| [7.2-beta, 7.2-alpine-beta, 7.2-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/7.2/beta/Dockerfile) | [7.2.94](https://community.ui.com/releases/UniFi-Network-Application-7-2-94/b559f699-407f-44bb-a6dc-f95ade25c1ff) | UniFi Network Application beta/release candidate | 2022-09-05 |
 | [7.1, 7.1-alpine, 7.1-ubuntu](https://github.com/goofball222/unifi/blob/main/7.1/official/Dockerfile) | [7.1.68](https://community.ui.com/releases/UniFi-Network-Application-7-1-68/30df65ee-9adf-44da-ba0c-f30766c2d874) | UniFi Network Application official release | 2022-07-26 |
 | [7.0, 7.0-alpine, 7.0-ubuntu](https://github.com/goofball222/unifi/blob/main/7.0/official/Dockerfile) | [7.0.25](https://community.ui.com/releases/UniFi-Network-Application-7-0-25/3344c362-7da5-4ecd-a403-3b47520e3c01) | UniFi Network Application official release | 2022-03-28 |
 | [6.5, 6.5-alpine, 6.5-ubuntu](https://github.com/goofball222/unifi/blob/main/6.5/official/Dockerfile) | [6.5.55](https://community.ui.com/releases/UniFi-Network-Application-6-5-55/48c64137-4a4a-41f7-b7e4-3bee505ae16e) | UniFi Network Application official release | 2021-12-16 |
@@ -35,6 +36,15 @@
 
 **NOTE:**
 **Alpine tags DO NOT contain any internal MongoDB binaries. You must connect them to an external Mongo DB container or other host instance.**
+
+**2022-09-08:**
+* Starting with v7.3.69 beta Java 11/OpenJDK 11 is required. Dockerfiles for 7.3 have been updated to reflect this.
+* Starting with v7.3.69 beta the controller has a constant non-fatal error if using a "full chain" / multi-cert pem custom certificate file imported:
+    ```bash
+    <ble-load-keystore> ERROR system - Unable to read certificate from the unifi chain. There are 3 certificates, but exactly 1 is expected
+    <ble-load-keystore> ERROR blebridge - unable to load local keystore for BLE bridge
+    ```
+    * Starting with this beta, design & documentation of the image for v7.3+ will switch to recommending importing only a single custom cert named "cert.pem"
 
 **2021-12-10:**
 * As of this date UniFi versions <= 6.5.53 may contain a version of log4j that is vulnerable to RCE - CVE-2021-44228 - https://github.com/advisories/GHSA-jfh8-c2jp-5v3q - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228
