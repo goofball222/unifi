@@ -1,3 +1,8 @@
+* **2022-10-04:**
+    * Update 7.3/beta to v[7.3.73](https://community.ui.com/releases/UniFi-Network-Application-7-3-73/c7c02a9e-584a-4a23-a72c-9709cdff955c)
+    * Move v[7.2.94](https://community.ui.com/releases/UniFi-Network-Application-7-2-94/2ab774d1-0f24-422e-accc-53b8200c10a7) to 7.2/official
+    * Tag 7.2.94 release
+---
 * **2022-09-08:**
     * Create 7.3/beta, v[7.3.69](https://community.ui.com/releases/UniFi-Network-Application-7-3-69/d801e00a-8d7d-4e52-b6db-d4d8d87835fb)
     * Update 7.3/beta Dockerfiles to use OpenJDK 11 instead of 8
