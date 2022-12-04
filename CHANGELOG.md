@@ -1,3 +1,8 @@
+* **2022-12-04:**
+    * Create 7.3/official, v[7.3.76](https://community.ui.com/releases/UniFi-Network-Application-7-3-76/85c75fc7-3e0f-4e99-aa90-7068af4f1141)
+    * Promote 7.3 official to "latest", "latest-alpine" and "latest-ubuntu" tags
+    * Tag 7.3.76 release
+---
 * **2022-11-15:**
     * Update 7.2/official to v[7.2.95](https://community.ui.com/releases/UniFi-Network-Application-7-2-95/7adebab5-8c41-4989-835d-ab60dba55255)
     * Tag 7.2.95 release
