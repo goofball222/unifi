@@ -1,6 +1,7 @@
 * **2022-12-05:**
     * Archive 7.1 folders & workflows
     * Update README.md to add missing tags from 2022-12-04 changes
+    * Update build-tag.yml GitHub action to remove arm/v7 arch from Alpine build. No Alpine openjdk-11 images being built for that arch.
 * **2022-12-04:**
     * Create 7.3/official, v[7.3.76](https://community.ui.com/releases/UniFi-Network-Application-7-3-76/85c75fc7-3e0f-4e99-aa90-7068af4f1141)
     * Promote 7.3 official to "latest", "latest-alpine" and "latest-ubuntu" tags
