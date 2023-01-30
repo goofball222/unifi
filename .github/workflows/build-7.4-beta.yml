@@ -1,9 +1,12 @@
-name: Build Tag
+name: Build 7.4 Beta
 
 on:
   push:
-    tags:
-      - '*'
+    branches:
+      - main
+    paths:
+      - 7.4/beta/**
+      - .github/workflows/build-7.4-beta.yml
 
 jobs:
   build:
@@ -15,7 +18,7 @@ jobs:
       -
         name: Set up dynamic build ARGs
         id: getargs
-        run: echo "::set-output name=version::$(cat ./release/VERSION)"
+        run: echo "::set-output name=version::$(cat ./7.4/beta/VERSION)"
       -
         name: Set up Docker metadata for Alpine
         id: meta-alpine
@@ -25,7 +28,8 @@ jobs:
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
           tags: |
-            type=raw,${{ steps.getargs.outputs.version }}-alpine
+            type=raw,latest-alpine-beta
+            type=raw,7.4-alpine-beta
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
             org.opencontainers.image.title=UniFi Controller
@@ -40,7 +44,8 @@ jobs:
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
           tags: |
-            type=raw,${{ steps.getargs.outputs.version }}
+            type=raw,latest-beta
+            type=raw,7.4-beta
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
             org.opencontainers.image.title=UniFi Controller
@@ -55,7 +60,8 @@ jobs:
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
           tags: |
-            type=raw,${{ steps.getargs.outputs.version }}-ubuntu
+            type=raw,latest-ubuntu-beta
+            type=raw,7.4-ubuntu-beta
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
             org.opencontainers.image.title=UniFi Controller
@@ -84,8 +90,8 @@ jobs:
         name: Build and push Alpine Docker image
         uses: docker/build-push-action@v3
         with:
-          context: ./release
-          file: ./release/Dockerfile.alpine
+          context: ./7.4/beta
+          file: ./7.4/beta/Dockerfile.alpine
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-alpine.outputs.tags }}
@@ -95,8 +101,8 @@ jobs:
         name: Build and push Debian Docker image
         uses: docker/build-push-action@v3
         with:
-          context: ./release
-          file: ./release/Dockerfile
+          context: ./7.4/beta
+          file: ./7.4/beta/Dockerfile
           platforms: linux/amd64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-debian.outputs.tags }}
@@ -106,8 +112,8 @@ jobs:
         name: Build and push Ubuntu Docker image
         uses: docker/build-push-action@v3
         with:
-          context: ./release
-          file: ./release/Dockerfile.ubuntu
+          context: ./7.4/beta
+          file: ./7.4/beta/Dockerfile.ubuntu
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-ubuntu.outputs.tags }}
