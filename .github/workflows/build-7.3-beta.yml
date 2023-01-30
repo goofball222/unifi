@@ -1,6 +1,7 @@
 name: Build 7.3 Beta
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -18,7 +19,7 @@ jobs:
       -
         name: Set up dynamic build ARGs
         id: getargs
-        run: echo "::set-output name=version::$(cat ./7.3/beta/VERSION)"
+        run: echo "version=$(cat ./7.3/beta/VERSION)" >> $GITHUB_OUTPUT
       -
         name: Set up Docker metadata for Alpine
         id: meta-alpine

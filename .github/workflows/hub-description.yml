@@ -1,6 +1,7 @@
 name: Hub Desc. Update
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main

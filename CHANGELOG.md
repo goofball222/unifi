@@ -2,6 +2,7 @@
     * Update 7.2/beta to v[7.2.97](https://community.ui.com/releases/UniFi-Network-Application-7-2-97/983063fd-3efa-4e82-8cb2-35c1ab8ed6e1)
     * Create 7.4/beta, v[7.4.140](https://community.ui.com/releases/UniFi-Network-Application-7-4-140/7ca7417e-1893-482b-86c3-044c2382967f)
     * Update GitHub workflow actions to newer versions - https://github.blog/changelog/2022-09-22-github-actions-all-actions-will-begin-running-on-node16-instead-of-node12/
+    * Update GitHub workflows - https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
 ---
 * **2023-01-19:**
     * Update 7.3/beta to v[7.3.83](https://community.ui.com/releases/UniFi-Network-Application-7-3-83/9c5f3dc2-b64d-42dc-86de-caef9c40d60f)

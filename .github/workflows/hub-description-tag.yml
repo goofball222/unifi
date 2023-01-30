@@ -1,6 +1,7 @@
 name: Hub Desc. Update on Tag
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - '*'

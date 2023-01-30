@@ -1,6 +1,7 @@
 name: Build Tag
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - '*'
@@ -15,7 +16,7 @@ jobs:
       -
         name: Set up dynamic build ARGs
         id: getargs
-        run: echo "::set-output name=version::$(cat ./release/VERSION)"
+        run: echo "version=$(cat ./release/VERSION)" >> $GITHUB_OUTPUT
       -
         name: Set up Docker metadata for Alpine
         id: meta-alpine
