@@ -1,3 +1,7 @@
+* **2023-02-07:**
+    * Update 7.2/official to v[7.2.97](https://community.ui.com/releases/UniFi-Network-Application-7-2-97/d2f71152-3001-42cd-834c-9245d86f4e72)
+    * Tag 7.2.97 release
+
 * **2023-01-30:**
     * Update 7.2/beta to v[7.2.97](https://community.ui.com/releases/UniFi-Network-Application-7-2-97/983063fd-3efa-4e82-8cb2-35c1ab8ed6e1)
     * Create 7.4/beta, v[7.4.140](https://community.ui.com/releases/UniFi-Network-Application-7-4-140/7ca7417e-1893-482b-86c3-044c2382967f)
