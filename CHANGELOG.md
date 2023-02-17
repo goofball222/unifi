@@ -1,3 +1,6 @@
+* **2023-02-17:**
+    * Update 7.4/beta to v[7.4.144](https://community.ui.com/releases/UniFi-Network-Application-7-4-144/196e40da-5eb4-45a3-9c32-f3e3a95258f1)
+---
 * **2023-02-07:**
     * From https://github.com/fharbe:
     * Update 7.2/official to v[7.2.97](https://community.ui.com/releases/UniFi-Network-Application-7-2-97/d2f71152-3001-42cd-834c-9245d86f4e72)
