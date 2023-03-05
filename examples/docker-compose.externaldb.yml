@@ -2,7 +2,7 @@ version: '3'
 
 services:
   mongo:
-    image: mongo
+    image: mongo:3.6
     container_name: unifidb
     restart: unless-stopped
 #   By default docker-compose will create a new bridge network for the services in the compose file.
