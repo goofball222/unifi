@@ -1,7 +1,9 @@
 * **2023-07-17:**
-    * Update 7.4/beta to v[7.4.165](https://community.ui.com/releases/UniFi-Network-Application-7-5-165/9b957451-acc0-4a80-92e7-affdf00612bb)
+    * Create 7.5/beta, v[7.5.165](https://community.ui.com/releases/UniFi-Network-Application-7-5-165/9b957451-acc0-4a80-92e7-affdf00612bb)
     * Update 7.4/official to v[7.4.162](https://community.ui.com/releases/UniFi-Network-Application-7-4-162/50b4b930-631e-4ada-87c4-0b4ea5fb26a7)
     * Tag 7.4.162 release
+    * Revert/fix changes to 7.4/beta, documentation
+    * Upgrade Dockerfiles & docker-entrypoint.sh for 7.5/beta move to openjdk-17-jre
 ---
 * **2023-06-27:**
     * Update 7.4/beta to v[7.4.162](https://community.ui.com/releases/UniFi-Network-Application-7-4-162/3e6109e9-9521-40aa-8b11-6e11bca965c4)
