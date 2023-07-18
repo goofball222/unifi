@@ -111,7 +111,7 @@ This container exposes the following ports (see: https://help.ubnt.com/hc/en-us/
 $ docker run --name unifi -d \
     -p 3478:3478/udp -p 8080:8080 -p 8443:8443 \
     -p 8880:8880 -p 8843:8843 \
-    goofball222/unifi
+    ghcr.io/goofball222/unifi
 ```
 
 ---
@@ -124,7 +124,7 @@ version: '3'
 
 services:
   unifi:
-    image: goofball222/unifi
+    image: ghcr.io/goofball222/unifi
     container_name: unifi
     restart: unless-stopped
     network_mode: bridge
@@ -154,7 +154,9 @@ version: '3'
 
 services:
   mongo:
-    image: mongo
+#   Use max mongo version 5.0.X. Higher versions are incompatible with the mongo driver built into Unifi.
+#   Older versions are acceptable, ie: mongo:3.6
+    image: mongo:5.0
     container_name: unifidb
     restart: unless-stopped
 #   By default docker-compose will create a new bridge network for the services in the compose file.
@@ -164,7 +166,7 @@ services:
       - ./data/db:/data/db
 
   unifi:
-    image: goofball222/unifi
+    image: ghcr.io/goofball222/unifi
     container_name: unifi
     restart: unless-stopped
 #   By default docker-compose will create a new bridge network for the services in the compose file.

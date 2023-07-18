@@ -2,7 +2,7 @@ version: '3'
 
 services:
   unifi:
-    image: goofball222/unifi
+    image: ghcr.io/goofball222/unifi
     container_name: unifi
     restart: unless-stopped
 #   By default docker-compose will create a new bridge network for the services in the compose file.
