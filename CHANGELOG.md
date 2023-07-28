@@ -1,3 +1,6 @@
+* **2023-07-28:**
+    * Update 7.5/beta to v[7.5.169](https://community.ui.com/releases/UniFi-Network-Application-7-5-169/1778c52a-fb5e-4f9e-b029-74abd29efef5)
+---
 * **2023-07-17:**
     * Create 7.5/beta, v[7.5.165](https://community.ui.com/releases/UniFi-Network-Application-7-5-165/9b957451-acc0-4a80-92e7-affdf00612bb)
     * Update 7.4/official to v[7.4.162](https://community.ui.com/releases/UniFi-Network-Application-7-4-162/50b4b930-631e-4ada-87c4-0b4ea5fb26a7)
