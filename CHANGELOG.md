@@ -1,3 +1,8 @@
+* **2023-10-11:**
+    * Create 7.5/official, v[7.5.176](https://community.ui.com/releases/UniFi-Network-Application-7-5-176/0a224764-0603-4a8b-a038-1a7d59c6615c)
+    * Promote 7.5 official to "latest", "latest-alpine" and "latest-ubuntu" tags
+    * Tag 7.5.176 release
+---
 * **2023-10-05:**
     * Update 7.5/beta to v[7.5.187](https://community.ui.com/releases/UniFi-Network-Application-7-5-187/e6faa0fa-ebf2-497e-9e42-901a1840d206)
 ---
