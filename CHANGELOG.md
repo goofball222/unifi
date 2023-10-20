@@ -1,3 +1,6 @@
+* **2023-10-20:**
+    * Create 8.0/beta, v[8.0.2](https://community.ui.com/releases/UniFi-Network-Application-8-0-2/29c6c92e-9198-46d1-b45d-c685c9fd4523)
+---
 * **2023-10-11:**
     * Create 7.5/official, v[7.5.176](https://community.ui.com/releases/UniFi-Network-Application-7-5-176/0a224764-0603-4a8b-a038-1a7d59c6615c)
     * Promote 7.5 official to "latest", "latest-alpine" and "latest-ubuntu" tags
