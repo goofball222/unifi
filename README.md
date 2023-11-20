@@ -6,10 +6,11 @@
 ## Docker tags:
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
-| [7.5, 7.5-alpine, 7.5-ubuntu, latest, latest-alpine, latest-ubuntu](https://github.com/goofball222/unifi/blob/main/7.5/official/Dockerfile) | [7.5.187](https://community.ui.com/releases/UniFi-Network-Application-7-5-187/408b64c5-a485-4a37-843c-31e87140be64) | UniFi Network Application official release | 2023-10-17 |
+| [8.0, 8.0-alpine, 8.0-ubuntu, latest, latest-alpine, latest-ubuntu](https://github.com/goofball222/unifi/blob/main/8.0/official/Dockerfile) | [8.0.7](https://community.ui.com/releases/UniFi-Network-Application-8-0-7/7818b9df-4845-4c82-ba3c-1218e61010d4) | UniFi Network Application official release | 2023-11-20 |
 | [8.0-beta, 8.0-alpine-beta, 8.0-ubuntu-beta, latest-beta, latest-alpine-beta, latest-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/8.0/beta/Dockerfile) | [8.0.7](https://community.ui.com/releases/UniFi-Network-Application-8-0-7/ee1af5a3-2bf9-440f-aa2d-4a296f44f2b9) | UniFi Network Application beta/release candidate | 2023-11-11 |
+| [7.5, 7.5-alpine, 7.5-ubuntu](https://github.com/goofball222/unifi/blob/main/7.5/official/Dockerfile) | [7.5.187](https://community.ui.com/releases/UniFi-Network-Application-7-5-187/408b64c5-a485-4a37-843c-31e87140be64) | UniFi Network Application official release | 2023-10-17 |
 | [7.5-beta, 7.5-alpine-beta, 7.5-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/7.5/beta/Dockerfile) | [7.5.187](https://community.ui.com/releases/UniFi-Network-Application-7-5-187/e6faa0fa-ebf2-497e-9e42-901a1840d206) | UniFi Network Application beta/release candidate | 2023-10-05 |
-| [7.4, 7.4-alpine, 7.4-ubuntu](https://github.com/goofball222/unifi/blob/main/7.4/official/Dockerfile) | [7.4.162](https://community.ui.com/releases/UniFi-Network-Application-7-4-162/50b4b930-631e-4ada-87c4-0b4ea5fb26a7) | UniFi Network Application official release | 2023-07-03 |
+| [8.0.7](https://github.com/goofball222/unifi/releases/tag/8.0.7) | [8.0.7](https://community.ui.com/releases/UniFi-Network-Application-8-0-7/7818b9df-4845-4c82-ba3c-1218e61010d4) | Static official release tag/image | 2023-11-20 |
 | [7.5.187](https://github.com/goofball222/unifi/releases/tag/7.5.187) | [7.5.187](https://community.ui.com/releases/UniFi-Network-Application-7-5-187/408b64c5-a485-4a37-843c-31e87140be64) | Static official release tag/image | 2023-10-17 |
 | [7.4.162](https://github.com/goofball222/unifi/releases/tag/7.4.162) | [7.4.162](https://community.ui.com/releases/UniFi-Network-Application-7-4-162/50b4b930-631e-4ada-87c4-0b4ea5fb26a7) | Static official release tag/image | 2023-07-03 |
 | [7.3.83](https://github.com/goofball222/unifi/releases/tag/7.3.83) | [7.3.83](https://community.ui.com/releases/UniFi-Network-Application-7-3-83/88f5ff3f-4c13-45e2-b57e-ad04b4140528) | Static official release tag/image | 2023-01-30 |
@@ -36,33 +37,6 @@
 
 **NOTE:**
 **Alpine tags DO NOT contain any internal MongoDB binaries. You must connect them to an external Mongo DB container or other host instance.**
-
-**2022-09-08:**
-* Starting with v7.3.69 beta Java 11/OpenJDK 11 is required. Dockerfiles for 7.3 have been updated to reflect this.
-* Starting with v7.3.69 beta the controller has a constant non-fatal error if using a "full chain" / multi-cert pem custom certificate file imported:
-    ```bash
-    <ble-load-keystore> ERROR system - Unable to read certificate from the unifi chain. There are 3 certificates, but exactly 1 is expected
-    <ble-load-keystore> ERROR blebridge - unable to load local keystore for BLE bridge
-    ```
-    * Starting with this beta, design & documentation of the image for v7.3+ will switch to recommending importing only a single custom cert named "cert.pem"
-* No armv7 package available for OpenJDK11-jre in Alpine, max OpenJDK8-jre. Removing arch from build. If armv7 support is required use v7.2 and lower Alpine images.
-
-**2021-12-10:**
-* As of this date UniFi versions <= 6.5.53 may contain a version of log4j that is vulnerable to RCE - CVE-2021-44228 - https://github.com/advisories/GHSA-jfh8-c2jp-5v3q - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228
-* Updated this container default JVM options to mitigate the issue via `-Dlog4j2.formatMsgNoLookups=true`, rebuilt dynamic tags for 6.5, 6.4, and 5.14 versions. Forced rebuild of static tag for 6.5.53 version.
-* Older static tags or non-updated usage should configure the ENV VAR `JVM_EXTRA_OPTS=-Dlog4j2.formatMsgNoLookups=true` in their docker run, docker-compose, etc. launch configuration.
-
-**2021-06-16:**
-* **GitHub actions build allows multi-architecture platforms:**
-* Latest/default tag Debian Buster image: linux/amd64
-* Alpine image: linux/amd64, linux/arm64, linux/arm/v7
-* New Ubuntu image: linux/amd64, linux/arm64
-* Multi-architechture images rebuilt back to 5.14 (non-static/tagged builds).
-* Targeting switch from Debian as latest/default to Ubuntu in the near future if no [issues](https://github.com/goofball222/unifi/issues) reported with it. Please test!
-
-**2020-10-25:**
-* Directory and tag structure was reworked to match UI community beta/official designations (no more unstable/testing/sc/stable)
-
 
 ---
 
