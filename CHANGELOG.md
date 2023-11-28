@@ -1,3 +1,6 @@
+* **2023-11-28:**
+    * Update 8.0/beta to v[8.0.21](https://community.ui.com/releases/UniFi-Network-Application-8-0-21/6aaff287-b2e9-4d5c-afc9-a72c45ab4877)
+---
 * **2023-11-20:**
     * Create 8.0/official, v[8.0.7](https://community.ui.com/releases/UniFi-Network-Application-8-0-7/7818b9df-4845-4c82-ba3c-1218e61010d4)
     * Promote 8.0 official to "latest", "latest-alpine" and "latest-ubuntu" tags
