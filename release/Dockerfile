@@ -39,10 +39,6 @@ RUN set -x \
     && apt-get -qqy install apt-utils \
     && apt-get -qqy --no-install-recommends install \
         dirmngr gnupg2 > /dev/null \
-    && echo "deb http://repo.mongodb.org/apt/debian stretch/mongodb-org/3.6 main" \
-        > /etc/apt/sources.list.d/mongodb-org.list \
-    && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5 \
-    && apt-get -qqy update \
     && apt-get -qqy --no-install-recommends install \
         binutils curl gosu \
         libcap2 libcap2-bin procps > /dev/null \
@@ -50,7 +46,11 @@ RUN set -x \
         ca-certificates-java > /dev/null \
     && apt-get -qqy --no-install-recommends install \
         openjdk-17-jre-headless > /dev/null \
-    && apt-get -qqy --no-install-recommends install \
+    && echo "deb http://repo.mongodb.org/apt/debian stretch/mongodb-org/3.6 main" \
+        > /etc/apt/sources.list.d/mongodb-org.list \
+    && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5 \
+    && apt-get -qqy --allow-insecure-repositories update \
+    && apt-get -qqy --no-install-recommends --allow-unauthenticated install \
         mongodb-org-server > /dev/null \
     && curl -sSL https://dl.ui.com/unifi/${VERSION}/unifi_sysvinit_all.deb -o /tmp/unifi-${VERSION}.deb \
     && apt-get -qqy purge \
