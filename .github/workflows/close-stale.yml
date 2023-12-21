@@ -1,0 +1,39 @@
+#
+# close-stale.yml
+# Close open issues after a period of inactivity
+# Credit to the https://github.com/MarlinFirmware/Marlin team for the base file and text this action is built on.
+#
+
+name: Close Stale Issues
+
+on:
+  schedule:
+  - cron: "22 1 * * *"
+
+jobs:
+  stale:
+    name: Close Stale Issues
+    if: github.repository == 'goofball222/unifi'
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/stale@v9
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        stale-issue-message: |
+          This issue has had no activity for the last 90 days.
+          Do you still see this issue with the latest release?
+          Please add a reply within 14 days or this issue will be automatically closed.
+          To keep a confirmed issue open we can also add a "bug confirmed" tag.
+
+          Disclaimer: This is an open community project with limited resources.
+          Any skilled member of the community may jump in at any time to fix this issue.
+          That can take a while depending on our busy lives so please be patient,
+          and take advantage of other resources to help solve the issue.
+        days-before-stale: 90
+        days-before-close: 14
+        stale-issue-label: 'stale-closing-soon'
+        exempt-all-assignees: true
+        exempt-issue-labels: 'bug confirmed,enhancement,feature request,more data needed,discussion needed,documentation needed,work needed,testing needed,help wanted,no-locking'
+
