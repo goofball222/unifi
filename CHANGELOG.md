@@ -1,4 +1,9 @@
 * **2023-12-20:**
+    * Update 8.0/beta to v[8.0.26](https://community.ui.com/releases/UniFi-Network-Application-8-0-26/3f2444ce-92dd-4aef-bfff-3f0d447c9783)
+    * Update README.md to add note on proposed fixes/changes for Debian MongoDB 3.6 issue
+    * Start base work for [proposed Debian changes](https://github.com/goofball222/unifi/issues/132)
+---
+* **2023-12-20:**
     * Tag 8.0.24 release
     * Remove 8.0.7 tag/link from README.md
     * Work-around expired signing key for mongodb-3.6 debian repo in release, 8.0/official, and 8.0/beta

@@ -7,7 +7,7 @@
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
 | [8.0, 8.0-alpine, 8.0-ubuntu, latest, latest-alpine, latest-ubuntu](https://github.com/goofball222/unifi/blob/main/8.0/official/Dockerfile) | [8.0.24](https://community.ui.com/releases/UniFi-Network-Application-8-0-24/43b24781-aea8-48dc-85b2-3fca42f758c9) | UniFi Network Application official release | 2023-12-18 |
-| [8.0-beta, 8.0-alpine-beta, 8.0-debian-beta, 8.0-ubuntu-beta, latest-beta, latest-alpine-beta, latest-debian-beta, latest-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/8.0/beta/Dockerfile) | [8.0.24](https://community.ui.com/releases/UniFi-Network-Application-8-0-24/738a6ea2-3750-48cb-86fd-646958ec903d) | UniFi Network Application beta/release candidate | 2023-12-07 |
+| [8.0-beta, 8.0-alpine-beta, 8.0-debian-beta, 8.0-ubuntu-beta, latest-beta, latest-alpine-beta, latest-debian-beta, latest-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/8.0/beta/Dockerfile) | [8.0.26](https://community.ui.com/releases/UniFi-Network-Application-8-0-26/3f2444ce-92dd-4aef-bfff-3f0d447c9783) | UniFi Network Application beta/release candidate | 2023-12-21 |
 | [7.5, 7.5-alpine, 7.5-ubuntu](https://github.com/goofball222/unifi/blob/main/7.5/official/Dockerfile) | [7.5.187](https://community.ui.com/releases/UniFi-Network-Application-7-5-187/408b64c5-a485-4a37-843c-31e87140be64) | UniFi Network Application official release | 2023-10-17 |
 | [7.5-beta, 7.5-alpine-beta, 7.5-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/7.5/beta/Dockerfile) | [7.5.187](https://community.ui.com/releases/UniFi-Network-Application-7-5-187/e6faa0fa-ebf2-497e-9e42-901a1840d206) | UniFi Network Application beta/release candidate | 2023-10-05 |
 | [8.0.24](https://github.com/goofball222/unifi/releases/tag/8.0.24) | [8.0.24](https://community.ui.com/releases/UniFi-Network-Application-8-0-24/43b24781-aea8-48dc-85b2-3fca42f758c9) | Static official release tag/image | 2023-12-18 |
@@ -38,11 +38,13 @@
 **NOTE:**
 **Alpine tags DO NOT contain any internal MongoDB binaries. You must connect them to an external Mongo DB container or other host instance.**
 
+**2023-12-21:**
+[Info and proposed changes for Debian-base MongoDB 3.6 Release Signing Key EXPKEYSIG](https://github.com/goofball222/unifi/issues/132)
 **2023-12-20:**
-MongoDB 3.6 Debian repo signing key has expired. Apt-get refuses to install packages from this repo without setting insecure options.
+MongoDB 3.6 Debian repo signing key has expired, apt-get refuses to install packages from this repo without setting insecure options.
 
 ALL RELEASES AFTER v8.0.24 WILL BE UPDATED TO USE THE UBUNTU BASED BUILD AS THE LATEST/CURRENT VERISON TAG.
-DEBIAN BASE WILL BE MOVED TO A NON-MONGO BUILD OR PHASED OUT ENTIRELY IN THE NEAR FUTURE.**
+DEBIAN BASE WILL BE MOVED TO A NEWER VERSION OF MONGODB, NON-MONGO BUILD, OR PHASED OUT ENTIRELY IN THE NEAR FUTURE.**
 
 Current beta tags of v8.0.24 have been rebuilt with Ubuntu as the default.
 Please test and [report any bugs, or issues on GitHub](https://github.com/goofball222/unifi/issues)
