@@ -1,6 +1,10 @@
 * **2023-12-20:**
     * Tag 8.0.24 release
     * Remove 8.0.7 tag/link from README.md
+    * Work-around expired signing key for mongodb-3.6 debian repo in release, 8.0/official, and 8.0/beta
+    * Switch 8.0/beta workflow to use Ubuntu default as "latest-beta" and "8.0-latest-beta" tags
+    * Created latest-debian-beta and 8.0-debian-beta tags to support moving Ubuntu to default/latest
+    * Updated README.md
 ---
 * **2023-12-18:**
     * Update 8.0/official to v[8.0.24](https://community.ui.com/releases/UniFi-Network-Application-8-0-24/43b24781-aea8-48dc-85b2-3fca42f758c9)
