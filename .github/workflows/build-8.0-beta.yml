@@ -45,8 +45,8 @@ jobs:
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
           tags: |
-            type=raw,latest-beta
-            type=raw,8.0-beta
+            type=raw,latest-debian-beta
+            type=raw,8.0-debian-beta
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
             org.opencontainers.image.title=UniFi Controller
@@ -61,7 +61,9 @@ jobs:
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
           tags: |
+            type=raw,latest-beta
             type=raw,latest-ubuntu-beta
+            type=raw,8.0-beta
             type=raw,8.0-ubuntu-beta
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
@@ -103,7 +105,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ./8.0/beta
-          file: ./8.0/beta/Dockerfile
+          file: ./8.0/beta/Dockerfile.debian
           platforms: linux/amd64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-debian.outputs.tags }}
@@ -114,7 +116,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ./8.0/beta
-          file: ./8.0/beta/Dockerfile.ubuntu
+          file: ./8.0/beta/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-ubuntu.outputs.tags }}
