@@ -44,10 +44,10 @@
 **2023-12-20:**
 MongoDB 3.6 Debian repo signing key has expired, apt-get refuses to install packages from this repo without setting insecure options.
 
-ALL RELEASES AFTER v8.0.24 WILL BE UPDATED TO USE THE UBUNTU BASED BUILD AS THE LATEST/CURRENT VERISON TAG.
+ALL RELEASES AFTER v8.0.26 WILL BE UPDATED TO USE THE UBUNTU BASED BUILD AS THE LATEST/CURRENT VERISON TAG.
 DEBIAN BASE WILL BE MOVED TO A NEWER VERSION OF MONGODB, NON-MONGO BUILD, OR PHASED OUT ENTIRELY IN THE NEAR FUTURE.**
 
-Current beta tags of v8.0.24 have been rebuilt with Ubuntu as the default.
+Current beta tags of v8.0.X have been rebuilt with Ubuntu as the default.
 Please test and [report any bugs, or issues on GitHub](https://github.com/goofball222/unifi/issues)
 
 ---
