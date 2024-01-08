@@ -1,3 +1,6 @@
+* **2024-01-05:**
+    * Update 8.0/official to v[8.0.26](https://community.ui.com/releases/UniFi-Network-Application-8-0-26/cd9303a8-f26a-44e2-94d8-a3cac8606726)
+---
 * **2023-12-20:**
     * Update 8.0/beta to v[8.0.26](https://community.ui.com/releases/UniFi-Network-Application-8-0-26/3f2444ce-92dd-4aef-bfff-3f0d447c9783)
     * Update README.md to add note on proposed fixes/changes for Debian MongoDB 3.6 issue
