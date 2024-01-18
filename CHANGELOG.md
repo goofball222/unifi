@@ -1,6 +1,11 @@
+* **2024-01-18:**
+    * Update 8.0/beta entrypoint and functions to allow setting unifi.logStdout (Issue #135) and unifi.config.readEnv via env
+    * Add LOGSTDOUT & READENV env vars for the above, default to true if unset.
+    * ToDo: add documentation on these to README.md whenever current beta is moved to official.
+---
 * **2024-01-12:**
     * Update 8.0/beta to v[8.0.28](https://community.ui.com/releases/UniFi-Network-Application-8-0-28/c1d84a2d-dc0b-438a-b0b4-e3e19011e619)
-
+---
 * **2024-01-05:**
     * Update 8.0/official to v[8.0.26](https://community.ui.com/releases/UniFi-Network-Application-8-0-26/cd9303a8-f26a-44e2-94d8-a3cac8606726)
 ---
