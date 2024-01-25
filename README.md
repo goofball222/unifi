@@ -6,11 +6,11 @@
 ## Docker tags:
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
-| [8.0, 8.0-alpine, 8.0-ubuntu, latest, latest-alpine, latest-ubuntu](https://github.com/goofball222/unifi/blob/main/8.0/official/Dockerfile) | [8.0.26](https://community.ui.com/releases/UniFi-Network-Application-8-0-26/cd9303a8-f26a-44e2-94d8-a3cac8606726) | UniFi Network Application official release | 2024-01-05 |
+| [8.0, 8.0-alpine, 8.0-ubuntu, latest, latest-alpine, latest-ubuntu](https://github.com/goofball222/unifi/blob/main/8.0/official/Dockerfile) | [8.0.28](https://community.ui.com/releases/UniFi-Network-Application-8-0-28/f7492865-778d-4539-aaf8-3fb09c4279b0) | UniFi Network Application official release | 2024-01-25 |
 | [8.0-beta, 8.0-alpine-beta, 8.0-debian-beta, 8.0-ubuntu-beta, latest-beta, latest-alpine-beta, latest-debian-beta, latest-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/8.0/beta/Dockerfile) | [8.0.28](https://community.ui.com/releases/UniFi-Network-Application-8-0-28/c1d84a2d-dc0b-438a-b0b4-e3e19011e619) | UniFi Network Application beta/release candidate | 2024-01-12 |
 | [7.5, 7.5-alpine, 7.5-ubuntu](https://github.com/goofball222/unifi/blob/main/7.5/official/Dockerfile) | [7.5.187](https://community.ui.com/releases/UniFi-Network-Application-7-5-187/408b64c5-a485-4a37-843c-31e87140be64) | UniFi Network Application official release | 2023-10-17 |
 | [7.5-beta, 7.5-alpine-beta, 7.5-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/7.5/beta/Dockerfile) | [7.5.187](https://community.ui.com/releases/UniFi-Network-Application-7-5-187/e6faa0fa-ebf2-497e-9e42-901a1840d206) | UniFi Network Application beta/release candidate | 2023-10-05 |
-| [8.0.26](https://github.com/goofball222/unifi/releases/tag/8.0.26) | [8.0.26](https://community.ui.com/releases/UniFi-Network-Application-8-0-26/cd9303a8-f26a-44e2-94d8-a3cac8606726) | Static official release tag/image | 2024-01-05 |
+| [8.0.28](https://github.com/goofball222/unifi/releases/tag/8.0.28) | [8.0.28](https://community.ui.com/releases/UniFi-Network-Application-8-0-28/f7492865-778d-4539-aaf8-3fb09c4279b0) | Static official release tag/image | 2024-01-25 |
 | [7.5.187](https://github.com/goofball222/unifi/releases/tag/7.5.187) | [7.5.187](https://community.ui.com/releases/UniFi-Network-Application-7-5-187/408b64c5-a485-4a37-843c-31e87140be64) | Static official release tag/image | 2023-10-17 |
 | [7.4.162](https://github.com/goofball222/unifi/releases/tag/7.4.162) | [7.4.162](https://community.ui.com/releases/UniFi-Network-Application-7-4-162/50b4b930-631e-4ada-87c4-0b4ea5fb26a7) | Static official release tag/image | 2023-07-03 |
 | [7.3.83](https://github.com/goofball222/unifi/releases/tag/7.3.83) | [7.3.83](https://community.ui.com/releases/UniFi-Network-Application-7-3-83/88f5ff3f-4c13-45e2-b57e-ad04b4140528) | Static official release tag/image | 2023-01-30 |
@@ -212,8 +212,10 @@ Copy the following to both services in the docker-compose.yml file under the com
 | `JVM_EXTRA_OPTS` | ***unset*** | Any additional custom run flags for the container Java process |
 | `JVM_INIT_HEAP_SIZE` | ***unset*** | Sets the start and min memory size for the container Java process (-Xms) |
 | `JVM_MAX_HEAP_SIZE` | ***1024M*** | Sets the max memory size for the container Java process (-Xmx) |
+| `LOGSTDOUT` | ***true*** | Set to *false* to disable the UniFi process log output to STDOUT. System will still output to log volume files if configured. |
 | `PGID` | ***999*** | Specifies the GID for the container internal unifi group (used for file ownership) |
 | `PUID` | ***999*** | Specifies the UID for the container internal unifi user (used for process and file ownership) |
+| `READENV` | ***true*** | Set to *false* to disable environment variables conversion to UniFi system.properties settings. |
 | `RUN_CHOWN` | ***true*** | Set to *false* to disable the container automatic `chown` at startup. Speeds up startup process on overlay2 Docker hosts. **NB/IMPORTANT:** It's critical that you insure directory/data permissions on all mapped volumes are correct before disabling this or UniFi and/or Mongo will not start. |
 | `RUNAS_UID0` | ***false*** | Set to *true* to force the container to run the Java/Mongo processes as UID=0 (root) - workaround for `setcap` AUFS missing xargs failure - **NB/IMPORTANT:** running with this set to "true" is insecure |
 
@@ -226,7 +228,7 @@ Recommended UniFi system.properties converted environment variables to externali
 | `STATDB_MONGO_URI` | ***mongodb://mongo:27017/unifi_stat*** | This sets the URI that UniFi should connect to for the statistics database |
 | `UNIFI_DB_NAME` | ***unifi*** | Sets a database name that can be connected and managed on the external Mongo DB server, must match with the URI variables (IE: unifi, unifi_stat = unifi). |
 
-**NB/IMPORTANT:** Although I've been running my own deployments with an external DB for a year or more without issue with these settings externalizing the DB, just like running the app itself in a Docker container, is considered experimental and totally unsupported by UBNT. Full documentation for an external DB setup is outside the scope of this README and is left as an exercise for the interested reader. Additional information available on the [UBNT forums in this post](https://community.ubnt.com/t5/UniFi-Wireless/External-MongoDB-Server/m-p/1711073/highlight/true#M188357) and in the PDF post linked below.
+**NB/IMPORTANT:** Although I've been running my own deployments with an external DB without issue with these settings externalizing the DB, just like running the app itself in a Docker container, is considered experimental and totally unsupported by UBNT. Full documentation for an external DB setup is outside the scope of this README and is left as an exercise for the interested reader. Additional information available on the [UBNT forums in this post](https://community.ubnt.com/t5/UniFi-Wireless/External-MongoDB-Server/m-p/1711073/highlight/true#M188357) and in the PDF post linked below.
 
 Additional UniFi [system.properties](https://help.ubnt.com/hc/en-us/articles/205202580-UniFi-system-properties-File-Explanation) config file settings can be passed to the container as -e/--env/environment flags at runtime [(more detail and a PDF with UBNT examples here)](https://community.ubnt.com/t5/UniFi-Wireless-Beta/Unifi-Controller-High-Availability/m-p/1801933/highlight/true#M43494). Envrionment variables must be in ALL CAPS and replace "." with "_". -- **IE:**
 

@@ -3,8 +3,8 @@
 # docker-entrypoint.sh script for UniFi Docker container
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-SCRIPT_VERSION="1.1.0"
-# Last updated date: 2023-07-17
+SCRIPT_VERSION="1.1.1"
+# Last updated date: 2024-01-18
 
 set -Eeuo pipefail
 
@@ -19,6 +19,9 @@ CERTDIR=${BASEDIR}/cert
 DATADIR=${BASEDIR}/data
 LOGDIR=${BASEDIR}/logs
 RUNDIR=${BASEDIR}/run
+
+LOGSTDOUT=${LOGSTDOUT:-"true"}
+READENV=${READENV:-"true"}
 
 f_log "INFO - Entrypoint script version ${SCRIPT_VERSION}"
 f_log "INFO - Entrypoint functions version ${ENTRYPOINT_FUNCTIONS_VERSION}"

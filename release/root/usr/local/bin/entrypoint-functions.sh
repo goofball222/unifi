@@ -3,8 +3,8 @@
 # entrypoint-functions.sh script for UniFi Docker container
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-ENTRYPOINT_FUNCTIONS_VERSION="1.0.8"
-# Last updated date: 2022-09-08
+ENTRYPOINT_FUNCTIONS_VERSION="1.1.0"
+# Last updated date: 2024-01-18
 
 f_bindpriv() {
     JAVABIN=$(readlink -f /usr/bin/java)
@@ -155,15 +155,15 @@ f_sysprop() {
     else
         f_log "INFO - Existing '${DATADIR}/system.properties' found, ensuring container mode options are enabled"
         if ! grep -q "unifi.logStdout" "${DATADIR}/system.properties"; then
-            echo "unifi.logStdout=true" >> ${DATADIR}/system.properties
+            echo "unifi.logStdout=${LOGSTDOUT}" >> ${DATADIR}/system.properties
         else
-            sed -i '/unifi.logStdout/c\unifi.logStdout=true' ${DATADIR}/system.properties
+            sed -i "/unifi.logStdout/c\unifi.logStdout=${LOGSTDOUT}" ${DATADIR}/system.properties
         fi
 
         if ! grep -q "unifi.config.readEnv" "${DATADIR}/system.properties"; then
-            echo "unifi.config.readEnv=true" >> ${DATADIR}/system.properties
+            echo "unifi.config.readEnv=${READENV}" >> ${DATADIR}/system.properties
         else
-            sed -i '/unifi.config.readEnv/c\unifi.config.readEnv=true' ${DATADIR}/system.properties
+            sed -i "/unifi.config.readEnv/c\unifi.config.readEnv=${READENV}" ${DATADIR}/system.properties
         fi
     fi
 }

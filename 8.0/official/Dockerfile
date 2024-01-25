@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM ubuntu:20.04
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -9,7 +9,7 @@ LABEL \
     org.opencontainers.image.url="https://github.com/goofball222/unifi" \
     org.opencontainers.image.title="UniFi Controller" \
     org.opencontainers.image.description="UniFi Controller" \
-    org.opencontainers.image.version=${VERSION}-Debian \
+    org.opencontainers.image.version=${VERSION}-Ubuntu \
     org.opencontainers.image.source="https://github.com/goofball222/unifi" \
     org.opencontainers.image.revision=${VCS_REF} \
     org.opencontainers.image.created=${BUILD_DATE} \
@@ -34,27 +34,19 @@ COPY root /
 RUN set -x \
     && groupadd -r unifi -g $PGID \
     && useradd --no-log-init -r -u $PUID -g $PGID unifi \
-    && mkdir -p /usr/share/man/man1 \
     && apt-get -qqy update \
     && apt-get -qqy install apt-utils \
     && apt-get -qqy --no-install-recommends install \
-        dirmngr gnupg2 > /dev/null \
-    && apt-get -qqy --no-install-recommends install \
-        binutils curl gosu \
+        binutils curl dirmngr gosu \
         libcap2 libcap2-bin procps > /dev/null \
     && apt-get -qqy --no-install-recommends install \
-        ca-certificates-java > /dev/null \
+        ca-certificates-java openjdk-17-jre-headless > /dev/null \
     && apt-get -qqy --no-install-recommends install \
-        openjdk-17-jre-headless > /dev/null \
-    && echo "deb http://repo.mongodb.org/apt/debian stretch/mongodb-org/3.6 main" \
-        > /etc/apt/sources.list.d/mongodb-org.list \
-    && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5 \
-    && apt-get -qqy --allow-insecure-repositories update \
-    && apt-get -qqy --no-install-recommends --allow-unauthenticated install \
-        mongodb-org-server > /dev/null \
+        mongodb-server-core > /dev/null \
+    && rm -rf /usr/bin/mongos \
     && curl -sSL https://dl.ui.com/unifi/${VERSION}/unifi_sysvinit_all.deb -o /tmp/unifi-${VERSION}.deb \
     && apt-get -qqy purge \
-        apt-utils dirmngr gnupg2 > /dev/null \
+        dirmngr > /dev/null \
     && apt-get -qqy autoremove --purge > /dev/null \
     && apt-get -qqy clean autoclean > /dev/null \
     && dpkg --force-all -i /tmp/unifi-${VERSION}.deb \

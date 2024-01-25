@@ -1,7 +1,12 @@
+* **2024-01-25:**
+    * Update 8.0/official to v[8.0.28](https://community.ui.com/releases/UniFi-Network-Application-8-0-28/f7492865-778d-4539-aaf8-3fb09c4279b0)
+    * Tag 8.0.28 release
+    * This release changes the default/latest image tag from Debian-based to Ubuntu-based - #132
+---
 * **2024-01-18:**
     * Update 8.0/beta entrypoint and functions to allow setting unifi.logStdout (Issue #135) and unifi.config.readEnv via env
     * Add LOGSTDOUT & READENV env vars for the above, default to true if unset.
-    * ToDo: add documentation on these to README.md whenever current beta is moved to official.
+    * ~~ToDo: add documentation on these to README.md whenever current beta is moved to official.~~
 ---
 * **2024-01-12:**
     * Update 8.0/beta to v[8.0.28](https://community.ui.com/releases/UniFi-Network-Application-8-0-28/c1d84a2d-dc0b-438a-b0b4-e3e19011e619)
