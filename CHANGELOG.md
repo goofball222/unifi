@@ -1,3 +1,7 @@
+* **2024-02-01:**
+    * Create 8.1/beta, v[8.1.104](https://community.ui.com/releases/UniFi-Network-Application-8-1-104/1a8f4eff-9300-4305-acbf-5b143fc9388d)
+    * Set latest-beta, etc. tags to 8.1/beta
+---
 * **2024-01-25:**
     * Update 8.0/official to v[8.0.28](https://community.ui.com/releases/UniFi-Network-Application-8-0-28/f7492865-778d-4539-aaf8-3fb09c4279b0)
     * Tag 8.0.28 release
