@@ -1,5 +1,8 @@
 * **2024-02-21:**
     * Update 8.1/beta to v[8.1.107](https://community.ui.com/releases/UniFi-Network-Application-8-1-107/c2cb7b81-07b9-43e7-a0ec-f728ab76e8a2)
+    * Change 8.1/beta STDOUT to tail UniFi server.log by default instead of internal unifi.logStdout that includes noisy task runs, etc.
+        * Default is now LOGSTDOUT=false, old style noisy output if desired by setting LOGSTDOUT=true in container run env
+        * DEBUG=true also now forces LOGSTDOUT=true
 ---
 * **2024-02-01:**
     * Create 8.1/beta, v[8.1.104](https://community.ui.com/releases/UniFi-Network-Application-8-1-104/1a8f4eff-9300-4305-acbf-5b143fc9388d)

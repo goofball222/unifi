@@ -10,6 +10,7 @@ set -Eeuo pipefail
 
 if [ "${DEBUG}" == 'true' ]; then
     set -x
+    LOGSTDOUT="true"
 fi
 
 . /usr/local/bin/entrypoint-functions.sh
@@ -20,7 +21,7 @@ DATADIR=${BASEDIR}/data
 LOGDIR=${BASEDIR}/logs
 RUNDIR=${BASEDIR}/run
 
-LOGSTDOUT=${LOGSTDOUT:-"true"}
+LOGSTDOUT=${LOGSTDOUT:-"false"}
 READENV=${READENV:-"true"}
 
 f_log "INFO - Entrypoint script version ${SCRIPT_VERSION}"
@@ -52,10 +53,17 @@ f_exit_handler() {
 }
 
 f_idle_handler() {
-    while true
-    do
-        tail -f /dev/null & wait ${!}
-    done
+    if [ "$LOGSTDOUT" = 'true' ]; then
+        while true
+        do
+            tail -f /dev/null & wait ${!}
+        done
+    else
+        while true
+        do
+            tail -f ${LOGDIR}/server.log & wait ${!}
+        done
+    fi
 }
 
 trap 'kill ${!}; f_exit_handler' SIGHUP SIGINT SIGQUIT SIGTERM
