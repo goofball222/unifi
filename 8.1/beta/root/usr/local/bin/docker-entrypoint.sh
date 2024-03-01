@@ -3,8 +3,8 @@
 # docker-entrypoint.sh script for UniFi Docker container
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-SCRIPT_VERSION="1.1.2"
-# Last updated date: 2024-02-21
+SCRIPT_VERSION="1.1.3"
+# Last updated date: 2024-03-01
 
 set -Eeuo pipefail
 
@@ -61,7 +61,7 @@ f_idle_handler() {
     else
         while true
         do
-            tail -f ${LOGDIR}/server.log & wait ${!}
+            tail -F -n0 ${LOGDIR}/server.log & wait ${!}
         done
     fi
 }
