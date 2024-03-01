@@ -1,3 +1,6 @@
+* **2024-03-01:**
+    * Update 8.1/beta to v[8.1.111](https://community.ui.com/releases/UniFi-Network-Application-8-1-111/d4b32f55-2960-4f87-8903-79f990f7737a)
+---
 * **2024-02-21:**
     * Update 8.1/beta to v[8.1.107](https://community.ui.com/releases/UniFi-Network-Application-8-1-107/c2cb7b81-07b9-43e7-a0ec-f728ab76e8a2)
     * Change 8.1/beta STDOUT to tail UniFi server.log by default instead of internal unifi.logStdout that includes noisy task runs, etc.
