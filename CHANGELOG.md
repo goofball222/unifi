@@ -1,6 +1,7 @@
 * **2024-03-01:**
     * Update 8.1/beta to v[8.1.111](https://community.ui.com/releases/UniFi-Network-Application-8-1-111/d4b32f55-2960-4f87-8903-79f990f7737a)
     * Remove 7.5 official and beta from README.md, this release train does not appear to be receiving any further updates.
+    * Archive 7.5 folders & workflows
 ---
 * **2024-02-21:**
     * Update 8.1/beta to v[8.1.107](https://community.ui.com/releases/UniFi-Network-Application-8-1-107/c2cb7b81-07b9-43e7-a0ec-f728ab76e8a2)
