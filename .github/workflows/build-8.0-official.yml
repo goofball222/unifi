@@ -100,7 +100,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ./8.0/official
-          file: ./8.0/official/Dockerfile
+          file: ./8.0/official/Dockerfile.debian
           platforms: linux/amd64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-debian.outputs.tags }}
@@ -111,7 +111,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ./8.0/official
-          file: ./8.0/official/Dockerfile.ubuntu
+          file: ./8.0/official/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-ubuntu.outputs.tags }}
