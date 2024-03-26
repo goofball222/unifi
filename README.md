@@ -6,8 +6,10 @@
 ## Docker tags:
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
-| [8.0, 8.0-alpine, 8.0-debian, 8.0-ubuntu, latest, latest-alpine, latest-debian, latest-ubuntu](https://github.com/goofball222/unifi/blob/main/8.0/official/Dockerfile) | [8.0.28](https://community.ui.com/releases/UniFi-Network-Application-8-0-28/f7492865-778d-4539-aaf8-3fb09c4279b0) | UniFi Network Application official release | 2024-01-25 |
+| [8.1, 8.1-alpine, 8.1-debian, 8.1-ubuntu, latest, latest-alpine, latest-debian, latest-ubuntu](https://github.com/goofball222/unifi/blob/main/8.1/official/Dockerfile) | [8.1.113](https://community.ui.com/releases/UniFi-Network-Application-8-1-113/af46fd38-8afe-4cef-8de1-89636b02b52c) | UniFi Network Application official release | 2024-03-26 |
 | [8.1-beta, 8.1-alpine-beta, 8.1-debian-beta, 8.1-ubuntu-beta, latest-beta, latest-alpine-beta, latest-debian-beta, latest-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/8.1/beta/Dockerfile) | [8.1.113](https://community.ui.com/releases/UniFi-Network-Application-8-1-113/a33c9fb4-bb37-427d-9486-59a33a693abf) | UniFi Network Application beta/release candidate | 2024-03-11 |
+| [8.0, 8.0-alpine, 8.0-debian, 8.0-ubuntu](https://github.com/goofball222/unifi/blob/main/8.0/official/Dockerfile) | [8.0.28](https://community.ui.com/releases/UniFi-Network-Application-8-0-28/f7492865-778d-4539-aaf8-3fb09c4279b0) | UniFi Network Application official release | 2024-01-25 |
+| [8.1.113](https://github.com/goofball222/unifi/releases/tag/8.1.113) | [8.1.113](https://community.ui.com/releases/UniFi-Network-Application-8-1-113/af46fd38-8afe-4cef-8de1-89636b02b52c) | Static official release tag/image | 2024-03-26 |
 | [8.0.28](https://github.com/goofball222/unifi/releases/tag/8.0.28) | [8.0.28](https://community.ui.com/releases/UniFi-Network-Application-8-0-28/f7492865-778d-4539-aaf8-3fb09c4279b0) | Static official release tag/image | 2024-01-25 |
 | [7.5.187](https://github.com/goofball222/unifi/releases/tag/7.5.187) | [7.5.187](https://community.ui.com/releases/UniFi-Network-Application-7-5-187/408b64c5-a485-4a37-843c-31e87140be64) | Static official release tag/image | 2023-10-17 |
 | [7.4.162](https://github.com/goofball222/unifi/releases/tag/7.4.162) | [7.4.162](https://community.ui.com/releases/UniFi-Network-Application-7-4-162/50b4b930-631e-4ada-87c4-0b4ea5fb26a7) | Static official release tag/image | 2023-07-03 |
@@ -210,7 +212,7 @@ Copy the following to both services in the docker-compose.yml file under the com
 | `JVM_EXTRA_OPTS` | ***unset*** | Any additional custom run flags for the container Java process |
 | `JVM_INIT_HEAP_SIZE` | ***unset*** | Sets the start and min memory size for the container Java process (-Xms) |
 | `JVM_MAX_HEAP_SIZE` | ***1024M*** | Sets the max memory size for the container Java process (-Xmx) |
-| `LOGSTDOUT` | ***true*** | Set to *false* to disable the UniFi process log output to STDOUT. System will still output to log volume files if configured. |
+| `LOGSTDOUT` | ***false*** | Set to *true* to enable the (noisy!) UniFi process log output to STDOUT. System will still output to log volume files if configured. |
 | `PGID` | ***999*** | Specifies the GID for the container internal unifi group (used for file ownership) |
 | `PUID` | ***999*** | Specifies the UID for the container internal unifi user (used for process and file ownership) |
 | `READENV` | ***true*** | Set to *false* to disable environment variables conversion to UniFi system.properties settings. |
