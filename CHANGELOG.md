@@ -1,3 +1,6 @@
+* **2024-02-21:**
+    * Update 8.1/beta to v[8.1.122](https://community.ui.com/releases/UniFi-Network-Application-8-1-122/2abd05be-d661-4c28-a43d-0a1dcdc39f4b)
+---
 * **2024-03-26:**
     * Create 8.1/official, v[8.1.113](https://community.ui.com/releases/UniFi-Network-Application-8-1-113/af46fd38-8afe-4cef-8de1-89636b02b52c)
     * Promote 8.1 official to "latest", "latest-alpine" and "latest-ubuntu" tags
