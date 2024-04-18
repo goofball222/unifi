@@ -1,3 +1,6 @@
+* **2024-04-18:**
+    * Update 8.1/beta to v[8.1.127](https://community.ui.com/releases/UniFi-Network-Application-8-1-127/dbc88c3a-a3e6-4f7d-8275-76bb40db14fd)
+---
 * **2024-04-09:**
     * Update 8.1/beta to v[8.1.124](https://community.ui.com/releases/UniFi-Network-Application-8-1-124/e2b9134d-095a-4b47-87db-e6996f4781ff)
 ---
