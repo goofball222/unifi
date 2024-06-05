@@ -1,3 +1,7 @@
+* **2024-05-30:**
+    * Create 8.2/official, v[8.2.93](https://community.ui.com/releases/UniFi-Network-Application-8-2-93/fce86dc6-897a-4944-9c53-1eec7e37e738)
+    * Promote 8.2 official to "latest", "latest-alpine" and "latest-ubuntu" tags
+    * Tag 8.2.93 release
 * **2024-05-28:**
     * Update 8.2/beta to v[8.2.93](https://community.ui.com/releases/UniFi-Network-Application-8-2-93/9cd7f8fc-74fe-471a-8baf-7a590e116b1d)
 ---
