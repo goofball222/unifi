@@ -1,3 +1,8 @@
+* **2024-06-15:**
+    * Create 8.3/beta, v[8.3.20](https://community.ui.com/releases/UniFi-Network-Application-8-3-20/663314c3-fc7d-4c50-863f-6969f24a3b77)
+    * Set latest-beta, etc. tags to 8.3/beta
+    * Approve & merge PR #143 "Update openjdk paths in ld-musl-x86_64.path for OpenJDK 17" fixing issue #142
+---
 * **2024-06-06:**
     * Create 8.2/official, v[8.2.93](https://community.ui.com/releases/UniFi-Network-Application-8-2-93/fce86dc6-897a-4944-9c53-1eec7e37e738)
     * Promote 8.2 official to "latest", "latest-alpine" and "latest-ubuntu" tags
