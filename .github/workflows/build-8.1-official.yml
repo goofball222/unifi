@@ -87,7 +87,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       -
         name: Build and push Alpine Docker image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ./8.1/official
           file: ./8.1/official/Dockerfile.alpine
@@ -98,7 +98,7 @@ jobs:
           build-args: VERSION=${{ steps.getargs.outputs.version }}
       -
         name: Build and push Debian Docker image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ./8.1/official
           file: ./8.1/official/Dockerfile.debian
@@ -109,7 +109,7 @@ jobs:
           build-args: VERSION=${{ steps.getargs.outputs.version }}
       -
         name: Build and push Ubuntu Docker image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ./8.1/official
           file: ./8.1/official/Dockerfile
