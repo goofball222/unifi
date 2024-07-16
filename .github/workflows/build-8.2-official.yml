@@ -1,4 +1,4 @@
-name: Build 8.1 Official
+name: Build 8.2 Official
 
 on:
   workflow_dispatch:
@@ -6,8 +6,8 @@ on:
     branches:
       - main
     paths:
-      - 8.1/official/**
-      - .github/workflows/build-8.1-official.yml
+      - 8.2/official/**
+      - .github/workflows/build-8.2-official.yml
 
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
       -
         name: Set up dynamic build ARGs
         id: getargs
-        run: echo "version=$(cat ./8.1/official/VERSION)" >> $GITHUB_OUTPUT
+        run: echo "version=$(cat ./8.2/official/VERSION)" >> $GITHUB_OUTPUT
       -
         name: Set up Docker metadata for Alpine
         id: meta-alpine
@@ -29,7 +29,7 @@ jobs:
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
           tags: |
-            type=raw,8.1-alpine
+            type=raw,8.2-alpine
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
             org.opencontainers.image.title=UniFi Controller
@@ -44,7 +44,7 @@ jobs:
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
           tags: |
-            type=raw,8.1-debian
+            type=raw,8.2-debian
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
             org.opencontainers.image.title=UniFi Controller
@@ -59,8 +59,8 @@ jobs:
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
           tags: |
-            type=raw,8.1
-            type=raw,8.1-ubuntu
+            type=raw,8.2
+            type=raw,8.2-ubuntu
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
             org.opencontainers.image.title=UniFi Controller
@@ -89,8 +89,8 @@ jobs:
         name: Build and push Alpine Docker image
         uses: docker/build-push-action@v6
         with:
-          context: ./8.1/official
-          file: ./8.1/official/Dockerfile.alpine
+          context: ./8.2/official
+          file: ./8.2/official/Dockerfile.alpine
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-alpine.outputs.tags }}
@@ -100,8 +100,8 @@ jobs:
         name: Build and push Debian Docker image
         uses: docker/build-push-action@v6
         with:
-          context: ./8.1/official
-          file: ./8.1/official/Dockerfile.debian
+          context: ./8.2/official
+          file: ./8.2/official/Dockerfile.debian
           platforms: linux/amd64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-debian.outputs.tags }}
@@ -111,8 +111,8 @@ jobs:
         name: Build and push Ubuntu Docker image
         uses: docker/build-push-action@v6
         with:
-          context: ./8.1/official
-          file: ./8.1/official/Dockerfile
+          context: ./8.2/official
+          file: ./8.2/official/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-ubuntu.outputs.tags }}

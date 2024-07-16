@@ -1,3 +1,8 @@
+* **2024-07-16:**
+    * Create 8.3/official, v[8.3.32](https://community.ui.com/releases/UniFi-Network-Application-8-3-32/54f3b506-afcf-4a7c-aba6-01a884dd9003)
+    * Promote 8.3 official to "latest", "latest-alpine" and "latest-ubuntu" tags
+    * Tag 8.3.32 release
+---
 * **2024-07-08:**
     * Update 8.3/beta to v[8.3.32](https://community.ui.com/releases/UniFi-Network-Application-8-3-32/8a189c7c-077e-4d7c-8e28-acf5f3c3c04e)
 ---
