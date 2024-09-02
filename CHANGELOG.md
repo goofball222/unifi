@@ -1,3 +1,10 @@
+* **2024-09-02:**
+    * Update 8.4/beta to v[8.4.62](https://community.ui.com/releases/UniFi-Network-Application-8-4-62/01f9801d-23d9-42e1-b2da-f4862db4948d)
+    * Create 8.4/official, v[8.4.59](https://community.ui.com/releases/UniFi-Network-Application-8-4-59/d3ba4443-ad36-4566-b1e6-2d21d8b4f225)
+    * Promote 8.4 official to "latest", "latest-alpine" and "latest-ubuntu" tags
+    * Tag 8.4.59 release
+    * Archive 8.1 & 8.2
+---
 * **2024-08-16:**
     * Update 8.4/beta to v[8.4.59](https://community.ui.com/releases/UniFi-Network-Application-8-4-59/6e4bbf52-60d7-4db9-91a6-78f643a6e233)
 ---
