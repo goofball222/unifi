@@ -37,7 +37,7 @@ default: build
 
 
 build:
-	docker build \
+	docker buildx build \
 	--build-arg VCS_REF=$(VCS_REF) \
 	--build-arg BUILD_DATE=$(BUILD_DATE) \
 	--build-arg VERSION=$(VERSION) \

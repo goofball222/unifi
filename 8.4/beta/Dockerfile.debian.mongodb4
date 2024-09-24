@@ -35,30 +35,31 @@ RUN set -x \
     && groupadd -r unifi -g $PGID \
     && useradd --no-log-init -r -u $PUID -g $PGID unifi \
     && mkdir -p /usr/share/man/man1 \
-    && apt-get -qqy update \
-    && apt-get -qqy install apt-utils \
-    && apt-get -qqy --no-install-recommends install \
-        dirmngr gnupg2 > /dev/null \
-    && apt-get -qqy update \
-    && apt-get -qqy --no-install-recommends install \
+    && apt-get -y update \
+    && apt-get -y install apt-utils \
+    && apt-get -y --no-install-recommends install \
+        dirmngr gnupg2 \
+    && apt-get -y update \
+    && apt-get -y --no-install-recommends install \
         binutils curl gosu \
-        libcap2 libcap2-bin procps > /dev/null \
-    && apt-get -qqy --no-install-recommends install \
-        ca-certificates-java > /dev/null \
-    && apt-get -qqy --no-install-recommends install \
-        openjdk-17-jre-headless > /dev/null \
+        libcap2 libcap2-bin procps \
+        tzdata \
+    && apt-get -y --no-install-recommends install \
+        ca-certificates-java \
+    && apt-get -y --no-install-recommends install \
+        openjdk-17-jre-headless \
     && curl -fsSL https://www.mongodb.org/static/pgp/server-4.0.asc | \
         apt-key add - \
     && echo "deb http://repo.mongodb.org/apt/debian stretch/mongodb-org/4.0 main" \
         > /etc/apt/sources.list.d/mongodb-org-4.0.list \
-    && apt-get -qqy update \
-    && apt-get -qqy --no-install-recommends install \
-        mongodb-org-server > /dev/null \
+    && apt-get -y update \
+    && apt-get -y --no-install-recommends install \
+        mongodb-org-server \
     && curl -sSL https://dl.ui.com/unifi/${VERSION}/unifi_sysvinit_all.deb -o /tmp/unifi-${VERSION}.deb \
-    && apt-get -qqy purge \
-        apt-utils dirmngr gnupg2 > /dev/null \
-    && apt-get -qqy autoremove --purge > /dev/null \
-    && apt-get -qqy clean autoclean > /dev/null \
+    && apt-get -y purge \
+        apt-utils dirmngr gnupg2 \
+    && apt-get -y autoremove --purge \
+    && apt-get -y clean autoclean \
     && dpkg --force-all -i /tmp/unifi-${VERSION}.deb \
     && rm -rf data logs run \
     && bash -c 'mkdir -p {data,logs,run,cert}' \
