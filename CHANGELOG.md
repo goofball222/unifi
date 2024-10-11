@@ -1,3 +1,9 @@
+* **2024-10-11:**
+    * Create 8.5/official, v[8.5.6](https://community.ui.com/releases/UniFi-Network-Application-8-5-6/bfa15dd8-8b58-4d40-9d83-73ebe8c9a955)
+    * Promote 8.5 official to "latest", "latest-alpine" and "latest-ubuntu" tags
+    * Tag 8.5.6 release
+    * Archive 8.3
+---
 * **2024-10-03:**
     * Update 8.5/beta to v[8.5.6](https://community.ui.com/releases/UniFi-Network-Application-8-5-6/a3338adf-1d59-42e4-8734-95f24c135e82)
 ---
