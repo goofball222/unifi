@@ -1,0 +1,5 @@
+/lib
+/usr/lib
+/usr/local/lib
+/usr/lib/jvm/java-17-openjdk/jre/lib
+/usr/lib/jvm/java-17-openjdk/jre/lib/server
