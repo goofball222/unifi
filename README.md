@@ -251,8 +251,10 @@ Additional UniFi [system.properties](https://help.ubnt.com/hc/en-us/articles/205
 1. Map the Docker host cert storage location or volume to the `/usr/lib/unifi/cert` volume exposed by the container
 2. Must contain a PEM format SSL private key corresponding to the SSL certificate to be installed.
 Private key file **MUST** be named `privkey.pem`.
-3. Must contain a PEM format SSL certificate file with the full certification chain. LetsEncrypt handles this automatically, other providers may need manual work (https://www.digicert.com/ssl-support/pem-ssl-creation.htm).
-Certificate file **MUST** be named `fullchain.pem`.
+3. Must contain a PEM format SSL certificate file.
+Certificate file **MUST** be named `cert.pem`.
+    - For versions prior to 7.3,  the SSL certificate file **MUST** be named `fullchain.pem` and must contain the full certification chain.
+      LetsEncrypt handles this automatically, other providers may need manual work (https://www.digicert.com/ssl-support/pem-ssl-creation.htm).
 4. Start the container. SSL import and Java keystore update process is automated during startup. Status, errors, etc. can be found in the container log, IE: `docker logs "containername"`
 5. Existing keystore file will be backed up to  `/usr/lib/unifi/data/keystore-"epochseconds"`
 6. Java keystore is only updated when changes to the certificate files are detected. To force a re-import of existing files delete the `unificert.sha256` file in `./cert` and restart the container.
