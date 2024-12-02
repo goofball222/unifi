@@ -1,7 +1,8 @@
 * **2024-12-02:**
     * Create 9.0/beta, v[9.0.92](https://community.ui.com/releases/UniFi-Network-Application-9-0-92/b3676f7e-df27-4564-a463-5b95831523f9)
     * Set latest-beta, etc. tags to 9.0/beta
-
+    * Archive 8.4 & 8.5 and adjust associated GH workflows
+    * README.md versions/tags cleanup
 ---
 * **2024-11-08:**
     * Create 8.6/official, v[8.6.9](https://community.ui.com/releases/UniFi-Network-Application-8-6-9/e4bd3f71-a2c4-4c98-b12a-a8b0b1c2178e)
