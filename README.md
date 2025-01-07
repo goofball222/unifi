@@ -12,6 +12,11 @@
 | [9.0.108](https://github.com/goofball222/unifi/releases/tag/9.0.108) | [9.0.108](https://community.ui.com/releases/UniFi-Network-Application-9-0-108/4e4c885a-311f-41b1-ad5d-9b6afcee77f7) | Static official release tag/image | 2025-01-06 |
 | [8.6.9](https://github.com/goofball222/unifi/releases/tag/8.6.9) | [8.6.9](https://community.ui.com/releases/UniFi-Network-Application-8-6-9/e4bd3f71-a2c4-4c98-b12a-a8b0b1c2178e) | Static official release tag/image | 2024-11-07 |
 | [8.5.6](https://github.com/goofball222/unifi/releases/tag/8.5.6) | [8.5.6](https://community.ui.com/releases/UniFi-Network-Application-8-5-6/bfa15dd8-8b58-4d40-9d83-73ebe8c9a955) | Static official release tag/image | 2024-10-09 |
+
+<details><summary>Older Static Tags</summary>
+
+| Tag | UniFi Version | Description | Release Date |
+| --- | :---: | --- | :---: |
 | [8.4.62](https://github.com/goofball222/unifi/releases/tag/8.4.62) | [8.4.62](https://community.ui.com/releases/UniFi-Network-Application-8-4-62/40240312-bb43-4648-adab-5b05f3d4354e) | Static official release tag/image | 2024-09-11 |
 | [8.3.32](https://github.com/goofball222/unifi/releases/tag/8.3.32) | [8.3.32](https://community.ui.com/releases/UniFi-Network-Application-8-3-32/54f3b506-afcf-4a7c-aba6-01a884dd9003) | Static official release tag/image | 2024-07-15 |
 | [8.2.93](https://github.com/goofball222/unifi/releases/tag/8.2.93) | [8.2.93](https://community.ui.com/releases/UniFi-Network-Application-8-2-93/fce86dc6-897a-4944-9c53-1eec7e37e738) | Static official release tag/image | 2024-06-03 |
@@ -33,6 +38,7 @@
 | [5.12.72](https://github.com/goofball222/unifi/releases/tag/5.12.72) | [5.12.72](https://community.ui.com/releases/UniFi-Network-Controller-5-12-72/9ac72983-5130-4f58-b3ba-909f4d4bb5f9) | Static official release tag/image | 2020-05-18 |
 | [5.11.50](https://github.com/goofball222/unifi/releases/tag/5.11.50) | [5.11.50](https://community.ui.com/releases/UniFi-Network-Controller-5-11-50/1728a1f1-f0a8-45dd-a2e2-95abcfc50dab) | Static official release tag/image | 2019-10-08 |
 | [5.6.42](https://github.com/goofball222/unifi/releases/tag/5.6.42) | [5.6.42](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-Network-Controller-5-6-42-Stable-has-been-released/ba-p/2771271) | Static official release tag/image | 2019-05-03 |
+</details>
 
 ---
 
