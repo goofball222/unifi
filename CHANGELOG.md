@@ -1,3 +1,6 @@
+* **2025-01-20:**
+    * Update 9.0/beta to [9.0.110](https://community.ui.com/releases/UniFi-Network-Application-9-0-110/11ea494d-8831-4bab-8818-3996c891652b)
+---
 * **2025-01-06:**
     * Create 9.0/official, v[9.0.108](https://community.ui.com/releases/UniFi-Network-Application-9-0-108/4e4c885a-311f-41b1-ad5d-9b6afcee77f7)
     * Promote 9.0 official to "latest", "latest-alpine" and "latest-ubuntu" tags
