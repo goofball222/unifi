@@ -1,3 +1,7 @@
+* **2025-02-10:**
+    * Update 9.0/official to v[9.0.114](https://community.ui.com/releases/UniFi-Network-Application-9-0-114/35b6e9ac-f63d-46c9-bbbe-74a4a61ac95f)
+    * Tag 9.0.114 release
+---
 * **2025-01-28:**
     * Update 9.0/beta to [9.0.114](https://community.ui.com/releases/UniFi-Network-Application-9-0-114/ccf337f7-a3c2-4c10-b1e2-7e23c9a34f07)
 ---
