@@ -1,3 +1,6 @@
+* **2025-04-25:**
+    * Update 9.1/beta to [9.1.120](https://community.ui.com/releases/UniFi-Network-Application-9-1-120/a5e88ae2-3c44-420a-bebb-5120bf2288b2)
+---
 * **2025-04-24:**
     * Create 9.1/official, v[9.1.119](https://community.ui.com/releases/UniFi-Network-Application-9-1-119/ae21f6e9-b18a-4705-81c0-cfff86a25bcb)
     * Promote 9.1 official to "latest", "latest-alpine" and "latest-ubuntu" tags
