@@ -1,3 +1,6 @@
+* **2025-05-27:**
+    * Update 9.2/beta to [9.2.84](https://community.ui.com/releases/UniFi-Network-Application-9-2-84/a32da007-38d4-4c16-ab4e-698eae9147b9)
+---
 * **2025-05-23:**
     * Update 9.2/beta to [9.2.83](https://community.ui.com/releases/UniFi-Network-Application-9-2-83/bce60236-5b59-4213-b076-ff0bf097b1ea)
 ---
