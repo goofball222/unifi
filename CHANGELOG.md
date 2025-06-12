@@ -1,3 +1,8 @@
+* **2025-06-12:**
+    * Create 9.2/official, v[9.2.87](https://community.ui.com/releases/UniFi-Network-Application-9-2-87/81a6a594-e925-4100-b1d7-351d2b91a7fd)
+    * Promote 9.2 official to "latest", "latest-alpine" and "latest-ubuntu" tags
+    * Tag 9.2.87 release
+---
 * **2025-06-06:**
     * Update 9.2/beta to [9.2.87](https://community.ui.com/releases/UniFi-Network-Application-9-2-87/b2b44d80-3b1c-4d07-961f-9cd91b30b5a9)
 ---
