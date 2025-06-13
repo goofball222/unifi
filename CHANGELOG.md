@@ -1,3 +1,8 @@
+* **2025-06-13:**
+    * Create 9.3/beta, v[9.3.25](https://community.ui.com/releases/UniFi-Network-Application-9-3-25/b68ba2d2-51cb-4c13-8a9d-d68614a0973e)
+    * Set latest-beta, etc. tags to 9.3/beta
+    * Archive 8.6 and 9.0
+---
 * **2025-06-12:**
     * Create 9.2/official, v[9.2.87](https://community.ui.com/releases/UniFi-Network-Application-9-2-87/81a6a594-e925-4100-b1d7-351d2b91a7fd)
     * Promote 9.2 official to "latest", "latest-alpine" and "latest-ubuntu" tags
