@@ -1,3 +1,8 @@
+* **2025-07-14:**
+    * Create 9.3/official, v[9.3.43](https://community.ui.com/releases/UniFi-Network-Application-9-3-43/498d71da-c9e9-47d7-8d15-a6d1472239e1)
+    * Promote 9.3 official to "latest", "latest-alpine" and "latest-ubuntu" tags
+    * Tag 9.3.43 release
+---
 * **2025-07-09:**
     * Update 9.3/beta to [9.3.43](https://community.ui.com/releases/UniFi-Network-Application-9-3-43/7618b881-17d5-4e48-acbc-f56651cbd92a)
 ---

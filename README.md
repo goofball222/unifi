@@ -6,16 +6,18 @@
 ## Docker tags:
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
-| [9.2, 9.2-alpine, 9.2-debian, 9.2-ubuntu, latest, latest-alpine, latest-debian, latest-ubuntu](https://github.com/goofball222/unifi/blob/main/9.2/official/Dockerfile) | [9.2.87](https://community.ui.com/releases/UniFi-Network-Application-9-2-87/81a6a594-e925-4100-b1d7-351d2b91a7fd) | UniFi Network Application official release | 2025-06-10 |
+| [9.3, 9.3-alpine, 9.3-debian, 9.3-ubuntu, latest, latest-alpine, latest-debian, latest-ubuntu](https://github.com/goofball222/unifi/blob/main/9.2/official/Dockerfile) | [9.3.43](https://community.ui.com/releases/UniFi-Network-Application-9-3-43/498d71da-c9e9-47d7-8d15-a6d1472239e1) | UniFi Network Application official release | 2025-07-14 |
 | [9.3-beta, 9.3-alpine-beta, 9.3-debian-beta, 9.3-ubuntu-beta, latest-beta, latest-alpine-beta, latest-debian-beta, latest-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/9.3/beta/Dockerfile) | [9.3.43](https://community.ui.com/releases/UniFi-Network-Application-9-3-43/7618b881-17d5-4e48-acbc-f56651cbd92a) | UniFi Network Application beta/release candidate | 2025-07-09 |
+| [9.2, 9.2-alpine, 9.2-debian, 9.2-ubuntu](https://github.com/goofball222/unifi/blob/main/9.2/official/Dockerfile) | [9.2.87](https://community.ui.com/releases/UniFi-Network-Application-9-2-87/81a6a594-e925-4100-b1d7-351d2b91a7fd) | UniFi Network Application official release | 2025-06-10 |
 | [9.1, 9.1-alpine, 9.1-debian, 9.1-ubuntu](https://github.com/goofball222/unifi/blob/main/9.1/official/Dockerfile) | [9.1.120](https://community.ui.com/releases/UniFi-Network-Application-9-1-120/a5e88ae2-3c44-420a-bebb-5120bf2288b2) | UniFi Network Application official release | 2025-04-25 |
+| [9.3.43](https://github.com/goofball222/unifi/releases/tag/9.3.43) | [9.3.43](https://community.ui.com/releases/UniFi-Network-Application-9-3-43/498d71da-c9e9-47d7-8d15-a6d1472239e1) | Static official release tag/image | 2025-07-14 |
 | [9.2.87](https://github.com/goofball222/unifi/releases/tag/9.2.87) | [9.2.87](https://community.ui.com/releases/UniFi-Network-Application-9-2-87/81a6a594-e925-4100-b1d7-351d2b91a7fd) | Static official release tag/image | 2025-06-10 |
-| [9.1.120](https://github.com/goofball222/unifi/releases/tag/9.1.120) | [9.1.120](https://community.ui.com/releases/UniFi-Network-Application-9-1-120/a5e88ae2-3c44-420a-bebb-5120bf2288b2) | Static official release tag/image | 2025-04-25 |
 
 <details><summary>Older Static Tags</summary>
 
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
+| [9.1.120](https://github.com/goofball222/unifi/releases/tag/9.1.120) | [9.1.120](https://community.ui.com/releases/UniFi-Network-Application-9-1-120/a5e88ae2-3c44-420a-bebb-5120bf2288b2) | Static official release tag/image | 2025-04-25 |
 | [9.0.114](https://github.com/goofball222/unifi/releases/tag/9.0.114) | [9.0.114](https://community.ui.com/releases/UniFi-Network-Application-9-0-114/35b6e9ac-f63d-46c9-bbbe-74a4a61ac95f) | Static official release tag/image | 2025-02-04 |
 | [8.6.9](https://github.com/goofball222/unifi/releases/tag/8.6.9) | [8.6.9](https://community.ui.com/releases/UniFi-Network-Application-8-6-9/e4bd3f71-a2c4-4c98-b12a-a8b0b1c2178e) | Static official release tag/image | 2024-11-07 |
 | [8.5.6](https://github.com/goofball222/unifi/releases/tag/8.5.6) | [8.5.6](https://community.ui.com/releases/UniFi-Network-Application-8-5-6/bfa15dd8-8b58-4d40-9d83-73ebe8c9a955) | Static official release tag/image | 2024-10-09 |
