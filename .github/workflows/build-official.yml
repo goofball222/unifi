@@ -1,4 +1,4 @@
-Sname: Build Official
+name: Build Official
 
 on:
   workflow_dispatch:
