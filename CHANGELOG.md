@@ -1,3 +1,6 @@
+* **2025-08-19:**
+    * Update 9.4/beta to [9.4.17](https://community.ui.com/releases/UniFi-Network-Application-9-4-17/b15aa603-9080-4484-824b-1630c16c00a6)
+---
 * **2025-08-06:**
     * Update 9.3/official to [9.3.45](https://community.ui.com/releases/UniFi-Network-Application-9-3-45/6f7eb802-3973-4258-8aeb-d257cd61e5c5)
     * Tag 9.3.45 release
