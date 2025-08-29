@@ -1,3 +1,10 @@
+* **2025-08-28:**
+    * Create 9.4/official, v[9.4.19](https://community.ui.com/releases/UniFi-Network-Application-9-4-19/6396efa7-0955-4733-a524-f028994f5f50)
+    * Promote 9.4 official to "latest", "latest-alpine" and "latest-ubuntu" tags
+    * Tag 9.4.19 release
+    * Update docker-entrypoint.sh version & last changed date, and copy updates to release build folder - From 2025-08-19
+        * Add additional flags used by UniFi init.d script to JVM_OPTIONS
+---
 * **2025-08-26:**
     * Update 9.4/beta to [9.4.19](https://community.ui.com/releases/UniFi-Network-Application-9-4-19/6396efa7-0955-4733-a524-f028994f5f50)
 ---

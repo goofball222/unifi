@@ -3,8 +3,8 @@
 # docker-entrypoint.sh script for UniFi Docker container
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-SCRIPT_VERSION="1.1.3"
-# Last updated date: 2024-03-01
+SCRIPT_VERSION="1.2.0"
+# Last updated date: 2025-08-19
 
 set -Eeuo pipefail
 
