@@ -1,3 +1,7 @@
+* **2025-09-15:**
+    * Create 9.5/beta, v[9.5.12](https://community.ui.com/releases/UniFi-Network-Application-9-5-12/78b81fe1-ebdd-4c26-8dd4-86b37cdf536e)
+    * Set latest-beta, etc. tags to 9.5/beta
+---
 * **2025-08-28:**
     * Create 9.4/official, v[9.4.19](https://community.ui.com/releases/UniFi-Network-Application-9-4-19/6396efa7-0955-4733-a524-f028994f5f50)
     * Promote 9.4 official to "latest", "latest-alpine" and "latest-ubuntu" tags
