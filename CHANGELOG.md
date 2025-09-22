@@ -1,3 +1,6 @@
+* **2025-09-22:**
+    * Update 9.5/beta to [9.5.15](https://community.ui.com/releases/UniFi-Network-Application-9-5-15/56a9c43c-8d8b-47a5-b972-2491eb505d7c)
+---
 * **2025-09-15:**
     * Create 9.5/beta, v[9.5.12](https://community.ui.com/releases/UniFi-Network-Application-9-5-12/78b81fe1-ebdd-4c26-8dd4-86b37cdf536e)
     * Set latest-beta, etc. tags to 9.5/beta
