@@ -1,3 +1,8 @@
+* **2025-10-13:**
+    * Create 9.5/official, v[9.5.21](https://community.ui.com/releases/UniFi-Network-Application-9-5-21/92266721-6758-4f33-b3bc-9d8b66f3c96e)
+    * Promote 9.5 official to "latest", "latest-alpine" and "latest-ubuntu" tags
+    * Tag 9.5.21 release
+---
 * **2025-10-07:**
     * Update 9.5/beta to [9.5.21](https://community.ui.com/releases/UniFi-Network-Application-9-5-21/e36f8a25-0d05-4cd2-b21b-6affd4aba5a5)
 ---
