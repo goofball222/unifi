@@ -7,7 +7,7 @@ on:
       - main
     paths:
       - 9.4/official/**
-      - .github/workflows/build-9.4-official.yml
+      - .github/workflows/build-official.yml
 
 jobs:
   build:
