@@ -1,3 +1,6 @@
+* **2025-11-12:**
+    * Update 10.0/beta to [10.0.152](https://community.ui.com/releases/UniFi-Network-Application-10-0-152/c83c1b07-ced3-4d26-86ef-4839d446a569)
+---
 * **2025-10-22:**
     * Create 10.0/beta, v[10.0.140](https://community.ui.com/releases/UniFi-Network-Application-10-0-140/fdefb031-226e-4e9f-b3f3-9739f4a64e19)
     * Set latest-beta, etc. tags to 10.0/beta
