@@ -71,6 +71,40 @@ jobs:
             org.opencontainers.image.description=UniFi Controller
             org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Ubuntu
       -
+        name: Set up Docker metadata for Debian mongo8
+        id: meta-debian-mongo8
+        uses: docker/metadata-action@v5
+        with:
+          images: |
+            ${{ github.repository }}
+            ghcr.io/${{ github.repository }}
+          tags: |
+            type=raw,latest-debian-mongo8-beta
+            type=raw,10.0-debian-mongo8-beta
+          labels: |
+            org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
+            org.opencontainers.image.title=UniFi Controller
+            org.opencontainers.image.description=UniFi Controller
+            org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Debian-mongo8
+      -
+        name: Set up Docker metadata for Ubuntu mongo8
+        id: meta-ubuntu-mongo8
+        uses: docker/metadata-action@v5
+        with:
+          images: |
+            ${{ github.repository }}
+            ghcr.io/${{ github.repository }}
+          tags: |
+            type=raw,latest-mongo8-beta
+            type=raw,latest-ubuntu-mongo8-beta
+            type=raw,10.0-mongo8-beta
+            type=raw,10.0-ubuntu-mongo8-beta
+          labels: |
+            org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
+            org.opencontainers.image.title=UniFi Controller
+            org.opencontainers.image.description=UniFi Controller
+            org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Ubuntu-mongo8
+      -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       -
@@ -121,4 +155,26 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-ubuntu.outputs.tags }}
           labels: ${{ steps.meta-ubuntu.outputs.labels }}
+          build-args: VERSION=${{ steps.getargs.outputs.version }}
+       -
+        name: Build and push Debian Docker mongo8 image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./10.0/beta
+          file: ./10.0/beta/Dockerfile.debian.mongo8
+          platforms: linux/amd64
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta-debian-mongo8.outputs.tags }}
+          labels: ${{ steps.meta-debian-mongo8.outputs.labels }}
+          build-args: VERSION=${{ steps.getargs.outputs.version }}
+      -
+        name: Build and push Ubuntu Docker mongo8 image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./10.0/beta
+          file: ./10.0/beta/Dockerfile.ubuntu.mongo8
+          platforms: linux/amd64,linux/arm64
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta-ubuntu-mongo8.outputs.tags }}
+          labels: ${{ steps.meta-ubuntu-mongo8.outputs.labels }}
           build-args: VERSION=${{ steps.getargs.outputs.version }}
