@@ -1,5 +1,10 @@
 * **2025-11-12:**
     * Update 10.0/beta to [10.0.152](https://community.ui.com/releases/UniFi-Network-Application-10-0-152/c83c1b07-ced3-4d26-86ef-4839d446a569)
+    * Update beta workflow to build additional image tags
+        `latest-mongo8-beta`, `latest-ubuntu-mongo8-beta`, `latest-debian-mongo8-beta`, `10.0-mongo8-beta`, `10.0-ubuntu-mongo8-beta`, `10.0-debian-mongo8-beta`
+    * Dockerfile cleanup
+    * Update entrypoint and functions with mongo version detection and deprecation error/warning
+    * Update Dockerfiles for openjdk-21 and mongodb 8+ & newer versions of base images where possible
 ---
 * **2025-10-22:**
     * Create 10.0/beta, v[10.0.140](https://community.ui.com/releases/UniFi-Network-Application-10-0-140/fdefb031-226e-4e9f-b3f3-9739f4a64e19)

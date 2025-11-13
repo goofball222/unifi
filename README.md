@@ -55,6 +55,13 @@
 **NOTE:**
 **Alpine tags DO NOT contain any internal MongoDB binaries. You must connect them to an external Mongo DB container or other host instance.**
 
+**2025-11-12:**
+10.0 beta images now introduce a warning about MongoDB deprecation and 90 seconds of startup delay if old embedded versions are detected.
+Anyone still running new images with old MongoDB versions and databases should work out an upgrade plan/path ASAP, current planned deprecation
+date is 2026-02-15.
+Tags now available with newer, supported/non-EOL versions of MongoDB built in:
+`latest-mongo8-beta`, `latest-ubuntu-mongo8-beta`, `latest-debian-mongo8-beta`, `10.0-mongo8-beta`, `10.0-ubuntu-mongo8-beta`, `10.0-debian-mongo8-beta` 
+
 **2023-12-21:**
 [Info and proposed changes for Debian-base MongoDB 3.6 Release Signing Key EXPKEYSIG](https://github.com/goofball222/unifi/issues/132)
 **2023-12-20:**
