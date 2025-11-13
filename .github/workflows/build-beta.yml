@@ -156,7 +156,7 @@ jobs:
           tags: ${{ steps.meta-ubuntu.outputs.tags }}
           labels: ${{ steps.meta-ubuntu.outputs.labels }}
           build-args: VERSION=${{ steps.getargs.outputs.version }}
-       -
+      -
         name: Build and push Debian Docker mongo8 image
         uses: docker/build-push-action@v6
         with:
