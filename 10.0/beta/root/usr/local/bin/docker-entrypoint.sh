@@ -3,8 +3,8 @@
 # docker-entrypoint.sh script for UniFi Docker container
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-SCRIPT_VERSION="1.2.0"
-# Last updated date: 2025-08-19
+SCRIPT_VERSION="1.2.1"
+# Last updated date: 2025-11-12
 
 set -Eeuo pipefail
 
@@ -23,6 +23,9 @@ RUNDIR=${BASEDIR}/run
 
 LOGSTDOUT=${LOGSTDOUT:-"false"}
 READENV=${READENV:-"true"}
+
+SUP_MONGOD_VER=${SUP_MONGOD_VER:-"v8.0.0"}
+MONGOD_TARGET_EOL_DATE=${MONGOD_TARGET_EOL_DATE:-"2026-02-15"}
 
 f_log "INFO - Entrypoint script version ${SCRIPT_VERSION}"
 f_log "INFO - Entrypoint functions version ${ENTRYPOINT_FUNCTIONS_VERSION}"

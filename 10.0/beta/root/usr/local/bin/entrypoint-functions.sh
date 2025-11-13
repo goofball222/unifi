@@ -3,8 +3,8 @@
 # entrypoint-functions.sh script for UniFi Docker container
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-ENTRYPOINT_FUNCTIONS_VERSION="1.1.0"
-# Last updated date: 2024-01-18
+ENTRYPOINT_FUNCTIONS_VERSION="1.1.1"
+# Last updated date: 2025-11-12
 
 f_bindpriv() {
     JAVABIN=$(readlink -f /usr/bin/java)
@@ -75,14 +75,38 @@ f_mongo() {
     STATDB_MONGO_URI=${STATDB_MONGO_URI:-}
     UNIFI_DB_NAME=${UNIFI_DB_NAME:-}
     if [ -x "/usr/bin/mongod" ]; then
+        SUP_MONGOD_VER=${SUP_MONGOD_VER:-}
+        MONGOD_TARGET_EOL_DATE=${MONGOD_TARGET_EOL_DATE:-}
+        MONGOD_VER="$(/usr/bin/mongod --version | awk -F'[ ]' 'NR==1{print $3}')"
         if [ -z "${DB_MONGO_LOCAL}" ] || [ -z "${DB_MONGO_URI}" ] || [ -z "${STATDB_MONGO_URI}" ] \
         || [ -z "${UNIFI_DB_NAME}" ]; then
+            if [ "$(printf '%s\n' "$SUP_MONGOD_VER" "$MONGOD_VER" | sort -V | head -n1)" = "$SUP_MONGOD_VER" ]; then
+                f_log "INFO - mongod detected version ${MONGOD_VER} is >= ${SUP_MONGOD_VER}, continuing."
+            else
+                f_log "ERROR - ======================================================================"
+                f_log "ERROR - THIS IMAGE WILL STOP SUPPLYING EMBEDDED MONGO VERSIONS BELOW ${SUP_MONGOD_VER}"
+                f_log "ERROR -                      ON OR AFTER ${MONGOD_TARGET_EOL_DATE}"
+                f_log "ERROR - ======================================================================"
+                f_log "ERROR - "
+                f_log "ERROR - ======================================================================"
+                f_log "ERROR - mongod detected version ${MONGOD_VER} is past end-of-life / end-of-support."
+                f_log "ERROR - "
+                f_log "ERROR - The UniFi latest supported version at this time is ${SUP_MONGOD_VER},"
+                f_log "ERROR - higher versions may also work. Please review the UniFi release notes and"
+                f_log "ERROR - https://www.mongodb.com/legal/support-policy/lifecycles"
+                f_log "ERROR - for more information. You should immediately back up your data via the"
+                f_log "ERROR - UniFi console & restore on a version of the image with newer mongo,"
+                f_log "ERROR - OR back up and perform the mongo DB upgrade steps to reach >= ${SUP_MONGOD_VER}."
+                f_log "ERROR - ======================================================================"
+                f_log "ERROR - NOW PAUSING FOR 90 SECONDS BEFORE CONTINUING STARTUP"
+                sleep 90
+            fi
             f_log "WARN - ======================================================================"
             f_log "WARN - One or more of: 'DB_MONGO_LOCAL', 'DB_MONGO_URI', 'STATDB_MONGO_URI', or 'UNIFI_DB_NAME' is unset."
             f_log "WARN - In the future you should consider running UniFi on Docker with an external Mongo DB instance defined."
             f_log "WARN - *** Please check the README.md and examples at https://github.com/goofball222/unifi ***"
             f_log "WARN - ======================================================================"
-        fi
+            fi
     else
         if [ -z "${DB_MONGO_LOCAL}" ] || [ -z "${DB_MONGO_URI}" ] || [ -z "${STATDB_MONGO_URI}" ] \
         || [ -z "${UNIFI_DB_NAME}" ]; then
