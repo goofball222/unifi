@@ -52,26 +52,18 @@
 
 ---
 
-**NOTE:**
-**Alpine tags DO NOT contain any internal MongoDB binaries. You must connect them to an external Mongo DB container or other host instance.**
-
-**2025-11-12:**
-10.0 beta images now introduce a warning about MongoDB deprecation and 90 seconds of startup delay if old embedded versions are detected.
+## **2025-11-12:**
+<h2>10.0 beta images now introduce a warning about MongoDB deprecation and 90 seconds of startup delay if old embedded versions are detected.
 Anyone still running new images with old MongoDB versions and databases should work out an upgrade plan/path ASAP, current planned deprecation
-date is 2026-02-15.
+date is 2026-02-15.</h2>
+
 Tags now available with newer, supported/non-EOL versions of MongoDB built in:
 `latest-mongo8-beta`, `latest-ubuntu-mongo8-beta`, `latest-debian-mongo8-beta`, `10.0-mongo8-beta`, `10.0-ubuntu-mongo8-beta`, `10.0-debian-mongo8-beta` 
 
-**2023-12-21:**
-[Info and proposed changes for Debian-base MongoDB 3.6 Release Signing Key EXPKEYSIG](https://github.com/goofball222/unifi/issues/132)
-**2023-12-20:**
-MongoDB 3.6 Debian repo signing key has expired, apt-get refuses to install packages from this repo without setting insecure options.
-
-ALL RELEASES AFTER v8.0.26 WILL BE UPDATED TO USE THE UBUNTU BASED BUILD AS THE LATEST/CURRENT VERISON TAG.
-DEBIAN BASE WILL BE MOVED TO A NEWER VERSION OF MONGODB, NON-MONGO BUILD, OR PHASED OUT ENTIRELY IN THE NEAR FUTURE.**
-
-Current beta tags of v8.0.X have been rebuilt with Ubuntu as the default.
 Please test and [report any bugs, or issues on GitHub](https://github.com/goofball222/unifi/issues)
+
+**NOTE:**
+**Alpine tags DO NOT contain any internal MongoDB binaries. You must connect them to an external Mongo DB container or other host instance.**
 
 ---
 
@@ -159,9 +151,9 @@ version: '3'
 
 services:
   mongo:
-#   Use max mongo version 5.0.X. Higher versions are incompatible with the mongo driver built into Unifi.
-#   Older versions are acceptable, ie: mongo:3.6
-    image: mongo:5.0
+#   Use max mongo version 8.0.X. Higher versions are not recommended by Ubiquiti/UniFi.
+#   Older versions are acceptable, ie: mongo:7.0
+    image: mongo:8.0
     container_name: unifidb
     restart: unless-stopped
 #   By default docker-compose will create a new bridge network for the services in the compose file.
