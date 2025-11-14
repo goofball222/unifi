@@ -2,9 +2,9 @@ version: '3'
 
 services:
   mongo:
-#   Use max mongo version 5.0.X. Higher versions are incompatible with the mongo driver built into Unifi.
-#   Older versions are acceptable, ie: mongo:3.6
-    image: mongo:5.0
+#   Use max mongo version 8.0.X. Higher versions are not recommended by Ubiquiti/UniFi.
+#   Older versions are acceptable, ie: mongo:7.0
+    image: mongo:8.0
     container_name: unifidb
     restart: unless-stopped
 #   By default docker-compose will create a new bridge network for the services in the compose file.
