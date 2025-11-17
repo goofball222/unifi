@@ -7,7 +7,7 @@
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
 | [9.5, 9.5-alpine, 9.5-debian, 9.5-ubuntu, latest, latest-alpine, latest-debian, latest-ubuntu](https://github.com/goofball222/unifi/blob/main/9.5/official/Dockerfile) | [9.5.21](https://community.ui.com/releases/UniFi-Network-Application-9-5-21/92266721-6758-4f33-b3bc-9d8b66f3c96e) | UniFi Network Application official release | 2025-10-13 |
-| [10.0-beta, 10.0-alpine-beta, 10.0-debian-beta, 10.0-ubuntu-beta, latest-beta, latest-alpine-beta, latest-debian-beta, latest-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/10.0/beta/Dockerfile) | [10.0.152](https://community.ui.com/releases/UniFi-Network-Application-10-0-152/c83c1b07-ced3-4d26-86ef-4839d446a569) | UniFi Network Application beta/release candidate | 2025-11-12 |
+| [10.0-beta, 10.0-alpine-beta, 10.0-debian-beta, 10.0-ubuntu-beta, latest-beta, latest-alpine-beta, latest-debian-beta, latest-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/10.0/beta/Dockerfile) | [10.0.156](https://community.ui.com/releases/UniFi-Network-Application-10-0-156/09e6e8de-b35f-4d8d-8eb3-dfab78ecdc20) | UniFi Network Application beta/release candidate | 2025-11-17 |
 | [9.4, 9.4-alpine, 9.4-debian, 9.4-ubuntu](https://github.com/goofball222/unifi/blob/main/9.4/official/Dockerfile) | [9.4.19](https://community.ui.com/releases/UniFi-Network-Application-9-4-19/6396efa7-0955-4733-a524-f028994f5f50) | UniFi Network Application official release | 2025-08-28 |
 | [9.5.21](https://github.com/goofball222/unifi/releases/tag/9.5.21) | [9.5.21](https://community.ui.com/releases/UniFi-Network-Application-9-5-21/92266721-6758-4f33-b3bc-9d8b66f3c96e?page=4) | Static official release tag/image | 2025-10-13 |
 | [9.4.19](https://github.com/goofball222/unifi/releases/tag/9.4.19) | [9.4.19](https://community.ui.com/releases/UniFi-Network-Application-9-4-19/6396efa7-0955-4733-a524-f028994f5f50) | Static official release tag/image | 2025-08-28 |
@@ -53,9 +53,11 @@
 ---
 
 ## **2025-11-12:**
-<h2>10.0 beta images now introduce a warning about MongoDB deprecation and 90 seconds of startup delay if old embedded versions are detected.
-Anyone still running new images with old MongoDB versions and databases should work out an upgrade plan/path ASAP, current planned deprecation
-date is 2026-02-15.</h2>
+<h2>10.0 beta images now introduce a warning about MongoDB deprecation and 90 seconds of startup delay if the database mode is still "internal"
+and old embedded versions are detected.
+
+Anyone still running new images with old MongoDB versions and "internal" databases should work out an upgrade plan/path ASAP, current planned 
+deprecation date is 2026-02-15.</h2>
 
 Tags now available with newer, supported/non-EOL versions of MongoDB built in:
 `latest-mongo8-beta`, `latest-ubuntu-mongo8-beta`, `latest-debian-mongo8-beta`, `10.0-mongo8-beta`, `10.0-ubuntu-mongo8-beta`, `10.0-debian-mongo8-beta` 

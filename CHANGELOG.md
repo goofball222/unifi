@@ -1,3 +1,6 @@
+* **2025-11-17:**
+    * Update 10.0/beta to [10.0.156](https://community.ui.com/releases/UniFi-Network-Application-10-0-156/09e6e8de-b35f-4d8d-8eb3-dfab78ecdc20)
+---
 * **2025-11-12:**
     * Update 10.0/beta to [10.0.152](https://community.ui.com/releases/UniFi-Network-Application-10-0-152/c83c1b07-ced3-4d26-86ef-4839d446a569)
     * Update beta workflow to build additional image tags
