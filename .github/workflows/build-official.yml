@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - 9.4/official/**
+      - 9.5/official/**
       - .github/workflows/build-official.yml
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
       -
         name: Set up dynamic build ARGs
         id: getargs
-        run: echo "version=$(cat ./9.4/official/VERSION)" >> $GITHUB_OUTPUT
+        run: echo "version=$(cat ./9.5/official/VERSION)" >> $GITHUB_OUTPUT
       -
         name: Set up Docker metadata for Alpine
         id: meta-alpine
@@ -29,11 +29,11 @@ jobs:
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
           tags: |
-            type=raw,9.4-alpine
+            type=raw,9.5-alpine
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
-            org.opencontainers.image.title=UniFi Controller
-            org.opencontainers.image.description=UniFi Controller
+            org.opencontainers.image.title=UniFi Network Application
+            org.opencontainers.image.description=UniFi Network Application
             org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Alpine
       -
         name: Set up Docker metadata for Debian
@@ -44,11 +44,11 @@ jobs:
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
           tags: |
-            type=raw,9.4-debian
+            type=raw,9.5-debian
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
-            org.opencontainers.image.title=UniFi Controller
-            org.opencontainers.image.description=UniFi Controller
+            org.opencontainers.image.title=UniFi Network Application
+            org.opencontainers.image.description=UniFi Network Application
             org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Debian
       -
         name: Set up Docker metadata for Ubuntu
@@ -59,12 +59,12 @@ jobs:
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
           tags: |
-            type=raw,9.4
-            type=raw,9.4-ubuntu
+            type=raw,9.5
+            type=raw,9.5-ubuntu
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
-            org.opencontainers.image.title=UniFi Controller
-            org.opencontainers.image.description=UniFi Controller
+            org.opencontainers.image.title=UniFi Network Application
+            org.opencontainers.image.description=UniFi Network Application
             org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Ubuntu
       -
         name: Set up QEMU
@@ -89,8 +89,8 @@ jobs:
         name: Build and push Alpine Docker image
         uses: docker/build-push-action@v6
         with:
-          context: ./9.4/official
-          file: ./9.4/official/Dockerfile.alpine
+          context: ./9.5/official
+          file: ./9.5/official/Dockerfile.alpine
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-alpine.outputs.tags }}
@@ -100,8 +100,8 @@ jobs:
         name: Build and push Debian Docker image
         uses: docker/build-push-action@v6
         with:
-          context: ./9.4/official
-          file: ./9.4/official/Dockerfile.debian
+          context: ./9.5/official
+          file: ./9.5/official/Dockerfile.debian
           platforms: linux/amd64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-debian.outputs.tags }}
@@ -111,8 +111,8 @@ jobs:
         name: Build and push Ubuntu Docker image
         uses: docker/build-push-action@v6
         with:
-          context: ./9.4/official
-          file: ./9.4/official/Dockerfile
+          context: ./9.5/official
+          file: ./9.5/official/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-ubuntu.outputs.tags }}

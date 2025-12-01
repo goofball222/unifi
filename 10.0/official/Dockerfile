@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM ubuntu:20.04
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -9,7 +9,7 @@ LABEL \
     org.opencontainers.image.url="https://github.com/goofball222/unifi" \
     org.opencontainers.image.title="UniFi Controller" \
     org.opencontainers.image.description="UniFi Controller" \
-    org.opencontainers.image.version=${VERSION}-Alpine \
+    org.opencontainers.image.version=${VERSION}-Ubuntu \
     org.opencontainers.image.source="https://github.com/goofball222/unifi" \
     org.opencontainers.image.revision=${VCS_REF} \
     org.opencontainers.image.created=${BUILD_DATE} \
@@ -17,6 +17,7 @@ LABEL \
 
 ENV \
     BIND_PRIV=false \
+    DEBIAN_FRONTEND=noninteractive \
     DEBUG=false \
     JVM_EXTRA_OPTS= \
     JVM_INIT_HEAP_SIZE= \
@@ -31,21 +32,29 @@ WORKDIR /usr/lib/unifi
 COPY root /
 
 RUN set -x \
-    && delgroup ping \
-    && addgroup -g $PGID unifi \
-    && adduser -D -G unifi -u $PUID unifi \
-    && apk add -q --no-cache \
-        gcompat libc6-compat \
-    && apk add -q --no-cache \
-        bash binutils coreutils curl libcap \
-        openjdk21-jre openssl shadow su-exec \
-        tzdata \
-    && curl -sSL https://dl.ui.com/unifi/${VERSION}/UniFi.unix.zip -o /tmp/UniFi.unix.${VERSION}.zip \
-    && unzip -q /tmp/UniFi.unix.${VERSION}.zip -d /tmp \
-    && mv /tmp/UniFi/* /usr/lib/unifi/ \
+    && groupadd -r unifi -g $PGID \
+    && useradd --no-log-init -r -u $PUID -g $PGID unifi \
+    && apt-get -y update \
+    && apt-get -y install apt-utils \
+    && apt-get -y --no-install-recommends install \
+        binutils curl dirmngr \
+        gosu libcap2 libcap2-bin \
+        procps tzdata \
+    && apt-get -y --no-install-recommends install \
+        ca-certificates-java openjdk-17-jre-headless \
+    && apt-get -y --no-install-recommends install \
+        mongodb-server-core \
+    && rm -rf /usr/bin/mongos \
+    && curl -sSL https://dl.ui.com/unifi/${VERSION}/unifi_sysvinit_all.deb -o /tmp/unifi-${VERSION}.deb \
+    && apt-get -y purge \
+        dirmngr \
+    && apt-get -y autoremove --purge \
+    && apt-get -y clean autoclean \
+    && dpkg --force-all -i /tmp/unifi-${VERSION}.deb \
+    && rm -rf data logs run \
     && bash -c 'mkdir -p {data,logs,run,cert}' \
     && chown -R unifi:unifi /usr/lib/unifi \
-    && rm -rf /tmp/* /var/tmp/* /var/cache/apk/*
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/log/*
 
 EXPOSE 3478/udp 6789/tcp 8080/tcp 8443/tcp 8843/tcp 8880/tcp 10001/udp
 

@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - 9.5/official/**
+      - 10.0/official/**
       - .github/workflows/build-latest.yml
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
       -
         name: Set up dynamic build ARGs
         id: getargs
-        run: echo "version=$(cat ./9.5/official/VERSION)" >> $GITHUB_OUTPUT
+        run: echo "version=$(cat ./10.0/official/VERSION)" >> $GITHUB_OUTPUT
       -
         name: Set up Docker metadata for Alpine
         id: meta-alpine
@@ -30,11 +30,11 @@ jobs:
             ghcr.io/${{ github.repository }}
           tags: |
             type=raw,latest-alpine
-            type=raw,9.5-alpine
+            type=raw,10.0-alpine
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
-            org.opencontainers.image.title=UniFi Controller
-            org.opencontainers.image.description=UniFi Controller
+            org.opencontainers.image.title=UniFi Network Application
+            org.opencontainers.image.description=UniFi Network Application
             org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Alpine
       -
         name: Set up Docker metadata for Debian
@@ -46,11 +46,11 @@ jobs:
             ghcr.io/${{ github.repository }}
           tags: |
             type=raw,latest-debian
-            type=raw,9.5-debian
+            type=raw,10.0-debian
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
-            org.opencontainers.image.title=UniFi Controller
-            org.opencontainers.image.description=UniFi Controller
+            org.opencontainers.image.title=UniFi Network Application
+            org.opencontainers.image.description=UniFi Network Application
             org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Debian
       -
         name: Set up Docker metadata for Ubuntu
@@ -62,14 +62,48 @@ jobs:
             ghcr.io/${{ github.repository }}
           tags: |
             type=raw,latest
-            type=raw,9.5
+            type=raw,10.0
             type=raw,latest-ubuntu
-            type=raw,9.5-ubuntu
+            type=raw,10.0-ubuntu
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
-            org.opencontainers.image.title=UniFi Controller
-            org.opencontainers.image.description=UniFi Controller
+            org.opencontainers.image.title=UniFi Network Application
+            org.opencontainers.image.description=UniFi Network Application
             org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Ubuntu
+      -
+        name: Set up Docker metadata for Debian mongo8
+        id: meta-debian-mongo8
+        uses: docker/metadata-action@v5
+        with:
+          images: |
+            ${{ github.repository }}
+            ghcr.io/${{ github.repository }}
+          tags: |
+            type=raw,latest-debian-mongo8
+            type=raw,10.0-debian-mongo8
+          labels: |
+            org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
+            org.opencontainers.image.title=UniFi Network Application
+            org.opencontainers.image.description=UniFi Network Application
+            org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Debian-mongo8
+      -
+        name: Set up Docker metadata for Ubuntu mongo8
+        id: meta-ubuntu-mongo8
+        uses: docker/metadata-action@v5
+        with:
+          images: |
+            ${{ github.repository }}
+            ghcr.io/${{ github.repository }}
+          tags: |
+            type=raw,latest-mongo8
+            type=raw,latest-ubuntu-mongo8
+            type=raw,10.0-mongo8
+            type=raw,10.0-ubuntu-mongo8
+          labels: |
+            org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
+            org.opencontainers.image.title=UniFi Network Application
+            org.opencontainers.image.description=UniFi Network Application
+            org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Ubuntu-mongo8
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -93,8 +127,8 @@ jobs:
         name: Build and push Alpine Docker image
         uses: docker/build-push-action@v6
         with:
-          context: ./9.5/official
-          file: ./9.5/official/Dockerfile.alpine
+          context: ./10.0/official
+          file: ./10.0/official/Dockerfile.alpine
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-alpine.outputs.tags }}
@@ -104,8 +138,8 @@ jobs:
         name: Build and push Debian Docker image
         uses: docker/build-push-action@v6
         with:
-          context: ./9.5/official
-          file: ./9.5/official/Dockerfile.debian
+          context: ./10.0/official
+          file: ./10.0/official/Dockerfile.debian
           platforms: linux/amd64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-debian.outputs.tags }}
@@ -115,10 +149,32 @@ jobs:
         name: Build and push Ubuntu Docker image
         uses: docker/build-push-action@v6
         with:
-          context: ./9.5/official
-          file: ./9.5/official/Dockerfile
+          context: ./10.0/official
+          file: ./10.0/official/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-ubuntu.outputs.tags }}
           labels: ${{ steps.meta-ubuntu.outputs.labels }}
+          build-args: VERSION=${{ steps.getargs.outputs.version }}
+      -
+        name: Build and push Debian Docker mongo8 image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./10.0/official
+          file: ./10.0/official/Dockerfile.debian.mongo8
+          platforms: linux/amd64
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta-debian-mongo8.outputs.tags }}
+          labels: ${{ steps.meta-debian-mongo8.outputs.labels }}
+          build-args: VERSION=${{ steps.getargs.outputs.version }}
+      -
+        name: Build and push Ubuntu Docker mongo8 image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./10.0/official
+          file: ./10.0/official/Dockerfile.ubuntu.mongo8
+          platforms: linux/amd64,linux/arm64
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta-ubuntu-mongo8.outputs.tags }}
+          labels: ${{ steps.meta-ubuntu-mongo8.outputs.labels }}
           build-args: VERSION=${{ steps.getargs.outputs.version }}
