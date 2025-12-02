@@ -1,4 +1,7 @@
 * **2025-12-01:**
+    * Update 10.0/beta to [10.0.162](https://community.ui.com/releases/UniFi-Network-Application-10-0-162/eed48f5a-f16b-4476-88fa-9ee6d52964f2)
+---
+* **2025-12-01:**
     * Update 10.0/beta to [10.0.161](https://community.ui.com/releases/UniFi-Network-Application-10-0-161/b92b3099-9926-4c1e-b544-751ca5199c38)
     * Create 10.0/official, v[10.0.160](https://community.ui.com/releases/UniFi-Network-Application-10-0-160/ce7adc5c-4b42-49d3-8447-971992c0bced)
     * Promote 10.0 official to "latest", "latest-alpine" and "latest-ubuntu" tags
