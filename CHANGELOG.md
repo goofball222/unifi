@@ -1,3 +1,7 @@
+* **2025-12-14:**
+    * Update 10.0/official to [10.0.162](https://community.ui.com/releases/UniFi-Network-Application-10-0-162/2efd581a-3a55-4c36-80bf-1267dbfc2aee)
+    * Tag 10.0.162 release
+---
 * **2025-12-01:**
     * Update 10.0/beta to [10.0.162](https://community.ui.com/releases/UniFi-Network-Application-10-0-162/eed48f5a-f16b-4476-88fa-9ee6d52964f2)
 ---
