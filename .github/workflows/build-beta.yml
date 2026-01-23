@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - 10.0/beta/**
+      - 10.1/beta/**
       - .github/workflows/build-beta.yml
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
       -
         name: Set up dynamic build ARGs
         id: getargs
-        run: echo "version=$(cat ./10.0/beta/VERSION)" >> $GITHUB_OUTPUT
+        run: echo "version=$(cat ./10.1/beta/VERSION)" >> $GITHUB_OUTPUT
       -
         name: Set up Docker metadata for Alpine
         id: meta-alpine
@@ -30,7 +30,7 @@ jobs:
             ghcr.io/${{ github.repository }}
           tags: |
             type=raw,latest-alpine-beta
-            type=raw,10.0-alpine-beta
+            type=raw,10.1-alpine-beta
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
             org.opencontainers.image.title=UniFi Network Application
@@ -46,7 +46,7 @@ jobs:
             ghcr.io/${{ github.repository }}
           tags: |
             type=raw,latest-debian-beta
-            type=raw,10.0-debian-beta
+            type=raw,10.1-debian-beta
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
             org.opencontainers.image.title=UniFi Network Application
@@ -63,8 +63,8 @@ jobs:
           tags: |
             type=raw,latest-beta
             type=raw,latest-ubuntu-beta
-            type=raw,10.0-beta
-            type=raw,10.0-ubuntu-beta
+            type=raw,10.1-beta
+            type=raw,10.1-ubuntu-beta
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
             org.opencontainers.image.title=UniFi Network Application
@@ -80,7 +80,7 @@ jobs:
             ghcr.io/${{ github.repository }}
           tags: |
             type=raw,latest-debian-mongo8-beta
-            type=raw,10.0-debian-mongo8-beta
+            type=raw,10.1-debian-mongo8-beta
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
             org.opencontainers.image.title=UniFi Network Application
@@ -97,8 +97,8 @@ jobs:
           tags: |
             type=raw,latest-mongo8-beta
             type=raw,latest-ubuntu-mongo8-beta
-            type=raw,10.0-mongo8-beta
-            type=raw,10.0-ubuntu-mongo8-beta
+            type=raw,10.1-mongo8-beta
+            type=raw,10.1-ubuntu-mongo8-beta
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
             org.opencontainers.image.title=UniFi Network Application
@@ -127,8 +127,8 @@ jobs:
         name: Build and push Alpine Docker image
         uses: docker/build-push-action@v6
         with:
-          context: ./10.0/beta
-          file: ./10.0/beta/Dockerfile.alpine
+          context: ./10.1/beta
+          file: ./10.1/beta/Dockerfile.alpine
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-alpine.outputs.tags }}
@@ -138,8 +138,8 @@ jobs:
         name: Build and push Debian Docker image
         uses: docker/build-push-action@v6
         with:
-          context: ./10.0/beta
-          file: ./10.0/beta/Dockerfile.debian
+          context: ./10.1/beta
+          file: ./10.1/beta/Dockerfile.debian
           platforms: linux/amd64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-debian.outputs.tags }}
@@ -149,8 +149,8 @@ jobs:
         name: Build and push Ubuntu Docker image
         uses: docker/build-push-action@v6
         with:
-          context: ./10.0/beta
-          file: ./10.0/beta/Dockerfile
+          context: ./10.1/beta
+          file: ./10.1/beta/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-ubuntu.outputs.tags }}
@@ -160,8 +160,8 @@ jobs:
         name: Build and push Debian Docker mongo8 image
         uses: docker/build-push-action@v6
         with:
-          context: ./10.0/beta
-          file: ./10.0/beta/Dockerfile.debian.mongo8
+          context: ./10.1/beta
+          file: ./10.1/beta/Dockerfile.debian.mongo8
           platforms: linux/amd64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-debian-mongo8.outputs.tags }}
@@ -171,8 +171,8 @@ jobs:
         name: Build and push Ubuntu Docker mongo8 image
         uses: docker/build-push-action@v6
         with:
-          context: ./10.0/beta
-          file: ./10.0/beta/Dockerfile.ubuntu.mongo8
+          context: ./10.1/beta
+          file: ./10.1/beta/Dockerfile.ubuntu.mongo8
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-ubuntu-mongo8.outputs.tags }}
