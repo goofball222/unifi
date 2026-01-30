@@ -44,7 +44,7 @@ RUN set -x \
     && apt-get -y --no-install-recommends install \
         ca-certificates-java \
     && apt-get -y --no-install-recommends install \
-        openjdk-21-jre-headless \
+        openjdk-25-jre-headless \
     && curl -sSL https://dl.ui.com/unifi/${VERSION}/unifi_sysvinit_all.deb -o /tmp/unifi-${VERSION}.deb \
     && apt-get -y purge \
         apt-utils \

@@ -71,39 +71,39 @@ jobs:
             org.opencontainers.image.description=UniFi Network Application
             org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Ubuntu
       -
-        name: Set up Docker metadata for Debian mongo8
-        id: meta-debian-mongo8
+        name: Set up Docker metadata for Debian mongo82
+        id: meta-debian-mongo82
         uses: docker/metadata-action@v5
         with:
           images: |
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
           tags: |
-            type=raw,latest-debian-mongo8-beta
-            type=raw,10.1-debian-mongo8-beta
+            type=raw,latest-debian-mongo82-beta
+            type=raw,10.1-debian-mongo82-beta
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
             org.opencontainers.image.title=UniFi Network Application
             org.opencontainers.image.description=UniFi Network Application
-            org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Debian-mongo8
+            org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Debian-mongo82
       -
-        name: Set up Docker metadata for Ubuntu mongo8
-        id: meta-ubuntu-mongo8
+        name: Set up Docker metadata for Ubuntu mongo82
+        id: meta-ubuntu-mongo82
         uses: docker/metadata-action@v5
         with:
           images: |
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
           tags: |
-            type=raw,latest-mongo8-beta
-            type=raw,latest-ubuntu-mongo8-beta
-            type=raw,10.1-mongo8-beta
-            type=raw,10.1-ubuntu-mongo8-beta
+            type=raw,latest-mongo82-beta
+            type=raw,latest-ubuntu-mongo82-beta
+            type=raw,10.1-mongo82-beta
+            type=raw,10.1-ubuntu-mongo82-beta
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
             org.opencontainers.image.title=UniFi Network Application
             org.opencontainers.image.description=UniFi Network Application
-            org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Ubuntu-mongo8
+            org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Ubuntu-mongo82
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -157,24 +157,24 @@ jobs:
           labels: ${{ steps.meta-ubuntu.outputs.labels }}
           build-args: VERSION=${{ steps.getargs.outputs.version }}
       -
-        name: Build and push Debian Docker mongo8 image
+        name: Build and push Debian Docker mongo82 image
         uses: docker/build-push-action@v6
         with:
           context: ./10.1/beta
-          file: ./10.1/beta/Dockerfile.debian.mongo8
+          file: ./10.1/beta/Dockerfile.debian.mongo82
           platforms: linux/amd64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta-debian-mongo8.outputs.tags }}
-          labels: ${{ steps.meta-debian-mongo8.outputs.labels }}
+          tags: ${{ steps.meta-debian-mongo82.outputs.tags }}
+          labels: ${{ steps.meta-debian-mongo82.outputs.labels }}
           build-args: VERSION=${{ steps.getargs.outputs.version }}
       -
-        name: Build and push Ubuntu Docker mongo8 image
+        name: Build and push Ubuntu Docker mongo82 image
         uses: docker/build-push-action@v6
         with:
           context: ./10.1/beta
-          file: ./10.1/beta/Dockerfile.ubuntu.mongo8
+          file: ./10.1/beta/Dockerfile.ubuntu.mongo82
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta-ubuntu-mongo8.outputs.tags }}
-          labels: ${{ steps.meta-ubuntu-mongo8.outputs.labels }}
+          tags: ${{ steps.meta-ubuntu-mongo82.outputs.tags }}
+          labels: ${{ steps.meta-ubuntu-mongo82.outputs.labels }}
           build-args: VERSION=${{ steps.getargs.outputs.version }}

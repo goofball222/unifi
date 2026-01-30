@@ -43,7 +43,7 @@ RUN set -x \
     && apt-get -y --no-install-recommends install \
         ca-certificates-java \
     && apt-get -y --no-install-recommends install \
-        openjdk-21-jre-headless \
+        openjdk-25-jre-headless \
     && curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | \
         gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg \
         --dearmor \

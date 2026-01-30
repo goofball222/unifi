@@ -38,7 +38,7 @@ RUN set -x \
         gcompat libc6-compat \
     && apk add -q --no-cache \
         bash binutils coreutils curl libcap \
-        openjdk21-jre openssl shadow su-exec \
+        openjdk25-jre openssl shadow su-exec \
         tzdata \
     && curl -sSL https://dl.ui.com/unifi/${VERSION}/UniFi.unix.zip -o /tmp/UniFi.unix.${VERSION}.zip \
     && unzip -q /tmp/UniFi.unix.${VERSION}.zip -d /tmp \

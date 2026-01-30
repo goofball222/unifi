@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM debian:trixie-slim
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -39,6 +39,7 @@ RUN set -x \
     && apt-get -y install apt-utils \
     && apt-get -y --no-install-recommends install \
         dirmngr gnupg2 \
+    && apt-get -y update \
     && apt-get -y --no-install-recommends install \
         binutils curl gosu \
         libcap2 libcap2-bin procps \
@@ -46,12 +47,14 @@ RUN set -x \
     && apt-get -y --no-install-recommends install \
         ca-certificates-java \
     && apt-get -y --no-install-recommends install \
-        openjdk-17-jre-headless \
-    && echo "deb http://repo.mongodb.org/apt/debian stretch/mongodb-org/3.6 main" \
-        > /etc/apt/sources.list.d/mongodb-org.list \
-    && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5 \
-    && apt-get -y --allow-insecure-repositories update \
-    && apt-get -y --no-install-recommends --allow-unauthenticated install \
+        openjdk-25-jre-headless \
+    && curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | \
+        gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg \
+        --dearmor \
+    && echo "deb [ signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] http://repo.mongodb.org/apt/debian bookworm/mongodb-org/8.0 main" \
+        > /etc/apt/sources.list.d/mongodb-org-8.0.list \
+    && apt-get -y update \
+    && apt-get -y --no-install-recommends install \
         mongodb-org-server \
     && curl -sSL https://dl.ui.com/unifi/${VERSION}/unifi_sysvinit_all.deb -o /tmp/unifi-${VERSION}.deb \
     && apt-get -y purge \
