@@ -1,3 +1,6 @@
+* **2026-02-07:**
+    * Update 10.1/beta to v[10.1.84](https://community.ui.com/releases/UniFi-Network-Application-10-1-84/482c0a2f-5ab3-4c4b-9d0c-77e7bd38323d)
+---
 * **2026-01-30:**
     * Update 10.1/beta to v[10.1.83](https://community.ui.com/releases/UniFi-Network-Application-10-1-83/5caf8d3b-413b-48a0-8261-3e9b2ce28422)
     * Move mongo8 images to defaults in 10.1/beta, deprecates mongo3.6 for beta builds
