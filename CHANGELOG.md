@@ -4,6 +4,7 @@
     * Promote 10.1 official to "latest", "latest-alpine" and "latest-ubuntu" tags
     * Tag 10.1.84 release
     * Update 10.1/beta to v[10.1.85](https://community.ui.com/releases/UniFi-Network-Application-10-1-85/364f40ee-6976-4299-803e-89e111020f91)
+    * Archive 9.5
 ---
 * **2026-02-07:**
     * Update 10.1/beta to v[10.1.84](https://community.ui.com/releases/UniFi-Network-Application-10-1-84/482c0a2f-5ab3-4c4b-9d0c-77e7bd38323d)
