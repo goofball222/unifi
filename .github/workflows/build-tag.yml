@@ -63,36 +63,36 @@ jobs:
             org.opencontainers.image.description=UniFi Network Application
             org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Ubuntu
       -
-        name: Set up Docker metadata for Debian mongo8
-        id: meta-debian-mongo8
+        name: Set up Docker metadata for Debian mongo82
+        id: meta-debian-mongo82
         uses: docker/metadata-action@v5
         with:
           images: |
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
           tags: |
-            type=raw,${{ steps.getargs.outputs.version }}-debian-mongo8
+            type=raw,${{ steps.getargs.outputs.version }}-debian-mongo82
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
             org.opencontainers.image.title=UniFi Network Application
             org.opencontainers.image.description=UniFi Network Application
-            org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Debian-mongo8
+            org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Debian-mongo82
       -
-        name: Set up Docker metadata for Ubuntu mongo8
-        id: meta-ubuntu-mongo8
+        name: Set up Docker metadata for Ubuntu mongo82
+        id: meta-ubuntu-mongo82
         uses: docker/metadata-action@v5
         with:
           images: |
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
           tags: |
-            type=raw,${{ steps.getargs.outputs.version }}-mongo8
-            type=raw,${{ steps.getargs.outputs.version }}-ubuntu-mongo8
+            type=raw,${{ steps.getargs.outputs.version }}-mongo82
+            type=raw,${{ steps.getargs.outputs.version }}-ubuntu-mongo82
           labels: |
             org.opencontainers.image.vendor=The Goofball - goofball222@gmail.com
             org.opencontainers.image.title=UniFi Network Application
             org.opencontainers.image.description=UniFi Network Application
-            org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Ubuntu-mongo8
+            org.opencontainers.image.version=${{ steps.getargs.outputs.version }}-Ubuntu-mongo82
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -146,24 +146,24 @@ jobs:
           labels: ${{ steps.meta-ubuntu.outputs.labels }}
           build-args: VERSION=${{ steps.getargs.outputs.version }}
       -
-        name: Build and push Debian Docker mongo8 image
+        name: Build and push Debian Docker mongo82 image
         uses: docker/build-push-action@v6
         with:
           context: ./10.0/official
-          file: ./10.0/official/Dockerfile.debian.mongo8
+          file: ./10.0/official/Dockerfile.debian.mongo82
           platforms: linux/amd64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta-debian-mongo8.outputs.tags }}
-          labels: ${{ steps.meta-debian-mongo8.outputs.labels }}
+          tags: ${{ steps.meta-debian-mongo82.outputs.tags }}
+          labels: ${{ steps.meta-debian-mongo82.outputs.labels }}
           build-args: VERSION=${{ steps.getargs.outputs.version }}
       -
-        name: Build and push Ubuntu Docker mongo8 image
+        name: Build and push Ubuntu Docker mongo82 image
         uses: docker/build-push-action@v6
         with:
           context: ./10.0/official
-          file: ./10.0/official/Dockerfile.ubuntu.mongo8
+          file: ./10.0/official/Dockerfile.ubuntu.mongo82
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta-ubuntu-mongo8.outputs.tags }}
-          labels: ${{ steps.meta-ubuntu-mongo8.outputs.labels }}
+          tags: ${{ steps.meta-ubuntu-mongo82.outputs.tags }}
+          labels: ${{ steps.meta-ubuntu-mongo82.outputs.labels }}
           build-args: VERSION=${{ steps.getargs.outputs.version }}

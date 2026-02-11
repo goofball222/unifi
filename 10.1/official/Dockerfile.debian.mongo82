@@ -47,12 +47,12 @@ RUN set -x \
     && apt-get -y --no-install-recommends install \
         ca-certificates-java \
     && apt-get -y --no-install-recommends install \
-        openjdk-21-jre-headless \
+        openjdk-25-jre-headless \
     && curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | \
         gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg \
         --dearmor \
-    && echo "deb [ signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] http://repo.mongodb.org/apt/debian bookworm/mongodb-org/8.0 main" \
-        > /etc/apt/sources.list.d/mongodb-org-8.0.list \
+    && echo "deb [ signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] http://repo.mongodb.org/apt/debian bookworm/mongodb-org/8.2 main" \
+        > /etc/apt/sources.list.d/mongodb-org-8.2.list \
     && apt-get -y update \
     && apt-get -y --no-install-recommends install \
         mongodb-org-server \

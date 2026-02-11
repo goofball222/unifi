@@ -6,16 +6,17 @@
 ## Docker tags:
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
-| [10.0, 10.0-alpine, 10.0-debian, 10.0-ubuntu, latest, latest-alpine, latest-debian, latest-ubuntu](https://github.com/goofball222/unifi/blob/main/10.0/official/Dockerfile) | [10.0.162](https://community.ui.com/releases/UniFi-Network-Application-10-0-162/eed48f5a-f16b-4476-88fa-9ee6d52964f2) | UniFi Network Application official release | 2025-12-08 |
-| [10.1-beta, 10.1-alpine-beta, 10.1-debian-beta, 10.1-ubuntu-beta, latest-beta, latest-alpine-beta, latest-debian-beta, latest-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/10.1/beta/Dockerfile) | [10.1.84](https://community.ui.com/releases/UniFi-Network-Application-10-1-84/482c0a2f-5ab3-4c4b-9d0c-77e7bd38323d) | UniFi Network Application beta/release candidate | 2026-02-07 |
-| [9.5, 9.5-alpine, 9.5-debian, 9.5-ubuntu](https://github.com/goofball222/unifi/blob/main/9.5/official/Dockerfile) | [9.5.21](https://community.ui.com/releases/UniFi-Network-Application-9-5-21/92266721-6758-4f33-b3bc-9d8b66f3c96e) | UniFi Network Application official release | 2025-10-13 |
+| [10.1, 10.1-alpine, 10.1-debian, 10.1-ubuntu, latest, latest-alpine, latest-debian, latest-ubuntu](https://github.com/goofball222/unifi/blob/main/10.1/official/Dockerfile) | [10.1.84](https://community.ui.com/releases/UniFi-Network-Application-10-1-84/482c0a2f-5ab3-4c4b-9d0c-77e7bd38323d) | UniFi Network Application official release | 2026-02-11 |
+| [10.1-beta, 10.1-alpine-beta, 10.1-debian-beta, 10.1-ubuntu-beta, latest-beta, latest-alpine-beta, latest-debian-beta, latest-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/10.1/beta/Dockerfile) | [10.1.85](https://community.ui.com/releases/UniFi-Network-Application-10-1-85/364f40ee-6976-4299-803e-89e111020f91) | UniFi Network Application beta/release candidate | 2026-02-11 |
+| [10.0, 10.0-alpine, 10.0-debian, 10.0-ubuntu](https://github.com/goofball222/unifi/blob/main/10.0/official/Dockerfile) | [10.0.162](https://community.ui.com/releases/UniFi-Network-Application-10-0-162/eed48f5a-f16b-4476-88fa-9ee6d52964f2) | UniFi Network Application official release | 2025-12-08 |
+| [10.1.84](https://github.com/goofball222/unifi/releases/tag/10.1.84) | [10.1.84](https://community.ui.com/releases/UniFi-Network-Application-10-1-84/482c0a2f-5ab3-4c4b-9d0c-77e7bd38323d) | Static official release tag/image | 2026-02-11 |
 | [10.0.162](https://github.com/goofball222/unifi/releases/tag/10.0.162) | [10.0.162](https://community.ui.com/releases/UniFi-Network-Application-10-0-162/eed48f5a-f16b-4476-88fa-9ee6d52964f2) | Static official release tag/image | 2025-12-14 |
-| [9.5.21](https://github.com/goofball222/unifi/releases/tag/9.5.21) | [9.5.21](https://community.ui.com/releases/UniFi-Network-Application-9-5-21/92266721-6758-4f33-b3bc-9d8b66f3c96e) | Static official release tag/image | 2025-10-13 |
 
 <details><summary>Older Static Tags</summary>
 
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
+| [9.5.21](https://github.com/goofball222/unifi/releases/tag/9.5.21) | [9.5.21](https://community.ui.com/releases/UniFi-Network-Application-9-5-21/92266721-6758-4f33-b3bc-9d8b66f3c96e) | Static official release tag/image | 2025-10-13 |
 | [9.4.19](https://github.com/goofball222/unifi/releases/tag/9.4.19) | [9.4.19](https://community.ui.com/releases/UniFi-Network-Application-9-4-19/6396efa7-0955-4733-a524-f028994f5f50) | Static official release tag/image | 2025-08-28 |
 | [9.3.45](https://github.com/goofball222/unifi/releases/tag/9.3.45) | [9.3.45](https://community.ui.com/releases/UniFi-Network-Application-9-3-45/6f7eb802-3973-4258-8aeb-d257cd61e5c5) | Static official release tag/image | 2025-07-31 |
 | [9.2.87](https://github.com/goofball222/unifi/releases/tag/9.2.87) | [9.2.87](https://community.ui.com/releases/UniFi-Network-Application-9-2-87/81a6a594-e925-4100-b1d7-351d2b91a7fd) | Static official release tag/image | 2025-06-10 |
@@ -53,6 +54,9 @@
 
 ---
 
+## **2026-02-11:**
+<h2>10.1 images & static release / tag now default to mongo 8.0. This slightly bumps the old MongoDB deprecation date up from 2026-02-15 to 2026-02-11.</h2>
+
 ## **2025-11-12:**
 <h2>10.0 beta images now introduce a warning about MongoDB deprecation and 90 seconds of startup delay if the database mode is still "internal"
 and old embedded versions are detected.
@@ -61,7 +65,7 @@ Anyone still running new images with old MongoDB versions and "internal" databas
 deprecation date is 2026-02-15.</h2>
 
 Tags now available with newer, supported/non-EOL versions of MongoDB built in:
-`latest-mongo8-beta`, `latest-ubuntu-mongo8-beta`, `latest-debian-mongo8-beta`, `10.0-mongo8-beta`, `10.0-ubuntu-mongo8-beta`, `10.0-debian-mongo8-beta` 
+`latest-mongo82-beta`, `latest-ubuntu-mongo82-beta`, `latest-debian-mongo82-beta`, `10.1-mongo82-beta`, `10.1-ubuntu-mongo82-beta`, `10.1-debian-mongo82-beta` 
 
 Please test and [report any bugs, or issues on GitHub](https://github.com/goofball222/unifi/issues)
 
