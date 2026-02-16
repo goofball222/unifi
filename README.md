@@ -64,8 +64,10 @@ and old embedded versions are detected.
 Anyone still running new images with old MongoDB versions and "internal" databases should work out an upgrade plan/path ASAP, current planned 
 deprecation date is 2026-02-15.</h2>
 
-Tags now available with newer, supported/non-EOL versions of MongoDB built in:
-`latest-mongo82-beta`, `latest-ubuntu-mongo82-beta`, `latest-debian-mongo82-beta`, `10.1-mongo82-beta`, `10.1-ubuntu-mongo82-beta`, `10.1-debian-mongo82-beta` 
+In addition to the Alpine based version, tags now available without MongoDB built in:
+`latest-nomongo`, `latest-nomongo-beta`, `latest-ubuntu-nomongo`, `latest-ubuntu-nomongo-beta`,
+`latest-debian-nomongo`, `latest-debian-nomongo-beta`, `10.1-nomongo`, `10.1-nomongo-beta`,
+`10.1-ubuntu-nomongo`, `10.1-ubuntu-nomongo-beta`, `10.1-debian-nomongo`, `10.1-debian-nomongo-beta`
 
 Please test and [report any bugs, or issues on GitHub](https://github.com/goofball222/unifi/issues)
 
