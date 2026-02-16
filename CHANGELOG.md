@@ -1,3 +1,6 @@
+* **2026-02-16:**
+    * Update workflows to build -nomongo instances instead of -mongo8 and -mongo82
+---
 * **2026-02-11:**
     * Copy 10.1/beta to 10.1/official, v[10.1.84](https://community.ui.com/releases/UniFi-Network-Application-10-1-84/482c0a2f-5ab3-4c4b-9d0c-77e7bd38323d)
     * This also copies the mongo and OpenJDK 25 changes to the official/latest build, deprecating mongo3.6.
