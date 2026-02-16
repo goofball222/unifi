@@ -3,8 +3,8 @@
 # docker-entrypoint.sh script for UniFi Docker container
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-SCRIPT_VERSION="1.2.1"
-# Last updated date: 2025-11-12
+SCRIPT_VERSION="1.2.2"
+# Last updated date: 2026-02-16
 
 set -Eeuo pipefail
 
@@ -93,11 +93,15 @@ if [ "$(id -u)" = '0' ]; then
                 f_log "INFO - Use su-exec to drop privileges and start Java/UniFi as GID=${PGID}, UID=${PUID}"
                 f_log "EXEC - su-exec unifi:unifi /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start"
                 exec su-exec unifi:unifi /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start &
+                f_log "EXEC - su-exec unifi:unifi /usr/bin/python3 /usr/local/bin/ulp-dummy.py - ULP error logspam workaround"
+                exec su-exec unifi:unifi /usr/bin/python3 /usr/local/bin/ulp-dummy.py &
                 f_idle_handler
             elif [ -x "/usr/sbin/gosu" ]; then
                 f_log "INFO - Use gosu to drop privileges and start Java/UniFi as GID=${PGID}, UID=${PUID}"
                 f_log "EXEC - gosu unifi:unifi /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start"
                 exec gosu unifi:unifi /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start &
+                f_log "EXEC - gosu unifi:unifi /usr/bin/python3 /usr/local/bin/ulp-dummy.py - ULP error logspam workaround"
+                exec gosu unifi:unifi /usr/bin/python3 /usr/local/bin/ulp-dummy.py &
                 f_idle_handler
             else
                 f_log "ERROR - su-exec/gosu NOT FOUND. Run state is invalid. Exiting."
@@ -119,6 +123,8 @@ else
         f_ssl
         f_log "EXEC - /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start"
         exec /usr/bin/java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start &
+        f_log "EXEC - /usr/bin/python3 /usr/local/bin/ulp-dummy.py - ULP error logspam workaround"
+        exec /usr/bin/python3 /usr/local/bin/ulp-dummy.py &
         f_idle_handler
     else
         f_log "EXEC - ${@}"

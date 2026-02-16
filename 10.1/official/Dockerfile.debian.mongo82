@@ -43,7 +43,7 @@ RUN set -x \
     && apt-get -y --no-install-recommends install \
         binutils curl gosu \
         libcap2 libcap2-bin procps \
-        tzdata \
+        python3 tzdata \
     && apt-get -y --no-install-recommends install \
         ca-certificates-java \
     && apt-get -y --no-install-recommends install \

@@ -39,7 +39,8 @@ RUN set -x \
     && apt-get -y --no-install-recommends install \
         binutils curl dirmngr \
         gnupg gosu libcap2 \
-        libcap2-bin procps tzdata \
+        libcap2-bin procps python3 \
+        tzdata \
     && apt-get -y --no-install-recommends install \
         ca-certificates-java \
     && apt-get -y --no-install-recommends install \

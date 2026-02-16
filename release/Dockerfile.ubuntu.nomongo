@@ -39,7 +39,7 @@ RUN set -x \
     && apt-get -y --no-install-recommends install \
         binutils curl dirmngr gosu \
         libcap2 libcap2-bin procps \
-        tzdata \
+        python3 tzdata \
     && apt-get -y --no-install-recommends install \
         ca-certificates-java openjdk-25-jre-headless \
     && curl -sSL https://dl.ui.com/unifi/${VERSION}/unifi_sysvinit_all.deb -o /tmp/unifi-${VERSION}.deb \

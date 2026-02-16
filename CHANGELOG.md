@@ -5,6 +5,7 @@
         * Changes mongod version checking logic to make missing x86_64 CPU AVX extension failures visible.
     * Update 10.1/official to [10.1.85](https://community.ui.com/releases/UniFi-Network-Application-10-1-85/364f40ee-6976-4299-803e-89e111020f91)
     * Tag 10.1.85 release
+    * Add ULP error logspam workaround to 10.1 - https://community.ui.com/questions/Manifest-request-to-ULP-failed-every-minute-in-server-log/2be0b5a3-504b-4864-a009-d084ea1031f6
 ---
 * **2026-02-11:**
     * Copy 10.1/beta to 10.1/official, v[10.1.84](https://community.ui.com/releases/UniFi-Network-Application-10-1-84/482c0a2f-5ab3-4c4b-9d0c-77e7bd38323d)
