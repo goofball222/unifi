@@ -1,5 +1,8 @@
 * **2026-02-16:**
     * Update workflows to build -nomongo instances instead of -mongo8 and -mongo82
+    * Update root/etc/ld-musl-x86_64.path to point at OpenJDK 25
+    * Update root/usr/local/bin/entrypoint-functions.sh to 1.2.0 in 10.1 & release
+        * Changes mongod version checking logic to make missing x86_64 CPU AVX extension failures visible.
 ---
 * **2026-02-11:**
     * Copy 10.1/beta to 10.1/official, v[10.1.84](https://community.ui.com/releases/UniFi-Network-Application-10-1-84/482c0a2f-5ab3-4c4b-9d0c-77e7bd38323d)
