@@ -6,10 +6,10 @@
 ## Docker tags:
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
-| [10.1, 10.1-alpine, 10.1-debian, 10.1-ubuntu, latest, latest-alpine, latest-debian, latest-ubuntu](https://github.com/goofball222/unifi/blob/main/10.1/official/Dockerfile) | [10.1.84](https://community.ui.com/releases/UniFi-Network-Application-10-1-84/482c0a2f-5ab3-4c4b-9d0c-77e7bd38323d) | UniFi Network Application official release | 2026-02-11 |
+| [10.1, 10.1-alpine, 10.1-debian, 10.1-ubuntu, latest, latest-alpine, latest-debian, latest-ubuntu](https://github.com/goofball222/unifi/blob/main/10.1/official/Dockerfile) | [10.1.85](https://community.ui.com/releases/UniFi-Network-Application-10-1-85/364f40ee-6976-4299-803e-89e111020f91) | UniFi Network Application official release | 2026-02-16 |
 | [10.1-beta, 10.1-alpine-beta, 10.1-debian-beta, 10.1-ubuntu-beta, latest-beta, latest-alpine-beta, latest-debian-beta, latest-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/10.1/beta/Dockerfile) | [10.1.85](https://community.ui.com/releases/UniFi-Network-Application-10-1-85/364f40ee-6976-4299-803e-89e111020f91) | UniFi Network Application beta/release candidate | 2026-02-11 |
 | [10.0, 10.0-alpine, 10.0-debian, 10.0-ubuntu](https://github.com/goofball222/unifi/blob/main/10.0/official/Dockerfile) | [10.0.162](https://community.ui.com/releases/UniFi-Network-Application-10-0-162/eed48f5a-f16b-4476-88fa-9ee6d52964f2) | UniFi Network Application official release | 2025-12-08 |
-| [10.1.84](https://github.com/goofball222/unifi/releases/tag/10.1.84) | [10.1.84](https://community.ui.com/releases/UniFi-Network-Application-10-1-84/482c0a2f-5ab3-4c4b-9d0c-77e7bd38323d) | Static official release tag/image | 2026-02-11 |
+| [10.1.85](https://github.com/goofball222/unifi/releases/tag/10.1.85) | [10.1.85](https://community.ui.com/releases/UniFi-Network-Application-10-1-85/364f40ee-6976-4299-803e-89e111020f91) | Static official release tag/image | 2026-02-16 |
 | [10.0.162](https://github.com/goofball222/unifi/releases/tag/10.0.162) | [10.0.162](https://community.ui.com/releases/UniFi-Network-Application-10-0-162/eed48f5a-f16b-4476-88fa-9ee6d52964f2) | Static official release tag/image | 2025-12-14 |
 
 <details><summary>Older Static Tags</summary>
