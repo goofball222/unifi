@@ -3,8 +3,8 @@
 # entrypoint-functions.sh script for UniFi Docker container
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-ENTRYPOINT_FUNCTIONS_VERSION="1.2.0"
-# Last updated date: 2026-02-16
+ENTRYPOINT_FUNCTIONS_VERSION="1.2.1"
+# Last updated date: 2026-02-20
 
 f_bindpriv() {
     JAVABIN=$(readlink -f /usr/bin/java)
@@ -107,12 +107,12 @@ f_mongo() {
                     f_log "ERROR - NOW PAUSING FOR 180 SECONDS BEFORE CONTINUING STARTUP"
                     sleep 180
                 fi
-            # Point users towards running with an external MongoDB
-            f_log "WARN - ======================================================================"
-            f_log "WARN - One or more of: 'DB_MONGO_LOCAL', 'DB_MONGO_URI', 'STATDB_MONGO_URI', or 'UNIFI_DB_NAME' is unset."
-            f_log "WARN - In the future you should consider running UniFi on Docker with an external MongoDB instance defined."
-            f_log "WARN - *** Please check the README.md and examples at https://github.com/goofball222/unifi ***"
-            f_log "WARN - ======================================================================"
+                # Point users towards running with an external MongoDB
+                f_log "WARN - ======================================================================"
+                f_log "WARN - One or more of: 'DB_MONGO_LOCAL', 'DB_MONGO_URI', 'STATDB_MONGO_URI', or 'UNIFI_DB_NAME' is unset."
+                f_log "WARN - In the future you should consider running UniFi on Docker with an external MongoDB instance defined."
+                f_log "WARN - *** Please check the README.md and examples at https://github.com/goofball222/unifi ***"
+                f_log "WARN - ======================================================================"
             fi
         elif [ "$ARCH" == "x86_64" ] && `/bin/grep -q 'avx' /proc/cpuinfo` && `/bin/grep -q 'avx2' /proc/cpuinfo`; then
         # x86_64 architecture *with* AVX required by Mongo versions >= 5.0
@@ -142,12 +142,12 @@ f_mongo() {
                     f_log "ERROR - NOW PAUSING FOR 180 SECONDS BEFORE CONTINUING STARTUP"
                     sleep 180
                 fi
-            # Point users towards running with an external MongoDB
-            f_log "WARN - ======================================================================"
-            f_log "WARN - One or more of: 'DB_MONGO_LOCAL', 'DB_MONGO_URI', 'STATDB_MONGO_URI', or 'UNIFI_DB_NAME' is unset."
-            f_log "WARN - In the future you should consider running UniFi on Docker with an external MongoDB instance defined."
-            f_log "WARN - *** Please check the README.md and examples at https://github.com/goofball222/unifi ***"
-            f_log "WARN - ======================================================================"
+                # Point users towards running with an external MongoDB
+                f_log "WARN - ======================================================================"
+                f_log "WARN - One or more of: 'DB_MONGO_LOCAL', 'DB_MONGO_URI', 'STATDB_MONGO_URI', or 'UNIFI_DB_NAME' is unset."
+                f_log "WARN - In the future you should consider running UniFi on Docker with an external MongoDB instance defined."
+                f_log "WARN - *** Please check the README.md and examples at https://github.com/goofball222/unifi ***"
+                f_log "WARN - ======================================================================"
             fi
         else
         # x86_64 architecture *missing* AVX required by Mongo versions >= 5.0

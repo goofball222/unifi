@@ -1,4 +1,7 @@
 * **2026-02-16:**
+    * Fix indenting in entrypoint-functions.sh
+---
+* **2026-02-16:**
     * Update workflows to build -nomongo instances instead of -mongo8 and -mongo82
     * Update root/etc/ld-musl-x86_64.path to point at OpenJDK 25
     * Update root/usr/local/bin/entrypoint-functions.sh to 1.2.0 in 10.1 & release
