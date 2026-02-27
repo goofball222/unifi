@@ -1,3 +1,7 @@
+* **2026-02-27:**
+    * Create 10.2/beta, v[10.2.78](https://community.ui.com/releases/UniFi-Network-Application-10-2-78/3b5a86eb-97c6-4aa0-af11-490f46d1d3e0)
+    * Set latest-beta, etc. tags to 10.2/beta
+---
 * **2026-02-16:**
     * Fix indenting in entrypoint-functions.sh
 ---
