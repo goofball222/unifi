@@ -125,7 +125,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       -
         name: Build and push Alpine Docker image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: ./10.2/beta
           file: ./10.2/beta/Dockerfile.alpine
@@ -136,7 +136,7 @@ jobs:
           build-args: VERSION=${{ steps.getargs.outputs.version }}
       -
         name: Build and push Debian Docker image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: ./10.2/beta
           file: ./10.2/beta/Dockerfile.debian
@@ -147,7 +147,7 @@ jobs:
           build-args: VERSION=${{ steps.getargs.outputs.version }}
       -
         name: Build and push Ubuntu Docker image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: ./10.2/beta
           file: ./10.2/beta/Dockerfile
@@ -158,7 +158,7 @@ jobs:
           build-args: VERSION=${{ steps.getargs.outputs.version }}
       -
         name: Build and push Debian Docker nomongo image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: ./10.2/beta
           file: ./10.2/beta/Dockerfile.debian.nomongo
@@ -169,7 +169,7 @@ jobs:
           build-args: VERSION=${{ steps.getargs.outputs.version }}
       -
         name: Build and push Ubuntu Docker nomongo image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: ./10.2/beta
           file: ./10.2/beta/Dockerfile.ubuntu.nomongo
