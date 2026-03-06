@@ -23,7 +23,7 @@ jobs:
       -
         name: Set up Docker metadata for Alpine
         id: meta-alpine
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@v6
         with:
           images: |
             ${{ github.repository }}
@@ -39,7 +39,7 @@ jobs:
       -
         name: Set up Docker metadata for Debian
         id: meta-debian
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@v6
         with:
           images: |
             ${{ github.repository }}
@@ -55,7 +55,7 @@ jobs:
       -
         name: Set up Docker metadata for Ubuntu
         id: meta-ubuntu
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@v6
         with:
           images: |
             ${{ github.repository }}
@@ -73,7 +73,7 @@ jobs:
       -
         name: Set up Docker metadata for Debian nomongo
         id: meta-debian-nomongo
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@v6
         with:
           images: |
             ${{ github.repository }}
@@ -89,7 +89,7 @@ jobs:
       -
         name: Set up Docker metadata for Ubuntu nomongo
         id: meta-ubuntu-nomongo
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@v6
         with:
           images: |
             ${{ github.repository }}
