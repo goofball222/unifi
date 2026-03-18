@@ -1,3 +1,7 @@
+* **2026-03-18:**
+    * Update 10.1/official to [10.1.89](https://community.ui.com/releases/UniFi-Network-Application-10-1-89/625f366f-7ea5-4266-bd9f-500180494035)
+    * Tag 10.1.89 release
+---
 * **2026-03-12:**
     * Update 10.2/beta to v[10.2.93](https://community.ui.com/releases/UniFi-Network-Application-10-2-93/6124ef35-ce93-47d9-8f9d-fa44ab02c587)
 ---
