@@ -3,6 +3,7 @@
     * Copy 10.2/beta to 10.2/official, v[10.2.105](https://community.ui.com/releases/UniFi-Network-Application-10-2-105/cf38dace-ce91-4e4a-8ab7-a1d2db30aa55)
     * Promote 10.2 official to "latest", "latest-alpine" and "latest-ubuntu" tags
     * Tag 10.2.105 release
+    * Update 10.2/beta entrypoint-functions.sh to v1.2.3, rework avx/avx2 grep, readability
 ---
 * **2026-03-31:**
     * Update 10.2/beta to v[10.2.105](https://community.ui.com/releases/UniFi-Network-Application-10-2-105/cf38dace-ce91-4e4a-8ab7-a1d2db30aa55)
