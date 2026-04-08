@@ -3,8 +3,8 @@
 # entrypoint-functions.sh script for UniFi Docker container
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-ENTRYPOINT_FUNCTIONS_VERSION="1.2.1"
-# Last updated date: 2026-02-20
+ENTRYPOINT_FUNCTIONS_VERSION="1.2.2"
+# Last updated date: 2026-04-08
 
 f_bindpriv() {
     JAVABIN=$(readlink -f /usr/bin/java)
@@ -76,6 +76,7 @@ f_mongo() {
     UNIFI_DB_NAME=${UNIFI_DB_NAME:-}
     SUP_MONGOD_VER=${SUP_MONGOD_VER:-}
     MONGOD_TARGET_EOL_DATE=${MONGOD_TARGET_EOL_DATE:-}
+    DISABLE_AVX_CHECK=${DISABLE_AVX_CHECK:-}
     ARCH=$(/bin/uname -m)
     if [ -x "/usr/bin/mongod" ]; then
     # Container has a built in mongod executable
@@ -113,6 +114,52 @@ f_mongo() {
                 f_log "WARN - In the future you should consider running UniFi on Docker with an external MongoDB instance defined."
                 f_log "WARN - *** Please check the README.md and examples at https://github.com/goofball222/unifi ***"
                 f_log "WARN - ======================================================================"
+            fi
+        elif [ "$ARCH" == "x86_64" ] && [ -n "${DISABLE_AVX_CHECK}" ]; then
+            if [ -z "${DB_MONGO_LOCAL}" ] || [ -z "${DB_MONGO_URI}" ] || [ -z "${STATDB_MONGO_URI}" ] \
+            || [ -z "${UNIFI_DB_NAME}" ]; then
+            # Check if any required external MongoDB variables are empty, throw an error, exit.
+                MONGOD_VER="$(/usr/bin/mongod --version | awk -F'[ ]' 'NR==1{print $3}')"
+                if [ "$(printf '%s\n' "$SUP_MONGOD_VER" "$MONGOD_VER" | sort -V | head -n1)" = "$SUP_MONGOD_VER" ]; then
+                # Check mongod reported version
+                    f_log "INFO - mongod detected version ${MONGOD_VER} is >= ${SUP_MONGOD_VER}, continuing."
+                else
+                    f_log "ERROR - ======================================================================"
+                    f_log "ERROR - THIS IMAGE WILL STOP SUPPLYING EMBEDDED MONGO VERSIONS BELOW ${SUP_MONGOD_VER}"
+                    f_log "ERROR -                      ON OR AFTER ${MONGOD_TARGET_EOL_DATE}"
+                    f_log "ERROR - ======================================================================"
+                    f_log "ERROR - "
+                    f_log "ERROR - ======================================================================"
+                    f_log "ERROR - mongod detected version ${MONGOD_VER} is past end-of-life / end-of-support."
+                    f_log "ERROR - "
+                    f_log "ERROR - The UniFi latest supported version at this time is ${SUP_MONGOD_VER},"
+                    f_log "ERROR - higher versions may also work. Please review the UniFi release notes and"
+                    f_log "ERROR - https://www.mongodb.com/legal/support-policy/lifecycles"
+                    f_log "ERROR - for more information. You should immediately back up your data via the"
+                    f_log "ERROR - UniFi console & restore on a version of the image with newer mongo,"
+                    f_log "ERROR - OR back up and perform the MongoDB upgrade steps to reach >= ${SUP_MONGOD_VER}."
+                    f_log "ERROR - ======================================================================"
+                    f_log "ERROR - NOW PAUSING FOR 180 SECONDS BEFORE CONTINUING STARTUP"
+                    sleep 180
+                fi
+                # Point users towards running with an external MongoDB and log error about AVX checks disabled
+                f_log "WARN - ======================================================================"
+                f_log "WARN - One or more of: 'DB_MONGO_LOCAL', 'DB_MONGO_URI', 'STATDB_MONGO_URI', or 'UNIFI_DB_NAME' is unset."
+                f_log "WARN - In the future you should consider running UniFi on Docker with an external MongoDB instance defined."
+                f_log "WARN - *** Please check the README.md and examples at https://github.com/goofball222/unifi ***"
+                f_log "WARN - ======================================================================"
+                f_log "ERROR - ======================================================================"
+                f_log "ERROR - *** x86_64 CPU AVX EXTENSION CHECKS FORCE-DISABLED ON THIS SYSTEM ***"
+                f_log "ERROR - "
+                f_log "ERROR - UNSUPPORTED CONFIGURATION - NO TROUBLESHOOTING OR ASSISTANCE WILL BE PROVIDED."
+                f_log "ERROR - "
+                f_log "ERROR - Versions >= 5.0 of MongoDB require AVX extensions on x86_64 CPUs."
+                f_log "ERROR - For releases of this container >= 10.1 or released after 2026-02-11 built-in"
+                f_log "ERROR - MongoDB binaries require AVX support."
+                f_log "ERROR - "
+                f_log "ERROR - If the container fails to start the database with this set you will need to run"
+                f_log "ERROR - on a CPU that fully supports AVX, or switch to an external MongoDB instance."
+                f_log "ERROR - ======================================================================"
             fi
         elif [ "$ARCH" == "x86_64" ] && `/bin/grep -q 'avx' /proc/cpuinfo` && `/bin/grep -q 'avx2' /proc/cpuinfo`; then
         # x86_64 architecture *with* AVX required by Mongo versions >= 5.0
@@ -155,7 +202,7 @@ f_mongo() {
             || [ -z "${UNIFI_DB_NAME}" ]; then
             # Check if any required external MongoDB variables are empty, throw an error, exit.
                 f_log "ERROR - ======================================================================"
-                f_log "ERROR - *** THE x86_64 CPU in THIS SYSTEM DOES NOT SUPPORT AVX EXTENSIONS ***"
+                f_log "ERROR - *** THE x86_64 CPU IN THIS SYSTEM DOES NOT SUPPORT AVX EXTENSIONS ***"
                 f_log "ERROR - "
                 f_log "ERROR - Versions >= 5.0 of MongoDB require AVX extensions on x86_64 CPUs."
                 f_log "ERROR - For releases of this container >= 10.1 or released after 2026-02-11 you must run this container"
