@@ -1,3 +1,9 @@
+* **2026-04-08:**
+    * Add UNSUPPORTED DISABLE_AVX_CHECK environment variable/option. Use at your own risk.
+    * Copy 10.2/beta to 10.2/official, v[10.2.105](https://community.ui.com/releases/UniFi-Network-Application-10-2-105/cf38dace-ce91-4e4a-8ab7-a1d2db30aa55)
+    * Promote 10.2 official to "latest", "latest-alpine" and "latest-ubuntu" tags
+    * Tag 10.2.105 release
+---
 * **2026-03-31:**
     * Update 10.2/beta to v[10.2.105](https://community.ui.com/releases/UniFi-Network-Application-10-2-105/cf38dace-ce91-4e4a-8ab7-a1d2db30aa55)
 ---
