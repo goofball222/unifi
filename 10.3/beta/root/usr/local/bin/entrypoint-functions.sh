@@ -3,8 +3,8 @@
 # entrypoint-functions.sh script for UniFi Docker container
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-ENTRYPOINT_FUNCTIONS_VERSION="1.2.3"
-# Last updated date: 2026-04-08
+ENTRYPOINT_FUNCTIONS_VERSION="1.2.4"
+# Last updated date: 2026-04-10
 
 f_bindpriv() {
     JAVABIN=$(readlink -f /usr/bin/java)
@@ -167,8 +167,7 @@ f_mongo() {
                 f_log "ERROR - ======================================================================"
             fi
         elif [ "$ARCH" == "x86_64" ] \
-        && `/bin/grep -q -m1 '\bavx\b' /proc/cpuinfo` \
-        && `/bin/grep -q -m1 '\bavx2\b' /proc/cpuinfo`; then
+        && `/bin/grep -q -m1 '\bavx\b' /proc/cpuinfo`; then
         # x86_64 architecture *with* AVX required by Mongo versions >= 5.0
             if [ -z "${DB_MONGO_LOCAL}" ] \
             || [ -z "${DB_MONGO_URI}" ] \
