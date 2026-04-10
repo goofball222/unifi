@@ -1,3 +1,9 @@
+* **2026-04-10:**
+    * Create 10.3/beta, v[10.3.47](https://community.ui.com/releases/UniFi-Network-Application-10-3-47/ad3a39c1-ce8a-4b37-9a09-1f0c49126d4f)
+    * Set latest-beta, etc. tags to 10.3/beta
+    * Update 10.3/beta entrypoint-functions.sh to v1.2.4, remove avx2 flag requirement/check
+    * Archive 10.0
+---
 * **2026-04-08:**
     * Add UNSUPPORTED DISABLE_AVX_CHECK environment variable/option. Use at your own risk.
     * Copy 10.2/beta to 10.2/official, v[10.2.105](https://community.ui.com/releases/UniFi-Network-Application-10-2-105/cf38dace-ce91-4e4a-8ab7-a1d2db30aa55)
