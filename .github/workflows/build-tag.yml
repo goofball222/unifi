@@ -1,10 +1,15 @@
 name: Build Tag
 
 on:
-  workflow_dispatch:
   push:
     tags:
       - '*'
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: 'Static tag to build'
+        required: true
+        type: string
 
 jobs:
   build:
@@ -149,8 +154,8 @@ jobs:
         name: Build and push Debian Docker nomongo image
         uses: docker/build-push-action@v7
         with:
-          context: ./10.0/official
-          file: ./10.0/official/Dockerfile.debian.nomongo
+          context: ./release
+          file: ./release/Dockerfile.debian.nomongo
           platforms: linux/amd64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-debian-nomongo.outputs.tags }}
@@ -160,8 +165,8 @@ jobs:
         name: Build and push Ubuntu Docker nomongo image
         uses: docker/build-push-action@v7
         with:
-          context: ./10.0/official
-          file: ./10.0/official/Dockerfile.ubuntu.nomongo
+          context: ./release
+          file: ./release/Dockerfile.ubuntu.nomongo
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-ubuntu-nomongo.outputs.tags }}
