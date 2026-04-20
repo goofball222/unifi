@@ -3,8 +3,8 @@
 # entrypoint-functions.sh script for UniFi Docker container
 # License: Apache-2.0
 # Github: https://github.com/goofball222/unifi
-ENTRYPOINT_FUNCTIONS_VERSION="1.2.2"
-# Last updated date: 2026-04-08
+ENTRYPOINT_FUNCTIONS_VERSION="1.2.4"
+# Last updated date: 2026-04-10
 
 f_bindpriv() {
     JAVABIN=$(readlink -f /usr/bin/java)
@@ -82,7 +82,9 @@ f_mongo() {
     # Container has a built in mongod executable
         if [ "$ARCH" != "x86_64" ]; then
         # Non x86_64 architecture, no AVX check
-            if [ -z "${DB_MONGO_LOCAL}" ] || [ -z "${DB_MONGO_URI}" ] || [ -z "${STATDB_MONGO_URI}" ] \
+            if [ -z "${DB_MONGO_LOCAL}" ] \
+            || [ -z "${DB_MONGO_URI}" ] \
+            || [ -z "${STATDB_MONGO_URI}" ] \
             || [ -z "${UNIFI_DB_NAME}" ]; then
             # Check if any external MongoDB variables are empty
                 MONGOD_VER="$(/usr/bin/mongod --version | awk -F'[ ]' 'NR==1{print $3}')"
@@ -115,8 +117,11 @@ f_mongo() {
                 f_log "WARN - *** Please check the README.md and examples at https://github.com/goofball222/unifi ***"
                 f_log "WARN - ======================================================================"
             fi
-        elif [ "$ARCH" == "x86_64" ] && [ -n "${DISABLE_AVX_CHECK}" ]; then
-            if [ -z "${DB_MONGO_LOCAL}" ] || [ -z "${DB_MONGO_URI}" ] || [ -z "${STATDB_MONGO_URI}" ] \
+        elif [ "$ARCH" == "x86_64" ] \
+        && [ -n "${DISABLE_AVX_CHECK}" ]; then
+            if [ -z "${DB_MONGO_LOCAL}" ] \
+            || [ -z "${DB_MONGO_URI}" ] \
+            || [ -z "${STATDB_MONGO_URI}" ] \
             || [ -z "${UNIFI_DB_NAME}" ]; then
             # Check if any required external MongoDB variables are empty, throw an error, exit.
                 MONGOD_VER="$(/usr/bin/mongod --version | awk -F'[ ]' 'NR==1{print $3}')"
@@ -161,9 +166,12 @@ f_mongo() {
                 f_log "ERROR - on a CPU that fully supports AVX, or switch to an external MongoDB instance."
                 f_log "ERROR - ======================================================================"
             fi
-        elif [ "$ARCH" == "x86_64" ] && `/bin/grep -q 'avx' /proc/cpuinfo` && `/bin/grep -q 'avx2' /proc/cpuinfo`; then
+        elif [ "$ARCH" == "x86_64" ] \
+        && `/bin/grep -q -m1 '\bavx\b' /proc/cpuinfo`; then
         # x86_64 architecture *with* AVX required by Mongo versions >= 5.0
-            if [ -z "${DB_MONGO_LOCAL}" ] || [ -z "${DB_MONGO_URI}" ] || [ -z "${STATDB_MONGO_URI}" ] \
+            if [ -z "${DB_MONGO_LOCAL}" ] \
+            || [ -z "${DB_MONGO_URI}" ] \
+            || [ -z "${STATDB_MONGO_URI}" ] \
             || [ -z "${UNIFI_DB_NAME}" ]; then
             # Check if any external MongoDB variables are empty
                 MONGOD_VER="$(/usr/bin/mongod --version | awk -F'[ ]' 'NR==1{print $3}')"
@@ -198,7 +206,9 @@ f_mongo() {
             fi
         else
         # x86_64 architecture *missing* AVX required by Mongo versions >= 5.0
-            if [ -z "${DB_MONGO_LOCAL}" ] || [ -z "${DB_MONGO_URI}" ] || [ -z "${STATDB_MONGO_URI}" ] \
+            if [ -z "${DB_MONGO_LOCAL}" ] \
+            || [ -z "${DB_MONGO_URI}" ] \
+            || [ -z "${STATDB_MONGO_URI}" ] \
             || [ -z "${UNIFI_DB_NAME}" ]; then
             # Check if any required external MongoDB variables are empty, throw an error, exit.
                 f_log "ERROR - ======================================================================"
@@ -220,7 +230,9 @@ f_mongo() {
         fi
     else
     # Container does not have a built-in mongod executable
-        if [ -z "${DB_MONGO_LOCAL}" ] || [ -z "${DB_MONGO_URI}" ] || [ -z "${STATDB_MONGO_URI}" ] \
+        if [ -z "${DB_MONGO_LOCAL}" ] \
+        || [ -z "${DB_MONGO_URI}" ] \
+        || [ -z "${STATDB_MONGO_URI}" ] \
         || [ -z "${UNIFI_DB_NAME}" ]; then
         # Check if any required external MongoDB variables are empty, throw an error, exit.
             f_log "ERROR - ======================================================================"
