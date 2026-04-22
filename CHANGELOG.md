@@ -1,3 +1,6 @@
+* **2026-04-22:**
+    * Update 10.3/beta to v[10.3.58](https://community.ui.com/releases/UniFi-Network-Application-10-3-58/449387c9-4187-44bd-ad47-02da91688dfc)
+---
 * **2026-04-20:**
     * Copy 10.3/beta to 10.3/official, v[10.3.55](https://community.ui.com/releases/UniFi-Network-Application-10-3-55/3ed8145b-94a2-44b2-a42e-2d970f135b7b)
     * Promote 10.3 official to "latest", "latest-alpine" and "latest-ubuntu" tags
