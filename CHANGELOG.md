@@ -1,3 +1,7 @@
+* **2026-05-07:**
+    * Create 10.4/beta, v[10.4.46](https://community.ui.com/releases/UniFi-Network-Application-10-4-46/d1e3985f-6c39-454c-904f-80c6bb4e4dff)
+    * Set latest-beta, etc. tags to 10.4/beta
+---
 * **2026-04-22:**
     * Update 10.3/beta to v[10.3.58](https://community.ui.com/releases/UniFi-Network-Application-10-3-58/449387c9-4187-44bd-ad47-02da91688dfc)
 ---
