@@ -3,6 +3,7 @@
     * Set latest-beta, etc. tags to 10.4/beta
     * Update 10.3/official to [10.3.58](https://community.ui.com/releases/UniFi-Network-Application-10-3-58/449387c9-4187-44bd-ad47-02da91688dfc)
     * Tag 10.3.58 release
+    * Archive 10.1
 ---
 * **2026-04-22:**
     * Update 10.3/beta to v[10.3.58](https://community.ui.com/releases/UniFi-Network-Application-10-3-58/449387c9-4187-44bd-ad47-02da91688dfc)
