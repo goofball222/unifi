@@ -1,3 +1,8 @@
+* **2026-05-28:**
+    * Copy 10.4/beta to 10.4/official, v[10.4.57](https://community.ui.com/releases/92694b29-fd78-4d52-906a-3211136610e2?replyId=f5a4c690-69d1-4f2a-bb16-90565a538be4)
+    * Promote 10.4 official to "latest", "latest-alpine" and "latest-ubuntu" tags
+    * Tag 10.4.57 release
+---
 * **2026-05-15:**
     * Update 10.4/beta to v[10.4.57](https://community.ui.com/releases/UniFi-Network-Application-10-4-57/5204b17d-193d-41bb-96b6-f9afe8b39aae)
 ---
