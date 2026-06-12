@@ -1,0 +1,1 @@
+https://dl.ui.com/unifi/10.5.43-mcpd00u690/UniFi-installer.exe awk -F / {print $5}
