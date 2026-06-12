@@ -1,3 +1,7 @@
+* **2026-06-12:**
+    * Create 10.5/beta, v[10.5.43](https://community.ui.com/releases/UniFi-Network-Application-10-5-43/f9ed5ec1-cd69-435c-b10e-ab4935116ad9)
+    * Set latest-beta, etc. tags to 10.5/beta
+---
 * **2026-05-28:**
     * Copy 10.4/beta to 10.4/official, v[10.4.57](https://community.ui.com/releases/92694b29-fd78-4d52-906a-3211136610e2?replyId=f5a4c690-69d1-4f2a-bb16-90565a538be4)
     * Promote 10.4 official to "latest", "latest-alpine" and "latest-ubuntu" tags
