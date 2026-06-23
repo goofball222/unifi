@@ -1,3 +1,6 @@
+* **2026-06-22:**
+    * Update 10.5/beta to v[10.5.51](https://community.ui.com/releases/UniFi-Network-Application-10-5-51/0d962347-1a65-4e7f-8594-ed81f34da894)
+---
 * **2026-06-12:**
     * Create 10.5/beta, v[10.5.43](https://community.ui.com/releases/UniFi-Network-Application-10-5-43/f9ed5ec1-cd69-435c-b10e-ab4935116ad9)
     * Set latest-beta, etc. tags to 10.5/beta
