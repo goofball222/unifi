@@ -12,12 +12,12 @@
 | [10.4, 10.4-alpine, 10.4-debian, 10.4-ubuntu](https://github.com/goofball222/unifi/blob/main/10.4/official/Dockerfile) | [10.4.57](https://community.ui.com/releases/92694b29-fd78-4d52-906a-3211136610e2) | UniFi Network Application official release | 2026-05-28 |
 | [10.5.67](https://github.com/goofball222/unifi/releases/tag/10.5.67) | [10.5.67](https://community.ui.com/releases/92694b29-fd78-4d52-906a-3211136610e2) | Static official release tag/image | 2026-08-03 |
 | [10.4.57](https://github.com/goofball222/unifi/releases/tag/10.4.57) | [10.4.57](https://community.ui.com/releases/92694b29-fd78-4d52-906a-3211136610e2) | Static official release tag/image | 2026-05-28 |
-| [10.3.58](https://github.com/goofball222/unifi/releases/tag/10.3.58) | [10.3.58](https://community.ui.com/releases/UniFi-Network-Application-10-3-58/449387c9-4187-44bd-ad47-02da91688dfc) | Static official release tag/image | 2026-04-28 |
 
 <details><summary>Older Static Tags</summary>
 
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
+| [10.3.58](https://github.com/goofball222/unifi/releases/tag/10.3.58) | [10.3.58](https://community.ui.com/releases/UniFi-Network-Application-10-3-58/449387c9-4187-44bd-ad47-02da91688dfc) | Static official release tag/image | 2026-04-28 |
 | [10.2.105](https://github.com/goofball222/unifi/releases/tag/10.2.105) | [10.2.105](https://community.ui.com/releases/UniFi-Network-Application-10-2-105/cf38dace-ce91-4e4a-8ab7-a1d2db30aa55) | Static official release tag/image | 2026-04-08 |
 | [10.1.89](https://github.com/goofball222/unifi/releases/tag/10.1.89) | [10.1.89](https://community.ui.com/releases/UniFi-Network-Application-10-1-89/625f366f-7ea5-4266-bd9f-500180494035) | Static official release tag/image | 2026-03-18 |
 | [10.0.162](https://github.com/goofball222/unifi/releases/tag/10.0.162) | [10.0.162](https://community.ui.com/releases/UniFi-Network-Application-10-0-162/eed48f5a-f16b-4476-88fa-9ee6d52964f2) | Static official release tag/image | 2025-12-14 |
