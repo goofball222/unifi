@@ -4,6 +4,7 @@
     * Copy 10.5/beta to 10.5/official, v[10.5.67](https://community.ui.com/releases/UniFi-Network-Application-10-5-67/375288b9-a4b4-46f1-a19d-5c787d342c2b)
     * Promote 10.5 official to "latest", "latest-alpine" and "latest-ubuntu" tags
     * Tag 10.5.67 release
+    * Archive 10.3
 ---
 * **2026-07-23:**
     * Update 10.5/beta to v[10.5.67](https://community.ui.com/releases/UniFi-Network-Application-10-5-67/375288b9-a4b4-46f1-a19d-5c787d342c2b)
