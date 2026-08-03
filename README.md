@@ -1,4 +1,4 @@
-y
+
 # UniFi Docker Container
 
 [![Latest Build Status](https://github.com/goofball222/unifi/actions/workflows/build-latest.yml/badge.svg)](https://github.com/goofball222/unifi/actions/workflows/build-latest.yml) [![Docker Pulls](https://img.shields.io/docker/pulls/goofball222/unifi.svg)](https://hub.docker.com/r/goofball222/unifi/) [![Docker Stars](https://img.shields.io/docker/stars/goofball222/unifi.svg)](https://hub.docker.com/r/goofball222/unifi/) [![License](https://img.shields.io/github/license/goofball222/unifi.svg)](https://github.com/goofball222/unifi)
@@ -7,8 +7,8 @@ y
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
 | [10.4, 10.4-alpine, 10.4-debian, 10.4-ubuntu, latest, latest-alpine, latest-debian, latest-ubuntu](https://github.com/goofball222/unifi/blob/main/10.4/official/Dockerfile) | [10.4.57](https://community.ui.com/releases/92694b29-fd78-4d52-906a-3211136610e2) | UniFi Network Application official release | 2026-05-28 |
-| [10.5-beta, 10.5-alpine-beta, 10.5-debian-beta, 10.5-ubuntu-beta, latest-beta, latest-alpine-beta, latest-debian-beta, latest-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/10.5/beta/Dockerfile) | [10.5.67](https://community.ui.com/releases/UniFi-Network-Application-10-5-67/375288b9-a4b4-46f1-a19d-5c787d342c2b) | UniFi Network Application beta/release candidate | 2026-07-23 |
-| [10.3, 10.3-alpine, 10.3-debian, 10.3-ubuntu](https://github.com/goofball222/unifi/blob/main/10.3/official/Dockerfile) | [10.3.58](https://community.ui.com/releases/UniFi-Network-Application-10-3-58/449387c9-4187-44bd-ad47-02da91688dfc) | UniFi Network Application official release | 2026-04-28 |
+| [10.6-beta, 10.6-alpine-beta, 10.6-debian-beta, 10.6-ubuntu-beta, latest-beta, latest-alpine-beta, latest-debian-beta, latest-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/10.6/beta/Dockerfile) | [10.6.88](https://community.ui.com/releases/UniFi-Network-Application-10-6-88/747f44ec-ad6b-4f7b-8265-49389a4c0142) | UniFi Network Application beta/release candidate | 2026-08-03 |
+| [10.5-beta, 10.5-alpine-beta, 10.5-debian-beta, 10.5-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/10.5/beta/Dockerfile) | [10.5.67](https://community.ui.com/releases/UniFi-Network-Application-10-5-67/375288b9-a4b4-46f1-a19d-5c787d342c2b) | UniFi Network Application beta/release candidate | 2026-07-23 |
 | [10.4.57](https://github.com/goofball222/unifi/releases/tag/10.4.57) | [10.4.57](https://community.ui.com/releases/92694b29-fd78-4d52-906a-3211136610e2) | Static official release tag/image | 2026-05-28 |
 | [10.3.58](https://github.com/goofball222/unifi/releases/tag/10.3.58) | [10.3.58](https://community.ui.com/releases/UniFi-Network-Application-10-3-58/449387c9-4187-44bd-ad47-02da91688dfc) | Static official release tag/image | 2026-04-28 |
 
