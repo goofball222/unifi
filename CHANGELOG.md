@@ -1,3 +1,6 @@
+* **2026-08-18:**
+    * Update 10.6/beta to v[10.6.97](https://community.ui.com/releases/UniFi-Network-Application-10-6-97/f5207e47-3b98-42d1-b489-9c66070fe417)
+---
 * **2026-08-12:**
     * Update 10.6/beta to v[10.6.94](https://community.ui.com/releases/UniFi-Network-Application-10-6-94/0429ddfe-7ab6-4ed6-959b-10e67ad39110)
 ---
