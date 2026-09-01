@@ -3,6 +3,7 @@
     * Promote 10.6 official to "latest", "latest-alpine" and "latest-ubuntu" tags
     * Tag 10.6.101 release
     * Archive 10.4
+    * Update 10.6/beta to v[10.6.102](https://community.ui.com/releases/UniFi-Network-Application-10-6-102/14dfb039-ebd8-47bd-a592-f75b2a5c32b6)
 ---
 * **2026-08-27:**
     * Update 10.6/beta to v[10.6.101](https://community.ui.com/releases/UniFi-Network-Application-10-6-101/05283624-0980-4dd7-b8d6-9fa5c4e28da4)
