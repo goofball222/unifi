@@ -1,3 +1,6 @@
+* **2026-09-09:**
+    * Update 10.6/beta to v[10.6.106](https://community.ui.com/releases/UniFi-Network-Application-10-6-106/f6f1d608-551b-46df-aca7-d146077e5833) 
+---
 * **2026-09-01:**
     * Copy 10.6/beta to 10.6/official, v[10.6.101](https://community.ui.com/releases/UniFi-Network-Application-10-6-101/05283624-0980-4dd7-b8d6-9fa5c4e28da4)
     * Promote 10.6 official to "latest", "latest-alpine" and "latest-ubuntu" tags
