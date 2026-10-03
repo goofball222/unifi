@@ -59,22 +59,13 @@
 
 ---
 
-## **2026-02-11:**
-<h2>10.1 images & static release / tag now default to mongo 8.0. This slightly bumps the old MongoDB deprecation date up from 2026-02-15 to 2026-02-11.</h2>
+## 2026-10-03:
 
-## **2025-11-12:**
-<h2>10.0 beta images now introduce a warning about MongoDB deprecation and 90 seconds of startup delay if the database mode is still "internal"
-and old embedded versions are detected.
+## [UniFi Network 10.6: Final Release for Legacy USG Gateways and the Standalone Network Application](https://community.ui.com/questions/UniFi-Network-10-6-Final-Release-for-Legacy-USG-Gateways-and-the-Standalone-Network-Application-or-/54a8e1dd-4210-47a4-86a5-572e40854fd0)
 
-Anyone still running new images with old MongoDB versions and "internal" databases should work out an upgrade plan/path ASAP, current planned 
-deprecation date is 2026-02-15.</h2>
+Per Ubiquiti: "UniFi Network 10.6 will be the final release compatible with the legacy UniFi Security Gateway lineup (USG, USG-Pro, USG XG 8) and the legacy self-hosted/Standalone UniFi Network Application."
 
-In addition to the Alpine based version, tags now available without MongoDB built in:
-`latest-nomongo`, `latest-nomongo-beta`, `latest-ubuntu-nomongo`, `latest-ubuntu-nomongo-beta`,
-`latest-debian-nomongo`, `latest-debian-nomongo-beta`, `10.1-nomongo`, `10.1-nomongo-beta`,
-`10.1-ubuntu-nomongo`, `10.1-ubuntu-nomongo-beta`, `10.1-debian-nomongo`, `10.1-debian-nomongo-beta`
-
-Please test and [report any bugs, or issues on GitHub](https://github.com/goofball222/unifi/issues)
+Barring any future 10.6 security updates and/or reversal of this decision from Ubiquiti v[10.6.106](https://github.com/goofball222/unifi/releases/tag/10.6.106) will be the final release of this Docker image. I leave it up to the reader to find their own path forward with UniFi from here.
 
 **NOTE:**
 **Alpine tags DO NOT contain any internal MongoDB binaries. You must connect them to an external Mongo DB container or other host instance.**
@@ -306,5 +297,9 @@ Please make sure to participate in discussion and create bug reports for any iss
 
 **USE BETA/BLEEDING-EDGE RELEASES AT YOUR OWN RISK - REPEAT: NOT RECOMMENDED FOR USE IN A PRODUCTION ENVIRONMENT WITHOUT EXTENSIVE TESTING**
 
+---
+
+This project is not affiliated with, endorsed by, or supported by Ubiquiti Inc. All trademarks and copyrights belong to their respective owners.
+
 [//]: # (Licensed under the Apache 2.0 license)
-[//]: # (Copyright 2021 The Goofball - goofball222@gmail.com)
+[//]: # (Copyright 2026 The Goofball - goofball222@gmail.com)
