@@ -67,6 +67,8 @@ Per Ubiquiti: "UniFi Network 10.6 will be the final release compatible with the 
 
 Barring any future 10.6 security updates and/or reversal of this decision from Ubiquiti v[10.6.106](https://github.com/goofball222/unifi/releases/tag/10.6.106) will be the final release of this Docker image. I leave it up to the reader to find their own path forward with UniFi from here.
 
+---
+
 **NOTE:**
 **Alpine tags DO NOT contain any internal MongoDB binaries. You must connect them to an external Mongo DB container or other host instance.**
 
