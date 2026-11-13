@@ -6,16 +6,16 @@
 ## Docker tags:
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
-| [10.6, 10.6-alpine, 10.6-debian, 10.6-ubuntu, latest, latest-alpine, latest-debian, latest-ubuntu](https://github.com/goofball222/unifi/blob/main/10.6/official/Dockerfile) | [10.6.106](https://community.ui.com/releases/UniFi-Network-Application-10-6-106/f206c01d-3f73-471b-b4a5-2da48f157ea6) | UniFi Network Application official release | 2026-09-15 |
+| [10.6, 10.6-alpine, 10.6-debian, 10.6-ubuntu, latest, latest-alpine, latest-debian, latest-ubuntu](https://github.com/goofball222/unifi/blob/main/10.6/official/Dockerfile) | [10.6.109](https://community.ui.com/releases/UniFi-Network-Application-10-6-109/772020d5-1426-4015-bbd6-631d28803933) | UniFi Network Application official release | 2026-10-23 |
 | [10.6-beta, 10.6-alpine-beta, 10.6-debian-beta, 10.6-ubuntu-beta, latest-beta, latest-alpine-beta, latest-debian-beta, latest-ubuntu-beta](https://github.com/goofball222/unifi/blob/main/10.6/beta/Dockerfile) | [10.6.106](https://community.ui.com/releases/UniFi-Network-Application-10-6-106/f6f1d608-551b-46df-aca7-d146077e5833) | UniFi Network Application beta/release candidate | 2026-09-09 |
+| [10.6.106](https://github.com/goofball222/unifi/releases/tag/10.6.109) | [10.6.109](https://community.ui.com/releases/UniFi-Network-Application-10-6-109/772020d5-1426-4015-bbd6-631d28803933) | Static official release tag/image | 2026-11-13 |
 | [10.5, 10.5-alpine, 10.5-debian, 10.5-ubuntu](https://github.com/goofball222/unifi/blob/main/10.5/official/Dockerfile) | [10.5.67](https://community.ui.com/releases/UniFi-Network-Application-10-5-67/375288b9-a4b4-46f1-a19d-5c787d342c2b) | UniFi Network Application official release | 2026-07-27 |
-| [10.6.106](https://github.com/goofball222/unifi/releases/tag/10.6.106) | [10.6.106](https://community.ui.com/releases/UniFi-Network-Application-10-6-106/f206c01d-3f73-471b-b4a5-2da48f157ea6) | Static official release tag/image | 2026-09-27 |
-| [10.5.67](https://github.com/goofball222/unifi/releases/tag/10.5.67) | [10.5.67](https://community.ui.com/releases/92694b29-fd78-4d52-906a-3211136610e2) | Static official release tag/image | 2026-08-03 |
 
 <details><summary>Older Static Tags</summary>
 
 | Tag | UniFi Version | Description | Release Date |
 | --- | :---: | --- | :---: |
+| [10.5.67](https://github.com/goofball222/unifi/releases/tag/10.5.67) | [10.5.67](https://community.ui.com/releases/92694b29-fd78-4d52-906a-3211136610e2) | Static official release tag/image | 2026-08-03 |
 | [10.4.57](https://github.com/goofball222/unifi/releases/tag/10.4.57) | [10.4.57](https://community.ui.com/releases/92694b29-fd78-4d52-906a-3211136610e2) | Static official release tag/image | 2026-05-28 |
 | [10.3.58](https://github.com/goofball222/unifi/releases/tag/10.3.58) | [10.3.58](https://community.ui.com/releases/UniFi-Network-Application-10-3-58/449387c9-4187-44bd-ad47-02da91688dfc) | Static official release tag/image | 2026-04-28 |
 | [10.2.105](https://github.com/goofball222/unifi/releases/tag/10.2.105) | [10.2.105](https://community.ui.com/releases/UniFi-Network-Application-10-2-105/cf38dace-ce91-4e4a-8ab7-a1d2db30aa55) | Static official release tag/image | 2026-04-08 |
@@ -59,13 +59,13 @@
 
 ---
 
-## 2026-10-03:
-
-## [UniFi Network 10.6: Final Release for Legacy USG Gateways and the Standalone Network Application](https://community.ui.com/questions/UniFi-Network-10-6-Final-Release-for-Legacy-USG-Gateways-and-the-Standalone-Network-Application-or-/54a8e1dd-4210-47a4-86a5-572e40854fd0)
+# 2026-10-03: [UniFi Network 10.6: Final Release for Legacy USG Gateways and the Standalone Network Application](https://community.ui.com/questions/UniFi-Network-10-6-Final-Release-for-Legacy-USG-Gateways-and-the-Standalone-Network-Application-or-/54a8e1dd-4210-47a4-86a5-572e40854fd0)
 
 Per Ubiquiti: "UniFi Network 10.6 will be the final release compatible with the legacy UniFi Security Gateway lineup (USG, USG-Pro, USG XG 8) and the legacy self-hosted/Standalone UniFi Network Application."
 
-Barring any future 10.6 security updates and/or reversal of this decision from Ubiquiti v[10.6.106](https://github.com/goofball222/unifi/releases/tag/10.6.106) will be the final release of this Docker image. I leave it up to the reader to find their own path forward with UniFi from here.
+Barring any future 10.6 security updates and/or reversal of this decision from Ubiquiti v[10.6.106](https://github.com/goofball222/unifi/releases/tag/10.6.106) will be the final release of this Docker image. I leave it up to the reader to find >
+
+* 2026-11-13: Updated official to [10.6.109](https://community.ui.com/releases/UniFi-Network-Application-10-6-109/772020d5-1426-4015-bbd6-631d28803933) release
 
 ---
 
