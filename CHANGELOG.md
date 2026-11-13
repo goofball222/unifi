@@ -1,6 +1,7 @@
 * **2026-11-13:**
     * Update 10.6/official to v[10.6.109](https://community.ui.com/releases/UniFi-Network-Application-10-6-109/772020d5-1426-4015-bbd6-631d28803933)
     * Tag 10.6.109 release
+    * Update 10.6/beta to v[10.6.111](https://community.ui.com/releases/UniFi-Network-Application-10-6-111/9559b5b4-7939-4f22-8c58-934c7ed624ef)
 ---
 * **2026-10-03:**
     * Update docs for the end of the line - [UniFi Network 10.6: Final Release for Legacy USG Gateways and the Standalone Network Application](https://community.ui.com/questions/UniFi-Network-10-6-Final-Release-for-Legacy-USG-Gateways-and-the-Standalone-Network-Application-or-/54a8e1dd-4210-47a4-86a5-572e40854fd0)
